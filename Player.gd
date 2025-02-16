@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
-
-const SPEED = 5.0
+var speed 
+const WALK_SPEED = 5.0
+const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const DEADZONE = 0.2
@@ -11,6 +12,11 @@ const MAX_DOWN_ANGLE = -50
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
+
+#fov variables
+const BASE_FOV = 75.0
+const SPRINT_FOV = 90.0
+const FOV_CHANGE_SPEED = 5.0
 
 var gravity = 9.8
 var joy_input = Vector2.ZERO
@@ -65,24 +71,27 @@ func _process(delta): # CAM MOVEMENT BASED ON JOYSTICK
 		head.rotation.z = 0
 		
 func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
-	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if Input.is_action_pressed("sprint"):
+		speed = SPRINT_SPEED
+		camera.fov = lerp(camera.fov, SPRINT_FOV, FOV_CHANGE_SPEED * delta)
+	else:
+		speed = WALK_SPEED
+		camera.fov = lerp(camera.fov, BASE_FOV, FOV_CHANGE_SPEED * delta)
+	
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var forward_dir = -head.transform.basis.z.normalized()
 	var right_dir = head.transform.basis.x.normalized()
 	var direction = (right_dir * input_dir.x - forward_dir * input_dir.y).normalized()
 	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
@@ -90,10 +99,11 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 #Head Bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
-
+	
+	
 	move_and_slide()
 
-func _headbob(time) -> Vector3:
+func _headbob(time) -> Vector3: #HEADBOB
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
