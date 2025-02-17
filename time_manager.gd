@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_MINUTE = 0.05 # Used to set the in game minute timer
+const GAME_MINUTE = 1 # Used to set the in game minute timer
 const start_time = 9 # Hour that the game starts at
 const end_time = 17 # Hour that the game ends
 var current_time = start_time
