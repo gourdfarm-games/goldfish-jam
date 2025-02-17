@@ -10,7 +10,7 @@ const MAX_UP_ANGLE = 50
 const MAX_DOWN_ANGLE = -50
 
 const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_AMP = 0.09
 var t_bob = 0.0
 
 #fov variables
