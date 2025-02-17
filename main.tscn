@@ -1,4 +1,3 @@
-[gd_scene format=3 uid="uid://dxvn05oothtqk"]
 [gd_scene load_steps=10 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
@@ -18,6 +17,8 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuq4e"]
 albedo_color = Color(1, 0.244842, 0.305418, 1)
+disable_receive_shadows = true
+shadow_to_opacity = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8owsr"]
 
@@ -52,10 +53,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601326, 0)
 shape = SubResource("ConvexPolygonShape3D_006v1")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2597, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224934, 1.14597, -0.75897)
-fov = 60.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224934, -0.243119, -0.75897)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(25.7402, 0, 0, 0, 0.467161, 0, 0, 0, 16.5595, 0.17019, -0.602801, -0.00345039)
@@ -65,6 +66,18 @@ size = Vector3(0.752441, 1, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(10.8733, 0, 0, 0, 2.84193, 0, 0, 0, 9.30393, 3.67014, 0.295626, -3.32888)
+material_override = SubResource("StandardMaterial3D_vo5er")
+use_collision = true
+size = Vector3(0.252808, 1, 0.285156)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(10.8733, 0, 0, 0, 2.84193, 0, 0, 0, 9.30393, -5.56605, 0.295626, 1.25095)
+material_override = SubResource("StandardMaterial3D_vo5er")
+use_collision = true
+size = Vector3(0.252808, 1, 0.285156)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(5.97588, 0, 0, 0, 2.84193, 0, 0, 0, 4.94787, 3.67014, 0.295626, 0.559836)
 material_override = SubResource("StandardMaterial3D_vo5er")
 use_collision = true
 size = Vector3(0.252808, 1, 0.285156)

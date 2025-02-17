@@ -34,16 +34,13 @@ func _unhandled_input(event): #CAM MOVEMENT BASED ON MOUSE
 		
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		
-		
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		
 		
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 func _process(delta): # CAM MOVEMENT BASED ON JOYSTICK
 	# CAM MOVEMENT BASED ON JOYSTICK
 	var right_x = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
 	var right_y = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
-
 	
 	if abs(right_x) < DEADZONE:
 		right_x = 0
@@ -56,13 +53,10 @@ func _process(delta): # CAM MOVEMENT BASED ON JOYSTICK
 	if right_y != 0:
 		
 		var current_rotation = head.rotation_degrees.x
-
 		
 		var new_rotation = current_rotation - right_y * SENSITIVITY * delta * 60000
-
 		
 		new_rotation = clamp(new_rotation, MAX_DOWN_ANGLE, MAX_UP_ANGLE)
-
 		
 		head.rotation_degrees.x = new_rotation
 		head.rotation.z = 0
@@ -82,8 +76,6 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 		speed = WALK_SPEED
 		camera.fov = lerp(camera.fov, BASE_FOV, FOV_CHANGE_SPEED * delta)
 	
-
-	
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var forward_dir = -head.transform.basis.z.normalized()
 	var right_dir = head.transform.basis.x.normalized()
@@ -95,11 +87,10 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
-
+		
 #Head Bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
-	
 	
 	move_and_slide()
 
