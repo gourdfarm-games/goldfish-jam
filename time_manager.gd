@@ -3,7 +3,7 @@ extends Node
 const GAME_MINUTE = 1 # Used to set the in game minute timer
 const start_time = 9 # Hour that the game starts at
 const end_time = 17 # Hour that the game ends
-var current_time = start_time
+var current_hour = start_time
 var minutes = 0
 
 @onready var timer: Timer = $Timer
@@ -19,11 +19,11 @@ func _on_timer_timeout() -> void:
 		minutes = str(minutes)
 	
 	# Converts 24hr time to 12hr time
-	if current_time > 12:
-		print_time = str(current_time - 12) + ":" + str(minutes) + "pm"
+	if current_hour > 12:
+		print_time = str(current_hour - 12) + ":" + str(minutes) + "pm"
 	else:
-		print_time = str(current_time) + ":" + str(minutes) + "am"
-	print("Time is: " + print_time)
+		print_time = str(current_hour) + ":" + str(minutes) + "am"
+	#print("Time is: " + print_time)
 	#
 	# Add functionality to print to hud here
 	#
@@ -34,7 +34,7 @@ func _on_timer_timeout() -> void:
 		minutes += 1
 		timer.start(GAME_MINUTE)
 	else:
-		current_time += 1
+		current_hour += 1
 		minutes = 0
 		timer.start(GAME_MINUTE)
 		
