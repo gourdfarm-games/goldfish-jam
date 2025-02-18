@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=80 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://f4bxcn4ofn72" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_03.png" id="5_3dd2n"]
 [ext_resource type="Texture2D" uid="uid://ck6ie7wnq13cj" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/green/texture_08.png" id="5_m43c4"]
 [ext_resource type="Texture2D" uid="uid://ctopg43ks815w" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/light/texture_07.png" id="5_wqlud"]
+[ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cn6dw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -582,3 +583,10 @@ material_override = SubResource("StandardMaterial3D_4kmus")
 [node name="CSGSphere3D3" type="CSGSphere3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0369, 2.31025, -4.87467)
 material_override = SubResource("StandardMaterial3D_cbu12")
+
+[node name="TimeManager" type="Node" parent="."]
+script = ExtResource("8_8gqm4")
+
+[node name="Timer" type="Timer" parent="TimeManager"]
+
+[connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
