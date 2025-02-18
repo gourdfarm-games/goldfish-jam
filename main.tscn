@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=87 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ctopg43ks815w" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/light/texture_07.png" id="5_wqlud"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="Script" path="res://interactable.gd" id="9_y8au6"]
+[ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cn6dw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -230,6 +231,13 @@ albedo_texture = ExtResource("5_3dd2n")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2epls"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2bmg5"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w151j"]
+height = 1.0
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -239,30 +247,30 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bgaai")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.993601, 0, 0, 0, 0.993601, 0, 0, 0, 0.993601, 7.50988, 0.785756, -4.70292)
 script = ExtResource("1_swxtx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601326, 0)
 material_override = SubResource("StandardMaterial3D_61bh6")
 mesh = SubResource("CapsuleMesh_8owsr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99597, 0, 0, 0, 0.99597, 0, 0, 0, 0.99597, 0, 0.601326, 0)
 shape = SubResource("CapsuleShape3D_iaatc")
 
-[node name="Head" type="Node3D" parent="CharacterBody3D"]
+[node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6039, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224934, -0.243119, -0.75897)
 
-[node name="InteractRay" type="RayCast3D" parent="CharacterBody3D/Head/Camera3D"]
+[node name="InteractRay" type="RayCast3D" parent="Player/Head/Camera3D"]
 target_position = Vector3(0, 0, -4)
 script = ExtResource("3_bfj5i")
 
-[node name="Prompt" type="Label" parent="CharacterBody3D/Head/Camera3D/InteractRay"]
+[node name="Prompt" type="Label" parent="Player/Head/Camera3D/InteractRay"]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -606,9 +614,10 @@ material_override = SubResource("StandardMaterial3D_3o4lp")
 transform = Transform3D(2.20664, 0, 0, 0, 1.60709, 0, 0, 0, 2.08139, -4.41113, 6.99185, -2.07375)
 material_override = SubResource("StandardMaterial3D_4kmus")
 
-[node name="CSGSphere3D3" type="CSGSphere3D" parent="Node"]
+[node name="FishBowl" type="CSGSphere3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0369, 2.31025, -4.87467)
 material_override = SubResource("StandardMaterial3D_cbu12")
+use_collision = true
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
@@ -626,4 +635,21 @@ shape = SubResource("BoxShape3D_rh2fd")
 mesh = SubResource("BoxMesh_2epls")
 skeleton = NodePath("../CollisionShape3D")
 
+[node name="Fish" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9864, 2.5999, -4.86924)
+script = ExtResource("11_lt3v1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Fish"]
+mesh = SubResource("CapsuleMesh_2bmg5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fish"]
+shape = SubResource("CapsuleShape3D_w151j")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
+aabb = AABB(-1, -1, -1, 1, 1, 1)
+
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
+[connection signal="interacted" from="Fish" to="Fish" method="_on_interacted"]
+[connection signal="screen_entered" from="Fish/VisibleOnScreenNotifier3D" to="Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="Fish/VisibleOnScreenNotifier3D" to="Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
