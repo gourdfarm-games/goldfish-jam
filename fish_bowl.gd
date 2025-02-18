@@ -9,6 +9,7 @@ func _ready() -> void:
 	
 func _on_holding():
 	is_holding = true
+	print(is_holding)
 	
 func _on_interacted(body: Variant) -> void:
 	if is_holding == true:
