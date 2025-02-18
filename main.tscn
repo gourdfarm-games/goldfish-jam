@@ -288,7 +288,6 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Greybox" type="Node" parent="."]
-main
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Greybox"]
 transform = Transform3D(16.2838, 0, 0, 0, 55.6482, 0, 0, 0, 11.9503, 3.31725, 6.3759, -1.57394)
