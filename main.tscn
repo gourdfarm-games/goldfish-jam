@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=89 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -32,8 +32,19 @@ albedo_texture = ExtResource("2_nh0l6")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iaatc"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_2v22i"]
+vertices = PackedVector3Array(-7.39671, 0.43885, -10.1412, -7.39671, 0.43885, 7.10877, 14.1033, 0.43885, 7.10877, 14.1033, 0.43885, -10.1412)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcmlq"]
 albedo_texture = ExtResource("3_bxfjm")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2bmg5"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ry6da"]
+points = PackedVector3Array(-0.0626015, -0.266393, -0.240247, 0.0113916, 0.238035, 0.249442, 0.0848621, 0.279592, 0.232102, 0.115522, -0.401785, 0.160223, 0.203685, 0.325489, -0.121749, -0.241412, 0.297443, 0.0411093, -0.181422, -0.341134, 0.144839, 0.234523, -0.327267, -0.0331359, -0.0637235, 0.421361, -0.169056, -0.196702, -0.341945, -0.122349, 0.219114, 0.311636, 0.100419, 0.0420738, 0.488726, 0.0573973, -0.0341012, -0.48823, -0.0646353, 0.0997428, -0.294785, -0.224458, -0.0927739, 0.297759, -0.226763, -0.13668, 0.296132, 0.203875, -0.00346824, -0.238412, 0.24983, 0.18791, -0.294307, 0.158478, 0.0557924, 0.281545, -0.240602, -0.208646, 0.263958, -0.135262, -0.242278, -0.298492, -0.0332556, -0.139874, 0.454283, 0.0266681, -0.125092, -0.440333, 0.102654, 0.131824, -0.451389, -0.0636977, 0.186715, -0.263172, -0.164131, 0.146689, 0.435778, -0.0786007, 0.249831, 0.238321, -0.00344428, 0.0265531, 0.437506, 0.162353, -0.0772764, -0.295446, 0.232954, -0.193856, -0.249126, 0.15785, -0.0486367, -0.391155, -0.199082, -0.15034, -0.293997, -0.19445)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vho2v"]
 albedo_texture = ExtResource("3_bxfjm")
@@ -232,13 +243,6 @@ albedo_texture = ExtResource("4_24qtf")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2epls"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_2bmg5"]
-radius = 0.25
-height = 1.0
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w151j"]
-height = 1.0
-
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -289,12 +293,35 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Greybox" type="Node" parent="."]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Greybox"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Greybox"]
+navigation_mesh = SubResource("NavigationMesh_2v22i")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(16.2838, 0, 0, 0, 55.6482, 0, 0, 0, 11.9503, 3.31725, 6.3759, -1.57394)
 material_override = SubResource("StandardMaterial3D_gcmlq")
 use_collision = true
 flip_faces = true
 size = Vector3(1.40802, 0.231348, 1.55934)
+
+[node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.986, 1, -2.476)
+script = ExtResource("11_lt3v1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/Fish"]
+mesh = SubResource("CapsuleMesh_2bmg5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/Fish"]
+shape = SubResource("ConvexPolygonShape3D_ry6da")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/NavigationRegion3D/Fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
+aabb = AABB(-1, -1, -1, 1, 1, 1)
+
+[node name="Timer" type="Timer" parent="Greybox/NavigationRegion3D/Fish"]
+one_shot = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Greybox/NavigationRegion3D/Fish"]
+debug_enabled = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Greybox"]
 transform = Transform3D(0.630854, 0, 0, 0, 1, 0, 0, 0, 3.14596, 5.1522, 0.0746465, -9.34108)
@@ -642,23 +669,9 @@ shape = SubResource("BoxShape3D_rh2fd")
 mesh = SubResource("BoxMesh_2epls")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="Fish" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9864, 2.5999, -2.44457)
-script = ExtResource("11_lt3v1")
-prompt_message = "·   E"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Fish"]
-mesh = SubResource("CapsuleMesh_2bmg5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Fish"]
-shape = SubResource("CapsuleShape3D_w151j")
-
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Fish"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
-aabb = AABB(-1, -1, -1, 1, 1, 1)
-
+[connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
+[connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/Timer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
 [connection signal="interacted" from="Greybox/FishBowl" to="Greybox/FishBowl" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
-[connection signal="interacted" from="Fish" to="Fish" method="_on_interacted"]
-[connection signal="screen_entered" from="Fish/VisibleOnScreenNotifier3D" to="Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
-[connection signal="screen_exited" from="Fish/VisibleOnScreenNotifier3D" to="Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
