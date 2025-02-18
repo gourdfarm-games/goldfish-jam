@@ -643,9 +643,8 @@ mesh = SubResource("BoxMesh_2epls")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="Fish" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9864, 2.5999, -2.44457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9864, 2.5999, -2.26102)
 script = ExtResource("11_lt3v1")
-prompt_message = "·   E"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Fish"]
 mesh = SubResource("CapsuleMesh_2bmg5")
@@ -657,7 +656,6 @@ shape = SubResource("CapsuleShape3D_w151j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
 aabb = AABB(-1, -1, -1, 1, 1, 1)
 
-[connection signal="interacted" from="Node/FishBowl" to="Node/FishBowl" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
 [connection signal="interacted" from="Fish" to="Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Fish/VisibleOnScreenNotifier3D" to="Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]

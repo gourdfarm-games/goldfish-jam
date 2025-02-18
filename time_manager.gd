@@ -23,7 +23,7 @@ func _on_timer_timeout() -> void:
 		print_time = str(current_hour - 12) + ":" + str(minutes) + "pm"
 	else:
 		print_time = str(current_hour) + ":" + str(minutes) + "am"
-	print("Time is: " + print_time)
+	#print("Time is: " + print_time)
 	#
 	# Add functionality to print to hud here
 	#
