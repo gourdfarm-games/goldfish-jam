@@ -3,8 +3,9 @@ extends CharacterBody3D
 const MAX_HP = 100
 const SPEED = 5.0
 var is_held = false
-var in_bowl = true
+var in_bowl = false
 var current_hp = MAX_HP
+var on_screen
 
 signal holding
 signal interacted(body)
@@ -28,6 +29,7 @@ func _on_interacted(body: Variant) -> void:
 	
 func _on_bowl_place():
 	is_held = false
+	in_bowl = true
 	visible = true
 	prompt_message = "·   E"
 	position.x = 11.9
@@ -37,20 +39,28 @@ func _on_bowl_place():
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
 	print("ON screen")
+	on_screen = true
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	if in_bowl == true:
-		timer.start(1)
+	print("OFF screen")
+	on_screen = false
+	if on_screen == false:
+		if in_bowl == true:
+			timer.start(1)
+			
+			
 
 func _on_timer_timeout() -> void:
 	var jump_out_rng = randi_range(1,2)
 	if jump_out_rng == 1:
 		in_bowl == false
 		print("out of bowl")
+		fish_move()
+	elif on_screen == true:
+		pass
 	else:
 		print("still in bowl")
 		timer.start(1)
-		
 		
 		
 func _physics_process(delta: float) -> void:
@@ -70,8 +80,6 @@ func fish_move():
 	random_position.x = randf_range(-5.0, 5)
 	random_position.z = randf_range(-5.0, 5)
 	nav_agent.set_target_position(random_position)
-
-
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
 	fish_move()

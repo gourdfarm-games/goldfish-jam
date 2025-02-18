@@ -305,9 +305,9 @@ flip_faces = true
 size = Vector3(1.40802, 0.231348, 1.55934)
 
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.51907, -2.00727)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("11_lt3v1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/Fish"]
@@ -318,6 +318,7 @@ shape = SubResource("ConvexPolygonShape3D_ry6da")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/NavigationRegion3D/Fish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
+layers = 7
 aabb = AABB(-1, -1, -1, 1, 1, 1)
 
 [node name="Timer" type="Timer" parent="Greybox/NavigationRegion3D/Fish"]
@@ -647,6 +648,7 @@ material_override = SubResource("StandardMaterial3D_4kmus")
 
 [node name="FishBowl" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.004, 2.162, -4.844)
+disable_mode = 1
 collision_layer = 2
 script = ExtResource("9_6tgp6")
 
