@@ -1,11 +1,25 @@
-extends Interactable
+extends CharacterBody3D
 
+const MAX_HP = 100
+const SPEED = 5.0
 var is_held = false
+var in_bowl = false
+var current_hp = MAX_HP
+var on_screen
 
 signal holding
+signal interacted(body)
+
+@export var prompt_message = "Interact"
+@onready var timer: Timer = $Timer
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
 func _ready() -> void:
-	$"../Greybox/FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
+	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
+	
+func interact(body):
+	print(body.name, " interacted with ", name)
+	interacted.emit(body)
 
 func _on_interacted(body: Variant) -> void:
 	is_held = true
@@ -15,12 +29,57 @@ func _on_interacted(body: Variant) -> void:
 	
 func _on_bowl_place():
 	is_held = false
+	in_bowl = true
 	visible = true
 	prompt_message = "·   E"
+	position.x = 11.9
+	position.y = 2.63
 	position.z = -4.86
+	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
-	print("screen")
+	print("ON screen")
+	on_screen = true
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	print("off screen")
+	print("OFF screen")
+	on_screen = false
+	if on_screen == false:
+		if in_bowl == true:
+			timer.start(1)
+			
+			
+
+func _on_timer_timeout() -> void:
+	var jump_out_rng = randi_range(1,2)
+	if jump_out_rng == 1:
+		in_bowl == false
+		print("out of bowl")
+		fish_move()
+	elif on_screen == true:
+		pass
+	else:
+		print("still in bowl")
+		timer.start(1)
+		
+		
+func _physics_process(delta: float) -> void:
+	var current_location = global_transform.origin
+	var next_location = nav_agent.get_next_path_position()
+	var new_velocity = (next_location - current_location).normalized() * SPEED
+	
+	velocity = velocity.move_toward(new_velocity, .25)
+	move_and_slide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("test"):
+		fish_move()
+		
+func fish_move():
+	var random_position := Vector3.ZERO
+	random_position.x = randf_range(-5.0, 5)
+	random_position.z = randf_range(-5.0, 5)
+	nav_agent.set_target_position(random_position)
+
+func _on_navigation_agent_3d_navigation_finished() -> void:
+	fish_move()

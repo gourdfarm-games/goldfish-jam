@@ -5,7 +5,7 @@ var is_holding
 signal bowl_place
 
 func _ready() -> void:
-	$"../../Fish".connect("holding", Callable(self, "_on_holding"))
+	$"../NavigationRegion3D/Fish".connect("holding", Callable(self, "_on_holding"))
 	
 func _on_holding():
 	is_holding = true
