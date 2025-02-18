@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const MAX_HP = 100
-const SPEED = 5.0
+const SPEED = 8.0
 var is_held = false
 var in_bowl = false
 var current_hp = MAX_HP
@@ -13,6 +13,7 @@ signal interacted(body)
 @export var prompt_message = "Interact"
 @onready var timer: Timer = $Timer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var region: NavigationRegion3D = $".."
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
@@ -32,9 +33,10 @@ func _on_bowl_place():
 	in_bowl = true
 	visible = true
 	prompt_message = "·   E"
-	position.x = 11.9
-	position.y = 2.63
-	position.z = -4.86
+	velocity = Vector3(0, 0, 0)
+	region.enabled = false
+	position = Vector3(11.9, 2.63, -4.86)
+	
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
@@ -48,14 +50,15 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 		if in_bowl == true:
 			timer.start(1)
 			
-			
 
 func _on_timer_timeout() -> void:
-	var jump_out_rng = randi_range(1,2)
+	var jump_out_rng = randi_range(1,1)
 	if jump_out_rng == 1:
 		in_bowl == false
 		print("out of bowl")
+		region.enabled = true
 		fish_move()
+		
 	elif on_screen == true:
 		pass
 	else:
@@ -70,6 +73,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = velocity.move_toward(new_velocity, .25)
 	move_and_slide()
+	
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):

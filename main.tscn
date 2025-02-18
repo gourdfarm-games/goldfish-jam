@@ -305,7 +305,7 @@ flip_faces = true
 size = Vector3(1.40802, 0.231348, 1.55934)
 
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.51907, -2.00727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.24818, -2.00727)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("11_lt3v1")
