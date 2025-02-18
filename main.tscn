@@ -273,7 +273,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224934, -0.243119, -0.7589
 
 [node name="InteractRay" type="RayCast3D" parent="Player/Head/Camera3D"]
 target_position = Vector3(0, 0, -4)
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("3_bfj5i")
 
 [node name="Prompt" type="Label" parent="Player/Head/Camera3D/InteractRay"]
@@ -647,6 +647,7 @@ material_override = SubResource("StandardMaterial3D_4kmus")
 
 [node name="FishBowl" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.004, 2.162, -4.844)
+collision_layer = 2
 script = ExtResource("9_6tgp6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/FishBowl"]
@@ -676,5 +677,6 @@ skeleton = NodePath("../CollisionShape3D")
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
 [connection signal="screen_exited" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 [connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/Timer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
+[connection signal="navigation_finished" from="Greybox/NavigationRegion3D/Fish/NavigationAgent3D" to="Greybox/NavigationRegion3D/Fish" method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="interacted" from="Greybox/FishBowl" to="Greybox/FishBowl" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]

@@ -15,8 +15,7 @@ func _physics_process(_delta):
 			
 			if collider.prompt_message != "Interact":
 				prompt.text = collider.prompt_message
-			if collider is CharacterBody3D:
-				pass
+				
 		
 			if Input.is_action_just_pressed("interact"):
 				collider.interact(owner)

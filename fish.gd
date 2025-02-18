@@ -63,10 +63,15 @@ func _physics_process(delta: float) -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
-		var random_position := Vector3.ZERO
-		random_position.x = randf_range(-5.0, 5)
-		random_position.z = randf_range(-5.0, 5)
-		nav_agent.set_target_position(random_position)
-	
-	
-	
+		fish_move()
+		
+func fish_move():
+	var random_position := Vector3.ZERO
+	random_position.x = randf_range(-5.0, 5)
+	random_position.z = randf_range(-5.0, 5)
+	nav_agent.set_target_position(random_position)
+
+
+
+func _on_navigation_agent_3d_navigation_finished() -> void:
+	fish_move()
