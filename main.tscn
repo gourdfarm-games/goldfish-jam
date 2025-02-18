@@ -287,8 +287,6 @@ text = "·   E"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Node" type="Node" parent="."]
-=======
 [node name="Greybox" type="Node" parent="."]
 main
 
