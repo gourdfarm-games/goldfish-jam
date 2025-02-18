@@ -615,14 +615,14 @@ material_override = SubResource("StandardMaterial3D_3o4lp")
 transform = Transform3D(2.20664, 0, 0, 0, 1.60709, 0, 0, 0, 2.08139, -4.41113, 6.99185, -2.07375)
 material_override = SubResource("StandardMaterial3D_4kmus")
 
-[node name="FishBowl" type="StaticBody3D" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0037, 2.16173, -4.84411)
+[node name="FishBowl" type="StaticBody3D" parent="Greybox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.004, 2.162, -4.844)
 script = ExtResource("9_6tgp6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/FishBowl"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/FishBowl"]
 shape = SubResource("SphereShape3D_bcrpx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/FishBowl"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/FishBowl"]
 mesh = SubResource("SphereMesh_x607m")
 skeleton = NodePath("../CollisionShape3D")
 
@@ -657,7 +657,7 @@ shape = SubResource("CapsuleShape3D_w151j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
 aabb = AABB(-1, -1, -1, 1, 1, 1)
 
-[connection signal="interacted" from="Node/FishBowl" to="Node/FishBowl" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/FishBowl" to="Greybox/FishBowl" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
 [connection signal="interacted" from="Fish" to="Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Fish/VisibleOnScreenNotifier3D" to="Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
