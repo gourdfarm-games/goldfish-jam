@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=101 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://food.gd" id="10_8a346"]
 [ext_resource type="Texture2D" uid="uid://bpec23g26rhw7" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/purple/texture_08.png" id="11_0ceq1"]
 [ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
+[ext_resource type="Script" path="res://phone.gd" id="12_4hh74"]
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
 [ext_resource type="Script" path="res://task_manager.gd" id="15_b8hnn"]
 
@@ -253,12 +254,13 @@ albedo_texture = ExtResource("11_0ceq1")
 
 [sub_resource type="SphereMesh" id="SphereMesh_x607m"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kse0c"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajk20"]
 albedo_texture = ExtResource("11_0ceq1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2bj8l"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxpr7"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ntm2n"]
 size = Vector3(1, 0.5, 1)
@@ -750,16 +752,15 @@ skeleton = NodePath("../CollisionShape3D")
 transform = Transform3D(1.11237, 0, 0, 0, 1.11237, 0, 0, 0, 1.11237, -0.764036, 2.162, 3.04308)
 disable_mode = 1
 collision_layer = 2
-script = ExtResource("9_6tgp6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Phone"]
-transform = Transform3D(-2.42438, 0, 0, 0, 1.49224, 0, 0, 0, 2.39338, 0, 0, 0)
-shape = SubResource("BoxShape3D_kse0c")
+script = ExtResource("12_4hh74")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Phone"]
 material_override = SubResource("StandardMaterial3D_ajk20")
 mesh = SubResource("BoxMesh_2bj8l")
-skeleton = NodePath("../CollisionShape3D")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Phone"]
+shape = SubResource("ConcavePolygonShape3D_xxpr7")
 
 [node name="Food" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16027, 1.61652, -0.443064)
@@ -817,6 +818,17 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Time: "
 
+[node name="Task" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 116.0
+offset_right = 161.0
+offset_bottom = 197.0
+grow_horizontal = 2
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 
@@ -828,6 +840,7 @@ script = ExtResource("8_8gqm4")
 script = ExtResource("15_b8hnn")
 
 [node name="Timer" type="Timer" parent="TaskManager"]
+autostart = true
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
