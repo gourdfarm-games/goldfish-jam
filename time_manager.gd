@@ -1,10 +1,12 @@
 extends Node
 
 const GAME_MINUTE = 1 # Used to set the in game minute timer
-const start_time = 9 # Hour that the game starts at
-const end_time = 17 # Hour that the game ends
-var current_hour = start_time
+const START_TIME = 9 # Hour that the game starts at
+const END_TIME = 17 # Hour that the game ends
+var current_hour = START_TIME
 var minutes = 0
+
+signal hunger_down
 
 @onready var timer: Timer = $Timer
 
@@ -34,8 +36,9 @@ func _on_timer_timeout() -> void:
 		minutes += 1
 		timer.start(GAME_MINUTE)
 	else:
+		emit_signal("hunger_down")
 		current_hour += 1
 		minutes = 0
 		timer.start(GAME_MINUTE)
 		
-	# if fish still alive at en
+	

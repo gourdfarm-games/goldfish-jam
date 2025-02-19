@@ -2,31 +2,42 @@ extends CharacterBody3D
 
 const MAX_HP = 100
 const SPEED = 8.0
+const HP_LOST_PER_SECOND = 1
+const ESCAPE_ATTEMPT_LAPSE_TIME = 1
+const MAX_HUNGER = 100
+var current_hp = MAX_HP
+var hunger = MAX_HUNGER
 var is_held = false
 var in_bowl = false
-var current_hp = MAX_HP
 var on_screen
+var has_food = false
 
 signal holding
 signal interacted(body)
 
 @export var prompt_message = "Interact"
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $InBowlTimer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var region: NavigationRegion3D = $".."
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
+	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
+	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
 	
 func interact(body):
 	print(body.name, " interacted with ", name)
 	interacted.emit(body)
 
 func _on_interacted(body: Variant) -> void:
-	is_held = true
-	emit_signal("holding")
-	prompt_message = ""
-	visible = false
+	if has_food == true:
+		has_food = false
+		hunger = MAX_HUNGER
+	else:
+		is_held = true
+		emit_signal("holding")
+		prompt_message = ""
+		visible = false
 	
 func _on_bowl_place():
 	is_held = false
@@ -36,7 +47,6 @@ func _on_bowl_place():
 	velocity = Vector3(0, 0, 0)
 	region.enabled = false
 	position = Vector3(11.9, 2.63, -4.86)
-	
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
@@ -48,22 +58,29 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	on_screen = false
 	if on_screen == false:
 		if in_bowl == true:
-			timer.start(1)
+			timer.start(ESCAPE_ATTEMPT_LAPSE_TIME)
 			
 
 func _on_timer_timeout() -> void:
-	var jump_out_rng = randi_range(1,1)
-	if jump_out_rng == 1:
-		in_bowl == false
-		print("out of bowl")
-		region.enabled = true
-		fish_move()
-		
-	elif on_screen == true:
-		pass
-	else:
-		print("still in bowl")
-		timer.start(1)
+	if in_bowl == true:
+		if on_screen == false:
+			var jump_out_rng = randi_range(1,1)
+			if jump_out_rng == 1:
+				in_bowl = false
+				print("out of bowl")
+				region.enabled = true
+				fish_move()
+				lose_hp()
+			elif on_screen == true:
+				pass
+			else:
+				print("still in bowl")
+				timer.start(ESCAPE_ATTEMPT_LAPSE_TIME)
+	# If fish is out of bowl, timer is used to degrade hp
+	elif in_bowl == false:
+		current_hp -= HP_LOST_PER_SECOND
+		print(current_hp)
+		lose_hp()
 		
 		
 func _physics_process(delta: float) -> void:
@@ -87,3 +104,23 @@ func fish_move():
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
 	fish_move()
+	
+func lose_hp():
+	if current_hp <= 0:
+		queue_free()
+	else:
+		timer.start(1)
+	
+func _on_hunger_down():
+	const HUNGER_LOST_PER_HOUR = 25
+	hunger -= HUNGER_LOST_PER_HOUR
+	print(hunger)
+	# dies if hunger reaches 0
+	if hunger <= 0:
+		queue_free()
+		
+func _on_food_in_hand():
+	has_food = true
+	
+	
+	
