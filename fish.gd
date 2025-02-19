@@ -3,36 +3,41 @@ extends CharacterBody3D
 const MAX_HP = 100
 const SPEED = 8.0
 const HP_LOST_PER_SECOND = 1
-const ESCAPE_ATTEMPT_LAPSE_TIME = 1
+const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 var current_hp = MAX_HP
-var hunger = MAX_HUNGER
+var hunger = 25
 var is_held = false
-var in_bowl = false
+var in_bowl = true
 var on_screen
 var has_food = false
 
 signal holding
 signal interacted(body)
+signal hunger_label_update(hunger_level)
 
 @export var prompt_message = "Interact"
 @onready var timer: Timer = $InBowlTimer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var region: NavigationRegion3D = $".."
+@onready var hunger_label: Label = $"../../../PlaceholderHUD/ColorRect/Hunger"
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
 	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
 	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
-	
+	hunger_label.text = "Hunger: " + str(hunger)
+
 func interact(body):
 	print(body.name, " interacted with ", name)
 	interacted.emit(body)
 
 func _on_interacted(body: Variant) -> void:
-	if has_food == true:
+	if has_food == true and in_bowl == true:
 		has_food = false
 		hunger = MAX_HUNGER
+		hunger_label.text = "Hunger: " + str(hunger)
+		
 	else:
 		is_held = true
 		emit_signal("holding")
@@ -58,14 +63,14 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	on_screen = false
 	if on_screen == false:
 		if in_bowl == true:
-			timer.start(ESCAPE_ATTEMPT_LAPSE_TIME)
+			timer.start(TIME_TO_ESCAPE)
 			
 
 func _on_timer_timeout() -> void:
 	if in_bowl == true:
 		if on_screen == false:
-			var jump_out_rng = randi_range(1,1)
-			if jump_out_rng == 1:
+			await get_tree().create_timer(1)
+			if on_screen == false:
 				in_bowl = false
 				print("out of bowl")
 				region.enabled = true
@@ -75,7 +80,7 @@ func _on_timer_timeout() -> void:
 				pass
 			else:
 				print("still in bowl")
-				timer.start(ESCAPE_ATTEMPT_LAPSE_TIME)
+				timer.start(TIME_TO_ESCAPE)
 	# If fish is out of bowl, timer is used to degrade hp
 	elif in_bowl == false:
 		current_hp -= HP_LOST_PER_SECOND
@@ -115,9 +120,11 @@ func _on_hunger_down():
 	const HUNGER_LOST_PER_HOUR = 25
 	hunger -= HUNGER_LOST_PER_HOUR
 	print(hunger)
+	hunger_label.text = "Hunger: " + str(hunger)
 	# dies if hunger reaches 0
 	if hunger <= 0:
 		queue_free()
+		
 		
 func _on_food_in_hand():
 	has_food = true

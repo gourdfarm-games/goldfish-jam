@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=92 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -249,6 +249,9 @@ size = Vector3(1, 0.5, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
 size = Vector3(1, 0.5, 1)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_87u11"]
+size = Vector2(11, 4)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -311,7 +314,7 @@ flip_faces = true
 size = Vector3(1.40802, 0.231348, 1.55934)
 
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.24818, -2.00727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9, 2.63, -4.86)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("11_lt3v1")
@@ -322,7 +325,7 @@ material_override = SubResource("StandardMaterial3D_p5bsa")
 mesh = SubResource("CapsuleMesh_2bmg5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/Fish"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, -7.43094e-08, 1.7, 0, -1.7, -7.43094e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ry6da")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/NavigationRegion3D/Fish"]
@@ -399,6 +402,7 @@ size = Vector3(1, 0.577271, 1)
 [node name="CSGBox3D14" type="CSGBox3D" parent="Greybox"]
 transform = Transform3D(0.629902, 0, 0, 0, 0.998492, 0, 0, 0, 3.14122, -5.31561, 6.38511, -1.74701)
 material_override = SubResource("StandardMaterial3D_aflj0")
+use_collision = true
 size = Vector3(10.7222, 0.577271, 6.09564)
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Greybox"]
@@ -679,6 +683,55 @@ shape = SubResource("BoxShape3D_ntm2n")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food"]
 mesh = SubResource("BoxMesh_2ytgd")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="Stairs" type="CSGMesh3D" parent="Greybox"]
+transform = Transform3D(0.725855, 0.687848, 0, -0.687848, 0.725855, 0, 0, 0, 1, 2.07387, 2.91124, -9.75911)
+visible = false
+use_collision = true
+mesh = SubResource("PlaneMesh_87u11")
+
+[node name="PlaceholderHUD" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PlaceholderHUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.5
+offset_top = -327.0
+offset_right = 578.5
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="Hunger" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = -100.0
+offset_right = 277.0
+offset_bottom = -25.0
+grow_vertical = 0
+
+[node name="Time" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.5
+offset_top = -120.0
+offset_right = -34.5
+offset_bottom = -29.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Time: "
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")

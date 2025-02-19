@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_MINUTE = 1 # Used to set the in game minute timer
+const GAME_MINUTE = 0.5 # Used to set the in game minute timer
 const START_TIME = 9 # Hour that the game starts at
 const END_TIME = 17 # Hour that the game ends
 var current_hour = START_TIME
@@ -8,6 +8,7 @@ var minutes = 0
 
 signal hunger_down
 
+@onready var time: Label = $"../PlaceholderHUD/ColorRect/Time"
 @onready var timer: Timer = $Timer
 
 func _ready():
@@ -25,10 +26,8 @@ func _on_timer_timeout() -> void:
 		print_time = str(current_hour - 12) + ":" + str(minutes) + "pm"
 	else:
 		print_time = str(current_hour) + ":" + str(minutes) + "am"
-	#print("Time is: " + print_time)
-	#
-	# Add functionality to print to hud here
-	#
+	time.text = "Time is: " + print_time
+	
 	minutes = int(minutes)
 	
 	timer.start(GAME_MINUTE)
