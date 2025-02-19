@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://du8mehk27poiy"]
+
+[ext_resource type="Script" path="res://Dialogue.gd" id="1_v1rh1"]
+[ext_resource type="Texture2D" uid="uid://bfe8wpesqdsqm" path="res://NPC Icons/png-clipart-cool-papa-bell-male-person-man-cool-guy-s-tshirt-hand.png" id="2_hw0nt"]
+
+[resource]
+script = ExtResource("1_v1rh1")
+texture = ExtResource("2_hw0nt")
+name = "Friend"
+dialogue = "So how's Murphy doing?"
+path_option = "Whats up?"
+options = Array[ExtResource("1_v1rh1")]([])

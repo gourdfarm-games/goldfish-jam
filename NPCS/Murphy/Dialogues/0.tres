@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://bpi65mb0vsj57"]
+
+[ext_resource type="Script" path="res://Dialogue.gd" id="1_qc1a1"]
+[ext_resource type="Resource" uid="uid://du8mehk27poiy" path="res://NPCS/Murphy/Dialogues/1.tres" id="2_0g3cn"]
+[ext_resource type="Texture2D" uid="uid://rcm6vpu5nk" path="res://NPC Icons/Oranda 1-1000x1000.jpg" id="2_34cvf"]
+
+[resource]
+script = ExtResource("1_qc1a1")
+texture = ExtResource("2_34cvf")
+name = "Murphy "
+dialogue = "Uhhh... Blub blub?"
+path_option = ""
+options = Array[ExtResource("1_qc1a1")]([ExtResource("2_0g3cn")])
