@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ctopg43ks815w" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/light/texture_07.png" id="5_wqlud"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
-[ext_resource type="Script" path="res://interactable.gd" id="9_y8au6"]
+[ext_resource type="Script" path="res://food.gd" id="10_8a346"]
 [ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cn6dw"]
@@ -239,9 +239,11 @@ albedo_texture = ExtResource("4_24qtf")
 
 [sub_resource type="SphereMesh" id="SphereMesh_x607m"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rh2fd"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntm2n"]
+size = Vector3(1, 0.5, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_2epls"]
+[sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
+size = Vector3(1, 0.5, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -659,21 +661,22 @@ shape = SubResource("SphereShape3D_bcrpx")
 mesh = SubResource("SphereMesh_x607m")
 skeleton = NodePath("../CollisionShape3D")
 
+[node name="Food" type="StaticBody3D" parent="Greybox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16027, 1.61652, -0.443064)
+collision_layer = 2
+script = ExtResource("10_8a346")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food"]
+shape = SubResource("BoxShape3D_ntm2n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food"]
+mesh = SubResource("BoxMesh_2ytgd")
+skeleton = NodePath("../CollisionShape3D")
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 
 [node name="Timer" type="Timer" parent="TimeManager"]
-
-[node name="InteractTest" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14794, 1.6487, -5.51472)
-script = ExtResource("9_y8au6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractTest"]
-shape = SubResource("BoxShape3D_rh2fd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractTest"]
-mesh = SubResource("BoxMesh_2epls")
-skeleton = NodePath("../CollisionShape3D")
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
@@ -681,4 +684,5 @@ skeleton = NodePath("../CollisionShape3D")
 [connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/InBowlTimer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
 [connection signal="navigation_finished" from="Greybox/NavigationRegion3D/Fish/NavigationAgent3D" to="Greybox/NavigationRegion3D/Fish" method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="interacted" from="Greybox/FishBowl" to="Greybox/FishBowl" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/Food" to="Greybox/Food" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
