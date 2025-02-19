@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ikeh0de3is2v"]
+
+[ext_resource type="Script" path="res://NPCS/Murphy/Dialogues/nextdialogue.gd" id="1_dpnln"]
+[ext_resource type="FontFile" uid="uid://dh32vslbjc75e" path="res://_fonts/Simply Rounded.ttf" id="1_nh6pf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydblt"]
+
+[node name="NextDialogue" type="Button"]
+offset_left = 101.0
+offset_right = 157.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_nh6pf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ydblt")
+script = ExtResource("1_dpnln")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

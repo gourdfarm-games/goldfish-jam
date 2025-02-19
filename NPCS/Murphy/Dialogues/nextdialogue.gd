@@ -1,7 +1,8 @@
 extends Button
 
 
-@onready var dialogue_manager = get_node("res://NPCS/Murphy/Dialogues/dialoguemanager.tscn")
+@onready var dialogue_manager = get_node("/root/DialogueManager")
+
 var dialogue : Dialogue:
 	set(value):
 		dialogue = value
