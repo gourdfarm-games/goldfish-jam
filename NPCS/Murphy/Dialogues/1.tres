@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://du8mehk27poiy"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://du8mehk27poiy"]
 
 [ext_resource type="Script" path="res://Dialogue.gd" id="1_v1rh1"]
+[ext_resource type="Resource" uid="uid://driqt3xm0tmdw" path="res://NPCS/Murphy/Dialogues/Ok.tres" id="2_6i2nc"]
 [ext_resource type="Texture2D" uid="uid://bfe8wpesqdsqm" path="res://NPC Icons/png-clipart-cool-papa-bell-male-person-man-cool-guy-s-tshirt-hand.png" id="2_hw0nt"]
 
 [resource]
@@ -9,4 +10,4 @@ texture = ExtResource("2_hw0nt")
 name = "Friend"
 dialogue = "So how's Murphy doing?"
 path_option = "Whats up?"
-options = Array[ExtResource("1_v1rh1")]([])
+options = Array[ExtResource("1_v1rh1")]([ExtResource("2_6i2nc")])

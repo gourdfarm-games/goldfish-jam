@@ -15,6 +15,10 @@ run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Dialoguemanager="*res://NPCS/Murphy/Dialogues/dialoguemanager.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray()

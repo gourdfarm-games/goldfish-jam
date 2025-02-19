@@ -18,6 +18,7 @@ next_button = ExtResource("2_iila4")
 
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="Panel" type="Panel" parent="UI"]
 anchors_preset = 7
@@ -37,7 +38,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_phqu6")
 layout_mode = 0
 offset_left = 22.0
 offset_right = 800.0
-offset_bottom = 228.0
+offset_bottom = 171.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 170)
