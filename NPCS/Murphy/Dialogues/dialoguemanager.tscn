@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://506kyjjwsruc"]
+[gd_scene load_steps=9 format=3 uid="uid://506kyjjwsruc"]
 
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="1_k7k4n"]
 [ext_resource type="Script" path="res://NPCS/Murphy/Dialogues/dialoguemanager.gd" id="1_qskvy"]
@@ -12,13 +12,47 @@ corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
+[sub_resource type="Animation" id="Animation_b31de"]
+resource_name = "text_anim"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+
+[sub_resource type="Animation" id="Animation_ve8xd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j85ji"]
+_data = {
+"RESET": SubResource("Animation_ve8xd"),
+"text_anim": SubResource("Animation_b31de")
+}
+
 [node name="DialogueManager" type="Node2D"]
 script = ExtResource("1_qskvy")
 next_button = ExtResource("2_iila4")
 
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="Panel" type="Panel" parent="UI"]
 anchors_preset = 7
@@ -72,11 +106,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tkxms")
 theme_override_font_sizes/font_size = 20
 text = "
-
-
 "
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Panel/VBoxContainer2/Dialogue"]
+libraries = {
+"": SubResource("AnimationLibrary_j85ji")
+}
+autoplay = "text_anim"
+speed_scale = 1.533
 
 [node name="Options" type="VBoxContainer" parent="UI/Panel/VBoxContainer2"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
