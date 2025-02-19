@@ -4,12 +4,14 @@ const MAX_HP = 100
 const SPEED = 8.0
 const HP_LOST_PER_SECOND = 1
 const ESCAPE_ATTEMPT_LAPSE_TIME = 1
+const HUNGER_LOST_PER_HOUR = 100
 var current_hp = MAX_HP
+var hunger = 100
 var is_held = false
 var in_bowl = false
 var on_screen
 
-signal holding
+signal holding(HUNGER_LOST_PER_HOUR)
 signal interacted(body)
 
 @export var prompt_message = "Interact"
@@ -19,6 +21,7 @@ signal interacted(body)
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
+	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
 	
 func interact(body):
 	print(body.name, " interacted with ", name)
@@ -67,6 +70,7 @@ func _on_timer_timeout() -> void:
 			else:
 				print("still in bowl")
 				timer.start(ESCAPE_ATTEMPT_LAPSE_TIME)
+	# If fish is out of bowl, timer is used to degrade hp
 	elif in_bowl == false:
 		current_hp -= HP_LOST_PER_SECOND
 		print(current_hp)
@@ -97,5 +101,13 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 	
 func lose_hp():
 	timer.start(1)
+	
+func _on_hunger_down(HUNGER_LOST_PER_HOUR):
+	
+	hunger -= HUNGER_LOST_PER_HOUR
+	# dies if hunger reaches 0
+	if hunger <= 0:
+		queue_free()
+	
 	
 	
