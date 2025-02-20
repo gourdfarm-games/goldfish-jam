@@ -828,6 +828,9 @@ offset_top = 116.0
 offset_right = 161.0
 offset_bottom = 197.0
 grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
@@ -840,6 +843,7 @@ script = ExtResource("8_8gqm4")
 script = ExtResource("15_b8hnn")
 
 [node name="Timer" type="Timer" parent="TaskManager"]
+one_shot = true
 autostart = true
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
