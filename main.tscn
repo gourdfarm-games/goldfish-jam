@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=105 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -10,12 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://j0wkwll323po" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_08.png" id="6_60578"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
-[ext_resource type="Script" path="res://food.gd" id="10_8a346"]
+[ext_resource type="Script" path="res://TaskObjects/food.gd" id="10_8a346"]
 [ext_resource type="Texture2D" uid="uid://bpec23g26rhw7" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/purple/texture_08.png" id="11_0ceq1"]
 [ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
-[ext_resource type="Script" path="res://phone.gd" id="12_4hh74"]
+[ext_resource type="Script" path="res://TaskObjects/phone.gd" id="12_4hh74"]
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
-[ext_resource type="Script" path="res://task_manager.gd" id="15_b8hnn"]
+[ext_resource type="Script" path="res://TaskObjects/TV.gd" id="14_5wsaj"]
+[ext_resource type="Script" path="res://TaskObjects/task_manager.gd" id="15_b8hnn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cn6dw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -262,14 +263,22 @@ albedo_texture = ExtResource("11_0ceq1")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxpr7"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ntm2n"]
-size = Vector3(1, 0.5, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyntg"]
 albedo_texture = ExtResource("11_0ceq1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
 size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntm2n"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q33in"]
+albedo_texture = ExtResource("11_0ceq1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1hwso"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7h3mg"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D"]
 
@@ -767,13 +776,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16027, 1.61652, -0.443064)
 collision_layer = 2
 script = ExtResource("10_8a346")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food"]
-shape = SubResource("BoxShape3D_ntm2n")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food"]
 material_override = SubResource("StandardMaterial3D_cyntg")
 mesh = SubResource("BoxMesh_2ytgd")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food"]
+shape = SubResource("BoxShape3D_ntm2n")
+
+[node name="TV" type="StaticBody3D" parent="Greybox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39649, 1.88229, -8.40992)
+collision_layer = 2
+script = ExtResource("14_5wsaj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/TV"]
+material_override = SubResource("StandardMaterial3D_q33in")
+mesh = SubResource("BoxMesh_1hwso")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/TV"]
+shape = SubResource("ConcavePolygonShape3D_7h3mg")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/TV"]
 
 [node name="PlaceholderHUD" type="Node" parent="."]
 
@@ -853,5 +876,6 @@ autostart = true
 [connection signal="interacted" from="Greybox/FishBowl" to="Greybox/FishBowl" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Phone" to="Greybox/Phone" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Food" to="Greybox/Food" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="TaskManager/Timer" to="TaskManager" method="_on_timer_timeout"]

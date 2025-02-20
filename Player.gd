@@ -21,6 +21,8 @@ const FOV_CHANGE_SPEED = 5.0
 var gravity = 9.8
 var joy_input = Vector2.ZERO
 
+var is_moving
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
@@ -84,9 +86,11 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		is_moving = true
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
+		is_moving = false
 		
 #Head Bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
