@@ -3,7 +3,7 @@ extends CharacterBody3D
 const MAX_HP = 100
 const SPEED = 8.0
 const HP_LOST_PER_SECOND = 1
-const TIME_TO_ESCAPE = 1
+const TIME_TO_ESCAPE = 3
 const MAX_HUNGER = 100
 var current_hp = MAX_HP
 var hunger = 25
@@ -11,6 +11,8 @@ var is_held = false
 var in_bowl = true
 var on_screen
 var has_food = false
+
+var escape_roll
 
 signal holding
 signal interacted(body)
@@ -63,29 +65,40 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	on_screen = false
 	if on_screen == false:
 		if in_bowl == true:
+			# Change this to have the initial attempt delay different from the rest
 			timer.start(TIME_TO_ESCAPE)
 			
-
-func _on_timer_timeout() -> void:
+# When the player looks away, the fish will attempt to escape
+# It has at 50/50 chance to escape
+# Each attempt delay is set by the TIME_TO_ESCAPE variable
+func attempt_escape():
 	if in_bowl == true:
 		if on_screen == false:
-			await get_tree().create_timer(1)
-			if on_screen == false:
+			escape_roll = randi_range(1, 2)
+			print(escape_roll)
+			if escape_roll == 1:
 				in_bowl = false
 				print("out of bowl")
 				region.enabled = true
 				fish_move()
 				lose_hp()
-			elif on_screen == true:
-				pass
-			else:
-				print("still in bowl")
+			elif escape_roll == 2:
 				timer.start(TIME_TO_ESCAPE)
-	# If fish is out of bowl, timer is used to degrade hp
+		else:
+			print("still in bowl")
+			timer.start(TIME_TO_ESCAPE)
+			
+	# If fish is out of bowl the same timer is used to degrade hp
 	elif in_bowl == false:
 		current_hp -= HP_LOST_PER_SECOND
 		print(current_hp)
 		lose_hp()
+
+func _on_timer_timeout() -> void:
+	attempt_escape()
+				
+	
+	
 		
 		
 func _physics_process(delta: float) -> void:

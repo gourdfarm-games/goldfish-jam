@@ -15,15 +15,16 @@ func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
 	
 func _on_task(task, description):
-	description_text = description
-	phone_call = task
+	if task == "friend_call" or task == "spam_call":
+		description_text = description
+		phone_call = task
 	
 	if phone_call == "friend_call":
 		friend_call_complete = false
 	elif phone_call == "spam_call":
 		spam_call_complete = false
 
-		
+	# Time to answer friends call
 	await get_tree().create_timer(5).timeout
 	if friend_call_complete == false:
 		print("lose")

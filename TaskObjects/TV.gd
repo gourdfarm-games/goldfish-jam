@@ -14,10 +14,12 @@ func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
 
 func _on_task(task, description):
-	description_text = description
-	watch_tv = task
+	if task == "watch_tv":
+		description_text = description
+		watch_tv = task
 	
-	watch_tv_done = false
+	if watch_tv == "watch_tv":
+		watch_tv_done = false
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
@@ -28,6 +30,7 @@ func _on_interacted(body: Variant) -> void:
 			print(watch_time)
 		if watch_time >= 5:
 			watch_tv_done = true
+			watch_time = 0
 			print("task complete")
 			new_text = task_label.text.replace(description_text, "")
 			task_label.text = new_text
