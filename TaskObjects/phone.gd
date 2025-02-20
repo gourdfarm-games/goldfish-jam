@@ -23,7 +23,7 @@ func _on_task(task, description):
 	elif phone_call == "spam_call":
 		spam_call_complete = false
 
-		
+	# Time to answer friends call
 	await get_tree().create_timer(5).timeout
 	if friend_call_complete == false:
 		print("lose")

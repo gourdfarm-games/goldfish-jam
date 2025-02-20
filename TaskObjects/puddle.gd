@@ -5,7 +5,6 @@ var description_text
 var mop_progress = 0
 var mop_complete = true
 
-
 signal mop_done
 
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
@@ -13,7 +12,6 @@ signal mop_done
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
 	visible = false
-	collision_layer = 3
 
 func _on_task(task, description):
 	description_text = description

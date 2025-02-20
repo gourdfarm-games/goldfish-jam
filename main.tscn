@@ -632,17 +632,17 @@ shape = SubResource("ConcavePolygonShape3D_7h3mg")
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/TV"]
 
 [node name="Puddle" type="StaticBody3D" parent="Greybox"]
-collision_layer = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01099, 0, -8.33832)
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("18_b6bht")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Puddle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55449, 1.31151, -7.41186)
 mesh = SubResource("BoxMesh_34rxh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Puddle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55449, 1.31151, -7.41186)
 shape = SubResource("ConcavePolygonShape3D_ydiih")
+disabled = true
 
 [node name="PlaceholderHUD" type="Node" parent="."]
 
@@ -712,6 +712,7 @@ script = ExtResource("8_8gqm4")
 script = ExtResource("15_b8hnn")
 
 [node name="Timer" type="Timer" parent="TaskManager"]
+wait_time = 5.0
 autostart = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -803,5 +804,6 @@ transform = Transform3D(-70, 0, -1.05697e-05, 0, 70, 0, 1.05697e-05, 0, -70, 5.1
 [connection signal="interacted" from="Greybox/Food" to="Greybox/Food" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/PlantShape" to="Greybox/PlantShape" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="TaskManager/Timer" to="TaskManager" method="_on_timer_timeout"]

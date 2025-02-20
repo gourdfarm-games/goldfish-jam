@@ -5,9 +5,12 @@ extends Node
 
 # Currently coded so that you only need to interact with object to complete task
 
+# Normal node variables
 @onready var task_label: Label = $"../PlaceholderHUD/ColorRect/Task"
 @onready var time_of_day: Node = $"../TimeManager"
+@onready var puddle_collision: CollisionShape3D = $"../Greybox/Puddle/CollisionShape3D"
 
+# Task node variables
 @onready var phone: StaticBody3D = $"../Greybox/Phone"
 @onready var tv: StaticBody3D = $"../Greybox/TV"
 @onready var plant_shape: StaticBody3D = $"../Greybox/PlantShape"
@@ -29,7 +32,7 @@ func _ready() -> void:
 	text_track = task_label.text
 
 func _on_timer_timeout() -> void:
-	var task = randi_range(1, 2)
+	var task = randi_range(1, 6)
 	task_roll(task)
 		
 func task_roll(task):
@@ -81,8 +84,8 @@ func task_roll(task):
 	# Pick up mop and clean up water areas
 	elif task == 4 and time_of_day.current_hour < 12: 
 		if puddle.mop_complete == true:
-			puddle.collision_layer = 2
 			puddle.visible = true
+			puddle_collision.disabled = false
 			task = "mop_floor"
 			description = " | Clean up Murphy's mess"
 			task_label.text = text_track + description
@@ -122,5 +125,7 @@ func _on_water_done(new_text):
 	text_track = new_text
 	
 func _on_mop_done(new_text):
+	puddle.visible = false
+	puddle_collision.disabled = true
 	text_track = new_text
 	
