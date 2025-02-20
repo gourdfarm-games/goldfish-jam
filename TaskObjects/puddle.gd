@@ -1,32 +1,35 @@
 extends Interactable
 
+var mop_floor
 var description_text
-var water_progress = 0
-var water_complete = true
-var water_plant
+var mop_progress = 0
+var mop_complete = true
 
-signal water_done
+
+signal mop_done
 
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
 
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
+	visible = false
+	collision_layer = 3
 
 func _on_task(task, description):
 	description_text = description
-	water_plant = task
+	mop_floor = task
 	
-	water_complete = false
+	mop_complete = false
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
-	if water_plant == "water_plant":
-		if water_progress > 5:
-			water_complete = true
-			water_progress = 0
+	if mop_floor == "mop_floor":
+		if mop_progress > 5:
+			mop_complete = true
+			mop_progress = 0
 			print("task complete")
 			new_text = task_label.text.replace(description_text, "")
 			task_label.text = new_text
-			emit_signal("water_done", task_label.text)
+			emit_signal("mop_done", task_label.text)
 		else:
-			water_progress += 1
+			mop_progress += 1

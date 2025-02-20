@@ -6,22 +6,30 @@ extends Node
 # Currently coded so that you only need to interact with object to complete task
 
 @onready var task_label: Label = $"../PlaceholderHUD/ColorRect/Task"
+@onready var time_of_day: Node = $"../TimeManager"
+
+@onready var phone: StaticBody3D = $"../Greybox/Phone"
+@onready var tv: StaticBody3D = $"../Greybox/TV"
+@onready var plant_shape: StaticBody3D = $"../Greybox/PlantShape"
+@onready var puddle: StaticBody3D = $"../Greybox/Puddle"
+
 
 var text_track
 
 signal task(task, description)
 
 func _ready() -> void:
-	$"../Greybox/Phone".connect("spam_call_done", Callable(self, "_on_spam_call_done"))
-	$"../Greybox/Phone".connect("friend_call_done", Callable(self, "_on_friend_call_done"))
-	$"../Greybox/TV".connect("tv_done", Callable(self, "_on_watch_done"))
-	$"../PlantShape".connect("water_done", Callable(self, "_on_water_done"))
+	phone.connect("spam_call_done", Callable(self, "_on_spam_call_done"))
+	phone.connect("friend_call_done", Callable(self, "_on_friend_call_done"))
+	tv.connect("tv_done", Callable(self, "_on_watch_done"))
+	plant_shape.connect("water_done", Callable(self, "_on_water_done"))
+	puddle.connect("mop_done", Callable(self, "_on_mop_done"))
 	
 	task_label.text = "Tasks"
 	text_track = task_label.text
 
 func _on_timer_timeout() -> void:
-	var task = randi_range(3, 3)
+	var task = randi_range(1, 2)
 	task_roll(task)
 		
 func task_roll(task):
@@ -30,7 +38,7 @@ func task_roll(task):
 	# Wait for dialogue to end to finish (cant skip through)
 	if task == 1:
 		# Phone only rings if no other calls are happening
-		if $"../Greybox/Phone".friend_call_complete == true and $"../Greybox/Phone".spam_call_complete == true:
+		if phone.friend_call_complete == true and phone.spam_call_complete == true:
 			task = "friend_call"
 			description = " | Friend is calling"
 			task_label.text = text_track + description
@@ -43,7 +51,7 @@ func task_roll(task):
 	# Wait for dialogue to end to finish (can skip through?)
 	elif task == 2:
 		# Phone only rings if no other calls are happening
-		if $"../Greybox/Phone".friend_call_complete == true and $"../Greybox/Phone".spam_call_complete == true:
+		if phone.friend_call_complete == true and phone.spam_call_complete == true:
 			var i = 0
 			while i < 5:
 				task = "spam_call"
@@ -51,7 +59,7 @@ func task_roll(task):
 				task_label.text = text_track + description
 				text_track = task_label.text
 				emit_signal("task", task, description)
-				await $"../Greybox/Phone".spam_call_done
+				await phone.spam_call_done
 				await get_tree().create_timer(3).timeout
 				i += 1
 		else:
@@ -60,7 +68,7 @@ func task_roll(task):
 	# Water plant
 	# Spam E a certain amount of times
 	elif task == 3: 
-		if $"../PlantShape".water_complete == true:
+		if plant_shape.water_complete == true:
 			task = "water_plant"
 			description = " | You need to water your plant"
 			task_label.text = text_track + description
@@ -71,13 +79,22 @@ func task_roll(task):
 	
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
-	elif task == 4: 
-		pass
+	elif task == 4 and time_of_day.current_hour < 12: 
+		if puddle.mop_complete == true:
+			puddle.collision_layer = 2
+			puddle.visible = true
+			task = "mop_floor"
+			description = " | Clean up Murphy's mess"
+			task_label.text = text_track + description
+			text_track = task_label.text
+			emit_signal("task", task, description)
+		else:
+			task = randi_range(1, 6)
 		
 	# Watch TV
 	# Wait a period of time
 	elif task == 5: 
-		if $"../Greybox/TV".watch_tv_done == true:
+		if tv.watch_tv_done == true:
 			task = "watch_tv"
 			description = " | Your favorite show is on"
 			task_label.text = text_track + description
@@ -102,5 +119,8 @@ func _on_watch_done(new_text):
 	text_track = new_text
 
 func _on_water_done(new_text):
+	text_track = new_text
+	
+func _on_mop_done(new_text):
 	text_track = new_text
 	
