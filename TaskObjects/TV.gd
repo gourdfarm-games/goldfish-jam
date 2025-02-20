@@ -9,6 +9,7 @@ signal tv_done
 
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
 @onready var player: CharacterBody3D = $"../../Player"
+@onready var progress_bar: ProgressBar = $"../../PlaceholderHUD/ColorRect/ProgressBar"
 
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
@@ -27,6 +28,7 @@ func _on_interacted(body: Variant) -> void:
 		while watch_time < 5 and player.is_moving == false and $VisibleOnScreenNotifier3D.is_on_screen() == true:
 			await get_tree().create_timer(0.1).timeout
 			watch_time += 0.1
+			progress_bar.value = watch_time
 			print(watch_time)
 		if watch_time >= 5:
 			watch_tv_done = true

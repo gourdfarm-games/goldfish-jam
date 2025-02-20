@@ -701,6 +701,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="ProgressBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 26.5
+offset_top = -349.0
+offset_right = 101.5
+offset_bottom = -165.0
+grow_vertical = 0
+max_value = 5.0
+fill_mode = 3
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 
