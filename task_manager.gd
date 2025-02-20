@@ -26,6 +26,7 @@ func task_roll(task):
 	var description
 	# Friend calls
 	if task == 1:
+		# Phone only rings if no other calls are happening
 		if $"../Greybox/Phone".friend_call_complete == true and $"../Greybox/Phone".spam_call_complete == true:
 			task = "friend_call"
 			description = " | Friend is calling"
@@ -34,20 +35,23 @@ func task_roll(task):
 			emit_signal("task", task, description)
 		else:
 			task = randi_range(1, 6)
-			print(task)
 		
 	# Spam calls
-	elif task == 2: 
-		var i = 0
-		while i < 5:
-			task = "spam_call"
-			description = " | Spam call"
-			task_label.text = text_track + description
-			text_track = task_label.text
-			emit_signal("task", task, description)
-			await $"../Greybox/Phone".spam_call_done
-			await get_tree().create_timer(3).timeout
-			i += 1
+	elif task == 2:
+		# Phone only rings if no other calls are happening
+		if $"../Greybox/Phone".friend_call_complete == true and $"../Greybox/Phone".spam_call_complete == true:
+			var i = 0
+			while i < 5:
+				task = "spam_call"
+				description = " | Spam call"
+				task_label.text = text_track + description
+				text_track = task_label.text
+				emit_signal("task", task, description)
+				await $"../Greybox/Phone".spam_call_done
+				await get_tree().create_timer(3).timeout
+				i += 1
+		else:
+			task = randi_range(1, 6)
 	
 	# Water plant
 	elif task == 3: 
