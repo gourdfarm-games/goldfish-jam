@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf55wliwqq7a8"]
+
+[ext_resource type="PackedScene" uid="uid://b3sw4xbffm725" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/Fridge.fbx" id="1_ufkft"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_001.jpg" id="2_qlimy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ix2re"]
+albedo_texture = ExtResource("2_qlimy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx5n7"]
+albedo_texture = ExtResource("2_qlimy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lt6y"]
+albedo_texture = ExtResource("2_qlimy")
+
+[node name="Fridge" instance=ExtResource("1_ufkft")]
+
+[node name="Fridge_Door" parent="Fridge" index="0"]
+material_override = SubResource("StandardMaterial3D_ix2re")
+
+[node name="Body" parent="Fridge" index="1"]
+material_override = SubResource("StandardMaterial3D_lx5n7")
+
+[node name="sweep2" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_6lt6y")

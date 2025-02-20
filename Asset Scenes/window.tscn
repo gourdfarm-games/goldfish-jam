@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6nxvtnan7d80"]
+[gd_scene load_steps=5 format=3 uid="uid://b6nxvtnan7d80"]
 
 [ext_resource type="PackedScene" uid="uid://d0t03dthx51ti" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Lena Wachs/window.fbx" id="1_v8gj5"]
-[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_didt1"]
 [ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="3_hjx8o"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_001.jpg" id="3_sgwla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6h61"]
+albedo_texture = ExtResource("3_sgwla")
 
 [node name="window" instance=ExtResource("1_v8gj5")]
 
 [node name="window" parent="." index="0"]
 surface_material_override/0 = ExtResource("3_hjx8o")
 surface_material_override/1 = ExtResource("3_hjx8o")
-surface_material_override/2 = ExtResource("2_didt1")
+surface_material_override/2 = SubResource("StandardMaterial3D_t6h61")
