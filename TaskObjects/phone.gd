@@ -15,8 +15,9 @@ func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
 	
 func _on_task(task, description):
-	description_text = description
-	phone_call = task
+	if task == "friend_call" or task == "spam_call":
+		description_text = description
+		phone_call = task
 	
 	if phone_call == "friend_call":
 		friend_call_complete = false

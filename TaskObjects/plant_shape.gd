@@ -13,10 +13,12 @@ func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
 
 func _on_task(task, description):
-	description_text = description
-	water_plant = task
+	if task == "water_plant":
+		description_text = description
+		water_plant = task
 	
-	water_complete = false
+	if water_plant == "water_plant":
+		water_complete = false
 
 func _on_interacted(body: Variant) -> void:
 	var new_text

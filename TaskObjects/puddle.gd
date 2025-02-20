@@ -14,10 +14,12 @@ func _ready() -> void:
 	visible = false
 
 func _on_task(task, description):
-	description_text = description
-	mop_floor = task
+	if task == "mop_floor":
+		description_text = description
+		mop_floor = task
 	
-	mop_complete = false
+	if mop_floor == "mop_floor":
+		mop_complete = false
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
