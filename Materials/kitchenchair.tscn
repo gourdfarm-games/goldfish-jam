@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdy82mk4f507x"]
 
 [ext_resource type="PackedScene" uid="uid://buxc4ntmj5nwx" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Lena Wachs/kitchenchair.fbx" id="1_16mub"]
-[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_nxjqq"]
+[ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_2nd7r"]
 
 [node name="kitchenchair" instance=ExtResource("1_16mub")]
 
 [node name="kitchenchair" parent="." index="0"]
 transform = Transform3D(19.9415, 0, 1.528, 0, 20, 0, -1.528, 0, 19.9415, 0, 0, 0)
-surface_material_override/0 = ExtResource("2_nxjqq")
+surface_material_override/0 = ExtResource("2_2nd7r")
