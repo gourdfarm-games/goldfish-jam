@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=126 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -42,7 +42,9 @@
 [ext_resource type="PackedScene" uid="uid://ewxq62ywwvki" path="res://Materials/jars.tscn" id="40_tj4s6"]
 [ext_resource type="PackedScene" uid="uid://gggdeau0p0j1" path="res://Materials/fruitbowl.tscn" id="40_vioqs"]
 [ext_resource type="PackedScene" uid="uid://xffctcfeqwrr" path="res://Materials/dishrack.tscn" id="42_jqi7q"]
+[ext_resource type="PackedScene" uid="uid://6wjybjc34xiw" path="res://Materials/beanbag_1.tscn" id="43_alj3g"]
 [ext_resource type="PackedScene" uid="uid://bjkrgjqhyk43y" path="res://Materials/coffeemaker.tscn" id="43_sgfi5"]
+[ext_resource type="PackedScene" uid="uid://c4vci8kuntmur" path="res://Materials/cabinet.tscn" id="44_ifarx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cn6dw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -169,12 +171,6 @@ albedo_texture = ExtResource("4_24qtf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8amx"]
 albedo_texture = ExtResource("4_24qtf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o4lp"]
-albedo_texture = ExtResource("4_24qtf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kmus"]
-albedo_texture = ExtResource("4_24qtf")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_87u11"]
 size = Vector2(11, 4)
 
@@ -280,9 +276,16 @@ size = Vector3(0.832634, 0.593262, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kr6eq"]
 size = Vector3(0.893555, 0.716553, 0.954224)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e7kv6"]
+height = 1.29213
+radius = 0.907462
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4jgqn"]
 height = 0.798397
 radius = 0.275747
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjwst"]
+size = Vector3(1.7912, 1.69885, 1.45264)
 
 [node name="Node3D" type="Node3D"]
 
@@ -593,16 +596,6 @@ sides = 20
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 0.529277, 0, 0, 0, 1, -6.793, 0.250756, -10.242)
 material_override = SubResource("StandardMaterial3D_i8amx")
-use_collision = true
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(2.20664, 0, 0, 0, 1.60709, 0, 0, 0, 2.08139, -4.46316, 6.97487, 2.22867)
-material_override = SubResource("StandardMaterial3D_3o4lp")
-use_collision = true
-
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(2.20664, 0, 0, 0, 1.60709, 0, 0, 0, 2.08139, -4.41113, 6.99185, -2.07375)
-material_override = SubResource("StandardMaterial3D_4kmus")
 use_collision = true
 
 [node name="Stairs" type="CSGMesh3D" parent="Greybox/NavigationRegion3D"]
@@ -1157,7 +1150,29 @@ shape = SubResource("BoxShape3D_kr6eq")
 [node name="dishrack" parent="FINAL 3D ASSETS/DISHRACK" instance=ExtResource("42_jqi7q")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.623153)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+[node name="BEANBAGS" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(0.9262, 0, -0.377033, 0, 1, 0, 0.377033, 0, 0.9262, -4.49117, 7.17564, -2.01348)
+collision_layer = 4
+collision_mask = 7
+
+[node name="beanbag1" parent="FINAL 3D ASSETS/BEANBAGS" instance=ExtResource("43_alj3g")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.184677, -0.151306, 0.218522)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/BEANBAGS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.142776, 0.496063, -0.109529)
+shape = SubResource("CylinderShape3D_e7kv6")
+
+[node name="BEANBAGS2" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(0.0315678, 0, -0.999502, 0, 1, 0, 0.999502, 0, 0.0315678, -4.39343, 7.17564, 1.92416)
+collision_layer = 4
+collision_mask = 7
+
+[node name="beanbag1" parent="FINAL 3D ASSETS/BEANBAGS2" instance=ExtResource("43_alj3g")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.184677, -0.151306, 0.218522)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/BEANBAGS2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.142776, 0.496063, -0.109529)
+shape = SubResource("CylinderShape3D_e7kv6")
 
 [node name="COFFEEMACHINE" type="StaticBody3D" parent="FINAL 3D ASSETS"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8.81649, 2.10589, 7.11741)
@@ -1169,7 +1184,55 @@ shape = SubResource("CylinderShape3D_4jgqn")
 [node name="coffeemaker" parent="FINAL 3D ASSETS/COFFEEMACHINE" instance=ExtResource("43_sgfi5")]
 transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -0.357189, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+[node name="CABINET" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.133, 5.30738, 7.06777)
+
+[node name="cabinet" parent="FINAL 3D ASSETS/CABINET" instance=ExtResource("44_ifarx")]
+transform = Transform3D(-60, 0, 9.05975e-06, 0, 60, 0, -9.05975e-06, 0, -60, 0.116011, 0, 0.766925)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/CABINET"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732635, -0.776794, 0.531544)
+shape = SubResource("BoxShape3D_vjwst")
+
+[node name="CABINET2" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4501, 5.30738, 7.06777)
+
+[node name="cabinet" parent="FINAL 3D ASSETS/CABINET2" instance=ExtResource("44_ifarx")]
+transform = Transform3D(-60, 0, 9.05975e-06, 0, 60, 0, -9.05975e-06, 0, -60, 0.116011, 0, 0.766925)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/CABINET2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732635, -0.776794, 0.531544)
+shape = SubResource("BoxShape3D_vjwst")
+
+[node name="CABINET3" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79622, 5.30738, 7.06777)
+
+[node name="cabinet" parent="FINAL 3D ASSETS/CABINET3" instance=ExtResource("44_ifarx")]
+transform = Transform3D(-60, 0, 9.05975e-06, 0, 60, 0, -9.05975e-06, 0, -60, 0.116011, 0, 0.766925)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/CABINET3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732635, -0.776794, 0.531544)
+shape = SubResource("BoxShape3D_vjwst")
+
+[node name="CABINET4" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1079, 5.30738, 7.06777)
+
+[node name="cabinet" parent="FINAL 3D ASSETS/CABINET4" instance=ExtResource("44_ifarx")]
+transform = Transform3D(-60, 0, 9.05975e-06, 0, 60, 0, -9.05975e-06, 0, -60, 0.116011, 0, 0.766925)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/CABINET4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732635, -0.776794, 0.531544)
+shape = SubResource("BoxShape3D_vjwst")
+
+[node name="CABINET5" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42923, 5.30738, 7.06777)
+
+[node name="cabinet" parent="FINAL 3D ASSETS/CABINET5" instance=ExtResource("44_ifarx")]
+transform = Transform3D(-60, 0, 9.05975e-06, 0, 60, 0, -9.05975e-06, 0, -60, 0.116011, 0, 0.766925)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/CABINET5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732635, -0.776794, 0.531544)
+shape = SubResource("BoxShape3D_vjwst")
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
