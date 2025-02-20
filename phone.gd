@@ -33,6 +33,7 @@ func _on_interacted(body: Variant) -> void:
 		print("task complete")
 		new_text = task_label.text.replace(description_text, "")
 		task_label.text = new_text
+		emit_signal("friend_call_done", task_label.text)
 		
 	
 	elif phone_call == "spam_call":
