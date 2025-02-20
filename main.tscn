@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=111 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -11,12 +11,17 @@
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
 [ext_resource type="Script" path="res://TaskObjects/food.gd" id="10_8a346"]
+[ext_resource type="PackedScene" uid="uid://cbwus21vjlc67" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/Bookshelf.fbx" id="10_kkaa8"]
 [ext_resource type="Texture2D" uid="uid://bpec23g26rhw7" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/purple/texture_08.png" id="11_0ceq1"]
 [ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
 [ext_resource type="Script" path="res://TaskObjects/phone.gd" id="12_4hh74"]
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
 [ext_resource type="Script" path="res://TaskObjects/TV.gd" id="14_5wsaj"]
+[ext_resource type="PackedScene" uid="uid://c8tffjggmhw71" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/fish_food.fbx" id="14_jrm1o"]
 [ext_resource type="Script" path="res://TaskObjects/task_manager.gd" id="15_b8hnn"]
+[ext_resource type="PackedScene" uid="uid://dcbr3a0hcl6ki" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/Oven.fbx" id="18_htgyf"]
+[ext_resource type="PackedScene" uid="uid://b3sw4xbffm725" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/Fridge.fbx" id="19_qmg6u"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="21_jsbxg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cn6dw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -269,8 +274,9 @@ albedo_texture = ExtResource("11_0ceq1")
 [sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
 size = Vector3(1, 0.5, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ntm2n"]
-size = Vector3(1, 0.5, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfryv"]
+radius = 0.384991
+height = 0.852762
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q33in"]
 albedo_texture = ExtResource("11_0ceq1")
@@ -279,6 +285,8 @@ albedo_texture = ExtResource("11_0ceq1")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7h3mg"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jpcdj"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -333,6 +341,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Greybox"]
 navigation_mesh = SubResource("NavigationMesh_2v22i")
+enabled = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(16.2838, 0, 0, 0, 55.6482, 0, 0, 0, 11.9503, 3.31725, 6.3759, -1.57394)
@@ -471,18 +480,21 @@ size = Vector3(12.268, 2.69, 2.91904)
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.490732, 0, 0, 0, 2.02154, 0, 0, 0, 0.300281, -6.67462, 2.37379, -2.09734)
+visible = false
 material_override = SubResource("StandardMaterial3D_t6wgr")
 use_collision = true
 size = Vector3(5.26792, 2.69, 4.54106)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.490732, 0, 0, 0, 2.02154, 0, 0, 0, 0.300281, -3.81179, 2.37379, -2.09734)
+visible = false
 material_override = SubResource("StandardMaterial3D_7cth4")
 use_collision = true
 size = Vector3(5.26792, 2.69, 4.54106)
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.490732, 0, 0, 0, 2.02154, 0, 0, 0, 0.300281, 1.83762, 2.37379, 7.10138)
+visible = false
 material_override = SubResource("StandardMaterial3D_41nt8")
 use_collision = true
 size = Vector3(5.26792, 2.69, 7.35817)
@@ -525,12 +537,14 @@ size = Vector3(20.8509, 0.948029, 7.35817)
 
 [node name="CSGBox3D41" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(-1.19392e-08, 0, -0.300281, 0, 2.02154, 0, 0.273137, 0, -1.31257e-08, -1.29961, 0.613059, 0.228777)
+visible = false
 material_override = SubResource("StandardMaterial3D_glrmj")
 use_collision = true
 size = Vector3(9.19681, 0.948029, 7.35817)
 
 [node name="CSGBox3D42" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(-1.19392e-08, 0, -0.300281, 0, 2.02154, 0, 0.273137, 0, -1.31257e-08, -2.73369, 1.53252, 0.228777)
+visible = false
 material_override = SubResource("StandardMaterial3D_qs5g8")
 use_collision = true
 size = Vector3(9.19681, 0.948029, 7.35817)
@@ -776,13 +790,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16027, 1.61652, -0.443064)
 collision_layer = 2
 script = ExtResource("10_8a346")
 
+[node name="fish_food" parent="Greybox/Food" instance=ExtResource("14_jrm1o")]
+transform = Transform3D(19.4112, 0, 0, 0, 19.4112, 0, 0, 0, 19.4112, 0.694225, -0.357145, 0.128341)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food"]
+visible = false
 material_override = SubResource("StandardMaterial3D_cyntg")
 mesh = SubResource("BoxMesh_2ytgd")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food"]
-shape = SubResource("BoxShape3D_ntm2n")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695292, 0.0285988, 0.0694488)
+shape = SubResource("CapsuleShape3D_sfryv")
 
 [node name="TV" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39649, 1.88229, -8.40992)
@@ -867,6 +886,26 @@ script = ExtResource("15_b8hnn")
 
 [node name="Timer" type="Timer" parent="TaskManager"]
 autostart = true
+
+[node name="Final 3D Assets" type="Node" parent="."]
+
+[node name="Oven" parent="Final 3D Assets" instance=ExtResource("18_htgyf")]
+transform = Transform3D(25.5351, 0, 0, 0, 25.5351, 0, 0, 0, 25.5351, -0.789866, -0.199236, 0.42742)
+
+[node name="Fridge" parent="Final 3D Assets" instance=ExtResource("19_qmg6u")]
+transform = Transform3D(-2.10137e-06, 0, 50.8145, 0, 48.0737, 0, -48.0737, 0, -2.22117e-06, 1.83535, -0.0163724, 7.00208)
+
+[node name="Bookshelf" parent="Final 3D Assets" instance=ExtResource("10_kkaa8")]
+transform = Transform3D(-1.29246e-06, 0, 26.9687, 0, 36.521, 0, -29.5681, 0, -1.17884e-06, -3.57528, 0.022001, -1.57875)
+
+[node name="Bookshelf2" parent="Final 3D Assets" instance=ExtResource("10_kkaa8")]
+transform = Transform3D(-1.29246e-06, 0, 26.9687, 0, 36.521, 0, -29.5681, 0, -1.17884e-06, -6.6006, 0.022001, -1.57875)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117643, 0.0106218, 0.00791788)
+visible = false
+mesh = SubResource("BoxMesh_jpcdj")
+surface_material_override/0 = ExtResource("21_jsbxg")
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
