@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=111 format=3 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -221,8 +221,41 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_jpcdj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5nt03"]
+size = Vector3(0.0339336, 0.0258789, 0.0605431)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1rvq"]
+size = Vector3(0.402008, 0.247253, 0.33194)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jf0uf"]
+size = Vector3(2.11572, 2.10815, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6sfr"]
+size = Vector3(1, 2.5663, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ljevl"]
-size = Vector3(1, 2.68762, 1.21155)
+size = Vector3(1, 0.975723, 0.991364)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q3t87"]
+height = 1.49036
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw1ji"]
+size = Vector3(0.932797, 0.602539, 0.337036)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yal0o"]
+size = Vector3(4.56396, 0.356079, 3.03738)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74oyx"]
+size = Vector3(6.03403, 5.52515, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k75d6"]
+size = Vector3(0.0941162, 0.119934, 0.0974274)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4ecx"]
+size = Vector3(2.95686, 6.46008, 2.05481)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tioa"]
+size = Vector3(1.03516, 0.0891113, 0.878418)
 
 [node name="Node3D" type="Node3D"]
 
@@ -733,79 +766,197 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117643, -3.29022, 0.007917
 mesh = SubResource("BoxMesh_jpcdj")
 surface_material_override/0 = ExtResource("21_jsbxg")
 
-[node name="Final 3D Assets" type="Node" parent="."]
+[node name="FINAL 3D ASSETS" type="Node" parent="."]
 
-[node name="placemat" parent="Final 3D Assets" instance=ExtResource("29_wrqvn")]
-transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 8.26473, 1.55772, 0.223516)
+[node name="POWERCORDS" parent="FINAL 3D ASSETS" instance=ExtResource("22_0twiy")]
+transform = Transform3D(-0.133041, 0, -72.2526, 0, 95.8031, 0, 91.8439, 0, -0.104662, -8.04983, 6.61637, -3.31447)
 
-[node name="placemat2" parent="Final 3D Assets" instance=ExtResource("29_wrqvn")]
-transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 8.26473, 1.55772, 1.82824)
-
-[node name="placemat3" parent="Final 3D Assets" instance=ExtResource("29_wrqvn")]
-transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 6.04418, 1.55772, 0.223516)
-
-[node name="placemat4" parent="Final 3D Assets" instance=ExtResource("29_wrqvn")]
-transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 6.04418, 1.55772, 1.82824)
-
-[node name="plant02" parent="Final 3D Assets" instance=ExtResource("29_53hdq")]
-transform = Transform3D(80, 0, 0, 0, 79.9821, -1.69075, 0, 1.69075, 79.9821, -6.94072, 6.57871, -2.86116)
-
-[node name="squaresidetable2" parent="Final 3D Assets" instance=ExtResource("21_ciywd")]
-transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -1.77258, -0.165462, -10.2565)
-
-[node name="powercords" parent="Final 3D Assets" instance=ExtResource("22_0twiy")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -0.0425613, -2.57145)
-
-[node name="window" parent="Final 3D Assets" instance=ExtResource("23_mxiyy")]
+[node name="WINDOW1" parent="FINAL 3D ASSETS" instance=ExtResource("23_mxiyy")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 14.6114, 1.51673, -2.93198)
 
-[node name="window3" parent="Final 3D Assets" instance=ExtResource("23_mxiyy")]
+[node name="WINDOW2" parent="FINAL 3D ASSETS" instance=ExtResource("23_mxiyy")]
 transform = Transform3D(-3.49691e-06, 0, -80, 0, 60, 0, 80, 0, -3.49691e-06, -4.02308, 8.47873, 7.58046)
 
-[node name="window2" parent="Final 3D Assets" instance=ExtResource("23_mxiyy")]
+[node name="WINDOW3" parent="FINAL 3D ASSETS" instance=ExtResource("23_mxiyy")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 14.6114, 1.51673, -0.0841914)
 
-[node name="Oven" parent="Final 3D Assets" instance=ExtResource("18_htgyf")]
-transform = Transform3D(25.5351, 0, 0, 0, 25.5351, 0, 0, 0, 25.5351, -0.789866, -0.199236, 0.42742)
-
-[node name="Fridge" parent="Final 3D Assets" instance=ExtResource("19_qmg6u")]
-transform = Transform3D(-2.10137e-06, 0, 50.8145, 0, 48.0737, 0, -48.0737, 0, -2.22117e-06, 1.83535, -0.0163724, 7.33855)
-
-[node name="Bookshelf" parent="Final 3D Assets" instance=ExtResource("10_kkaa8")]
-transform = Transform3D(-1.29246e-06, 0, 26.9687, 0, 36.521, 0, -29.5681, 0, -1.17884e-06, -3.57528, 0.022001, -1.57875)
-
-[node name="Bookshelf2" parent="Final 3D Assets" instance=ExtResource("10_kkaa8")]
-transform = Transform3D(-1.29246e-06, 0, 26.9687, 0, 36.521, 0, -29.5681, 0, -1.17884e-06, -6.6006, 0.022001, -1.57875)
-
-[node name="sofa" parent="Final 3D Assets" instance=ExtResource("25_mudd8")]
+[node name="SOFA" type="StaticBody3D" parent="FINAL 3D ASSETS"]
 transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -2.09871, -0.0970112, -4.71247)
 
-[node name="kitchentable2" parent="Final 3D Assets" instance=ExtResource("28_2jifd")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 4.84763, -0.0605445, -0.325139)
+[node name="SOFA" parent="FINAL 3D ASSETS/SOFA" instance=ExtResource("25_mudd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="plant01" parent="Final 3D Assets" instance=ExtResource("30_fqrtl")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -1.26288, 0.795293, -9.70481)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/SOFA"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0154414, 0.013916, -0.0318851)
+shape = SubResource("BoxShape3D_5nt03")
 
-[node name="microwave" parent="Final 3D Assets" instance=ExtResource("32_o8gc3")]
+[node name="MICROWAVE" type="StaticBody3D" parent="FINAL 3D ASSETS"]
 transform = Transform3D(-0.0897926, 0, 4.99919, 0, 5, 0, -4.99919, 0, -0.0897926, -1.46703, 1.645, 5.92083)
 
-[node name="soap" parent="Final 3D Assets" instance=ExtResource("32_i3rsl")]
-transform = Transform3D(-4.98904, 0, 0.330934, 0, 5, 0, -0.330934, 0, -4.98904, 6.69158, 2.09476, 7.51228)
+[node name="MICROWAVE" parent="FINAL 3D ASSETS/MICROWAVE" instance=ExtResource("32_o8gc3")]
 
-[node name="LAMP" type="RigidBody3D" parent="Final 3D Assets"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MICROWAVE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18602, 0.144073, 0.105484)
+shape = SubResource("BoxShape3D_e1rvq")
+
+[node name="KITCHENSINK" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60433, 2.26946, 7.58978)
+collision_mask = 7
+
+[node name="KITCHENSINK" parent="FINAL 3D ASSETS/KITCHENSINK" instance=ExtResource("34_1ywq6")]
+transform = Transform3D(-70, 0, -1.05697e-05, 0, 70, 0, 1.05697e-05, 0, -70, -1.42638, -2.34913, -0.910257)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/KITCHENSINK"]
+transform = Transform3D(0.996231, 0, 0, 0, 0.996231, 0, 0, 0, 0.996231, -0.368896, -1.24037, -0.387762)
+shape = SubResource("BoxShape3D_jf0uf")
+
+[node name="LAMP" type="RigidBody3D" parent="FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.826554, 0.697162, -3.86429)
 collision_layer = 4
 collision_mask = 7
 
-[node name="floorlamp" parent="Final 3D Assets/LAMP" instance=ExtResource("31_n7j6n")]
+[node name="floorlamp" parent="FINAL 3D ASSETS/LAMP" instance=ExtResource("31_n7j6n")]
 transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -0.260015, -0.737361, -0.00958204)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Final 3D Assets/LAMP"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493312, 0.599915, -0.227724)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/LAMP"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.545204, -0.107433)
+shape = SubResource("BoxShape3D_d6sfr")
+
+[node name="SMALL TABLE" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.826554, 0.697162, -9.36794)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/SMALL TABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493312, -0.186179, -0.405047)
 shape = SubResource("BoxShape3D_ljevl")
 
-[node name="kitchensink" parent="." instance=ExtResource("34_1ywq6")]
-transform = Transform3D(-70, 0, -1.05697e-05, 0, 70, 0, 1.05697e-05, 0, -70, 5.17795, -0.07967, 6.67952)
+[node name="squaresidetable" parent="FINAL 3D ASSETS/SMALL TABLE" instance=ExtResource("21_ciywd")]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -0.796132, -0.692644, -0.891437)
+
+[node name="PLANT01" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27232, 1.28929, -9.8504)
+collision_layer = 4
+collision_mask = 7
+
+[node name="plant01" parent="FINAL 3D ASSETS/PLANT01" instance=ExtResource("30_fqrtl")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0094409, -0.108145, 0.145589)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624516, 0.144259)
+shape = SubResource("CylinderShape3D_q3t87")
+
+[node name="PLANT02" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08526, 6.92456, -3.34233)
+collision_layer = 4
+collision_mask = 7
+
+[node name="plant02" parent="FINAL 3D ASSETS/PLANT02" instance=ExtResource("29_53hdq")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
+shape = SubResource("CylinderShape3D_q3t87")
+
+[node name="SOAP" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60433, 2.26946, 7.58978)
+collision_layer = 4
+collision_mask = 7
+
+[node name="soap" parent="FINAL 3D ASSETS/SOAP" instance=ExtResource("32_i3rsl")]
+transform = Transform3D(-4.98904, 0, 0.330934, 0, 5, 0, -0.330934, 0, -4.98904, 0.087245, -0.174699, -0.077497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/SOAP"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.892482, 0.431814, 0.144648, -0.0745678)
+shape = SubResource("BoxShape3D_dw1ji")
+
+[node name="KITCHENTABLE" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.98633, 1.04828, 1.20113)
+
+[node name="kitchentable2" parent="FINAL 3D ASSETS/KITCHENTABLE" instance=ExtResource("28_2jifd")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -2.1387, -1.10882, -1.52627)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/KITCHENTABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0983887, 0.32932, -0.20314)
+shape = SubResource("BoxShape3D_yal0o")
+
+[node name="Bookshelves" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+
+[node name="Bookshelf" parent="FINAL 3D ASSETS/Bookshelves" instance=ExtResource("10_kkaa8")]
+transform = Transform3D(-1.09278e-06, 0, 26, 0, 40, 0, -25, 0, -1.1365e-06, -3.55518, 0.0329707, -1.57985)
+
+[node name="Bookshelf2" parent="FINAL 3D ASSETS/Bookshelves" instance=ExtResource("10_kkaa8")]
+transform = Transform3D(-1.09278e-06, 0, 26, 0, 40, 0, -25, 0, -1.1365e-06, -6.73216, 0.0329707, -1.57985)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/Bookshelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03471, 2.72717, -1.92942)
+shape = SubResource("BoxShape3D_74oyx")
+
+[node name="Oven" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(25.5351, 0, 0, 0, 25.5351, 0, 0, 0, 25.5351, -0.789866, -0.199236, 0.42742)
+
+[node name="Oven" parent="FINAL 3D ASSETS/Oven" instance=ExtResource("18_htgyf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/Oven"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000643732, 0.0639529, 0.000177862)
+shape = SubResource("BoxShape3D_k75d6")
+
+[node name="FRIDGE" type="StaticBody3D" parent="FINAL 3D ASSETS"]
+
+[node name="Fridge" parent="FINAL 3D ASSETS/FRIDGE" instance=ExtResource("19_qmg6u")]
+transform = Transform3D(-2.10137e-06, 0, 50.8145, 0, 48.0737, 0, -48.0737, 0, -2.22117e-06, 1.83535, -0.0163724, 7.33855)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/FRIDGE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82771, 2.73004, 7.09871)
+shape = SubResource("BoxShape3D_j4ecx")
+
+[node name="PLACEMAT" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, -0.0256774)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLACEMAT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
+shape = SubResource("BoxShape3D_3tioa")
+
+[node name="placemat" parent="FINAL 3D ASSETS/PLACEMAT" instance=ExtResource("29_wrqvn")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.019985)
+
+[node name="PLACEMAT3" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73332, 1.60139, -0.0256774)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLACEMAT3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
+shape = SubResource("BoxShape3D_3tioa")
+
+[node name="placemat" parent="FINAL 3D ASSETS/PLACEMAT3" instance=ExtResource("29_wrqvn")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.019985)
+
+[node name="PLACEMAT4" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73332, 1.60139, 1.89485)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLACEMAT4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
+shape = SubResource("BoxShape3D_3tioa")
+
+[node name="placemat" parent="FINAL 3D ASSETS/PLACEMAT4" instance=ExtResource("29_wrqvn")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.019985)
+
+[node name="PLACEMAT2" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, 1.92129)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLACEMAT2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
+shape = SubResource("BoxShape3D_3tioa")
+
+[node name="placemat" parent="FINAL 3D ASSETS/PLACEMAT2" instance=ExtResource("29_wrqvn")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.019985)
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]

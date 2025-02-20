@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0d2dsqqwhhw2"]
 
 [ext_resource type="PackedScene" uid="uid://5kblprwgsvwi" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Lena Wachs/kitchentable.fbx" id="1_cv1hm"]
-[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_wxrup"]
+[ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_ybocv"]
 
 [node name="kitchentable" instance=ExtResource("1_cv1hm")]
 
 [node name="kitchentable" parent="." index="0"]
-material_override = ExtResource("2_wxrup")
+material_override = ExtResource("2_ybocv")

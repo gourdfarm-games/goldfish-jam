@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ca0xunrblw1"]
+[gd_scene load_steps=8 format=3 uid="uid://b5ca0xunrblw1"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_bmcdj"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="2_0awpc"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_a4yjc"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="3_5gqdd"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_o4gai"]
@@ -22,6 +23,15 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_bmcdj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -238.0
+offset_top = -322.0
+offset_right = 4562.0
+offset_bottom = 2478.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0awpc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
