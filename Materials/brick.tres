@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvrxkapsiew12"]
+
+[ext_resource type="Texture2D" uid="uid://ysu1l6hdwqdk" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Textures/Bricks/Brick.png" id="1_rwwlg"]
+
+[resource]
+albedo_texture = ExtResource("1_rwwlg")
+uv1_scale = Vector3(4, 4, 4)
+point_size = 18.0
