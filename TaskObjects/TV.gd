@@ -28,6 +28,7 @@ func _on_interacted(body: Variant) -> void:
 			print(watch_time)
 		if watch_time >= 5:
 			watch_tv_done = true
+			watch_time = 0
 			print("task complete")
 			new_text = task_label.text.replace(description_text, "")
 			task_label.text = new_text

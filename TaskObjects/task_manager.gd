@@ -15,11 +15,13 @@ func _ready() -> void:
 	$"../Greybox/Phone".connect("spam_call_done", Callable(self, "_on_spam_call_done"))
 	$"../Greybox/Phone".connect("friend_call_done", Callable(self, "_on_friend_call_done"))
 	$"../Greybox/TV".connect("tv_done", Callable(self, "_on_watch_done"))
+	$"../PlantShape".connect("water_done", Callable(self, "_on_water_done"))
+	
 	task_label.text = "Tasks"
 	text_track = task_label.text
 
 func _on_timer_timeout() -> void:
-	var task = randi_range(5, 5)
+	var task = randi_range(3, 3)
 	task_roll(task)
 		
 func task_roll(task):
@@ -58,7 +60,14 @@ func task_roll(task):
 	# Water plant
 	# Spam E a certain amount of times
 	elif task == 3: 
-		pass
+		if $"../PlantShape".water_complete == true:
+			task = "water_plant"
+			description = " | You need to water your plant"
+			task_label.text = text_track + description
+			text_track = task_label.text
+			emit_signal("task", task, description)
+		else:
+			task = randi_range(1, 6)
 	
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
@@ -90,5 +99,8 @@ func _on_friend_call_done(new_text):
 	text_track = new_text
 	
 func _on_watch_done(new_text):
+	text_track = new_text
+
+func _on_water_done(new_text):
 	text_track = new_text
 	

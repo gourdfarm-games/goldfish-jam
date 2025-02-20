@@ -120,3 +120,9 @@ speed_scale = 1.533
 [node name="Options" type="VBoxContainer" parent="UI/Panel/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="NextDialogue" parent="." instance=ExtResource("2_iila4")]
+offset_left = 331.0
+offset_top = 600.0
+offset_right = 948.0
+offset_bottom = 600.0
