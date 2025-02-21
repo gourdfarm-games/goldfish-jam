@@ -17,7 +17,8 @@ func _on_interacted(body: Variant) -> void:
 			is_eaten = true
 			eat_progress = 0
 			muffin_manager.muffin_arr.erase(self)
-			print(muffin_manager.muffin_arr)
+			remove_from_group("Muffins")
+			queue_free()
 			if muffin_manager.muffin_arr.is_empty() == true:
 				muffin_manager.all_muffins_eaten()
 			else:

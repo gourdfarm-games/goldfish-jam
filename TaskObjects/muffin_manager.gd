@@ -6,6 +6,7 @@ var muffin_eat
 var muffin_arr = []
 
 signal muffin_done
+signal all_muffins_done
 
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
 
@@ -14,13 +15,13 @@ func _ready() -> void:
 
 func _on_task(task, description):
 	if task == "muffin_eat":
+		muffin_arr = []
 		description_text = description
+		print(description_text)
 		muffin_eat = task
-		muffin_arr.append(self)
 		for child in self.find_children("*"):
 			if child.is_in_group("Muffins"):
 				muffin_arr.append(child)
-		print(muffin_arr)
 		get_tree().call_group("Muffins", "can_eat")
 	
 	if muffin_eat == "muffin_eat":
@@ -31,7 +32,7 @@ func eat_a_muffin():
 	muffin_complete = true
 	new_text = task_label.text.replace(description_text, "")
 	task_label.text = new_text
-	emit_signal("muffin_done")
+	emit_signal("muffin_done", new_text)
 	
 func all_muffins_eaten():
 	emit_signal("all_muffins_done")
