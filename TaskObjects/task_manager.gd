@@ -72,7 +72,7 @@ func task_roll(task):
 	# Spam E a certain amount of times
 	elif task == 3: 
 		print(plant_shape.water_complete)
-		if plant_shape.water_complete == true:
+		if plant_shape.can_start_watering == true:
 			task = "water_plant"
 			description = " | You need to water your plant"
 			task_label.text = text_track + description

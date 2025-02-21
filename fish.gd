@@ -31,7 +31,6 @@ func _ready() -> void:
 	hunger_label.text = "Hunger: " + str(hunger)
 
 func interact(body):
-	print(body.name, " interacted with ", name)
 	interacted.emit(body)
 
 func _on_interacted(body: Variant) -> void:
@@ -57,11 +56,9 @@ func _on_bowl_place():
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
-	print("ON screen")
 	on_screen = true
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	print("OFF screen")
 	on_screen = false
 	if on_screen == false:
 		if in_bowl == true:
@@ -75,23 +72,19 @@ func attempt_escape():
 	if in_bowl == true:
 		if on_screen == false:
 			escape_roll = randi_range(1, 2)
-			print(escape_roll)
 			if escape_roll == 1:
 				in_bowl = false
-				print("out of bowl")
 				region.enabled = true
 				fish_move()
 				lose_hp()
 			elif escape_roll == 2:
 				timer.start(TIME_TO_ESCAPE)
 		else:
-			print("still in bowl")
 			timer.start(TIME_TO_ESCAPE)
 			
 	# If fish is out of bowl the same timer is used to degrade hp
 	elif in_bowl == false:
 		current_hp -= HP_LOST_PER_SECOND
-		print(current_hp)
 		lose_hp()
 
 func _on_timer_timeout() -> void:
@@ -132,7 +125,6 @@ func lose_hp():
 func _on_hunger_down():
 	const HUNGER_LOST_PER_HOUR = 25
 	hunger -= HUNGER_LOST_PER_HOUR
-	print(hunger)
 	hunger_label.text = "Hunger: " + str(hunger)
 	# dies if hunger reaches 0
 	if hunger <= 0:

@@ -17,6 +17,7 @@ func _on_interacted(body: Variant) -> void:
 	if is_watered == false:
 		if watered_progress > 5:
 			is_watered = true
+			watered_progress = 0
 			main_water.plants_arr.erase(self)
 			print(main_water.plants_arr)
 			if main_water.plants_arr.is_empty() == true:
