@@ -1386,7 +1386,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.529
 transform = Transform3D(1, 0, 0, 0, 0.725215, 0, 0, 0, 0.817634, -2.04352, 3.71142, 5.39946)
 
 [node name="Framed_Picture" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Framed_Picture" instance=ExtResource("63_bqabe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.954252, 0, -0.547057, -4.24919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.954252, -0.00212431, -0.52888, -4.23984)
 
 [node name="Framed_Picture" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Framed_Picture/Framed_Picture" instance=ExtResource("64_hq7wh")]
 transform = Transform3D(2.98023e-08, 0, -0.723967, 0, 1, 0, 1, 0, 0, 7.72499, 6.96016, -16.8045)
