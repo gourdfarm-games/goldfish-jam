@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=161 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
 [ext_resource type="Script" path="res://TaskObjects/TV.gd" id="14_5wsaj"]
 [ext_resource type="Script" path="res://TaskObjects/task_manager.gd" id="15_b8hnn"]
+[ext_resource type="Script" path="res://TaskObjects/plants/plant_4.gd" id="16_nexj3"]
 [ext_resource type="PackedScene" uid="uid://cd6vvesxhqluf" path="res://water_puddle_(1).tscn" id="17_7rlpn"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="18_1dse5"]
 [ext_resource type="Script" path="res://TaskObjects/puddle.gd" id="18_b6bht"]
@@ -146,7 +147,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 albedo_texture = ExtResource("11_0ceq1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(0.7, 1, 0.7)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfryv"]
 radius = 0.384991
@@ -155,8 +156,31 @@ height = 0.852762
 [sub_resource type="BoxMesh" id="BoxMesh_2u3pk"]
 size = Vector3(1, 1.5, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_456km"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wgiax"]
 data = PackedVector3Array(-0.5, 0.75, 0.5, 0.5, 0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, -0.5, 0.5, -0.75, -0.5, -0.5, 0.75, -0.5, -0.5, -0.75, -0.5, 0.5, -0.75, -0.5, 0.5, 0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, -0.5, 0.5, -0.75, 0.5, -0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, 0.75, 0.5, -0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, 0.75, -0.5, 0.5, 0.75, -0.5, -0.5, -0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, -0.75, 0.5, 0.5, -0.75, -0.5, -0.5, -0.75, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hdttj"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dtn6e"]
+data = PackedVector3Array(-0.5, 0.75, 0.5, 0.5, 0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, -0.5, 0.5, -0.75, -0.5, -0.5, 0.75, -0.5, -0.5, -0.75, -0.5, 0.5, -0.75, -0.5, 0.5, 0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, -0.5, 0.5, -0.75, 0.5, -0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, 0.75, 0.5, -0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, 0.75, -0.5, 0.5, 0.75, -0.5, -0.5, -0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, -0.75, 0.5, 0.5, -0.75, -0.5, -0.5, -0.75, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbivx"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5f22x"]
+data = PackedVector3Array(-0.4, 0.4, 0.4, 0.4, 0.4, 0.4, -0.4, -0.4, 0.4, 0.4, 0.4, 0.4, 0.4, -0.4, 0.4, -0.4, -0.4, 0.4, 0.4, 0.4, -0.4, -0.4, 0.4, -0.4, 0.4, -0.4, -0.4, -0.4, 0.4, -0.4, -0.4, -0.4, -0.4, 0.4, -0.4, -0.4, 0.4, 0.4, 0.4, 0.4, 0.4, -0.4, 0.4, -0.4, 0.4, 0.4, 0.4, -0.4, 0.4, -0.4, -0.4, 0.4, -0.4, 0.4, -0.4, 0.4, -0.4, -0.4, 0.4, 0.4, -0.4, -0.4, -0.4, -0.4, 0.4, 0.4, -0.4, -0.4, 0.4, -0.4, -0.4, -0.4, 0.4, 0.4, 0.4, -0.4, 0.4, 0.4, 0.4, 0.4, -0.4, -0.4, 0.4, 0.4, -0.4, 0.4, -0.4, 0.4, 0.4, -0.4, -0.4, -0.4, 0.4, 0.4, -0.4, 0.4, -0.4, -0.4, -0.4, 0.4, -0.4, 0.4, 0.4, -0.4, -0.4, -0.4, -0.4, -0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vmmuo"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrd3q"]
+data = PackedVector3Array(-0.5, 0.75, 0.5, 0.5, 0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, -0.5, 0.5, -0.75, -0.5, -0.5, 0.75, -0.5, -0.5, -0.75, -0.5, 0.5, -0.75, -0.5, 0.5, 0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, -0.5, 0.5, -0.75, 0.5, -0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, 0.75, 0.5, -0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, 0.75, -0.5, 0.5, 0.75, -0.5, -0.5, -0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, -0.75, 0.5, 0.5, -0.75, -0.5, -0.5, -0.75, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bobvc"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uejen"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q33in"]
 albedo_texture = ExtResource("11_0ceq1")
@@ -652,6 +676,7 @@ collision_layer = 2
 script = ExtResource("10_8a346")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213963, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_cyntg")
 mesh = SubResource("BoxMesh_2ytgd")
@@ -664,19 +689,70 @@ shape = SubResource("CapsuleShape3D_sfryv")
 [node name="Food" parent="Greybox/Food" instance=ExtResource("13_vn7xv")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 
-[node name="PlantShape" type="StaticBody3D" parent="Greybox"]
+[node name="PlantShape" type="StaticBody3D" parent="Greybox" groups=["Plants"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61587, 7.56405, -3.38091)
 visible = false
 collision_layer = 2
 script = ExtResource("23_k0hlu")
 prompt_message = "·   Mash E"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/PlantShape"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10911, 7.1904, -3.11092)
 mesh = SubResource("BoxMesh_2u3pk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10911, 7.1904, -3.11092)
-shape = SubResource("ConcavePolygonShape3D_456km")
+shape = SubResource("ConcavePolygonShape3D_wgiax")
+
+[node name="Node" type="Node" parent="Greybox/PlantShape"]
+
+[node name="Plant2" type="StaticBody3D" parent="Greybox/PlantShape/Node" groups=["Plants"]]
+collision_layer = 2
+script = ExtResource("16_nexj3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/PlantShape/Node/Plant2"]
+visible = false
+mesh = SubResource("BoxMesh_hdttj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Node/Plant2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41194, 0, 0.610094)
+shape = SubResource("ConcavePolygonShape3D_dtn6e")
+
+[node name="Plant3" type="StaticBody3D" parent="Greybox/PlantShape/Node" groups=["Plants"]]
+collision_layer = 2
+script = ExtResource("16_nexj3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/PlantShape/Node/Plant3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12813, 1.43947, -9.71064)
+visible = false
+mesh = SubResource("BoxMesh_gbivx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Node/Plant3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12813, 1.43947, -9.71064)
+shape = SubResource("ConcavePolygonShape3D_5f22x")
+
+[node name="Plant4" type="StaticBody3D" parent="Greybox/PlantShape/Node" groups=["Plants"]]
+collision_layer = 2
+script = ExtResource("16_nexj3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/PlantShape/Node/Plant4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6019, 0.553246, -10.4304)
+visible = false
+mesh = SubResource("BoxMesh_vmmuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Node/Plant4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6019, 0.553246, -10.4304)
+shape = SubResource("ConcavePolygonShape3D_yrd3q")
+
+[node name="Plant5" type="StaticBody3D" parent="Greybox/PlantShape/Node" groups=["Plants"]]
+collision_layer = 2
+script = ExtResource("16_nexj3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/PlantShape/Node/Plant5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.636, 5.58134, 7.39595)
+mesh = SubResource("BoxMesh_bobvc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Node/Plant5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.636, 5.58134, 7.39595)
+shape = SubResource("ConcavePolygonShape3D_uejen")
 
 [node name="TV" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84876, 9.70459, 0.100574)
@@ -795,7 +871,6 @@ script = ExtResource("8_8gqm4")
 script = ExtResource("15_b8hnn")
 
 [node name="Timer" type="Timer" parent="TaskManager"]
-wait_time = 5.0
 autostart = true
 
 [node name="FINAL 3D ASSETS" type="Node" parent="."]
@@ -983,7 +1058,7 @@ shape = SubResource("BoxShape3D_ljevl")
 transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -0.796132, -0.692644, -0.891437)
 
 [node name="PLANT01" type="RigidBody3D" parent="FINAL 3D ASSETS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27232, 1.28929, -9.8504)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27232, 1.02222, -9.8504)
 collision_layer = 4
 collision_mask = 7
 
@@ -991,7 +1066,7 @@ collision_mask = 7
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0094409, -0.108145, 0.145589)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT01"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624516, 0.144259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29536, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PLANT05" type="RigidBody3D" parent="FINAL 3D ASSETS"]
@@ -1701,6 +1776,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.612
 [connection signal="interacted" from="Greybox/Phone" to="Greybox/Phone" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Food" to="Greybox/Food" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/PlantShape" to="Greybox/PlantShape" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Node/Plant2" to="Player" method="_on_plant_2_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Node/Plant3" to="Greybox/PlantShape/Node/Plant3" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Node/Plant4" to="Greybox/PlantShape/Node/Plant4" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Node/Plant5" to="Greybox/PlantShape/Node/Plant5" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]

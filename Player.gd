@@ -103,3 +103,7 @@ func _headbob(time) -> Vector3: #HEADBOB
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos 
+
+
+func _on_plant_2_interacted(body: Variant) -> void:
+	pass # Replace with function body.

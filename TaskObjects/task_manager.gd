@@ -32,16 +32,14 @@ func _ready() -> void:
 	text_track = task_label.text
 
 func _on_timer_timeout() -> void:
-	var task = randi_range(1, 5)
+	var task = randi_range(3, 3)
 	task_roll(task)
 		
 func task_roll(task):
 	var description
-	print("initial: " + str(task))
 	# Friend calls
 	# Wait for dialogue to end to finish (cant skip through)
 	if task == 1:
-		print("post roll: " + str(task))
 		# Phone only rings if no other calls are happening
 		if phone.friend_call_complete == true and phone.spam_call_complete == true:
 			task = "friend_call"
@@ -55,7 +53,6 @@ func task_roll(task):
 	# Spam calls
 	# Wait for dialogue to end to finish (can skip through?)
 	elif task == 2:
-		print("post roll: " + str(task))
 		# Phone only rings if no other calls are happening
 		if phone.friend_call_complete == true and phone.spam_call_complete == true:
 			var i = 0
@@ -74,7 +71,6 @@ func task_roll(task):
 	# Water plant
 	# Spam E a certain amount of times
 	elif task == 3: 
-		print("post roll: " + str(task))
 		print(plant_shape.water_complete)
 		if plant_shape.water_complete == true:
 			task = "water_plant"
@@ -88,7 +84,6 @@ func task_roll(task):
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
 	elif task == 4 and time_of_day.current_hour < 12: 
-		print("post roll: " + str(task))
 		if puddle.mop_complete == true:
 			puddle.visible = true
 			puddle_collision.disabled = false
@@ -103,7 +98,6 @@ func task_roll(task):
 	# Watch TV
 	# Wait a period of time
 	elif task == 5: 
-		print("post roll: " + str(task))
 		if tv.watch_tv_done == true:
 			task = "watch_tv"
 			description = " | Your favorite show is on"
