@@ -10,6 +10,8 @@ signal tv_done
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
 @onready var player: CharacterBody3D = $"../../Player"
 @onready var progress_bar: ProgressBar = $"../../PlaceholderHUD/ColorRect/ProgressBar"
+@onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
+@onready var tv_timer: Timer = $TVTimer
 
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
@@ -21,6 +23,13 @@ func _on_task(task, description):
 	
 	if watch_tv == "watch_tv":
 		watch_tv_done = false
+		progress_bar.visible = true
+	
+	tv_timer.start()
+	await tv_timer.timeout
+	if watch_tv_done == false:
+		game_over.text = ("watch tv failed")
+		get_tree().paused = true
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
@@ -31,6 +40,8 @@ func _on_interacted(body: Variant) -> void:
 			progress_bar.value = watch_time
 			print(watch_time)
 		if watch_time >= 5:
+			tv_timer.stop()
+			progress_bar.visible = false
 			watch_tv_done = true
 			watch_time = 0
 			print("task complete")

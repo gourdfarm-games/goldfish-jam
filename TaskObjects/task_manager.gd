@@ -16,6 +16,7 @@ extends Node
 @onready var plant_shape: StaticBody3D = $"../Greybox/PlantShape"
 @onready var puddle: StaticBody3D = $"../Greybox/Puddle"
 @onready var muffin: Node = $"../FINAL 3D ASSETS/MuffinManager"
+@onready var timer: Timer = $Timer
 
 var text_track
 var task_number
@@ -36,7 +37,7 @@ func _ready() -> void:
 	text_track = task_label.text
 
 func task_get_rng():
-	task_number = randi_range(6, 6)
+	task_number = randi_range(3, 3)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
@@ -49,6 +50,7 @@ func task_roll(task):
 	if task == 1:
 		# Phone only rings if no other calls are happening
 		if phone.friend_call_complete == true and phone.spam_call_complete == true:
+			timer.wait_time = 5
 			task = "friend_call"
 			description = " | Friend is calling"
 			task_label.text = text_track + description
@@ -62,6 +64,7 @@ func task_roll(task):
 	elif task == 2:
 		# Phone only rings if no other calls are happening
 		if phone.friend_call_complete == true and phone.spam_call_complete == true:
+			timer.wait_time = 5
 			var i = 0
 			while i < 5:
 				task = "spam_call"
@@ -80,6 +83,7 @@ func task_roll(task):
 	elif task == 3: 
 		print(plant_shape.water_complete)
 		if plant_shape.can_start_watering == true:
+			timer.wait_time = 10
 			task = "water_plant"
 			description = " | You need to water your plant"
 			task_label.text = text_track + description
@@ -92,6 +96,7 @@ func task_roll(task):
 	# Pick up mop and clean up water areas
 	elif task == 4 and time_of_day.current_hour < 12: 
 		if puddle.mop_complete == true:
+			timer.wait_time = 5
 			puddle.visible = true
 			puddle_collision.disabled = false
 			task = "mop_floor"
@@ -106,6 +111,7 @@ func task_roll(task):
 	# Wait a period of time
 	elif task == 5: 
 		if tv.watch_tv_done == true:
+			timer.wait_time = 5
 			task = "watch_tv"
 			description = " | Your favorite show is on"
 			task_label.text = text_track + description
@@ -119,6 +125,7 @@ func task_roll(task):
 	elif task == 6:
 		if can_eat_muffin == true:
 			if muffin.muffin_complete == true:
+				timer.wait_time = 3
 				task = "muffin_eat"
 				description = " | Eat a muffin"
 				task_label.text = text_track + description
