@@ -5,7 +5,6 @@ var spam_call_complete = true
 var phone_call
 var description_text
 
-
 signal friend_call_done
 signal spam_call_done
 

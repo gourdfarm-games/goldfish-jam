@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=156 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -63,9 +63,10 @@
 [ext_resource type="PackedScene" uid="uid://cnamqqxcg85ja" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/WelcomeMat01.fbx" id="55_qu7l4"]
 [ext_resource type="PackedScene" uid="uid://cj2wi87yf0c6j" path="res://Materials/tv_stand.tscn" id="55_rg2o6"]
 [ext_resource type="PackedScene" uid="uid://b1188ky77axg0" path="res://welcome_mat_01.tscn" id="56_e727u"]
+[ext_resource type="Script" path="res://TaskObjects/muffin_manager.gd" id="58_ahxyn"]
 [ext_resource type="PackedScene" uid="uid://cuus7no4c2rsp" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/More Assets/smokedetector.fbx" id="58_gacj5"]
 [ext_resource type="PackedScene" uid="uid://duchel13xua4a" path="res://front_door.tscn" id="58_mqr1b"]
-[ext_resource type="Script" path="res://TaskObjects/muffins.gd" id="59_208yo"]
+[ext_resource type="Script" path="res://TaskObjects/muffin.gd" id="59_fpdls"]
 [ext_resource type="PackedScene" uid="uid://bu5tv3o7b0a04" path="res://picture_2.tscn" id="62_fak2v"]
 [ext_resource type="PackedScene" uid="uid://d3rtjotucr7oe" path="res://picture_3.tscn" id="63_bqabe"]
 [ext_resource type="PackedScene" uid="uid://c8hcki183git4" path="res://picture_7.tscn" id="64_hq7wh"]
@@ -839,7 +840,6 @@ script = ExtResource("8_8gqm4")
 script = ExtResource("15_b8hnn")
 
 [node name="Timer" type="Timer" parent="TaskManager"]
-wait_time = 5.0
 autostart = true
 
 [node name="FINAL 3D ASSETS" type="Node" parent="."]
@@ -1519,62 +1519,68 @@ mesh = SubResource("ArrayMesh_y2for")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("52_etogu")
 
-[node name="MUFFIN" type="RigidBody3D" parent="FINAL 3D ASSETS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23228, 5.48704, 7.12066)
-collision_layer = 4
-collision_mask = 7
+[node name="MuffinManager" type="Node" parent="FINAL 3D ASSETS"]
+script = ExtResource("58_ahxyn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MUFFIN"]
+[node name="MUFFIN" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23228, 5.48704, 7.12066)
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("59_fpdls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.041626, 0.129359)
 shape = SubResource("BoxShape3D_rsqdl")
 
-[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MUFFIN"]
+[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
-[node name="MUFFIN2" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+[node name="MUFFIN2" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23228, 1.65495, 1.08285)
-collision_layer = 4
+collision_layer = 6
 collision_mask = 7
+script = ExtResource("59_fpdls")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MUFFIN2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.0221558, 0.129359)
 shape = SubResource("BoxShape3D_rsqdl")
 
-[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MUFFIN2"]
+[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
-[node name="MUFFIN3" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+[node name="MUFFIN3" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53184, 1.65495, 0.624113)
-collision_layer = 4
+collision_layer = 6
 collision_mask = 7
-script = ExtResource("59_208yo")
+script = ExtResource("59_fpdls")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MUFFIN3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0, 0.129359)
 shape = SubResource("BoxShape3D_rsqdl")
 
-[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MUFFIN3"]
+[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
-[node name="MUFFIN4" type="RigidBody3D" parent="FINAL 3D ASSETS"]
+[node name="MUFFIN4" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73595, 3.43656, -4.95036)
-collision_layer = 4
+collision_layer = 6
 collision_mask = 7
+script = ExtResource("59_fpdls")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MUFFIN4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN4"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.0693359, 0.129359)
 shape = SubResource("BoxShape3D_rsqdl")
 
-[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MUFFIN4"]
+[node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
@@ -1705,3 +1711,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.612
 [connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="TaskManager/Timer" to="TaskManager" method="_on_timer_timeout"]
+[connection signal="interacted" from="FINAL 3D ASSETS/MuffinManager/MUFFIN" to="FINAL 3D ASSETS/MuffinManager/MUFFIN" method="_on_interacted"]
+[connection signal="interacted" from="FINAL 3D ASSETS/MuffinManager/MUFFIN2" to="FINAL 3D ASSETS/MuffinManager/MUFFIN2" method="_on_interacted"]
+[connection signal="interacted" from="FINAL 3D ASSETS/MuffinManager/MUFFIN3" to="FINAL 3D ASSETS/MuffinManager/MUFFIN3" method="_on_interacted"]
+[connection signal="interacted" from="FINAL 3D ASSETS/MuffinManager/MUFFIN4" to="FINAL 3D ASSETS/MuffinManager/MUFFIN4" method="_on_interacted"]

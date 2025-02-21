@@ -15,9 +15,11 @@ extends Node
 @onready var tv: StaticBody3D = $"../Greybox/TV"
 @onready var plant_shape: StaticBody3D = $"../Greybox/PlantShape"
 @onready var puddle: StaticBody3D = $"../Greybox/Puddle"
-
+@onready var muffin: Node = $"../FINAL 3D ASSETS/MuffinManager"
 
 var text_track
+var task_number
+var can_eat_muffin = true
 
 signal task(task, description)
 
@@ -27,13 +29,18 @@ func _ready() -> void:
 	tv.connect("tv_done", Callable(self, "_on_watch_done"))
 	plant_shape.connect("water_done", Callable(self, "_on_water_done"))
 	puddle.connect("mop_done", Callable(self, "_on_mop_done"))
+	muffin.connect("muffin_done", Callable(self, "_on_muffin_done"))
+	muffin.connect("all_muffins_done", Callable(self, "_all_muffins_done"))
 	
 	task_label.text = "Tasks"
 	text_track = task_label.text
 
+func task_get_rng():
+	task_number = randi_range(6, 6)
+
 func _on_timer_timeout() -> void:
-	var task = randi_range(3, 3)
-	task_roll(task)
+	task_get_rng()
+	task_roll(task_number)
 		
 func task_roll(task):
 	var description
@@ -66,7 +73,7 @@ func task_roll(task):
 				await get_tree().create_timer(3).timeout
 				i += 1
 		else:
-			task = randi_range(1, 6)
+			task_get_rng()
 	
 	# Water plant
 	# Spam E a certain amount of times
@@ -79,7 +86,7 @@ func task_roll(task):
 			text_track = task_label.text
 			emit_signal("task", task, description)
 		else:
-			task = randi_range(1, 6)
+			task_get_rng()
 	
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
@@ -93,7 +100,7 @@ func task_roll(task):
 			text_track = task_label.text
 			emit_signal("task", task, description)
 		else:
-			task = randi_range(1, 6)
+			task_get_rng()
 		
 	# Watch TV
 	# Wait a period of time
@@ -105,12 +112,22 @@ func task_roll(task):
 			text_track = task_label.text
 			emit_signal("task", task, description)
 		else:
-			task = randi_range(1, 6)
+			task_get_rng()
 	
 	# Make your own food
 	# Get all ingredients
-	elif task == 6: 
-		pass
+	elif task == 6:
+		if can_eat_muffin == true:
+			if muffin.muffin_complete == true:
+				task = "muffin_eat"
+				description = " | Eat a muffin"
+				task_label.text = text_track + description
+				text_track = task_label.text
+				emit_signal("task", task, description)
+			else:
+				task_get_rng()
+		else:
+			task_get_rng()
 	
 
 func _on_spam_call_done(new_text):
@@ -129,4 +146,11 @@ func _on_mop_done(new_text):
 	puddle.visible = false
 	puddle_collision.disabled = true
 	text_track = new_text
+	
+func _on_muffin_done(new_text):
+	text_track = new_text
+
+func _all_muffins_done(new_text):
+	text_track = new_text
+	can_eat_muffin = false
 	
