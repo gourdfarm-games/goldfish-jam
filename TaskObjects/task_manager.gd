@@ -135,7 +135,7 @@ func task_roll(task):
 	elif task == 6 and task != last_task:
 		if can_eat_muffin == true:
 			if muffin.muffin_complete == true:
-				timer.wait_time = 3
+				timer.wait_time = 5
 				task = "muffin_eat"
 				description = " | Eat a muffin"
 				task_label.text = text_track + description

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Dialogue.gd" id="1_qc1a1"]
 [ext_resource type="Resource" uid="uid://du8mehk27poiy" path="res://NPCS/Murphy/Dialogues/1.tres" id="2_0g3cn"]
-[ext_resource type="Texture2D" uid="uid://k0bgrd1y27wg" path="res://Character Icons/Murphy_Icon.PNG" id="3_qqlhr"]
+[ext_resource type="Texture2D" uid="uid://ced053qgm5lj8" path="res://Character Icons/IMG_2270.png" id="3_r27ro"]
 
 [resource]
 script = ExtResource("1_qc1a1")
-texture = ExtResource("3_qqlhr")
+texture = ExtResource("3_r27ro")
 name = "Murphy "
 dialogue = "Uhhh... Blub blub?"
 path_option = ""
