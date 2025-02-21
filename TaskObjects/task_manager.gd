@@ -117,7 +117,7 @@ func task_roll(task):
 	# Make your own food
 	# Get all ingredients
 	elif task == 6:
-		if can_eat_muffin:
+		if can_eat_muffin == true:
 			if muffin.muffin_complete == true:
 				task = "muffin_eat"
 				description = " | Eat a muffin"
@@ -150,6 +150,7 @@ func _on_mop_done(new_text):
 func _on_muffin_done(new_text):
 	text_track = new_text
 
-func _all_muffins_done():
+func _all_muffins_done(new_text):
+	text_track = new_text
 	can_eat_muffin = false
 	

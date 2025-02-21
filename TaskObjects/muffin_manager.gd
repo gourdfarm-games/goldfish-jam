@@ -27,12 +27,16 @@ func _on_task(task, description):
 	if muffin_eat == "muffin_eat":
 		muffin_complete = false
 		
-func eat_a_muffin():
+func clear_text():
 	var new_text
 	muffin_complete = true
 	new_text = task_label.text.replace(description_text, "")
 	task_label.text = new_text
-	emit_signal("muffin_done", new_text)
+	return new_text
+		
+func eat_a_muffin():
+	emit_signal("muffin_done", clear_text())
 	
 func all_muffins_eaten():
-	emit_signal("all_muffins_done")
+	emit_signal("all_muffins_done", clear_text())
+	
