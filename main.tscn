@@ -1,12 +1,14 @@
-[gd_scene load_steps=170 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=172 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
 [ext_resource type="Script" path="res://interact_ray.gd" id="3_bfj5i"]
 [ext_resource type="Material" uid="uid://dvrxkapsiew12" path="res://Materials/brick.tres" id="4_g3100"]
+[ext_resource type="PackedScene" uid="uid://b5no7njkn4g5e" path="res://Character Assets/Murphy_Hand_Default.fbx" id="5_10cqv"]
 [ext_resource type="Texture2D" uid="uid://j0wkwll323po" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_08.png" id="6_60578"]
 [ext_resource type="Material" uid="uid://ddwjk72rdq1r3" path="res://Materials/wall.tres" id="7_1c5cd"]
 [ext_resource type="Material" uid="uid://dv477n3wbr7jb" path="res://Materials/carpet.tres" id="7_iwi4q"]
+[ext_resource type="PackedScene" uid="uid://bmujcn33g656w" path="res://murphy_fish.tscn" id="8_2ewl5"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="PackedScene" uid="uid://bntcjvrqaexjm" path="res://Materials/lightswitchon (1).fbx" id="8_mtovj"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
@@ -533,6 +535,9 @@ shape = SubResource("CapsuleShape3D_iaatc")
 [node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.6039, 0)
 
+[node name="Murphy_Hand_Default" parent="Player/Head" instance=ExtResource("5_10cqv")]
+transform = Transform3D(-4.37114e-08, -0.841501, 0.540255, 0, 0.540255, 0.841501, -1, 3.67832e-08, -2.36153e-08, -0.529606, -0.614825, 0.0136608)
+
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224934, -0.243119, -0.75897)
 
@@ -574,6 +579,7 @@ script = ExtResource("11_lt3v1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/Fish"]
 transform = Transform3D(0.999803, 0.0125402, -0.0153762, -0.0156023, 0.0181346, -0.999714, -0.0122578, 0.999757, 0.0183267, 0, 0, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_p5bsa")
 mesh = SubResource("CapsuleMesh_2bmg5")
 
@@ -591,6 +597,9 @@ one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Greybox/NavigationRegion3D/Fish"]
 debug_enabled = true
+
+[node name="Murphy_Fish2" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("8_2ewl5")]
+transform = Transform3D(-2.47505, 0, -0.352296, 0, 2.5, 0, 0.352296, 0, -2.47505, -0.192349, 0.123374, -0.200882)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.629016, 0, 0, 0, 2.74349, 0, 0, 0, 3.84189, -2.18564, 2.88044, 4.35872)
@@ -1367,7 +1376,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
-transform = Transform3D(4.51, 0, 0, 0, 4.51, 0, 0, 0, 4.51, 2.60668, 0, -0.304875)
+transform = Transform3D(4.51, 0, 0, 0, 4.51, 0, 0, 0, 4.51, 0.641293, 0, -0.727872)
 shape = SubResource("ConvexPolygonShape3D_k7qv1")
 
 [node name="MUFFIN3" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
