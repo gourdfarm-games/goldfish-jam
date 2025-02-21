@@ -13,7 +13,10 @@ signal all_muffins_done
 @onready var muffin_timer: Timer = $MuffinTimer
 
 func _ready() -> void:
-	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
+	$"../../../../TimeManager".connect("task_muffin", Callable(self, "_on_task"))
+	while true:
+		await get_tree().create_timer(.1).timeout
+		print(muffin_timer.time_left)
 
 func _on_task(task, description):
 	if task == "muffin_eat":
@@ -29,24 +32,25 @@ func _on_task(task, description):
 	if muffin_eat == "muffin_eat":
 		muffin_complete = false
 		
-	muffin_timer.start()
-	await muffin_timer.timeout
-	if muffin_complete == false:
-		game_over.text = ("muffin failed")
-		get_tree().paused = true
+		muffin_timer.start()
+		await muffin_timer.timeout
+		if muffin_complete == false:
+			game_over.text = ("muffin failed")
+			get_tree().paused = true
 		
 func clear_text():
 	var new_text
-	muffin_complete = true
 	new_text = task_label.text.replace(description_text, "")
 	task_label.text = new_text
 	return new_text
 		
 func eat_a_muffin():
 	muffin_timer.stop()
+	muffin_complete = true
 	emit_signal("muffin_done", clear_text())
 	
 func all_muffins_eaten():
 	muffin_timer.stop()
+	muffin_complete = true
 	emit_signal("all_muffins_done", clear_text())
 	

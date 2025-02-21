@@ -14,7 +14,7 @@ signal tv_done
 @onready var tv_timer: Timer = $TVTimer
 
 func _ready() -> void:
-	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
+	$"../../TaskManager".connect("task_tv", Callable(self, "_on_task"))
 
 func _on_task(task, description):
 	if task == "watch_tv":
@@ -23,6 +23,7 @@ func _on_task(task, description):
 	
 	if watch_tv == "watch_tv":
 		watch_tv_done = false
+		progress_bar.value = 0
 		progress_bar.visible = true
 	
 	tv_timer.start()
@@ -33,18 +34,21 @@ func _on_task(task, description):
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
-	if watch_tv == "watch_tv":
-		while watch_time < 5 and player.is_moving == false and $VisibleOnScreenNotifier3D.is_on_screen() == true:
-			await get_tree().create_timer(0.1).timeout
-			watch_time += 0.1
-			progress_bar.value = watch_time
-			print(watch_time)
-		if watch_time >= 5:
-			tv_timer.stop()
-			progress_bar.visible = false
-			watch_tv_done = true
-			watch_time = 0
-			print("task complete")
-			new_text = task_label.text.replace(description_text, "")
-			task_label.text = new_text
-			emit_signal("tv_done", task_label.text)
+	if watch_tv_done == false:
+		if watch_tv == "watch_tv":
+			set_collision_layer_value(2, false)
+			while watch_time < 5 and player.is_moving == false and $VisibleOnScreenNotifier3D.is_on_screen() == true:
+				await get_tree().create_timer(0.1).timeout
+				watch_time += 0.1
+				progress_bar.value = watch_time
+				print(watch_time)
+			set_collision_layer_value(2, true)
+			if watch_time >= 5:
+				tv_timer.stop()
+				progress_bar.visible = false
+				watch_tv_done = true
+				watch_time = 0
+				print("task complete")
+				new_text = task_label.text.replace(description_text, "")
+				task_label.text = new_text
+				emit_signal("tv_done", task_label.text)

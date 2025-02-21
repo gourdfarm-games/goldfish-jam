@@ -12,13 +12,14 @@ signal mop_done
 @onready var puddle_timer: Timer = $PuddleTimer
 
 func _ready() -> void:
-	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
+	$"../../TaskManager".connect("task_mop", Callable(self, "_on_task"))
 	visible = false
 
 func _on_task(task, description):
 	if task == "mop_floor":
 		description_text = description
 		mop_floor = task
+		set_collision_layer_value(2, true)
 	
 	if mop_floor == "mop_floor":
 		mop_complete = false
@@ -35,6 +36,7 @@ func _on_interacted(body: Variant) -> void:
 		if mop_progress > 5:
 			puddle_timer.stop()
 			mop_complete = true
+			set_collision_layer_value(2, false)
 			mop_progress = 0
 			print("task complete")
 			new_text = task_label.text.replace(description_text, "")
