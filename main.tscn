@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=155 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
 [ext_resource type="Script" path="res://TaskObjects/TV.gd" id="14_5wsaj"]
 [ext_resource type="Script" path="res://TaskObjects/task_manager.gd" id="15_b8hnn"]
+[ext_resource type="Script" path="res://TaskObjects/plants/plant_4.gd" id="16_nexj3"]
 [ext_resource type="PackedScene" uid="uid://cd6vvesxhqluf" path="res://water_puddle_(1).tscn" id="17_7rlpn"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="18_1dse5"]
 [ext_resource type="Script" path="res://TaskObjects/puddle.gd" id="18_b6bht"]
@@ -64,6 +65,7 @@
 [ext_resource type="PackedScene" uid="uid://b1188ky77axg0" path="res://welcome_mat_01.tscn" id="56_e727u"]
 [ext_resource type="PackedScene" uid="uid://cuus7no4c2rsp" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/More Assets/smokedetector.fbx" id="58_gacj5"]
 [ext_resource type="PackedScene" uid="uid://duchel13xua4a" path="res://front_door.tscn" id="58_mqr1b"]
+[ext_resource type="Script" path="res://TaskObjects/muffins.gd" id="59_208yo"]
 [ext_resource type="PackedScene" uid="uid://bu5tv3o7b0a04" path="res://picture_2.tscn" id="62_fak2v"]
 [ext_resource type="PackedScene" uid="uid://d3rtjotucr7oe" path="res://picture_3.tscn" id="63_bqabe"]
 [ext_resource type="PackedScene" uid="uid://c8hcki183git4" path="res://picture_7.tscn" id="64_hq7wh"]
@@ -142,21 +144,25 @@ albedo_texture = ExtResource("11_0ceq1")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxpr7"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_egyle"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyntg"]
 albedo_texture = ExtResource("11_0ceq1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(0.7, 1, 0.7)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfryv"]
-radius = 0.384991
-height = 0.852762
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i4kqe"]
+data = PackedVector3Array(-0.35, 0.5, 0.35, 0.35, 0.5, 0.35, -0.35, -0.5, 0.35, 0.35, 0.5, 0.35, 0.35, -0.5, 0.35, -0.35, -0.5, 0.35, 0.35, 0.5, -0.35, -0.35, 0.5, -0.35, 0.35, -0.5, -0.35, -0.35, 0.5, -0.35, -0.35, -0.5, -0.35, 0.35, -0.5, -0.35, 0.35, 0.5, 0.35, 0.35, 0.5, -0.35, 0.35, -0.5, 0.35, 0.35, 0.5, -0.35, 0.35, -0.5, -0.35, 0.35, -0.5, 0.35, -0.35, 0.5, -0.35, -0.35, 0.5, 0.35, -0.35, -0.5, -0.35, -0.35, 0.5, 0.35, -0.35, -0.5, 0.35, -0.35, -0.5, -0.35, 0.35, 0.5, 0.35, -0.35, 0.5, 0.35, 0.35, 0.5, -0.35, -0.35, 0.5, 0.35, -0.35, 0.5, -0.35, 0.35, 0.5, -0.35, -0.35, -0.5, 0.35, 0.35, -0.5, 0.35, -0.35, -0.5, -0.35, 0.35, -0.5, 0.35, 0.35, -0.5, -0.35, -0.35, -0.5, -0.35)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2u3pk"]
 size = Vector3(1, 1.5, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_456km"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wgiax"]
 data = PackedVector3Array(-0.5, 0.75, 0.5, 0.5, 0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, -0.5, 0.5, -0.75, -0.5, -0.5, 0.75, -0.5, -0.5, -0.75, -0.5, 0.5, -0.75, -0.5, 0.5, 0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, 0.5, 0.5, 0.75, -0.5, 0.5, -0.75, -0.5, 0.5, -0.75, 0.5, -0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, 0.75, 0.5, -0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, 0.75, -0.5, 0.5, 0.75, -0.5, -0.5, -0.75, 0.5, 0.5, -0.75, 0.5, -0.5, -0.75, -0.5, 0.5, -0.75, 0.5, 0.5, -0.75, -0.5, -0.5, -0.75, -0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q3t87"]
+height = 1.49036
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q33in"]
 albedo_texture = ExtResource("11_0ceq1")
@@ -189,10 +195,7 @@ size = Vector3(1, 3.75727, 1.06002)
 [sub_resource type="SphereShape3D" id="SphereShape3D_l7787"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ljevl"]
-size = Vector3(1, 0.975723, 0.991364)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_q3t87"]
-height = 1.49036
+size = Vector3(1, 0.975723, 1.0699)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dw1ji"]
 size = Vector3(0.932797, 0.602539, 0.337036)
@@ -496,7 +499,6 @@ environment = SubResource("Environment_bgaai")
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.993601, 0, 0, 0, 0.993601, 0, 0, 0, 0.993601, 7.50988, 0.785756, -4.70292)
 collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_swxtx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -649,34 +651,76 @@ shape = SubResource("ConcavePolygonShape3D_xxpr7")
 [node name="Food" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14832, 1.65717, -0.30953)
 collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_egyle")
 script = ExtResource("10_8a346")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213963, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_cyntg")
 mesh = SubResource("BoxMesh_2ytgd")
-skeleton = NodePath("../CollisionShape3D")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695292, 0.0285988, 0.0694488)
-shape = SubResource("CapsuleShape3D_sfryv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213963, 0)
+shape = SubResource("ConcavePolygonShape3D_i4kqe")
 
 [node name="Food" parent="Greybox/Food" instance=ExtResource("13_vn7xv")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 
-[node name="PlantShape" type="StaticBody3D" parent="Greybox"]
+[node name="PlantShape" type="StaticBody3D" parent="Greybox" groups=["Plants"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61587, 7.56405, -3.38091)
 visible = false
 collision_layer = 2
 script = ExtResource("23_k0hlu")
 prompt_message = "·   Mash E"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/PlantShape"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10911, 7.1904, -3.11092)
 mesh = SubResource("BoxMesh_2u3pk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10911, 7.1904, -3.11092)
-shape = SubResource("ConcavePolygonShape3D_456km")
+shape = SubResource("ConcavePolygonShape3D_wgiax")
+
+[node name="Plants" type="Node" parent="Greybox/PlantShape"]
+
+[node name="PLANT04" type="RigidBody3D" parent="Greybox/PlantShape/Plants" groups=["Plants"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45817, 0.0647087, -3.16172)
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("16_nexj3")
+
+[node name="plant02" parent="Greybox/PlantShape/Plants/PLANT04" instance=ExtResource("29_53hdq")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Plants/PLANT04"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
+shape = SubResource("CylinderShape3D_q3t87")
+
+[node name="PLANT01" type="RigidBody3D" parent="Greybox/PlantShape/Plants" groups=["Plants"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19559, 1.31016, -9.8504)
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("16_nexj3")
+
+[node name="plant01" parent="Greybox/PlantShape/Plants/PLANT01" instance=ExtResource("30_fqrtl")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0094409, -0.108145, 0.145589)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Plants/PLANT01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648602, 0.144259)
+shape = SubResource("CylinderShape3D_q3t87")
+
+[node name="PLANT03" type="RigidBody3D" parent="Greybox/PlantShape/Plants" groups=["Plants"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6209, 0.0647087, -10.5526)
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("16_nexj3")
+
+[node name="plant02" parent="Greybox/PlantShape/Plants/PLANT03" instance=ExtResource("29_53hdq")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Plants/PLANT03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
+shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="TV" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84876, 9.70459, 0.100574)
@@ -976,35 +1020,11 @@ collision_layer = 4
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/SMALL TABLE"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493312, -0.186179, -0.405047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333287, -0.186179, -0.365779)
 shape = SubResource("BoxShape3D_ljevl")
 
 [node name="squaresidetable" parent="FINAL 3D ASSETS/SMALL TABLE" instance=ExtResource("21_ciywd")]
 transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -0.796132, -0.692644, -0.891437)
-
-[node name="PLANT01" type="RigidBody3D" parent="FINAL 3D ASSETS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27232, 1.28929, -9.8504)
-collision_layer = 4
-collision_mask = 7
-
-[node name="plant01" parent="FINAL 3D ASSETS/PLANT01" instance=ExtResource("30_fqrtl")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0094409, -0.108145, 0.145589)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT01"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624516, 0.144259)
-shape = SubResource("CylinderShape3D_q3t87")
-
-[node name="PLANT05" type="RigidBody3D" parent="FINAL 3D ASSETS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6918, 5.37156, 7.38161)
-collision_layer = 4
-collision_mask = 7
-
-[node name="plant01" parent="FINAL 3D ASSETS/PLANT05" instance=ExtResource("30_fqrtl")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0094409, -0.108145, 0.145589)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT05"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624516, 0.144259)
-shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PLANT02" type="RigidBody3D" parent="FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6114, 6.92456, -3.49803)
@@ -1015,30 +1035,6 @@ collision_mask = 7
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT02"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
-shape = SubResource("CylinderShape3D_q3t87")
-
-[node name="PLANT03" type="RigidBody3D" parent="FINAL 3D ASSETS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6209, 0.0647087, -10.5526)
-collision_layer = 4
-collision_mask = 7
-
-[node name="plant02" parent="FINAL 3D ASSETS/PLANT03" instance=ExtResource("29_53hdq")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT03"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
-shape = SubResource("CylinderShape3D_q3t87")
-
-[node name="PLANT04" type="RigidBody3D" parent="FINAL 3D ASSETS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45817, 0.0647087, -3.16172)
-collision_layer = 4
-collision_mask = 7
-
-[node name="plant02" parent="FINAL 3D ASSETS/PLANT04" instance=ExtResource("29_53hdq")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/PLANT04"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
@@ -1557,6 +1553,7 @@ surface_material_override/0 = ExtResource("53_hxq3e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53184, 1.65495, 0.624113)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("59_208yo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MUFFIN3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0, 0.129359)
@@ -1701,6 +1698,9 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.612
 [connection signal="interacted" from="Greybox/Phone" to="Greybox/Phone" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Food" to="Greybox/Food" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/PlantShape" to="Greybox/PlantShape" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Plants/PLANT04" to="Greybox/PlantShape/Plants/PLANT04" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Plants/PLANT01" to="Greybox/PlantShape/Plants/PLANT01" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/PlantShape/Plants/PLANT03" to="Greybox/PlantShape/Plants/PLANT03" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
