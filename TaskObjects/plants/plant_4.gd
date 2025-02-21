@@ -2,8 +2,10 @@ extends Interactable
 
 var is_watered = true
 var watered_progress = 0
+var plants_watered = 0
 
 @onready var main_water: StaticBody3D = $"../.."
+@onready var plants_to_water: Label = $"../../../../PlaceholderHUD/ColorRect/PlantsToWater"
 
 func _ready() -> void:
 	pass
@@ -17,7 +19,8 @@ func _on_interacted(body: Variant) -> void:
 			is_watered = true
 			watered_progress = 0
 			main_water.plants_arr.erase(self)
-			print(main_water.plants_arr)
+			main_water.plants_watered += 1
+			plants_to_water.text = ("Plants to water: " + str(main_water.plants_watered) + "/4")
 			if main_water.plants_arr.is_empty() == true:
 				main_water.all_plants_done()
 		else:

@@ -5,6 +5,7 @@ const SPEED = 8.0
 const HP_LOST_PER_SECOND = 2
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
+const HUNGER_LOST_PER_HOUR = 15
 var current_hp = MAX_HP
 var hunger = 25
 var is_held = false
@@ -29,6 +30,7 @@ func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
 	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
 	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
+	$"../../Food2".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
 	hunger_label.text = "Hunger: " + str(hunger)
 
 func interact(body):
@@ -132,7 +134,6 @@ func lose_hp():
 			timer.start(1)
 	
 func _on_hunger_down():
-	const HUNGER_LOST_PER_HOUR = 25
 	hunger -= HUNGER_LOST_PER_HOUR
 	hunger_label.text = "Hunger: " + str(hunger)
 	# dies if hunger reaches 0

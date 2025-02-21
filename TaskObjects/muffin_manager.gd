@@ -12,7 +12,6 @@ signal all_muffins_done
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var muffin_timer: Timer = $MuffinTimer
 
-
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
 

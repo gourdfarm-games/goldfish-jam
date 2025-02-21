@@ -37,7 +37,7 @@ func _ready() -> void:
 	text_track = task_label.text
 
 func task_get_rng():
-	task_number = randi_range(6, 6)
+	task_number = randi_range(3, 3)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()

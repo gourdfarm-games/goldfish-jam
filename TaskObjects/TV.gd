@@ -23,6 +23,7 @@ func _on_task(task, description):
 	
 	if watch_tv == "watch_tv":
 		watch_tv_done = false
+		progress_bar.visible = true
 	
 	tv_timer.start()
 	await tv_timer.timeout
@@ -40,6 +41,7 @@ func _on_interacted(body: Variant) -> void:
 			print(watch_time)
 		if watch_time >= 5:
 			tv_timer.stop()
+			progress_bar.visible = false
 			watch_tv_done = true
 			watch_time = 0
 			print("task complete")

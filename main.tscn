@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=157 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -425,7 +425,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_s6w8r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rsqdl"]
-size = Vector3(1, 0.467529, 1)
+size = Vector3(1, 0.586121, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ucob"]
 resource_name = "standardSurface11"
@@ -469,6 +469,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c3f3g")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k7qv1"]
+points = PackedVector3Array(0.0246817, 0.0221903, 0.0596524, -0.00619759, 0.00369549, -0.0662075, -0.0062062, 0.00784737, -0.0662995, -0.0621339, 0.00992206, 0.026922, 0.0246545, -0.057967, 0.0308167, 0.0470997, 0.0405218, -0.0225133, -0.0268678, 0.0553759, -0.0020454, -0.0368621, -0.0577877, -0.0143337, 0.0246545, -0.057967, -0.0308167, 0.0662165, 0.00371804, -0.00619539, -0.0514292, 0.00778838, -0.045259, -0.026595, -0.0495194, 0.0368021, 0.0452314, 0.0036698, -0.0513938, -0.0269263, 0.00992151, 0.0621313, -0.00615912, 0.0427426, -0.0493344, -0.00205951, 0.0553746, 0.0268614, 0.0597513, 0.0201683, 0.0267796, 0.0267356, 0.00161946, 0.0617118, -0.026595, -0.0495194, -0.0368021, -0.0471007, 0.0405213, 0.022513, 0.0268532, 0.055376, 0.00205834, 0.0473064, -0.039505, 0.0164405, -0.0471007, 0.0405213, -0.022513, -0.0663004, 0.00784585, -0.00620308, -0.00204424, -0.0558049, 0.0410145, 0.038832, -0.0556159, -0.0143035, 0.0513997, 0.00366959, 0.0452216, -0.0368621, -0.0577877, 0.0143337, -0.0225192, 0.0405236, 0.0470939, 0.0225177, 0.0405238, 0.0470942, 0.0246817, 0.0221903, -0.0596524, 0.00204257, -0.0558053, -0.0410148)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1mbh"]
 size = Vector3(3.6713, 4.07251, 5.45797)
@@ -524,20 +527,22 @@ collision_mask = 2
 script = ExtResource("3_bfj5i")
 
 [node name="Prompt" type="Label" parent="Player/Head/Camera3D/InteractRay"]
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -22.5
-offset_bottom = 22.5
+offset_left = -3.0
+offset_top = -25.0
+offset_right = 134.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("18_1dse5")
 theme_override_font_sizes/font_size = 32
-text = "·   E"
-horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Greybox" type="Node" parent="."]
@@ -653,7 +658,7 @@ shape = SubResource("ConcavePolygonShape3D_xxpr7")
 wait_time = 10.0
 
 [node name="Food" type="StaticBody3D" parent="Greybox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14832, 1.65717, -0.30953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71726, 1.65717, -0.30953)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_egyle")
 script = ExtResource("10_8a346")
@@ -670,6 +675,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213963, 0)
 shape = SubResource("ConcavePolygonShape3D_i4kqe")
 
 [node name="Food" parent="Greybox/Food" instance=ExtResource("13_vn7xv")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="Food2" type="StaticBody3D" parent="Greybox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67407, 1.65717, -0.30953)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_egyle")
+script = ExtResource("10_8a346")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Food2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213963, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_cyntg")
+mesh = SubResource("BoxMesh_2ytgd")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213963, 0)
+shape = SubResource("ConcavePolygonShape3D_i4kqe")
+
+[node name="Food" parent="Greybox/Food2" instance=ExtResource("13_vn7xv")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 
 [node name="PlantShape" type="StaticBody3D" parent="Greybox" groups=["Plants"]]
@@ -692,6 +717,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45817, 0.0647087, -3.16172
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("16_nexj3")
+prompt_message = "·   Mash E"
 
 [node name="plant02" parent="Greybox/PlantShape/Plants/PLANT04" instance=ExtResource("29_53hdq")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
@@ -705,6 +731,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19559, 1.31016, -9.8504)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("16_nexj3")
+prompt_message = "·   Mash E"
 
 [node name="plant01" parent="Greybox/PlantShape/Plants/PLANT01" instance=ExtResource("30_fqrtl")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0094409, -0.108145, 0.145589)
@@ -718,6 +745,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6209, 0.0647087, -10.5526)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("16_nexj3")
+prompt_message = "·   Mash E"
 
 [node name="plant02" parent="Greybox/PlantShape/Plants/PLANT03" instance=ExtResource("29_53hdq")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
@@ -752,6 +780,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21454, 0, -4.24722)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("18_b6bht")
+prompt_message = "·   Mash E"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/Puddle"]
 visible = false
@@ -828,14 +857,15 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ProgressBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 26.5
-offset_top = -349.0
-offset_right = 101.5
-offset_bottom = -165.0
+offset_left = 299.5
+offset_top = -406.0
+offset_right = 374.5
+offset_bottom = -222.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("18_1dse5")
 max_value = 5.0
@@ -859,6 +889,21 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlantsToWater" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -394.0
+offset_top = -324.0
+offset_right = -114.0
+offset_bottom = -222.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
@@ -1554,49 +1599,52 @@ surface_material_override/0 = ExtResource("52_etogu")
 script = ExtResource("58_ahxyn")
 
 [node name="MUFFIN" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23228, 5.48704, 7.12066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1389, 2.34492, 7.12066)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
+prompt_message = "·   Mash E"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.041626, 0.129359)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0296478, 0)
 shape = SubResource("BoxShape3D_rsqdl")
 
 [node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
 [node name="MUFFIN2" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23228, 1.65495, 1.08285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89149, 1.65495, 1.35561)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.0221558, 0.129359)
-shape = SubResource("BoxShape3D_rsqdl")
+prompt_message = "·   Mash E"
 
 [node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
+transform = Transform3D(4.51, 0, 0, 0, 4.51, 0, 0, 0, 4.51, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_k7qv1")
 
 [node name="MUFFIN3" type="RigidBody3D" parent="FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53184, 1.65495, 0.624113)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
+prompt_message = "·   Mash E"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0, 0.129359)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_rsqdl")
 
 [node name="Muffin1" type="MeshInstance3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
@@ -1606,6 +1654,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73595, 3.43656, -4.95036)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
+prompt_message = "·   Mash E"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FINAL 3D ASSETS/MuffinManager/MUFFIN4"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.0693359, 0.129359)
@@ -1737,6 +1786,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.612
 [connection signal="interacted" from="Greybox/FishBowl" to="Greybox/FishBowl" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Phone" to="Greybox/Phone" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Food" to="Greybox/Food" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/Food2" to="Greybox/Food2" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/PlantShape" to="Greybox/PlantShape" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/PlantShape/Plants/PLANT04" to="Greybox/PlantShape/Plants/PLANT04" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/PlantShape/Plants/PLANT01" to="Greybox/PlantShape/Plants/PLANT01" method="_on_interacted"]
