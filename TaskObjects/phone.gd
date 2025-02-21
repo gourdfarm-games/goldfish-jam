@@ -11,6 +11,7 @@ signal spam_call_done
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var phone_timer: Timer = $PhoneTimer
+@onready var caller_id: Label = $"../../PlaceholderHUD/ColorRect/CallerID"
 
 
 func _ready() -> void:
@@ -39,15 +40,21 @@ func _on_interacted(body: Variant) -> void:
 		phone_timer.stop()
 		friend_call_complete = true
 		print("task complete")
-		new_text = task_label.text.replace(description_text, "")
+		new_text = task_label.text.replace(" | Phone ringing", "")
 		task_label.text = new_text
 		emit_signal("friend_call_done", task_label.text)
+		caller_id.text = "it was your friend checking on his fish"
+		await get_tree().create_timer(2).timeout
+		caller_id.text = ""
 		
 	
 	elif phone_call == "spam_call":
 		phone_timer.stop()
 		spam_call_complete = true
 		print("task complete")
-		new_text = task_label.text.replace(description_text, "")
+		new_text = task_label.text.replace(" | Phone ringing", "")
 		task_label.text = new_text
 		emit_signal("spam_call_done", task_label.text)
+		caller_id.text = "it was a spam call"
+		await get_tree().create_timer(2).timeout
+		caller_id.text = ""

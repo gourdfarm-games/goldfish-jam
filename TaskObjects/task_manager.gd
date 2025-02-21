@@ -15,7 +15,7 @@ extends Node
 @onready var tv: StaticBody3D = $"../Greybox/TV"
 @onready var plant_shape: StaticBody3D = $"../Greybox/PlantShape"
 @onready var puddle: StaticBody3D = $"../Greybox/Puddle"
-@onready var muffin: Node = $"../FINAL 3D ASSETS/MuffinManager"
+@onready var muffin: Node = $"../Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager"
 @onready var timer: Timer = $Timer
 
 var text_track
@@ -61,7 +61,7 @@ func task_roll(task):
 				timer.wait_time = 5
 				task = "friend_call"
 				description = " | Friend is calling"
-				task_label.text = text_track + description
+				task_label.text = text_track + " | Phone ringing"
 				text_track = task_label.text
 				emit_signal("task_call", task, description)
 			else:
@@ -79,7 +79,7 @@ func task_roll(task):
 				while i < 2:
 					task = "spam_call"
 					description = " | Spam call"
-					task_label.text = text_track + description
+					task_label.text = text_track + " | Phone ringing"
 					text_track = task_label.text
 					emit_signal("task_call", task, description)
 					await phone.spam_call_done
@@ -95,7 +95,7 @@ func task_roll(task):
 		if plant_shape.can_start_watering == true:
 			timer.wait_time = 10
 			task = "water_plant"
-			description = " | You need to water your plant"
+			description = " | You need to water your plants"
 			task_label.text = text_track + description
 			text_track = task_label.text
 			emit_signal("task_plant", task, description)

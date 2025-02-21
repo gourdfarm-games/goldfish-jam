@@ -13,7 +13,7 @@ signal all_muffins_done
 @onready var muffin_timer: Timer = $MuffinTimer
 
 func _ready() -> void:
-	$"../../TaskManager".connect("task_muffin", Callable(self, "_on_task"))
+	$"../../../../TimeManager".connect("task_muffin", Callable(self, "_on_task"))
 	while true:
 		await get_tree().create_timer(.1).timeout
 		print(muffin_timer.time_left)
