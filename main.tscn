@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=170 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -8,14 +8,18 @@
 [ext_resource type="Material" uid="uid://ddwjk72rdq1r3" path="res://Materials/wall.tres" id="7_1c5cd"]
 [ext_resource type="Material" uid="uid://dv477n3wbr7jb" path="res://Materials/carpet.tres" id="7_iwi4q"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
+[ext_resource type="PackedScene" uid="uid://bntcjvrqaexjm" path="res://Materials/lightswitchon (1).fbx" id="8_mtovj"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
 [ext_resource type="Script" path="res://TaskObjects/food.gd" id="10_8a346"]
 [ext_resource type="Texture2D" uid="uid://bpec23g26rhw7" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/purple/texture_08.png" id="11_0ceq1"]
 [ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
 [ext_resource type="Script" path="res://TaskObjects/phone.gd" id="12_4hh74"]
+[ext_resource type="PackedScene" uid="uid://bialfqal4ye7i" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/window01.fbx" id="12_i6v66"]
+[ext_resource type="PackedScene" uid="uid://cmi005ciy65wa" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/window02.fbx" id="13_4mymg"]
 [ext_resource type="PackedScene" uid="uid://cdu5ckwqxrfdu" path="res://Materials/food.tscn" id="13_vn7xv"]
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
 [ext_resource type="Script" path="res://TaskObjects/TV.gd" id="14_5wsaj"]
+[ext_resource type="PackedScene" uid="uid://bo38eae1oyji4" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/window03.fbx" id="14_rrhcf"]
 [ext_resource type="Script" path="res://TaskObjects/task_manager.gd" id="15_b8hnn"]
 [ext_resource type="Script" path="res://TaskObjects/plants/plant_4.gd" id="16_nexj3"]
 [ext_resource type="PackedScene" uid="uid://cd6vvesxhqluf" path="res://water_puddle_(1).tscn" id="17_7rlpn"]
@@ -24,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://q76t1swxl4rf" path="res://Asset Scenes/squaresidetable.tscn" id="21_ciywd"]
 [ext_resource type="PackedScene" uid="uid://dxin16b1056dk" path="res://Materials/powercords.tscn" id="22_0twiy"]
 [ext_resource type="Script" path="res://TaskObjects/plant_shape.gd" id="23_k0hlu"]
-[ext_resource type="PackedScene" uid="uid://b6nxvtnan7d80" path="res://Asset Scenes/window.tscn" id="23_mxiyy"]
 [ext_resource type="Material" uid="uid://b21lmff76q1p4" path="res://carpet1.tres" id="24_a7eq8"]
 [ext_resource type="PackedScene" uid="uid://csc8rasqvg85n" path="res://Asset Scenes/sofa.tscn" id="25_mudd8"]
 [ext_resource type="PackedScene" uid="uid://djx2y6fv6e45" path="res://Materials/counter.tscn" id="27_23b6l"]
@@ -33,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://b4oxsrr7447ll" path="res://Materials/placemat.tscn" id="29_wrqvn"]
 [ext_resource type="PackedScene" uid="uid://bb46gof5qyf32" path="res://Materials/plant_01.tscn" id="30_fqrtl"]
 [ext_resource type="PackedScene" uid="uid://c834nihn57etc" path="res://Materials/floorlamp.tscn" id="31_n7j6n"]
+[ext_resource type="PackedScene" uid="uid://cv213ebre8y4v" path="res://3D Assets/counter (1).fbx" id="31_nvkt7"]
 [ext_resource type="PackedScene" uid="uid://dev5rapdqc10i" path="res://Materials/soap.tscn" id="32_i3rsl"]
 [ext_resource type="PackedScene" uid="uid://c3ki0yd67rej" path="res://Materials/microwave.tscn" id="32_o8gc3"]
 [ext_resource type="PackedScene" uid="uid://bxadxh4auanxg" path="res://Materials/bookshelf.tscn" id="33_7fr23"]
@@ -40,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bnkeh8dltvovg" path="res://Materials/newoven.tscn" id="35_7skyb"]
 [ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_002.jpg" id="35_57e4h"]
 [ext_resource type="PackedScene" uid="uid://cf55wliwqq7a8" path="res://Materials/newfridge.tscn" id="36_jgvof"]
+[ext_resource type="PackedScene" uid="uid://b64y7jk37qwll" path="res://3D Assets/kitchensink (1).fbx" id="37_s3un2"]
 [ext_resource type="PackedScene" uid="uid://cdy82mk4f507x" path="res://Materials/kitchenchair.tscn" id="38_nslm4"]
 [ext_resource type="PackedScene" uid="uid://ewxq62ywwvki" path="res://Materials/jars.tscn" id="40_tj4s6"]
 [ext_resource type="PackedScene" uid="uid://gggdeau0p0j1" path="res://Materials/fruitbowl.tscn" id="40_vioqs"]
@@ -73,6 +78,12 @@
 [ext_resource type="PackedScene" uid="uid://q3apx5gexcxt" path="res://picture_4.tscn" id="64_qfov0"]
 [ext_resource type="PackedScene" uid="uid://bwwfeuhbh4lbu" path="res://picture_5.tscn" id="65_3uhwv"]
 [ext_resource type="PackedScene" uid="uid://brc0vf1s2t13v" path="res://picture_6.tscn" id="66_17j3o"]
+[ext_resource type="PackedScene" uid="uid://cdyas0wcw1y5v" path="res://Materials/window_01.tscn" id="78_bxkhy"]
+[ext_resource type="PackedScene" uid="uid://drg6fimmrf1wr" path="res://Materials/window_02.tscn" id="79_mwrrr"]
+[ext_resource type="PackedScene" uid="uid://da8yo0qt0i4f3" path="res://Materials/window_03.tscn" id="80_o6nhu"]
+[ext_resource type="PackedScene" uid="uid://ber6h4sjcs4vx" path="res://Materials/walloutlet.fbx" id="81_pmpbf"]
+[ext_resource type="PackedScene" uid="uid://b5a17fa1vyr2i" path="res://Materials/hanginglight_02.tscn" id="82_bs674"]
+[ext_resource type="PackedScene" uid="uid://dh7x1lttj2oql" path="res://Materials/hanginglight_01.tscn" id="83_mdxj1"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -137,7 +148,7 @@ size = Vector3(0.0339336, 0.0258789, 0.0605431)
 size = Vector3(0.271645, 0.161224, 0.33194)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3m48"]
-size = Vector3(0.281906, 0.34906, 0.180054)
+size = Vector3(0.281906, 0.0710144, 0.180054)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jf0uf"]
 size = Vector3(2.11572, 2.10815, 1)
@@ -446,6 +457,9 @@ size = Vector3(1, 1.80615, 4.12512)
 [sub_resource type="BoxShape3D" id="BoxShape3D_flc0i"]
 size = Vector3(10.026, 1, 0.206055)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tukhf"]
+size = Vector3(1, 2.06946, 8.23279)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_bcrpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oiew1"]
@@ -469,8 +483,9 @@ albedo_texture = ExtResource("11_0ceq1")
 [sub_resource type="BoxMesh" id="BoxMesh_2ytgd"]
 size = Vector3(0.7, 1, 0.7)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i4kqe"]
-data = PackedVector3Array(-0.35, 0.5, 0.35, 0.35, 0.5, 0.35, -0.35, -0.5, 0.35, 0.35, 0.5, 0.35, 0.35, -0.5, 0.35, -0.35, -0.5, 0.35, 0.35, 0.5, -0.35, -0.35, 0.5, -0.35, 0.35, -0.5, -0.35, -0.35, 0.5, -0.35, -0.35, -0.5, -0.35, 0.35, -0.5, -0.35, 0.35, 0.5, 0.35, 0.35, 0.5, -0.35, 0.35, -0.5, 0.35, 0.35, 0.5, -0.35, 0.35, -0.5, -0.35, 0.35, -0.5, 0.35, -0.35, 0.5, -0.35, -0.35, 0.5, 0.35, -0.35, -0.5, -0.35, -0.35, 0.5, 0.35, -0.35, -0.5, 0.35, -0.35, -0.5, -0.35, 0.35, 0.5, 0.35, -0.35, 0.5, 0.35, 0.35, 0.5, -0.35, -0.35, 0.5, 0.35, -0.35, 0.5, -0.35, 0.35, 0.5, -0.35, -0.35, -0.5, 0.35, 0.35, -0.5, 0.35, -0.35, -0.5, -0.35, 0.35, -0.5, 0.35, 0.35, -0.5, -0.35, -0.35, -0.5, -0.35)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ko2mx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0e20u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2u3pk"]
 size = Vector3(1, 1.5, 1)
@@ -583,6 +598,9 @@ material_override = ExtResource("7_iwi4q")
 use_collision = true
 size = Vector3(0.68634, 2.69, 2.91904)
 
+[node name="lightswitchon (1)" parent="Greybox/NavigationRegion3D" instance=ExtResource("8_mtovj")]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 12.7239, 3.33135, -10.1248)
+
 [node name="CSGBox3D16" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.640411, 0, 0, 0, 2.68046, 0, 0, 0, 0.125306, -5.78812, 2.88044, -1.27978)
 material_override = ExtResource("7_iwi4q")
@@ -625,10 +643,7 @@ mesh = SubResource("PlaneMesh_87u11")
 [node name="FINAL 3D ASSETS" type="Node" parent="Greybox/NavigationRegion3D"]
 
 [node name="POWERCORDS" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("22_0twiy")]
-transform = Transform3D(-0.133041, 0, -72.2526, 0, 95.8031, 0, 91.8439, 0, -0.104662, -9.84479, 6.61637, -3.98075)
-
-[node name="WINDOW1" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("23_mxiyy")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 12.5853, 2.3909, -3.17652)
+transform = Transform3D(-0.128265, -18.832, -69.6587, -0.0353276, 68.3737, -19.1859, 91.8439, 6.32397e-10, -0.104662, -9.82179, 6.6986, -4.5938)
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(6.21861, 0, 0, 0, 0.138859, 0, 0, 0, 6.78902, -3.39913, -0.294096, -6.81025)
@@ -643,11 +658,11 @@ material_override = ExtResource("24_a7eq8")
 height = 3.18161
 sides = 30
 
-[node name="WINDOW2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("23_mxiyy")]
-transform = Transform3D(-3.49691e-06, 0, -80, 0, 60, 0, 80, 0, -3.49691e-06, -4.02308, 8.47873, 7.6022)
+[node name="window01" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("12_i6v66")]
 
-[node name="WINDOW3" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("23_mxiyy")]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 12.5612, 2.3909, -0.311013)
+[node name="window02" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("13_4mymg")]
+
+[node name="window03" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("14_rrhcf")]
 
 [node name="SOFA" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -2.09871, -0.0970112, -4.71247)
@@ -669,29 +684,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172727, 0.206206, 0.0303923
 shape = SubResource("BoxShape3D_e1rvq")
 
 [node name="COUNTER" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -2.158, -0.092, -4.457)
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -1.34756, 0.937302, -4.06595)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.169776, 0.0180469, 0.195648)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.169776, 0.00414462, 0.195648)
 shape = SubResource("BoxShape3D_c3m48")
 
 [node name="counter" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER" instance=ExtResource("27_23b6l")]
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER2" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -5.865, -0.087, -4.472)
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -5.04202, 0.905677, -4.02128)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER2"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.169776, 0.0180469, 0.195648)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.169776, 0.00722559, 0.195648)
 shape = SubResource("BoxShape3D_c3m48")
 
 [node name="counter" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER2" instance=ExtResource("27_23b6l")]
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER3" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -0.484691, -0.092, -4.457)
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0.255697, 0.937302, -4.06595)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER3"]
@@ -702,7 +717,7 @@ shape = SubResource("BoxShape3D_c3m48")
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER5" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.4637, -0.092, -6.05034)
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.0354, 0.937302, -5.24103)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER5"]
@@ -713,7 +728,7 @@ shape = SubResource("BoxShape3D_c3m48")
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER6" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.4637, -0.092, -7.72927)
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.0354, 0.937302, -6.91996)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER6"]
@@ -724,7 +739,7 @@ shape = SubResource("BoxShape3D_c3m48")
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER7" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.4637, -0.092, -2.69241)
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.0354, 0.937302, -1.8831)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER7"]
@@ -735,7 +750,7 @@ shape = SubResource("BoxShape3D_c3m48")
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER8" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.4637, -0.092, -4.37134)
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.0354, 0.937302, -3.56203)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER8"]
@@ -746,18 +761,15 @@ shape = SubResource("BoxShape3D_c3m48")
 transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
 
 [node name="COUNTER9" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 10.4637, -0.092, -1.08985)
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 11.2041, 0.937302, -0.698797)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER9"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.169776, 0.0180469, 0.195648)
 shape = SubResource("BoxShape3D_c3m48")
 
-[node name="counter" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER9" instance=ExtResource("27_23b6l")]
-transform = Transform3D(-0.05, 0, 8.97363e-09, 0, 0.0578641, 0, -7.54979e-09, 0, -0.0594297, 0.155099, 0.000426117, 0.185752)
-
 [node name="COUNTER4" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 1.2303, -0.092, -4.457)
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 1.97069, 0.937302, -4.06595)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER4"]
@@ -772,7 +784,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60433, 2.26946, 7.58978)
 collision_mask = 7
 
 [node name="KITCHENSINK" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENSINK" instance=ExtResource("34_1ywq6")]
-transform = Transform3D(-70.708, 0, -1.05697e-05, 0, 70, 0, 1.06766e-05, 0, -70, -1.44655, -2.34913, -0.907837)
+transform = Transform3D(-70.708, 0, -1.05697e-05, 0, 70, 0, 1.06766e-05, 0, -70, 0.57299, -2.34913, -0.907837)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENSINK"]
 transform = Transform3D(0.996231, 0, 0, 0, 0.996231, 0, 0, 0, 0.996231, -0.368896, -1.24037, -0.387762)
@@ -1102,6 +1114,9 @@ shape = SubResource("BoxShape3D_kr6eq")
 [node name="dishrack" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/DISHRACK" instance=ExtResource("42_jqi7q")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.623153)
 
+[node name="counter (1)" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("31_nvkt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0293, 0)
+
 [node name="BEANBAGS" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(0.9262, 0, -0.377033, 0, 1, 0, 0.377033, 0, 0.9262, -4.49117, 7.17564, -2.01348)
 collision_layer = 4
@@ -1191,6 +1206,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36657, 8.78799, -0.116536)
 
 [node name="Phone2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("48_u8nes")]
 transform = Transform3D(1.4583, 0, 0.351237, 0, 1.5, 0, -0.351237, 0, 1.4583, -1.13481, 2.0285, 3.23832)
+
+[node name="kitchensink (1)" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("37_s3un2")]
 
 [node name="ARMCHAIR" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16651, 0.0768661, -8.80598)
@@ -1319,6 +1336,23 @@ mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
+[node name="MUFFIN5" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62186, 7.99873, 3.64805)
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("59_fpdls")
+prompt_message = "·   Mash E"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0296478, 0)
+shape = SubResource("BoxShape3D_rsqdl")
+
+[node name="Muffin1" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("ArrayMesh_f7xi6")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("53_hxq3e")
+
 [node name="MUFFIN2" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89149, 1.65495, 1.35561)
 collision_layer = 6
@@ -1333,7 +1367,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
-transform = Transform3D(4.51, 0, 0, 0, 4.51, 0, 0, 0, 4.51, 0, 0, 0)
+transform = Transform3D(4.51, 0, 0, 0, 4.51, 0, 0, 0, 4.51, 2.60668, 0, -0.304875)
 shape = SubResource("ConvexPolygonShape3D_k7qv1")
 
 [node name="MUFFIN3" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
@@ -1457,6 +1491,14 @@ shape = SubResource("BoxShape3D_drsp0")
 transform = Transform3D(0.739561, 0.67309, 0, -0.67309, 0.739561, 0, 0, 0, 1, 8.09243, -2.28402, -7.10648)
 shape = SubResource("BoxShape3D_flc0i")
 
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/HOUSE ARCHITECTURE/WALLCOLL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64002, -5.36624, 6.45029)
+shape = SubResource("BoxShape3D_tukhf")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/HOUSE ARCHITECTURE/WALLCOLL"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.6284, -5.37218, 8.0501)
+shape = SubResource("BoxShape3D_tukhf")
+
 [node name="Front_Door" parent="Greybox/NavigationRegion3D/HOUSE ARCHITECTURE" instance=ExtResource("58_mqr1b")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.6128, 0, -7.64972)
 
@@ -1495,7 +1537,7 @@ shape = SubResource("ConcavePolygonShape3D_xxpr7")
 [node name="PhoneTimer" type="Timer" parent="Greybox/Phone"]
 wait_time = 10.0
 
-[node name="Food" type="StaticBody3D" parent="Greybox"]
+[node name="Food" type="RigidBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71726, 1.54759, -0.30953)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_egyle")
@@ -1510,12 +1552,12 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food"]
 transform = Transform3D(0.815, 0, 0, 0, 0.815, 0, 0, 0, 0.815, 0, 0.415552, 0)
-shape = SubResource("ConcavePolygonShape3D_i4kqe")
+shape = SubResource("BoxShape3D_ko2mx")
 
 [node name="Food" parent="Greybox/Food" instance=ExtResource("13_vn7xv")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 
-[node name="Food2" type="StaticBody3D" parent="Greybox"]
+[node name="Food2" type="RigidBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67407, 2.01473, 7.22498)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_egyle")
@@ -1530,7 +1572,7 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Food2"]
 transform = Transform3D(0.815, 0, 0, 0, 0.815, 0, 0, 0, 0.815, 0, 0.430763, 0)
-shape = SubResource("ConcavePolygonShape3D_i4kqe")
+shape = SubResource("BoxShape3D_0e20u")
 
 [node name="Food" parent="Greybox/Food2" instance=ExtResource("13_vn7xv")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
@@ -1636,6 +1678,38 @@ transform = Transform3D(1.93547, 0, 1.32455, 0, 2.3453, 0, -1.32455, 0, 1.93547,
 
 [node name="PuddleTimer" type="Timer" parent="Greybox/Puddle"]
 wait_time = 10.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(26.2514, 0, 0, 0, 1, 0, 0, 0, 0.290416, 0.429694, 12.2505, 7.90474)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(-1.43051e-06, 0, 0.290416, 0, 1, 0, -26.2514, 0, -2.98023e-08, -9.89338, 12.2505, 1.32535)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(-1.43051e-06, 0, 0.290416, 0, 1, 0, -26.2514, 0, -2.98023e-08, 12.7949, 12.2505, 1.32535)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(26.2514, 0, 0, 0, 1, 0, 0, 0, 0.290416, 0.429694, 12.2505, -11.6168)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(26.2514, 0, 0, 0, 1, 0, 0, 0, 0.290416, 0.429694, 0.325215, 7.90474)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(-1.43051e-06, 0, 0.290416, 0, 1, 0, -26.2514, 0, -2.98023e-08, -9.89338, 0.325215, 1.32535)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(-1.43051e-06, 0, 0.290416, 0, 1, 0, -26.2514, 0, -2.98023e-08, 12.7949, 0.325215, 1.32535)
+material_override = ExtResource("55_cux80")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Greybox"]
+transform = Transform3D(26.2514, 0, 0, 0, 1, 0, 0, 0, 0.290416, 0.429694, 0.325215, -11.6168)
+material_override = ExtResource("55_cux80")
 
 [node name="PlaceholderHUD" type="Node" parent="."]
 
@@ -1790,7 +1864,7 @@ autostart = true
 
 [node name="LIGHTING" type="Node" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="LIGHTING"]
+[node name="MAIN LIGHT" type="OmniLight3D" parent="LIGHTING"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49673, 8.01218, -0.187403)
 light_color = Color(0.990807, 0.724033, 0.473901, 1)
 light_energy = 14.874
@@ -1808,12 +1882,68 @@ light_energy = 25.0
 spot_range = 11.7625
 spot_angle = 43.2237
 
+[node name="window01" parent="LIGHTING" instance=ExtResource("78_bxkhy")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 12.7098, 3.55748, -0.209672)
+
+[node name="window02" parent="LIGHTING/window01" instance=ExtResource("79_mwrrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0349854)
+
+[node name="window03" parent="LIGHTING" instance=ExtResource("80_o6nhu")]
+transform = Transform3D(-2.62268e-06, 0, -69.5936, 0, 60, 0, 60, 0, -3.04203e-06, -5.48369, 9.85258, 7.65949)
+
+[node name="walloutlet" parent="LIGHTING" instance=ExtResource("81_pmpbf")]
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, -9.85665, 8.14135, -2.72861)
+
+[node name="walloutlet2" parent="LIGHTING" instance=ExtResource("81_pmpbf")]
+transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 12.7747, 1.32935, 5.24601)
+
+[node name="hanginglight05" parent="LIGHTING" instance=ExtResource("82_bs674")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.68231, 6.6513, -6.6388)
+
+[node name="hanginglight07" parent="LIGHTING" instance=ExtResource("82_bs674")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -6.13017, 12.161, -0.0574532)
+
+[node name="hanginglight02" parent="LIGHTING" instance=ExtResource("83_mdxj1")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 9.42209, 10.3284, 0.851421)
+
+[node name="hanginglight03" parent="LIGHTING" instance=ExtResource("83_mdxj1")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 7.05916, 10.3284, 0.851421)
+
+[node name="hanginglight04" parent="LIGHTING" instance=ExtResource("83_mdxj1")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 4.86654, 10.3284, 0.851421)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LIGHTING"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82768, 8.44191, 0.879443)
+light_energy = 50.0
+omni_range = 0.9
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LIGHTING"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.05687, 8.44191, 0.879443)
+light_energy = 50.0
+omni_range = 0.9
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="LIGHTING"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55032, 10.8034, 0.0598752)
+light_energy = 16.81
+omni_range = 0.9
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="LIGHTING"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94207, 5.43871, -6.64289)
+light_energy = 16.81
+omni_range = 0.9
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="LIGHTING"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42322, 8.44191, 0.879443)
+light_energy = 50.0
+omni_range = 0.9
+
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
 [connection signal="screen_exited" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 [connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/InBowlTimer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
 [connection signal="navigation_finished" from="Greybox/NavigationRegion3D/Fish/NavigationAgent3D" to="Greybox/NavigationRegion3D/Fish" method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN3" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN3" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN4" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN4" method="_on_interacted"]

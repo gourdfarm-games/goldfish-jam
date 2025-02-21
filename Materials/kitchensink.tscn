@@ -1,21 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvlwuqodi4c6e"]
+[gd_scene load_steps=4 format=3 uid="uid://cvlwuqodi4c6e"]
 
-[ext_resource type="PackedScene" uid="uid://1l0dykxw3cpk" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Lena Wachs/kitchensink.fbx" id="1_o1gmd"]
-[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_002.jpg" id="2_sdcyn"]
-[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_001.jpg" id="3_a0crj"]
+[ext_resource type="PackedScene" uid="uid://b64y7jk37qwll" path="res://3D Assets/kitchensink (1).fbx" id="1_rhtfl"]
+[ext_resource type="Material" uid="uid://clocfvgmvvxq0" path="res://Materials/gradient3.tres" id="2_5xk6h"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="3_d5n2e"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxvxg"]
-albedo_texture = ExtResource("2_sdcyn")
+[node name="kitchensink (1)" instance=ExtResource("1_rhtfl")]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8eb2"]
-albedo_texture = ExtResource("3_a0crj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x44p"]
-albedo_texture = ExtResource("2_sdcyn")
-
-[node name="kitchensink" instance=ExtResource("1_o1gmd")]
-
-[node name="sink" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_fxvxg")
-surface_material_override/1 = SubResource("StandardMaterial3D_h8eb2")
-surface_material_override/2 = SubResource("StandardMaterial3D_7x44p")
+[node name="sink1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_5xk6h")
+surface_material_override/1 = ExtResource("3_d5n2e")
