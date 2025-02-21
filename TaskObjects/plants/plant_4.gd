@@ -20,7 +20,7 @@ func _on_interacted(body: Variant) -> void:
 			watered_progress = 0
 			main_water.plants_arr.erase(self)
 			main_water.plants_watered += 1
-			plants_to_water.text = ("Plants to water: " + str(main_water.plants_watered) + "/4")
+			plants_to_water.text = ("Plants to water: " + str(main_water.plants_watered) + "/" + main_water.amount_of_plants)
 			if main_water.plants_arr.is_empty() == true:
 				main_water.all_plants_done()
 		else:

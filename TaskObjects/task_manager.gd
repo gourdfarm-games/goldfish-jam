@@ -21,8 +21,13 @@ extends Node
 var text_track
 var task_number
 var can_eat_muffin = true
+var can_call = true
 
-signal task(task, description)
+signal task_call(task, description)
+signal task_plant(task, description)
+signal task_mop(task, description)
+signal task_tv(task, description)
+signal task_muffin(task, description)
 
 func _ready() -> void:
 	phone.connect("spam_call_done", Callable(self, "_on_spam_call_done"))
@@ -37,7 +42,7 @@ func _ready() -> void:
 	text_track = task_label.text
 
 func task_get_rng():
-	task_number = randi_range(3, 3)
+	task_number = randi_range(1, 6)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
@@ -45,42 +50,47 @@ func _on_timer_timeout() -> void:
 		
 func task_roll(task):
 	var description
+	var last_task
 	# Friend calls
 	# Wait for dialogue to end to finish (cant skip through)
-	if task == 1:
+	if task == 1 and task != last_task:
 		# Phone only rings if no other calls are happening
-		if phone.friend_call_complete == true and phone.spam_call_complete == true:
-			timer.wait_time = 5
-			task = "friend_call"
-			description = " | Friend is calling"
-			task_label.text = text_track + description
-			text_track = task_label.text
-			emit_signal("task", task, description)
-		else:
-			task = randi_range(1, 6)
+		if can_call == true:
+			if phone.friend_call_complete == true and phone.spam_call_complete == true:
+				can_call = false
+				timer.wait_time = 5
+				task = "friend_call"
+				description = " | Friend is calling"
+				task_label.text = text_track + description
+				text_track = task_label.text
+				emit_signal("task_call", task, description)
+			else:
+				task = randi_range(1, 6)
 		
 	# Spam calls
 	# Wait for dialogue to end to finish (can skip through?)
-	elif task == 2:
+	elif task == 2 and task != last_task:
 		# Phone only rings if no other calls are happening
-		if phone.friend_call_complete == true and phone.spam_call_complete == true:
-			timer.wait_time = 5
-			var i = 0
-			while i < 5:
-				task = "spam_call"
-				description = " | Spam call"
-				task_label.text = text_track + description
-				text_track = task_label.text
-				emit_signal("task", task, description)
-				await phone.spam_call_done
-				await get_tree().create_timer(3).timeout
-				i += 1
-		else:
-			task_get_rng()
+		if can_call == true:
+			if phone.friend_call_complete == true and phone.spam_call_complete == true:
+				can_call = false
+				timer.wait_time = 5
+				var i = 0
+				while i < 2:
+					task = "spam_call"
+					description = " | Spam call"
+					task_label.text = text_track + description
+					text_track = task_label.text
+					emit_signal("task_call", task, description)
+					await phone.spam_call_done
+					await get_tree().create_timer(3).timeout
+					i += 1
+			else:
+				task_get_rng()
 	
 	# Water plant
 	# Spam E a certain amount of times
-	elif task == 3: 
+	elif task == 3 and task != last_task: 
 		print(plant_shape.water_complete)
 		if plant_shape.can_start_watering == true:
 			timer.wait_time = 10
@@ -88,13 +98,13 @@ func task_roll(task):
 			description = " | You need to water your plant"
 			task_label.text = text_track + description
 			text_track = task_label.text
-			emit_signal("task", task, description)
+			emit_signal("task_plant", task, description)
 		else:
 			task_get_rng()
 	
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
-	elif task == 4 and time_of_day.current_hour < 12: 
+	elif task == 4 and time_of_day.current_hour > 12 and task != last_task: 
 		if puddle.mop_complete == true:
 			timer.wait_time = 5
 			puddle.visible = true
@@ -103,26 +113,26 @@ func task_roll(task):
 			description = " | Clean up Murphy's mess"
 			task_label.text = text_track + description
 			text_track = task_label.text
-			emit_signal("task", task, description)
+			emit_signal("task_mop", task, description)
 		else:
 			task_get_rng()
 		
 	# Watch TV
 	# Wait a period of time
-	elif task == 5: 
+	elif task == 5 and task != last_task: 
 		if tv.watch_tv_done == true:
-			timer.wait_time = 5
+			timer.wait_time = 10
 			task = "watch_tv"
 			description = " | Your favorite show is on"
 			task_label.text = text_track + description
 			text_track = task_label.text
-			emit_signal("task", task, description)
+			emit_signal("task_tv", task, description)
 		else:
 			task_get_rng()
 	
 	# Make your own food
 	# Get all ingredients
-	elif task == 6:
+	elif task == 6 and task != last_task:
 		if can_eat_muffin == true:
 			if muffin.muffin_complete == true:
 				timer.wait_time = 3
@@ -130,18 +140,20 @@ func task_roll(task):
 				description = " | Eat a muffin"
 				task_label.text = text_track + description
 				text_track = task_label.text
-				emit_signal("task", task, description)
+				emit_signal("task_muffin", task, description)
 			else:
 				task_get_rng()
-		else:
-			task_get_rng()
-	
+	else:
+		task_get_rng()
+	last_task = task
 
 func _on_spam_call_done(new_text):
 	text_track = new_text
+	can_call = true
 	
 func _on_friend_call_done(new_text):
 	text_track = new_text
+	can_call = true
 	
 func _on_watch_done(new_text):
 	text_track = new_text
@@ -156,6 +168,7 @@ func _on_mop_done(new_text):
 	
 func _on_muffin_done(new_text):
 	text_track = new_text
+	can_eat_muffin = true
 
 func _all_muffins_done(new_text):
 	text_track = new_text

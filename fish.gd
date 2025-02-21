@@ -6,6 +6,7 @@ const HP_LOST_PER_SECOND = 2
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 const HUNGER_LOST_PER_HOUR = 15
+const ESCAPE_CHANCE = 3 # 1 in ESCAPE_CHANCE
 var current_hp = MAX_HP
 var hunger = 25
 var is_held = false
@@ -79,14 +80,14 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 func attempt_escape():
 	if in_bowl == true:
 		if on_screen == false:
-			escape_roll = randi_range(1, 2)
+			escape_roll = randi_range(1, ESCAPE_CHANCE)
 			if escape_roll == 1:
 				in_bowl = false
 				region.enabled = true
 				fish_move()
 				lose_hp()
 				print(current_hp)
-			elif escape_roll == 2:
+			else:
 				timer.start(TIME_TO_ESCAPE)
 		else:
 			timer.start(TIME_TO_ESCAPE)
@@ -98,10 +99,6 @@ func attempt_escape():
 
 func _on_timer_timeout() -> void:
 	attempt_escape()
-				
-	
-	
-		
 		
 func _physics_process(delta: float) -> void:
 	var current_location = global_transform.origin
