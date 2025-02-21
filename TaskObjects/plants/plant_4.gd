@@ -3,8 +3,6 @@ extends Interactable
 var is_watered = true
 var watered_progress = 0
 
-signal watered_done
-
 @onready var main_water: StaticBody3D = $"../.."
 
 func _ready() -> void:
