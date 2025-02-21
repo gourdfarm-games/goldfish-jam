@@ -11,6 +11,8 @@ var can_start_watering = true
 signal water_done
 
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
+@onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
+@onready var plant_timer: Timer = $PlantTimer
 
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
@@ -30,6 +32,12 @@ func _on_task(task, description):
 	
 	if water_plant == "water_plant":
 		water_complete = false
+		
+	plant_timer.start()
+	await plant_timer.timeout
+	if water_complete == false:
+		game_over.text = ("plant failed")
+		get_tree().paused = true
 
 func _on_interacted(body: Variant) -> void:
 	if water_complete == false:
@@ -44,6 +52,7 @@ func _on_interacted(body: Variant) -> void:
 			
 func all_plants_done():
 	var new_text
+	plant_timer.stop()
 	water_complete = true
 	watered_progress = 0
 	can_start_watering = true

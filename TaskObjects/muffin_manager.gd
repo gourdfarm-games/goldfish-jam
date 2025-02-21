@@ -9,6 +9,9 @@ signal muffin_done
 signal all_muffins_done
 
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
+@onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
+@onready var muffin_timer: Timer = $MuffinTimer
+
 
 func _ready() -> void:
 	$"../../TaskManager".connect("task", Callable(self, "_on_task"))
@@ -27,6 +30,12 @@ func _on_task(task, description):
 	if muffin_eat == "muffin_eat":
 		muffin_complete = false
 		
+	muffin_timer.start()
+	await muffin_timer.timeout
+	if muffin_complete == false:
+		game_over.text = ("muffin failed")
+		get_tree().paused = true
+		
 func clear_text():
 	var new_text
 	muffin_complete = true
@@ -35,8 +44,10 @@ func clear_text():
 	return new_text
 		
 func eat_a_muffin():
+	muffin_timer.stop()
 	emit_signal("muffin_done", clear_text())
 	
 func all_muffins_eaten():
+	muffin_timer.stop()
 	emit_signal("all_muffins_done", clear_text())
 	
