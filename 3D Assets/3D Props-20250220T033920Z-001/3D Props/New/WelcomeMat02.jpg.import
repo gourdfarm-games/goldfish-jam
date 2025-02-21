@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq01qr4yvtac1"
-path.s3tc="res://.godot/imported/BreadLoaf_BreadLoaf_Metallic.1001.png-074d2207287a30bf5a0d12082f9af0cc.s3tc.ctex"
+uid="uid://dliawp12mihto"
+path.s3tc="res://.godot/imported/WelcomeMat02.jpg-235e3d4c10120705df799b4a3167d406.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Textures/BreadLoaf/BreadLoaf_BreadLoaf_Metallic.1001.png"
-dest_files=["res://.godot/imported/BreadLoaf_BreadLoaf_Metallic.1001.png-074d2207287a30bf5a0d12082f9af0cc.s3tc.ctex"]
+source_file="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/WelcomeMat02.jpg"
+dest_files=["res://.godot/imported/WelcomeMat02.jpg-235e3d4c10120705df799b4a3167d406.s3tc.ctex"]
 
 [params]
 

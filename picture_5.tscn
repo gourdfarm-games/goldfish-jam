@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwwfeuhbh4lbu"]
+
+[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/Framed_Picture.fbx" id="1_51ryv"]
+[ext_resource type="Texture2D" uid="uid://cq01qr4yvtac1" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Textures/BreadLoaf/BreadLoaf_BreadLoaf_Metallic.1001.png" id="2_3435y"]
+[ext_resource type="Material" uid="uid://bnwp03uabskmn" path="res://picture_2.tres" id="3_pdev5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faggg"]
+albedo_texture = ExtResource("2_3435y")
+
+[node name="Framed_Picture" instance=ExtResource("1_51ryv")]
+
+[node name="pCube76" parent="group13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.24754, 9.03941, 0.84216, 8.09557)
+
+[node name="pPlane3" parent="." index="1"]
+transform = Transform3D(1.0022, 0, 0, 0, -5.50881e-08, 1.0022, 0, -1.26027, -4.38077e-08, 0.0857004, 1.33801, -0.103906)
+material_override = SubResource("StandardMaterial3D_faggg")
+surface_material_override/0 = ExtResource("3_pdev5")
