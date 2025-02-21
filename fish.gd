@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const MAX_HP = 100
 const SPEED = 8.0
-const HP_LOST_PER_SECOND = 1
+const HP_LOST_PER_SECOND = 5
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 var current_hp = MAX_HP
@@ -23,6 +23,7 @@ signal hunger_label_update(hunger_level)
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var region: NavigationRegion3D = $".."
 @onready var hunger_label: Label = $"../../../PlaceholderHUD/ColorRect/Hunger"
+@onready var game_over_label: Label = $"../../../PlaceholderHUD/ColorRect/GameOver"
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
@@ -33,17 +34,22 @@ func _ready() -> void:
 func interact(body):
 	interacted.emit(body)
 
+func feed_fish():
+	has_food = false
+	hunger = MAX_HUNGER
+	hunger_label.text = "Hunger: " + str(hunger)
+	
+func hold_fish():
+	is_held = true
+	emit_signal("holding")
+	prompt_message = ""
+	visible = false
+	
 func _on_interacted(body: Variant) -> void:
 	if has_food == true and in_bowl == true:
-		has_food = false
-		hunger = MAX_HUNGER
-		hunger_label.text = "Hunger: " + str(hunger)
-		
+		feed_fish()	
 	else:
-		is_held = true
-		emit_signal("holding")
-		prompt_message = ""
-		visible = false
+		hold_fish()
 	
 func _on_bowl_place():
 	is_held = false
@@ -77,6 +83,7 @@ func attempt_escape():
 				region.enabled = true
 				fish_move()
 				lose_hp()
+				print(current_hp)
 			elif escape_roll == 2:
 				timer.start(TIME_TO_ESCAPE)
 		else:
@@ -117,10 +124,12 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 	fish_move()
 	
 func lose_hp():
-	if current_hp <= 0:
-		queue_free()
-	else:
-		timer.start(1)
+	if in_bowl == false:
+		if current_hp <= 0:
+			game_over_label.text = "Murphy drowned on air"
+			get_tree().paused = true
+		else:
+			timer.start(1)
 	
 func _on_hunger_down():
 	const HUNGER_LOST_PER_HOUR = 25
@@ -128,7 +137,9 @@ func _on_hunger_down():
 	hunger_label.text = "Hunger: " + str(hunger)
 	# dies if hunger reaches 0
 	if hunger <= 0:
-		queue_free()
+		game_over_label.text = "Murphy died of hunger"
+		get_tree().paused = true
+		
 		
 		
 func _on_food_in_hand():

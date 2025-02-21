@@ -829,6 +829,25 @@ theme_override_fonts/font = ExtResource("18_1dse5")
 max_value = 5.0
 fill_mode = 3
 
+[node name="GameOver" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -403.5
+offset_top = -180.5
+offset_right = 403.5
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 

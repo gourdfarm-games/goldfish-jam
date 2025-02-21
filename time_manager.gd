@@ -2,7 +2,7 @@ extends Node
 
 const GAME_MINUTE = 0.5 # Used to set the in game minute timer
 const START_TIME = 9 # Hour that the game starts at
-const END_TIME = 17 # Hour that the game ends
+const END_TIME = 11 # Hour that the game ends
 var current_hour = START_TIME
 var minutes = 0
 
@@ -10,6 +10,7 @@ signal hunger_down
 
 @onready var time: Label = $"../PlaceholderHUD/ColorRect/Time"
 @onready var timer: Timer = $Timer
+@onready var game_over_label: Label = $"../PlaceholderHUD/ColorRect/GameOver"
 
 func _ready():
 	timer.start(0.05)
@@ -39,5 +40,8 @@ func _on_timer_timeout() -> void:
 		current_hour += 1
 		minutes = 0
 		timer.start(GAME_MINUTE)
-		
+	
+	if current_hour == END_TIME:
+		game_over_label.text = "YOU WIN"
+		get_tree().paused = true
 	
