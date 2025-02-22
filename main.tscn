@@ -1929,7 +1929,7 @@ script = ExtResource("8_8gqm4")
 [node name="TaskManager" type="Node" parent="."]
 script = ExtResource("15_b8hnn")
 
-[node name="Timer" type="Timer" parent="TaskManager"]
+[node name="TaskDelayTimer" type="Timer" parent="TaskManager"]
 autostart = true
 
 [node name="IMPORTING" type="Node" parent="."]
@@ -2033,4 +2033,4 @@ transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0
 [connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
-[connection signal="timeout" from="TaskManager/Timer" to="TaskManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="TaskManager/TaskDelayTimer" to="TaskManager" method="_on_timer_timeout"]
