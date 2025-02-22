@@ -15,3 +15,5 @@ func _on_pressed() -> void:
 		get_tree().call_group("dialogue", "hide_dialogue")
 	else:
 		get_tree().call_group("dialogue", "update", dialogue)
+		
+		

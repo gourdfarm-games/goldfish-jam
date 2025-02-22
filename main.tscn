@@ -519,7 +519,7 @@ shadow_enabled = true
 environment = SubResource("Environment_bgaai")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.993601, 0, 0, 0, 0.993601, 0, 0, 0, 0.993601, 7.50988, 0.785756, -4.70292)
+transform = Transform3D(0.993601, 0, 0, 0, 0.993601, 0, 0, 0, 0.993601, 7.21927, 0.785756, -6.9419)
 collision_layer = 2
 script = ExtResource("1_swxtx")
 
@@ -1861,6 +1861,14 @@ theme_override_fonts/font = ExtResource("18_1dse5")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 254.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("18_1dse5")
+text = "   Hold shift/right bumper to sprint"
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
