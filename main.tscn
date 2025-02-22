@@ -1883,6 +1883,23 @@ offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("18_1dse5")
 text = "   Hold shift/right bumper to sprint"
 
+[node name="Drop" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 554.5
+offset_top = -6.0
+offset_right = 741.5
+offset_bottom = 101.0
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_1dse5")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 

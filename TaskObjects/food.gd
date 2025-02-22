@@ -7,8 +7,10 @@ signal food_in_hand
 
 @onready var player: CharacterBody3D = $"../../Player"
 @onready var interact_ray: RayCast3D = $"../../Player/Head/Camera3D/InteractRay"
+@onready var drop_label: Label = $"../../PlaceholderHUD/ColorRect/Drop"
 
 func _on_interacted(body: Variant) -> void:
+	drop_label.text = "Q to Drop Food"
 	visible = false
 	set_collision_layer_value(2, false)
 	in_hand = true
@@ -17,6 +19,7 @@ func _on_interacted(body: Variant) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("drop_food"):
+		drop_label.text = ""
 		in_hand = false
 		visible = true
 		set_collision_layer_value(2, true)
