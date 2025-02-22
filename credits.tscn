@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm6eh3hbshuk6"]
+[gd_scene load_steps=7 format=3 uid="uid://dm6eh3hbshuk6"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_y4j8t"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_hr4b3"]
 [ext_resource type="Texture2D" uid="uid://ka4at8402dh" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/Screenshot 2025-02-17 210735 (1).png" id="2_y6n7u"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_gqwkc"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="4_dfxsh"]
+[ext_resource type="Script" path="res://back.gd" id="6_yrnsv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -77,6 +78,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_hr4b3")
 theme_override_font_sizes/font_size = 40
@@ -85,5 +87,6 @@ theme_override_styles/hover = ExtResource("4_dfxsh")
 theme_override_styles/pressed = ExtResource("3_gqwkc")
 theme_override_styles/normal = ExtResource("3_gqwkc")
 text = "Back"
+script = ExtResource("6_yrnsv")
 
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

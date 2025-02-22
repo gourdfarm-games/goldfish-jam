@@ -602,6 +602,9 @@ debug_enabled = true
 [node name="Murphy_Fish2" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("8_2ewl5")]
 transform = Transform3D(-2.47505, 0, -0.352296, 0, 2.5, 0, 0.352296, 0, -2.47505, -0.192349, 0.123374, -0.200882)
 
+[node name="Node3D" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("87_h2ujb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282572, -0.354703, -0.199103)
+
 [node name="CSGBox3D15" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.629016, 0, 0, 0, 2.74349, 0, 0, 0, 3.84189, -2.18564, 2.88044, 4.35872)
 material_override = ExtResource("7_iwi4q")
@@ -684,10 +687,10 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.015441
 shape = SubResource("BoxShape3D_5nt03")
 
 [node name="MICROWAVE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(-4.99919, 0, -0.0897928, 0, 5, 0, 0.0897928, 0, -4.99919, 12.1783, 1.645, 7.64515)
+transform = Transform3D(-4.99919, 0, -0.0897928, 0, 5, 0, 0.0897928, 0, -4.99919, 12.1682, 1.65407, 7.65345)
 
 [node name="MICROWAVE" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MICROWAVE" instance=ExtResource("32_o8gc3")]
-transform = Transform3D(0.8, 0, -9.31323e-10, 0, 0.8, 0, 9.31323e-10, 0, 0.8, 0.0460393, 0.08513, 0.000826955)
+transform = Transform3D(-2.98023e-08, 0, -0.8, 0, 0.657688, 0, 0.686078, 0, -3.53903e-08, 2.7068, 0.0890042, 1.2721)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MICROWAVE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172727, 0.206206, 0.0303923)
@@ -779,7 +782,7 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.169776, 0.0180469, 0.
 shape = SubResource("BoxShape3D_c3m48")
 
 [node name="COUNTER4" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
-transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 1.97069, 0.937302, -4.06595)
+transform = Transform3D(0, 0, -60, 0, 60, 0, 60, 0, 0, 10.0465, 0.937302, -8.60892)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COUNTER4"]
@@ -924,7 +927,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000643732, 0.0639529, 0.000
 shape = SubResource("BoxShape3D_k75d6")
 
 [node name="Oven" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" instance=ExtResource("35_7skyb")]
-transform = Transform3D(0.742606, 0, 0, 0, 1, 0, 0, 0, 0.850414, 0, 0, 0)
+transform = Transform3D(-3.24603e-08, 0, 0.850414, 0, 1, 0, -0.742606, 0, -3.71728e-08, 0.477573, 0, 0.262416)
 
 [node name="FRIDGE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 
@@ -933,7 +936,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82771, 2.73004, 7.09871)
 shape = SubResource("BoxShape3D_j4ecx")
 
 [node name="Fridge2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" instance=ExtResource("36_jgvof")]
-transform = Transform3D(-1.8573e-06, 0, 46.2499, 0, 42.4352, 0, -42.49, 0, -2.02165e-06, 1.61081, -0.135868, 7.55563)
+transform = Transform3D(-1.82833e-06, 0, 44.7741, 0, 37.6119, 0, -41.8272, 0, -1.95714e-06, 1.61081, -0.135868, 7.55563)
 
 [node name="PLACEMAT" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, -0.0256774)
@@ -1160,7 +1163,7 @@ transform = Transform3D(-0.63663, 0, -0.771169, 0, 1, 0, 0.771169, 0, -0.63663, 
 shape = SubResource("CylinderShape3D_4jgqn")
 
 [node name="coffeemaker" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/COFFEEMACHINE" instance=ExtResource("43_sgfi5")]
-transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -0.357189, 0, 0)
+transform = Transform3D(-2.44783, 0, -3.26364e-07, 0, 2.40793, 0, 3.69612e-07, 0, -2.16141, -0.357189, 0, 0)
 
 [node name="CABINET" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.133, 5.30738, 7.06777)
@@ -1216,7 +1219,7 @@ shape = SubResource("BoxShape3D_vjwst")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36657, 8.78799, -0.116536)
 
 [node name="Phone2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("48_u8nes")]
-transform = Transform3D(1.4583, 0, 0.351237, 0, 1.5, 0, -0.351237, 0, 1.4583, -1.13481, 2.0285, 3.23832)
+transform = Transform3D(0.875599, 0, 0.268765, 0, 1.5, 0, -0.210891, 0, 1.11588, -1.13481, 2.0285, 3.23832)
 
 [node name="kitchensink (1)" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("37_s3un2")]
 
@@ -1818,6 +1821,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("18_1dse5")
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1

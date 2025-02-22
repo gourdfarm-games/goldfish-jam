@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn32h7ga7xtp0"]
+[gd_scene load_steps=6 format=3 uid="uid://bn32h7ga7xtp0"]
 
 [ext_resource type="Script" path="res://settings.gd" id="1_6jx53"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_58cva"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="2_67wt3"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="4_y3c5o"]
+[ext_resource type="Script" path="res://back.gd" id="5_t5b6c"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -75,6 +76,7 @@ theme_override_constants/separation = 15
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_58cva")
 theme_override_font_sizes/font_size = 40
@@ -83,6 +85,7 @@ theme_override_styles/hover = ExtResource("4_y3c5o")
 theme_override_styles/pressed = ExtResource("2_67wt3")
 theme_override_styles/normal = ExtResource("2_67wt3")
 text = "Back"
+script = ExtResource("5_t5b6c")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -103,6 +106,7 @@ theme_override_constants/separation = 15
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_58cva")
 theme_override_font_sizes/font_size = 40

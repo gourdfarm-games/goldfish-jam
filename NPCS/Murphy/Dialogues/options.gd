@@ -1,6 +1,4 @@
-extends Button
-
-
+extends VBoxContainer
 
 
 func _ready():

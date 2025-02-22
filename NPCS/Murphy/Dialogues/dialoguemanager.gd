@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
 

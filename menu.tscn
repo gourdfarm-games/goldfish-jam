@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5ca0xunrblw1"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ca0xunrblw1"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_bmcdj"]
 [ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="2_0awpc"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_a4yjc"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="3_5gqdd"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_o4gai"]
+[ext_resource type="Script" path="res://play.gd" id="6_glp6h"]
 
 [sub_resource type="FontVariation" id="FontVariation_xcnva"]
 base_font = ExtResource("2_a4yjc")
@@ -47,12 +48,14 @@ offset_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+focus_mode = 2
 theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
@@ -61,11 +64,13 @@ theme_override_styles/hover = ExtResource("3_5gqdd")
 theme_override_styles/pressed = ExtResource("3_o4gai")
 theme_override_styles/normal = ExtResource("3_o4gai")
 text = "Play"
+script = ExtResource("6_glp6h")
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
@@ -79,6 +84,7 @@ text = "Settings"
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
@@ -92,6 +98,7 @@ text = "Credits"
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40

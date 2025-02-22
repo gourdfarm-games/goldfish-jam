@@ -10,7 +10,7 @@ func _physics_process(_delta):
 	if is_colliding():
 		var collider = get_collider()
 		if collider is Interactable or CharacterBody3D:
-			prompt.text = "·   E"
+			prompt.text = "·   E/A"
 			
 			if collider.prompt_message != "Interact":
 				prompt.text = collider.prompt_message

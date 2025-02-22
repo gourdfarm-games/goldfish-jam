@@ -6,5 +6,5 @@
 script = ExtResource("1_ostju")
 name = "Murphy"
 dialogue = ""
-path_option = "Ok."
+path_option = "Ok..."
 options = Array[ExtResource("1_ostju")]([])
