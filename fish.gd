@@ -33,7 +33,7 @@ func _ready() -> void:
 	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
 	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
 	$"../../Food2".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
-	hunger_label.text = "Hunger: " + str(hunger)
+	hunger_label.text = "Murphy's Hunger: " + str(hunger)
 
 func interact(body):
 	interacted.emit(body)
@@ -41,7 +41,7 @@ func interact(body):
 func feed_fish():
 	has_food = false
 	hunger = MAX_HUNGER
-	hunger_label.text = "Hunger: " + str(hunger)
+	hunger_label.text = "Murphy's Hunger: " + str(hunger)
 	
 func hold_fish():
 	is_held = true
@@ -147,7 +147,7 @@ func lose_hp():
 	
 func _on_hunger_down():
 	hunger -= HUNGER_LOST_PER_HOUR
-	hunger_label.text = "Hunger: " + str(hunger)
+	hunger_label.text = "Murphy's Hunger: " + str(hunger)
 	# dies if hunger reaches 0
 	if hunger <= 0:
 		game_over_label.text = "Murphy died of hunger"
