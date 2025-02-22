@@ -3,9 +3,7 @@ extends CharacterBody3D
 var speed 
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
-const JUMP_VELOCITY = 10
-const FALL_SPEED = 30
-
+const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const DEADZONE = 0.2
 const MAX_UP_ANGLE = 50
@@ -20,6 +18,7 @@ const BASE_FOV = 75.0
 const SPRINT_FOV = 90.0
 const FOV_CHANGE_SPEED = 5.0
 
+var gravity = 9.8
 var joy_input = Vector2.ZERO
 
 var is_moving
@@ -69,11 +68,8 @@ func _process(delta): # CAM MOVEMENT BASED ON JOYSTICK
 		
 func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 	
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = JUMP_VELOCITY
-	
 	if not is_on_floor():
-		velocity.y = velocity.y - (FALL_SPEED * delta)
+		velocity += get_gravity() * delta
 		
 	if Input.is_action_pressed("sprint"):
 		speed = SPRINT_SPEED
