@@ -4,16 +4,17 @@ var description_text
 var muffin_complete = true
 var muffin_eat
 var muffin_arr = []
+var can_eat = false
 
 signal muffin_done
 signal all_muffins_done
 
-@onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
-@onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
+@onready var task_label: Label = $"../../../../PlaceholderHUD/ColorRect/Task"
+@onready var game_over: Label = $"../../../../PlaceholderHUD/ColorRect/GameOver"
 @onready var muffin_timer: Timer = $MuffinTimer
 
 func _ready() -> void:
-	$"../../../../TimeManager".connect("task_muffin", Callable(self, "_on_task"))
+	$"../../../../TaskManager".connect("task_muffin", Callable(self, "_on_task"))
 	while true:
 		await get_tree().create_timer(.1).timeout
 		print(muffin_timer.time_left)
@@ -31,6 +32,7 @@ func _on_task(task, description):
 	
 	if muffin_eat == "muffin_eat":
 		muffin_complete = false
+		can_eat = true
 		
 		muffin_timer.start()
 		await muffin_timer.timeout
@@ -47,6 +49,7 @@ func clear_text():
 func eat_a_muffin():
 	muffin_timer.stop()
 	muffin_complete = true
+	can_eat = false
 	emit_signal("muffin_done", clear_text())
 	
 func all_muffins_eaten():
