@@ -1772,7 +1772,7 @@ script = ExtResource("79_a2l3r")
 
 [node name="Hunger" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
-<<<<<<< HEAD
+HEAD
 anchors_preset = -1
 anchor_left = -0.0207433
 anchor_top = 1.0
