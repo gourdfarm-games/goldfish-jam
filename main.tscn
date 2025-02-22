@@ -923,6 +923,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000643732, 0.0639529, 0.000
 shape = SubResource("BoxShape3D_k75d6")
 
 [node name="Oven" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" instance=ExtResource("35_7skyb")]
+transform = Transform3D(0.742606, 0, 0, 0, 1, 0, 0, 0, 0.850414, 0, 0, 0)
 
 [node name="FRIDGE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 
@@ -931,7 +932,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82771, 2.73004, 7.09871)
 shape = SubResource("BoxShape3D_j4ecx")
 
 [node name="Fridge2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" instance=ExtResource("36_jgvof")]
-transform = Transform3D(-2.18557e-06, 0, 50, 0, 50, 0, -50, 0, -2.18557e-06, 1.61081, -0.135868, 7.55563)
+transform = Transform3D(-1.8573e-06, 0, 46.2499, 0, 42.4352, 0, -42.49, 0, -2.02165e-06, 1.61081, -0.135868, 7.55563)
 
 [node name="PLACEMAT" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, -0.0256774)
