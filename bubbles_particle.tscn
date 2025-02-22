@@ -7,7 +7,8 @@ emission_shape = 1
 emission_sphere_radius = 5.4
 spread = 45.5
 gravity = Vector3(0, 9, 0)
-scale_max = 2.0
+scale_min = 0.1
+scale_max = 0.2
 
 [sub_resource type="SphereMesh" id="SphereMesh_ggf4i"]
 material = ExtResource("1_xnxl8")
@@ -15,9 +16,11 @@ material = ExtResource("1_xnxl8")
 [node name="Node3D" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 6
+transform = Transform3D(0.0437948, 0, 0, 0, 0.096831, 0, 0, 0, 0.0577217, 0, 0, 0)
+amount = 2
 amount_ratio = 0.6445
-lifetime = 1.75
-randomness = 0.15
+lifetime = 0.45
+speed_scale = 0.4
+randomness = 0.28
 process_material = SubResource("ParticleProcessMaterial_7a7yv")
 draw_pass_1 = SubResource("SphereMesh_ggf4i")

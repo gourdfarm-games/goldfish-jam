@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=173 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -86,6 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://ber6h4sjcs4vx" path="res://Materials/walloutlet.fbx" id="81_pmpbf"]
 [ext_resource type="PackedScene" uid="uid://b5a17fa1vyr2i" path="res://Materials/hanginglight_02.tscn" id="82_bs674"]
 [ext_resource type="PackedScene" uid="uid://dh7x1lttj2oql" path="res://Materials/hanginglight_01.tscn" id="83_mdxj1"]
+[ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -1946,6 +1947,9 @@ omni_range = 0.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42322, 8.44191, 0.879443)
 light_energy = 50.0
 omni_range = 0.9
+
+[node name="Node3D" parent="." instance=ExtResource("87_h2ujb")]
+transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0999891, 11.2639, 2.0587, -4.41492)
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
