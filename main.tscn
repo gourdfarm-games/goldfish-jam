@@ -1,8 +1,4 @@
-HEAD
 [gd_scene load_steps=177 format=4 uid="uid://dxvn05oothtqk"]
-=======
-[gd_scene load_steps=178 format=4 uid="uid://dxvn05oothtqk"]
-98684cc9d20b520855f8087d74368ea81c16bd98
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -86,7 +82,6 @@ HEAD
 [ext_resource type="PackedScene" uid="uid://bwwfeuhbh4lbu" path="res://picture_5.tscn" id="65_3uhwv"]
 [ext_resource type="PackedScene" uid="uid://brc0vf1s2t13v" path="res://picture_6.tscn" id="66_17j3o"]
 [ext_resource type="PackedScene" uid="uid://cdyas0wcw1y5v" path="res://Materials/window_01.tscn" id="78_bxkhy"]
-[ext_resource type="Script" path="res://color_rect.gd" id="79_a2l3r"]
 [ext_resource type="PackedScene" uid="uid://drg6fimmrf1wr" path="res://Materials/window_02.tscn" id="79_mwrrr"]
 [ext_resource type="PackedScene" uid="uid://da8yo0qt0i4f3" path="res://Materials/window_03.tscn" id="80_o6nhu"]
 [ext_resource type="PackedScene" uid="uid://ber6h4sjcs4vx" path="res://Materials/walloutlet.fbx" id="81_pmpbf"]
@@ -524,13 +519,6 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f5tp3"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6eyqw"]
-bg_color = Color(0.952154, 0.416432, 3.85046e-07, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [node name="Node3D" type="Node3D"]
 
@@ -1765,14 +1753,11 @@ offset_right = 578.5
 offset_bottom = 327.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_stretch_ratio = 11.9
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
-script = ExtResource("79_a2l3r")
 
 [node name="Hunger" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
-<<<<<<< HEAD
 anchors_preset = -1
 anchor_left = -0.0207433
 anchor_top = 1.0
@@ -1787,19 +1772,6 @@ theme_override_colors/font_color = Color(0.98765, 0.499771, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("18_1dse5")
-=======
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 11.5
-offset_top = 159.0
-offset_right = 255.5
-offset_bottom = 234.0
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("18_1dse5")
-theme_override_font_sizes/font_size = 18
-text = "Murphy's Hunger"
-98684cc9d20b520855f8087d74368ea81c16bd98
 
 [node name="Time" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
@@ -1919,33 +1891,6 @@ offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("18_1dse5")
 text = "   Hold shift/right bumper to sprint"
 
-[node name="Drop" type="Label" parent="PlaceholderHUD/ColorRect"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 554.5
-offset_top = -6.0
-offset_right = 741.5
-offset_bottom = 101.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("18_1dse5")
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HungerBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 514.0
-offset_right = 168.0
-offset_bottom = 576.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_6eyqw")
-value = 1.67
-rounded = true
-
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 
@@ -1956,7 +1901,8 @@ script = ExtResource("8_8gqm4")
 [node name="TaskManager" type="Node" parent="."]
 script = ExtResource("15_b8hnn")
 
-[node name="TaskDelayTimer" type="Timer" parent="TaskManager"]
+[node name="Timer" type="Timer" parent="TaskManager"]
+autostart = true
 
 [node name="IMPORTING" type="Node" parent="."]
 
@@ -2056,4 +2002,4 @@ omni_range = 0.9
 [connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
-[connection signal="timeout" from="TaskManager/TaskDelayTimer" to="TaskManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="TaskManager/Timer" to="TaskManager" method="_on_timer_timeout"]

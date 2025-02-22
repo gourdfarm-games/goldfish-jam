@@ -20,7 +20,6 @@ var has_rotated = false
 signal holding
 signal interacted(body)
 signal hunger_label_update(hunger_level)
-signal destory_food
 
 @export var prompt_message = "Interact"
 @onready var timer: Timer = $InBowlTimer
@@ -28,15 +27,13 @@ signal destory_food
 @onready var region: NavigationRegion3D = $".."
 @onready var hunger_label: Label = $"../../../PlaceholderHUD/ColorRect/Hunger"
 @onready var game_over_label: Label = $"../../../PlaceholderHUD/ColorRect/GameOver"
-@onready var hunger_bar: ProgressBar = $"../../../PlaceholderHUD/ColorRect/HungerBar"
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
 	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
 	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
 	$"../../Food2".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
-	hunger_bar.value = hunger
-	#hunger_label.text = "Murphy's Hunger: " + str(hunger)
+	hunger_label.text = "Murphy's Hunger: " + str(hunger)
 
 func interact(body):
 	interacted.emit(body)
@@ -44,9 +41,7 @@ func interact(body):
 func feed_fish():
 	has_food = false
 	hunger = MAX_HUNGER
-	hunger_bar.value = hunger
-	emit_signal("destory_food")
-	#hunger_label.text = "Murphy's Hunger: " + str(hunger)
+	hunger_label.text = "Murphy's Hunger: " + str(hunger)
 	
 func hold_fish():
 	is_held = true
@@ -121,6 +116,11 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = velocity.move_toward(new_velocity, .5)
 	move_and_slide()
+	
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("test"):
+		fish_move()
 		
 func fish_move():
 	var random_position := Vector3.ZERO
@@ -147,8 +147,7 @@ func lose_hp():
 	
 func _on_hunger_down():
 	hunger -= HUNGER_LOST_PER_HOUR
-	hunger_bar.value = hunger
-	#hunger_label.text = "Murphy's Hunger: " + str(hunger)
+	hunger_label.text = "Murphy's Hunger: " + str(hunger)
 	# dies if hunger reaches 0
 	if hunger <= 0:
 		game_over_label.text = "Murphy died of hunger"
