@@ -12,8 +12,9 @@ var dialogue : Dialogue:
 		
 		reset_options()
 		add_buttons(value.options)
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(3.0).timeout
 		%Options.show()
+		
 		
 #TESTIN
 func _ready():

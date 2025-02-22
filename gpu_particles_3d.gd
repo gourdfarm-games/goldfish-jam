@@ -1,0 +1,1 @@
+extends GPUParticles3D
