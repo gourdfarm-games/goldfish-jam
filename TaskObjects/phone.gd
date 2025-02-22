@@ -39,7 +39,6 @@ func _on_interacted(body: Variant) -> void:
 	if phone_call == "friend_call":
 		phone_timer.stop()
 		friend_call_complete = true
-		print("task complete")
 		new_text = task_label.text.replace(" | Phone ringing", "")
 		task_label.text = new_text
 		emit_signal("friend_call_done", task_label.text)
@@ -51,7 +50,6 @@ func _on_interacted(body: Variant) -> void:
 	elif phone_call == "spam_call":
 		phone_timer.stop()
 		spam_call_complete = true
-		print("task complete")
 		new_text = task_label.text.replace(" | Phone ringing", "")
 		task_label.text = new_text
 		emit_signal("spam_call_done", task_label.text)

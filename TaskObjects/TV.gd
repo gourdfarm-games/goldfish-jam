@@ -20,6 +20,7 @@ func _on_task(task, description):
 	if task == "watch_tv":
 		description_text = description
 		watch_tv = task
+		
 	
 	if watch_tv == "watch_tv":
 		watch_tv_done = false
@@ -31,6 +32,10 @@ func _on_task(task, description):
 	if watch_tv_done == false:
 		game_over.text = ("watch tv failed")
 		get_tree().paused = true
+	
+	while true:
+		await get_tree().create_timer(0.5).timeout
+		print(tv_timer.time_left)
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
@@ -41,14 +46,12 @@ func _on_interacted(body: Variant) -> void:
 				await get_tree().create_timer(0.1).timeout
 				watch_time += 0.1
 				progress_bar.value = watch_time
-				print(watch_time)
 			set_collision_layer_value(2, true)
 			if watch_time >= 5:
 				tv_timer.stop()
 				progress_bar.visible = false
 				watch_tv_done = true
 				watch_time = 0
-				print("task complete")
 				new_text = task_label.text.replace(description_text, "")
 				task_label.text = new_text
 				emit_signal("tv_done", task_label.text)

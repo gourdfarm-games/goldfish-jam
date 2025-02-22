@@ -17,13 +17,11 @@ func _ready() -> void:
 	$"../../../../TaskManager".connect("task_muffin", Callable(self, "_on_task"))
 	while true:
 		await get_tree().create_timer(.1).timeout
-		print(muffin_timer.time_left)
 
 func _on_task(task, description):
 	if task == "muffin_eat":
 		muffin_arr = []
 		description_text = description
-		print(description_text)
 		muffin_eat = task
 		for child in self.find_children("*"):
 			if child.is_in_group("Muffins"):

@@ -21,7 +21,6 @@ func _ready():
 		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
 
 func update(new_dialogue: Dialogue) -> void:
-	print("signal")
 	%UI.hide()
 
 	%Icon.texture = new_dialogue.texture

@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=181 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -62,6 +62,7 @@
 [ext_resource type="Material" uid="uid://u0eq1u1mj34o" path="res://loaf.tres" id="50_fsd3a"]
 [ext_resource type="PackedScene" uid="uid://bq8oihsclbw05" path="res://bed.tscn" id="51_k7ow8"]
 [ext_resource type="Material" uid="uid://gfwxe5oogsnp" path="res://pillows.tres" id="51_w1b4u"]
+[ext_resource type="AudioStream" uid="uid://bk5we2dsjq21" path="res://Music/Sound effects/4211__dobroide__firecracklingmp3.wav" id="51_w7cm0"]
 [ext_resource type="PackedScene" uid="uid://cr62ba8kmbsfx" path="res://Materials/fishbowl_updated.tscn" id="52_0gbsj"]
 [ext_resource type="Material" uid="uid://cekml3b6j35g" path="res://bun.tres" id="52_etogu"]
 [ext_resource type="PackedScene" uid="uid://c867vkndqkcsj" path="res://fireplace.tscn" id="52_l0qps"]
@@ -80,6 +81,7 @@
 [ext_resource type="PackedScene" uid="uid://q3apx5gexcxt" path="res://picture_4.tscn" id="64_qfov0"]
 [ext_resource type="PackedScene" uid="uid://bwwfeuhbh4lbu" path="res://picture_5.tscn" id="65_3uhwv"]
 [ext_resource type="PackedScene" uid="uid://brc0vf1s2t13v" path="res://picture_6.tscn" id="66_17j3o"]
+[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/527522__narjara__ppop_1wav.wav" id="77_fej86"]
 [ext_resource type="PackedScene" uid="uid://cdyas0wcw1y5v" path="res://Materials/window_01.tscn" id="78_bxkhy"]
 [ext_resource type="Script" path="res://color_rect.gd" id="79_a2l3r"]
 [ext_resource type="PackedScene" uid="uid://drg6fimmrf1wr" path="res://Materials/window_02.tscn" id="79_mwrrr"]
@@ -88,6 +90,7 @@
 [ext_resource type="PackedScene" uid="uid://b5a17fa1vyr2i" path="res://Materials/hanginglight_02.tscn" id="82_bs674"]
 [ext_resource type="PackedScene" uid="uid://dh7x1lttj2oql" path="res://Materials/hanginglight_01.tscn" id="83_mdxj1"]
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
+[ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="89_4fljq"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -1318,6 +1321,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11092, -6.56474, -5.4403)
 [node name="Fireplace" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED/FIREPLACE" instance=ExtResource("52_l0qps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19781, -0.0877011, -6.90442)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED/FIREPLACE/Fireplace"]
+stream = ExtResource("51_w7cm0")
+unit_size = 3.0
+autoplay = true
+
 [node name="BUN" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8154, 5.53139, 7.32593)
 collision_layer = 4
@@ -1667,7 +1675,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.928965, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PlantTimer" type="Timer" parent="Greybox/PlantShape"]
-wait_time = 30.0
+wait_time = 35.0
+
+[node name="PlantPop" type="AudioStreamPlayer2D" parent="Greybox/PlantShape"]
+stream = ExtResource("77_fej86")
+bus = &"Sound"
 
 [node name="TV" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93375, 10.0008, -0.0837333)
@@ -2010,6 +2022,11 @@ omni_range = 0.9
 
 [node name="Node3D" parent="." instance=ExtResource("87_h2ujb")]
 transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0999891, 11.2639, 2.0587, -4.41492)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("89_4fljq")
+autoplay = true
+bus = &"Music"
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]

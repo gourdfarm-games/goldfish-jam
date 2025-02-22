@@ -44,7 +44,7 @@ func _ready() -> void:
 	task_delay_timer.start()
 
 func task_get_rng():
-	task_number = randi_range(1, 6)
+	task_number = randi_range(3, 3)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
@@ -79,23 +79,17 @@ func task_roll(task):
 				can_call = false
 				task_delay_timer.wait_time = 7
 				task_delay_timer.start()
-				var i = 0
-				while i < 2:
-					task = "spam_call"
-					description = " | Spam call"
-					task_label.text = text_track + " | Phone ringing"
-					text_track = task_label.text
-					emit_signal("task_call", task, description)
-					await phone.spam_call_done
-					await get_tree().create_timer(3).timeout
-					i += 1
+				task = "spam_call"
+				description = " | Spam call"
+				task_label.text = text_track + " | Phone ringing"
+				text_track = task_label.text
+				emit_signal("task_call", task, description)
 			else:
 				task_get_rng()
 	
 	# Water plant
 	# Spam E a certain amount of times
 	elif task == 3 and task != last_task: 
-		print(plant_shape.water_complete)
 		if plant_shape.can_start_watering == true:
 			task_delay_timer.wait_time = 15
 			task_delay_timer.start()
