@@ -1900,6 +1900,15 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HungerBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 0
+offset_left = 41.5
+offset_top = 391.0
+offset_right = 102.5
+offset_bottom = 603.0
+value = 1.67
+fill_mode = 3
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 

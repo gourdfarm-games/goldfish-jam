@@ -8,6 +8,10 @@ signal food_in_hand
 @onready var player: CharacterBody3D = $"../../Player"
 @onready var interact_ray: RayCast3D = $"../../Player/Head/Camera3D/InteractRay"
 @onready var drop_label: Label = $"../../PlaceholderHUD/ColorRect/Drop"
+@onready var fish: CharacterBody3D = $"../NavigationRegion3D/Fish"
+
+func _ready() -> void:
+	fish.connect("destory_food", Callable(self, "_on_destory_food"))
 
 func _on_interacted(body: Variant) -> void:
 	drop_label.text = "Q to Drop Food"
@@ -27,3 +31,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			var drop_offset = Vector3(0, 0, 2)
 			global_position = interact_ray.global_position - interact_ray.global_transform.basis.z
 			food_tracker += 1
+			
+func _on_destory_food():
+	if self.name == str(food_tracker):
+		drop_label.text = ""
+		queue_free()
