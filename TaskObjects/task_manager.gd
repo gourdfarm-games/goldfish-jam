@@ -58,7 +58,7 @@ func task_roll(task):
 		if can_call == true:
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
-				timer.wait_time = 5
+				timer.wait_time = 7
 				task = "friend_call"
 				description = " | Friend is calling"
 				task_label.text = text_track + " | Phone ringing"
@@ -74,7 +74,7 @@ func task_roll(task):
 		if can_call == true:
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
-				timer.wait_time = 5
+				timer.wait_time = 7
 				var i = 0
 				while i < 2:
 					task = "spam_call"
@@ -93,7 +93,7 @@ func task_roll(task):
 	elif task == 3 and task != last_task: 
 		print(plant_shape.water_complete)
 		if plant_shape.can_start_watering == true:
-			timer.wait_time = 10
+			timer.wait_time = 15
 			task = "water_plant"
 			description = " | You need to water your plants"
 			task_label.text = text_track + description
@@ -121,7 +121,7 @@ func task_roll(task):
 	# Wait a period of time
 	elif task == 5 and task != last_task: 
 		if tv.watch_tv_done == true:
-			timer.wait_time = 10
+			timer.wait_time = 12
 			task = "watch_tv"
 			description = " | Your favorite show is on"
 			task_label.text = text_track + description

@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=176 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -165,7 +165,8 @@ size = Vector3(1, 3.75727, 1.06002)
 size = Vector3(1, 0.975723, 1.0699)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q3t87"]
-height = 1.49036
+height = 1.8876
+radius = 0.816136
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dw1ji"]
 size = Vector3(0.932797, 0.602539, 0.337036)
@@ -349,7 +350,7 @@ shadow_mesh = SubResource("ArrayMesh_yhfml")
 size = Vector3(1, 0.373901, 1.71802)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_evv5l"]
-size = Vector3(8.5592, 1.18839, 4.58246)
+size = Vector3(8.5592, 0.862405, 4.58246)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8xfq1"]
 
@@ -392,9 +393,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_s6w8r")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rsqdl"]
-size = Vector3(1, 0.586121, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ucob"]
 resource_name = "standardSurface11"
@@ -439,7 +437,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c3f3g")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k7qv1"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u7pkr"]
+points = PackedVector3Array(0.0246817, 0.0221903, 0.0596524, -0.00619759, 0.00369549, -0.0662075, -0.0062062, 0.00784737, -0.0662995, -0.0621339, 0.00992206, 0.026922, 0.0246545, -0.057967, 0.0308167, 0.0470997, 0.0405218, -0.0225133, -0.0268678, 0.0553759, -0.0020454, -0.0368621, -0.0577877, -0.0143337, 0.0246545, -0.057967, -0.0308167, 0.0662165, 0.00371804, -0.00619539, -0.0514292, 0.00778838, -0.045259, -0.026595, -0.0495194, 0.0368021, 0.0452314, 0.0036698, -0.0513938, -0.0269263, 0.00992151, 0.0621313, -0.00615912, 0.0427426, -0.0493344, -0.00205951, 0.0553746, 0.0268614, 0.0597513, 0.0201683, 0.0267796, 0.0267356, 0.00161946, 0.0617118, -0.026595, -0.0495194, -0.0368021, -0.0471007, 0.0405213, 0.022513, 0.0268532, 0.055376, 0.00205834, 0.0473064, -0.039505, 0.0164405, -0.0471007, 0.0405213, -0.022513, -0.0663004, 0.00784585, -0.00620308, -0.00204424, -0.0558049, 0.0410145, 0.038832, -0.0556159, -0.0143035, 0.0513997, 0.00366959, 0.0452216, -0.0368621, -0.0577877, 0.0143337, -0.0225192, 0.0405236, 0.0470939, 0.0225177, 0.0405238, 0.0470942, 0.0246817, 0.0221903, -0.0596524, 0.00204257, -0.0558053, -0.0410148)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v2xkg"]
+points = PackedVector3Array(0.0246817, 0.0221903, 0.0596524, -0.00619759, 0.00369549, -0.0662075, -0.0062062, 0.00784737, -0.0662995, -0.0621339, 0.00992206, 0.026922, 0.0246545, -0.057967, 0.0308167, 0.0470997, 0.0405218, -0.0225133, -0.0268678, 0.0553759, -0.0020454, -0.0368621, -0.0577877, -0.0143337, 0.0246545, -0.057967, -0.0308167, 0.0662165, 0.00371804, -0.00619539, -0.0514292, 0.00778838, -0.045259, -0.026595, -0.0495194, 0.0368021, 0.0452314, 0.0036698, -0.0513938, -0.0269263, 0.00992151, 0.0621313, -0.00615912, 0.0427426, -0.0493344, -0.00205951, 0.0553746, 0.0268614, 0.0597513, 0.0201683, 0.0267796, 0.0267356, 0.00161946, 0.0617118, -0.026595, -0.0495194, -0.0368021, -0.0471007, 0.0405213, 0.022513, 0.0268532, 0.055376, 0.00205834, 0.0473064, -0.039505, 0.0164405, -0.0471007, 0.0405213, -0.022513, -0.0663004, 0.00784585, -0.00620308, -0.00204424, -0.0558049, 0.0410145, 0.038832, -0.0556159, -0.0143035, 0.0513997, 0.00366959, 0.0452216, -0.0368621, -0.0577877, 0.0143337, -0.0225192, 0.0405236, 0.0470939, 0.0225177, 0.0405238, 0.0470942, 0.0246817, 0.0221903, -0.0596524, 0.00204257, -0.0558053, -0.0410148)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2tirt"]
+points = PackedVector3Array(0.0246817, 0.0221903, 0.0596524, -0.00619759, 0.00369549, -0.0662075, -0.0062062, 0.00784737, -0.0662995, -0.0621339, 0.00992206, 0.026922, 0.0246545, -0.057967, 0.0308167, 0.0470997, 0.0405218, -0.0225133, -0.0268678, 0.0553759, -0.0020454, -0.0368621, -0.0577877, -0.0143337, 0.0246545, -0.057967, -0.0308167, 0.0662165, 0.00371804, -0.00619539, -0.0514292, 0.00778838, -0.045259, -0.026595, -0.0495194, 0.0368021, 0.0452314, 0.0036698, -0.0513938, -0.0269263, 0.00992151, 0.0621313, -0.00615912, 0.0427426, -0.0493344, -0.00205951, 0.0553746, 0.0268614, 0.0597513, 0.0201683, 0.0267796, 0.0267356, 0.00161946, 0.0617118, -0.026595, -0.0495194, -0.0368021, -0.0471007, 0.0405213, 0.022513, 0.0268532, 0.055376, 0.00205834, 0.0473064, -0.039505, 0.0164405, -0.0471007, 0.0405213, -0.022513, -0.0663004, 0.00784585, -0.00620308, -0.00204424, -0.0558049, 0.0410145, 0.038832, -0.0556159, -0.0143035, 0.0513997, 0.00366959, 0.0452216, -0.0368621, -0.0577877, 0.0143337, -0.0225192, 0.0405236, 0.0470939, 0.0225177, 0.0405238, 0.0470942, 0.0246817, 0.0221903, -0.0596524, 0.00204257, -0.0558053, -0.0410148)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5b6f4"]
+points = PackedVector3Array(0.0246817, 0.0221903, 0.0596524, -0.00619759, 0.00369549, -0.0662075, -0.0062062, 0.00784737, -0.0662995, -0.0621339, 0.00992206, 0.026922, 0.0246545, -0.057967, 0.0308167, 0.0470997, 0.0405218, -0.0225133, -0.0268678, 0.0553759, -0.0020454, -0.0368621, -0.0577877, -0.0143337, 0.0246545, -0.057967, -0.0308167, 0.0662165, 0.00371804, -0.00619539, -0.0514292, 0.00778838, -0.045259, -0.026595, -0.0495194, 0.0368021, 0.0452314, 0.0036698, -0.0513938, -0.0269263, 0.00992151, 0.0621313, -0.00615912, 0.0427426, -0.0493344, -0.00205951, 0.0553746, 0.0268614, 0.0597513, 0.0201683, 0.0267796, 0.0267356, 0.00161946, 0.0617118, -0.026595, -0.0495194, -0.0368021, -0.0471007, 0.0405213, 0.022513, 0.0268532, 0.055376, 0.00205834, 0.0473064, -0.039505, 0.0164405, -0.0471007, 0.0405213, -0.022513, -0.0663004, 0.00784585, -0.00620308, -0.00204424, -0.0558049, 0.0410145, 0.038832, -0.0556159, -0.0143035, 0.0513997, 0.00366959, 0.0452216, -0.0368621, -0.0577877, 0.0143337, -0.0225192, 0.0405236, 0.0470939, 0.0225177, 0.0405238, 0.0470942, 0.0246817, 0.0221903, -0.0596524, 0.00204257, -0.0558053, -0.0410148)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k5ik7"]
 points = PackedVector3Array(0.0246817, 0.0221903, 0.0596524, -0.00619759, 0.00369549, -0.0662075, -0.0062062, 0.00784737, -0.0662995, -0.0621339, 0.00992206, 0.026922, 0.0246545, -0.057967, 0.0308167, 0.0470997, 0.0405218, -0.0225133, -0.0268678, 0.0553759, -0.0020454, -0.0368621, -0.0577877, -0.0143337, 0.0246545, -0.057967, -0.0308167, 0.0662165, 0.00371804, -0.00619539, -0.0514292, 0.00778838, -0.045259, -0.026595, -0.0495194, 0.0368021, 0.0452314, 0.0036698, -0.0513938, -0.0269263, 0.00992151, 0.0621313, -0.00615912, 0.0427426, -0.0493344, -0.00205951, 0.0553746, 0.0268614, 0.0597513, 0.0201683, 0.0267796, 0.0267356, 0.00161946, 0.0617118, -0.026595, -0.0495194, -0.0368021, -0.0471007, 0.0405213, 0.022513, 0.0268532, 0.055376, 0.00205834, 0.0473064, -0.039505, 0.0164405, -0.0471007, 0.0405213, -0.022513, -0.0663004, 0.00784585, -0.00620308, -0.00204424, -0.0558049, 0.0410145, 0.038832, -0.0556159, -0.0143035, 0.0513997, 0.00366959, 0.0452216, -0.0368621, -0.0577877, 0.0143337, -0.0225192, 0.0405236, 0.0470939, 0.0225177, 0.0405238, 0.0470942, 0.0246817, 0.0221903, -0.0596524, 0.00204257, -0.0558053, -0.0410148)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1mbh"]
@@ -1291,7 +1301,7 @@ collision_mask = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9, -0.782989, -0.502101, -0.239786)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65399, 0.845402, 0.00485229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65399, 0.682409, 0.00485229)
 shape = SubResource("BoxShape3D_evv5l")
 
 [node name="FIREPLACE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED"]
@@ -1334,15 +1344,11 @@ surface_material_override/0 = ExtResource("52_etogu")
 script = ExtResource("58_ahxyn")
 
 [node name="MUFFIN" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1389, 2.34492, 7.12066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1389, 2.25064, 6.53556)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
 prompt_message = "·   Mash E"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0296478, 0)
-shape = SubResource("BoxShape3D_rsqdl")
 
 [node name="Muffin1" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -1350,16 +1356,16 @@ mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.109264, 0)
+shape = SubResource("ConvexPolygonShape3D_u7pkr")
+
 [node name="MUFFIN5" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62186, 7.99873, 3.64805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20455, 7.86912, 3.64805)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
 prompt_message = "·   Mash E"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0296478, 0)
-shape = SubResource("BoxShape3D_rsqdl")
 
 [node name="Muffin1" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -1367,8 +1373,12 @@ mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.0990672, 0)
+shape = SubResource("ConvexPolygonShape3D_v2xkg")
+
 [node name="MUFFIN2" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89149, 1.65495, 1.35561)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89149, 1.7308, 1.35561)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
@@ -1381,19 +1391,15 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2"]
-transform = Transform3D(4.51, 0, 0, 0, 4.51, 0, 0, 0, 4.51, 0.641293, 0, -0.727872)
-shape = SubResource("ConvexPolygonShape3D_k7qv1")
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.114671, 0)
+shape = SubResource("ConvexPolygonShape3D_2tirt")
 
 [node name="MUFFIN3" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53184, 1.65495, 0.624113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53184, 1.73913, 0.624113)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
 prompt_message = "·   Mash E"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("BoxShape3D_rsqdl")
 
 [node name="Muffin1" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -1401,16 +1407,16 @@ mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.106344, 0)
+shape = SubResource("ConvexPolygonShape3D_5b6f4")
+
 [node name="MUFFIN4" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73595, 3.43656, -4.95036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73595, 2.97176, -4.95036)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
 prompt_message = "·   Mash E"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN4"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.101641, 0.0693359, 0.129359)
-shape = SubResource("BoxShape3D_rsqdl")
 
 [node name="Muffin1" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0988801, 0.0607388, 0.123501)
@@ -1418,8 +1424,12 @@ mesh = SubResource("ArrayMesh_f7xi6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("53_hxq3e")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN4"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0988803, 0.162842, 0.123501)
+shape = SubResource("ConvexPolygonShape3D_k5ik7")
+
 [node name="MuffinTimer" type="Timer" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager"]
-wait_time = 10.0
+wait_time = 15.0
 
 [node name="FISHBOWL" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("52_0gbsj")]
 transform = Transform3D(-40, 0, -3.49691e-06, 0, 40, 0, 3.49691e-06, 0, -40, 11.237, 1.99408, -4.43871)
@@ -1549,7 +1559,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_xxpr7")
 
 [node name="PhoneTimer" type="Timer" parent="Greybox/Phone"]
-wait_time = 30.0
+wait_time = 10.0
 
 [node name="Food" type="RigidBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71726, 1.54759, -0.30953)
@@ -1621,7 +1631,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PLANT01" type="RigidBody3D" parent="Greybox/PlantShape/Plants" groups=["Plants"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19559, 1.31016, -9.8504)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19559, 1.12483, -9.8504)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("16_nexj3")
@@ -1635,7 +1645,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648602, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PLANT03" type="RigidBody3D" parent="Greybox/PlantShape/Plants" groups=["Plants"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6209, 0.0647087, -10.5526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6209, -0.0473708, -10.5526)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("16_nexj3")
@@ -1645,7 +1655,7 @@ prompt_message = "·   Mash E"
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/PlantShape/Plants/PLANT03"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.861107, 0.144259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.928965, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PlantTimer" type="Timer" parent="Greybox/PlantShape"]
@@ -1745,7 +1755,7 @@ color = Color(1, 1, 1, 0)
 [node name="Hunger" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0121003
+anchor_left = -0.0207433
 anchor_top = 1.0
 anchor_right = -0.0207433
 anchor_bottom = 1.0
