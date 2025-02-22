@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5ca0xunrblw1"]
+[gd_scene load_steps=10 format=3 uid="uid://b5ca0xunrblw1"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_bmcdj"]
 [ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="2_0awpc"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_a4yjc"]
+[ext_resource type="Texture2D" uid="uid://2riuxnw0iv7m" path="res://Game Logo/Splash_Art 2.png" id="2_g41an"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="3_5gqdd"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_o4gai"]
 [ext_resource type="Script" path="res://play.gd" id="6_glp6h"]
@@ -25,11 +26,39 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_bmcdj")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1305.0
+offset_top = -818.0
+offset_right = 1248.0
+offset_bottom = 731.0
+color = Color(0.898039, 0.466667, 0.172549, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -576.0
+offset_top = -332.0
+offset_right = 5184.0
+offset_bottom = 2968.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_g41an")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -602.0
+offset_top = -337.0
+offset_right = 4198.0
+offset_bottom = 2419.0
+scale = Vector2(0.25, 0.25)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-offset_left = -238.0
+offset_left = 53.0
 offset_top = -322.0
-offset_right = 4562.0
+offset_right = 4853.0
 offset_bottom = 2478.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_0awpc")
@@ -41,9 +70,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -226.0
+offset_left = 26.0
 offset_top = -31.0
-offset_right = 227.0
+offset_right = 532.0
 offset_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
