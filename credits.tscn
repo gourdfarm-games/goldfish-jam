@@ -57,7 +57,7 @@ text = " Benji L : Gourdfarm - Technical art & programming
  Heydee: FroschGift - 3d character art
  Ari J: iins0mniart - 2d art
 Julia H: soubbles - Texturing
-Tobe P: BRapaholic - sound/Music
+ Mark: sound & music
 "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
