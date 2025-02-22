@@ -40,6 +40,8 @@ func _ready() -> void:
 	
 	task_label.text = "Tasks"
 	text_track = task_label.text
+	task_delay_timer.wait_time = 1
+	task_delay_timer.start()
 
 func task_get_rng():
 	task_number = randi_range(1, 6)
@@ -59,6 +61,7 @@ func task_roll(task):
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
 				task_delay_timer.wait_time = 7
+				task_delay_timer.start()
 				task = "friend_call"
 				description = " | Friend is calling"
 				task_label.text = text_track + " | Phone ringing"
@@ -75,6 +78,7 @@ func task_roll(task):
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
 				task_delay_timer.wait_time = 7
+				task_delay_timer.start()
 				var i = 0
 				while i < 2:
 					task = "spam_call"
@@ -94,6 +98,7 @@ func task_roll(task):
 		print(plant_shape.water_complete)
 		if plant_shape.can_start_watering == true:
 			task_delay_timer.wait_time = 15
+			task_delay_timer.start()
 			task = "water_plant"
 			description = " | You need to water your plants"
 			task_label.text = text_track + description
@@ -107,6 +112,7 @@ func task_roll(task):
 	elif task == 4 and time_of_day.current_hour > 12 and task != last_task: 
 		if puddle.mop_complete == true:
 			task_delay_timer.wait_time = 5
+			task_delay_timer.start()
 			puddle.visible = true
 			puddle_collision.disabled = false
 			task = "mop_floor"
@@ -122,6 +128,7 @@ func task_roll(task):
 	elif task == 5 and task != last_task: 
 		if tv.watch_tv_done == true:
 			task_delay_timer.wait_time = 12
+			task_delay_timer.start()
 			task = "watch_tv"
 			description = " | Your favorite show is on"
 			task_label.text = text_track + description
@@ -136,6 +143,7 @@ func task_roll(task):
 		if can_eat_muffin == true:
 			if muffin.muffin_complete == true:
 				task_delay_timer.wait_time = 5
+				task_delay_timer.start()
 				task = "muffin_eat"
 				description = " | Eat a muffin"
 				task_label.text = text_track + description

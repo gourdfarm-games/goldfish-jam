@@ -1930,7 +1930,6 @@ script = ExtResource("8_8gqm4")
 script = ExtResource("15_b8hnn")
 
 [node name="TaskDelayTimer" type="Timer" parent="TaskManager"]
-autostart = true
 
 [node name="IMPORTING" type="Node" parent="."]
 
