@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydblt"]
 
-[node name="NextDialogue" type="Button"]
+[node name="NextDialogue" type="Button" groups=["dialogue"]]
 offset_left = 101.0
 offset_right = 157.0
 offset_bottom = 8.0

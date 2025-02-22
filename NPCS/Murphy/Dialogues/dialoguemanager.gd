@@ -1,22 +1,27 @@
 extends Node2D
 
-@export var next_button: PackedScene
+const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
 
-var _dialogue: Dialogue
-
-var dialogue: Dialogue:
+var dialogue : Dialogue:
 	set(value):
-		_dialogue = value
-		update_dialogue(value)
-	get:
-		return _dialogue
+		dialogue = value
+		
+		%Icon.texture = value.texture
+		%Name.text = value.name
+		%Dialogue.text = value.dialogue
+		
+		reset_options()
+		add_buttons(value.options)
+		await get_tree().create_timer(0.5).timeout
+		%Options.show()
 		
 #TESTIN
 func _ready():
 	if dialogue == null:
 		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
 
-func update_dialogue(new_dialogue: Dialogue) -> void:
+func update(new_dialogue: Dialogue) -> void:
+	print("signal")
 	%UI.hide()
 
 	%Icon.texture = new_dialogue.texture

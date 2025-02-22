@@ -1,7 +1,6 @@
 extends Button
 
-
-@onready var dialogue_manager = get_node("/root/DialogueManager")
+@onready var dialogue_manager = $".."
 
 var dialogue : Dialogue:
 	set(value):
@@ -11,8 +10,6 @@ var dialogue : Dialogue:
 
 func _on_pressed() -> void:
 	if dialogue.options.size() == 0:
-		dialogue_manager.hide_dialogue()
-		return
-	
-	
-	dialogue_manager.dialogue = dialogue
+		get_tree().call_group("dialogue", "hide_dialogue")
+	else:
+		get_tree().call_group("dialogue", "update", dialogue)
