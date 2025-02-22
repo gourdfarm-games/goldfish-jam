@@ -15,6 +15,7 @@ var on_screen
 var has_food = false
 
 var escape_roll
+var has_rotated = false
 
 signal holding
 signal interacted(body)
@@ -87,6 +88,12 @@ func attempt_escape():
 				fish_move()
 				lose_hp()
 				print(current_hp)
+				
+				# Rotate only once
+				if not has_rotated:
+					rotate_fish()
+					has_rotated = true
+					
 			else:
 				timer.start(TIME_TO_ESCAPE)
 		else:
@@ -96,9 +103,11 @@ func attempt_escape():
 	elif in_bowl == false:
 		current_hp -= HP_LOST_PER_SECOND
 		lose_hp()
+		
 
 func _on_timer_timeout() -> void:
 	attempt_escape()
+	
 		
 func _physics_process(delta: float) -> void:
 	var current_location = global_transform.origin
@@ -118,10 +127,16 @@ func fish_move():
 	random_position.x = randf_range(-10.0, 10.0)
 	random_position.z = randf_range(-10.0, 10.0)
 	nav_agent.set_target_position(random_position)
+	
 
 func _on_navigation_agent_3d_navigation_finished() -> void:
 	fish_move()
-	
+
+func rotate_fish():
+	$Murphy_Fish2.rotation_degrees.z += 90
+
+
+
 func lose_hp():
 	if in_bowl == false:
 		if current_hp <= 0:

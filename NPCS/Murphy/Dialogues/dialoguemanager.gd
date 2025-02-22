@@ -49,3 +49,8 @@ func hide_dialogue():
 
 func show_dialogue():
 	%UI.show()
+	
+	
+func _input(event):
+	if Input.is_action_pressed("hide_dialogue"):
+		%UI.hide()
