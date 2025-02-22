@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=178 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bntcjvrqaexjm" path="res://Materials/lightswitchon (1).fbx" id="8_mtovj"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
 [ext_resource type="Script" path="res://TaskObjects/food.gd" id="10_8a346"]
-[ext_resource type="PackedScene" uid="uid://dw4ivix1tm2ia" path="res://fire_particles.tscn" id="10_irdq0"]
 [ext_resource type="Texture2D" uid="uid://bpec23g26rhw7" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/purple/texture_08.png" id="11_0ceq1"]
 [ext_resource type="Script" path="res://fish.gd" id="11_lt3v1"]
 [ext_resource type="Script" path="res://TaskObjects/phone.gd" id="12_4hh74"]
@@ -82,6 +81,7 @@
 [ext_resource type="PackedScene" uid="uid://bwwfeuhbh4lbu" path="res://picture_5.tscn" id="65_3uhwv"]
 [ext_resource type="PackedScene" uid="uid://brc0vf1s2t13v" path="res://picture_6.tscn" id="66_17j3o"]
 [ext_resource type="PackedScene" uid="uid://cdyas0wcw1y5v" path="res://Materials/window_01.tscn" id="78_bxkhy"]
+[ext_resource type="Script" path="res://color_rect.gd" id="79_a2l3r"]
 [ext_resource type="PackedScene" uid="uid://drg6fimmrf1wr" path="res://Materials/window_02.tscn" id="79_mwrrr"]
 [ext_resource type="PackedScene" uid="uid://da8yo0qt0i4f3" path="res://Materials/window_03.tscn" id="80_o6nhu"]
 [ext_resource type="PackedScene" uid="uid://ber6h4sjcs4vx" path="res://Materials/walloutlet.fbx" id="81_pmpbf"]
@@ -520,6 +520,13 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f5tp3"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6eyqw"]
+bg_color = Color(0.952154, 0.416432, 3.85046e-07, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -596,11 +603,8 @@ material_override = SubResource("StandardMaterial3D_p5bsa")
 mesh = SubResource("CapsuleMesh_2bmg5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/Fish"]
-transform = Transform3D(1.7, 0, 0, 0, -7.43094e-08, 1.7, 0, -1.7, -7.43094e-08, -0.0798103, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, -7.43094e-08, 1.7, 0, -1.7, -7.43094e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ry6da")
-
-[node name="BUBBLES" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("87_h2ujb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164123, -0.279474, -0.0266614)
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/NavigationRegion3D/Fish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465545, 0.474829, 0.527058)
@@ -616,8 +620,8 @@ debug_enabled = true
 [node name="Murphy_Fish2" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("8_2ewl5")]
 transform = Transform3D(-2.47505, 0, -0.352296, 0, 2.5, 0, 0.352296, 0, -2.47505, -0.192349, 0.123374, -0.200882)
 
-[node name="Node3D2" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("10_irdq0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8483, -2.24671, -2.63139)
+[node name="Node3D" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("87_h2ujb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282572, -0.354703, -0.199103)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.629016, 0, 0, 0, 2.74349, 0, 0, 0, 3.84189, -2.18564, 2.88044, 4.35872)
@@ -1436,7 +1440,7 @@ shape = SubResource("ConvexPolygonShape3D_k5ik7")
 wait_time = 15.0
 
 [node name="FISHBOWL" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("52_0gbsj")]
-transform = Transform3D(-40, 0, -3.49691e-06, 0, 40, 0, 3.49691e-06, 0, -40, 11.237, 1.99408, -4.37288)
+transform = Transform3D(-40, 0, -3.49691e-06, 0, 40, 0, 3.49691e-06, 0, -40, 11.237, 1.99408, -4.43871)
 
 [node name="WelcomeMat01" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("55_qu7l4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7486, -4.76837e-07, -7.68291)
@@ -1753,25 +1757,24 @@ offset_right = 578.5
 offset_bottom = 327.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_stretch_ratio = 11.9
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
+script = ExtResource("79_a2l3r")
 
 [node name="Hunger" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0207433
-anchor_top = 1.0
-anchor_right = -0.0207433
-anchor_bottom = 1.0
-offset_left = 33.0
-offset_top = -35.0
-offset_right = 277.0
-offset_bottom = 26.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.98765, 0.499771, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.5
+offset_top = 159.0
+offset_right = 255.5
+offset_bottom = 234.0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("18_1dse5")
+theme_override_font_sizes/font_size = 18
+text = "Murphy's Hunger"
 
 [node name="Time" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
@@ -1780,29 +1783,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -134.0
-offset_top = -32.0
-offset_right = 11.0
-offset_bottom = 52.0
+offset_left = -161.5
+offset_top = -121.0
+offset_right = 9.5
+offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.556836, 0.758969, 0.349228, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("18_1dse5")
 text = "Time: "
 
 [node name="Task" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -299.0
-offset_top = 22.0
-offset_right = -24.0
-offset_bottom = 301.0
-grow_horizontal = 0
-theme_override_colors/font_color = Color(0.52992, 0.814945, 0.895859, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.5
+offset_top = -227.0
+offset_right = 286.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("18_1dse5")
@@ -1817,9 +1819,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1056.0
+offset_left = 299.5
 offset_top = -406.0
-offset_right = 1122.0
+offset_right = 374.5
 offset_bottom = -222.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("18_1dse5")
@@ -1847,7 +1849,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlantsToWater" type="Label" parent="PlaceholderHUD/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1891,6 +1892,33 @@ offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("18_1dse5")
 text = "   Hold shift/right bumper to sprint"
 
+[node name="Drop" type="Label" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 554.5
+offset_top = -6.0
+offset_right = 741.5
+offset_bottom = 101.0
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_1dse5")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HungerBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 514.0
+offset_right = 168.0
+offset_bottom = 576.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_6eyqw")
+value = 1.67
+rounded = true
+
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("8_8gqm4")
 
@@ -1901,8 +1929,7 @@ script = ExtResource("8_8gqm4")
 [node name="TaskManager" type="Node" parent="."]
 script = ExtResource("15_b8hnn")
 
-[node name="Timer" type="Timer" parent="TaskManager"]
-autostart = true
+[node name="TaskDelayTimer" type="Timer" parent="TaskManager"]
 
 [node name="IMPORTING" type="Node" parent="."]
 
@@ -1942,10 +1969,10 @@ transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, -9.
 transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 12.7747, 1.32935, 5.24601)
 
 [node name="hanginglight05" parent="LIGHTING" instance=ExtResource("82_bs674")]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.68231, 5.4616, -6.6388)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.68231, 6.6513, -6.6388)
 
 [node name="hanginglight07" parent="LIGHTING" instance=ExtResource("82_bs674")]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -6.13017, 11.0936, -0.0574532)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -6.13017, 12.161, -0.0574532)
 
 [node name="hanginglight02" parent="LIGHTING" instance=ExtResource("83_mdxj1")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 9.42209, 10.3284, 0.851421)
@@ -1981,6 +2008,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42322, 8.44191, 0.879443)
 light_energy = 50.0
 omni_range = 0.9
 
+[node name="Node3D" parent="." instance=ExtResource("87_h2ujb")]
+transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0999891, 11.2639, 2.0587, -4.41492)
+
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
 [connection signal="screen_exited" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
@@ -2002,4 +2032,4 @@ omni_range = 0.9
 [connection signal="interacted" from="Greybox/TV" to="Greybox/TV" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/Puddle" to="Greybox/Puddle" method="_on_interacted"]
 [connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
-[connection signal="timeout" from="TaskManager/Timer" to="TaskManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="TaskManager/TaskDelayTimer" to="TaskManager" method="_on_timer_timeout"]

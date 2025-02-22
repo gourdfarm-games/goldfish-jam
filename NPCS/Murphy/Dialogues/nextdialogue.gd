@@ -16,4 +16,6 @@ func _on_pressed() -> void:
 	else:
 		get_tree().call_group("dialogue", "update", dialogue)
 		
-		
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_pressed("next_button_bind"):
+		_on_pressed()
