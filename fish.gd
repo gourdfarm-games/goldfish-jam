@@ -121,11 +121,6 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = velocity.move_toward(new_velocity, .5)
 	move_and_slide()
-	
-	
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("test"):
-		fish_move()
 		
 func fish_move():
 	var random_position := Vector3.ZERO
