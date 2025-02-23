@@ -48,19 +48,11 @@ func _on_interacted(body: Variant) -> void:
 		if watered_progress > 5:
 			water_complete = true
 			plants_arr.erase(self)
+			plants_watered += 1
 			plants_to_water.text = ("Plants to water: " + str(plants_watered) + "/" + amount_of_plants)
 			if plants_arr.is_empty() == true:
 				all_plants_done()
-			if plants_arr.size() < 1:
-				plant_pop.pitch_scale = 2
-				plant_pop.volume_db = 8
-				plant_pop.play()
-			else:
-				if plant_pop.pitch_scale != 1:
-					plant_pop.pitch_scale = 1
-				if plant_pop.volume_db != 0:
-					plant_pop.volume_db = 0
-				plant_pop.play()
+			plant_pop.play()
 		else:
 			watered_progress += 1
 			

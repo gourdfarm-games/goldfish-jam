@@ -1407,7 +1407,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.0990672, 0)
 shape = SubResource("ConvexPolygonShape3D_v2xkg")
 
 [node name="MUFFIN2" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89149, 1.7308, 1.35561)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78688, 0.0591694, -10.9832)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
@@ -1699,6 +1699,7 @@ wait_time = 35.0
 
 [node name="PlantPop" type="AudioStreamPlayer2D" parent="Greybox/PlantShape"]
 stream = ExtResource("77_fej86")
+volume_db = 15.0
 bus = &"Sound"
 
 [node name="TV" type="StaticBody3D" parent="Greybox"]
@@ -1844,6 +1845,7 @@ text = "TEXT"
 autowrap_mode = 3
 
 [node name="ProgressBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
