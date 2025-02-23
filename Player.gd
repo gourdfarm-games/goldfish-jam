@@ -77,6 +77,7 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 		velocity.y = velocity.y - (FALL_SPEED * delta)
 		
 	if Input.is_action_pressed("sprint"):
+		player_steps.pitch_scale = 1.8
 		speed = SPRINT_SPEED
 		camera.fov = lerp(camera.fov, SPRINT_FOV, FOV_CHANGE_SPEED * delta)
 	else:
@@ -93,6 +94,7 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 		velocity.z = direction.z * speed
 		is_moving = true
 		if player_steps.playing == false:
+			player_steps.pitch_scale = 1.3
 			player_steps.play()
 		
 	else:

@@ -5,9 +5,12 @@ var collision_occurred = false
 var new_crash
 
 var crash_sound = preload("res://Music/crash_sound.tscn")
+var wack_sound = preload("res://Music/wet_wack.tscn")
 
 const COLLISION_FIRST = preload("res://Music/Sound effects/collision_first.wav")
 const COLLISION_SECOND = preload("res://Music/Sound effects/collision_second.wav")
+
+
 
 func _ready():
 	contact_monitor = true
@@ -26,6 +29,10 @@ func _physics_process(delta):
 				crash.stream = COLLISION_SECOND
 			add_child(crash)
 			crash.play()
+			if "Fish" in str(get_colliding_bodies()):
+				var wack = wack_sound.instantiate()
+				add_child(wack)
+				wack.play()
 			
 			
 	elif get_contact_count() == 0:
