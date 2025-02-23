@@ -52,6 +52,7 @@ func hold_fish():
 	get_tree().call_group("hand", "pickup")
 	emit_signal("holding")
 	prompt_message = ""
+	visible = false
 	
 	
 func _on_interacted(body: Variant) -> void:
@@ -93,7 +94,7 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 func attempt_escape():
 	if in_bowl == true:
 		if on_screen == false:
-			escape_roll = randi_range(81, ESCAPE_CHANCE)
+			escape_roll = randi_range(1, ESCAPE_CHANCE)
 			if escape_roll < 30:
 				in_bowl = false
 				region.enabled = true
@@ -120,7 +121,7 @@ func attempt_escape():
 		lose_hp()
 		
 func random_position():
-	var random = randi_range(2, 2)
+	var random = randi_range(1, 3)
 	# Oven
 	if random == 1:
 		position = Vector3(11.189, 1.823, 7.057)
@@ -130,6 +131,9 @@ func random_position():
 		position = Vector3(2.1, 2.273, 6.854)
 		rotation = Vector3(0, -90, 0)
 		get_tree().call_group("fridge", "in_fridge")
+	if random == 3:
+		position = Vector3(-6.928, 7.85, 5.281)
+		rotation = Vector3(0, -90, -90)
 
 func _on_timer_timeout() -> void:
 	attempt_escape()
