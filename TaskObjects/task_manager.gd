@@ -44,7 +44,7 @@ func _ready() -> void:
 	task_delay_timer.start()
 
 func task_get_rng():
-	task_number = randi_range(3, 3)
+	task_number = randi_range(1, 2)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()

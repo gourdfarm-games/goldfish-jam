@@ -4,4 +4,5 @@
 
 [node name="CrashSound" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_4egm7")
-volume_db = -20.0
+volume_db = -15.0
+bus = &"Sound"

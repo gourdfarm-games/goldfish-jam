@@ -82,6 +82,7 @@
 [ext_resource type="PackedScene" uid="uid://q3apx5gexcxt" path="res://picture_4.tscn" id="64_qfov0"]
 [ext_resource type="PackedScene" uid="uid://bwwfeuhbh4lbu" path="res://picture_5.tscn" id="65_3uhwv"]
 [ext_resource type="PackedScene" uid="uid://brc0vf1s2t13v" path="res://picture_6.tscn" id="66_17j3o"]
+[ext_resource type="AudioStream" uid="uid://ctoh7h6rb54sm" path="res://Music/Sound effects/556499__cookiespolicy__rotaryphoneringloopablewav.wav" id="73_vp2fl"]
 [ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/527522__narjara__ppop_1wav.wav" id="77_fej86"]
 [ext_resource type="PackedScene" uid="uid://cdyas0wcw1y5v" path="res://Materials/window_01.tscn" id="78_bxkhy"]
 [ext_resource type="Script" path="res://color_rect.gd" id="79_a2l3r"]
@@ -92,7 +93,6 @@
 [ext_resource type="PackedScene" uid="uid://dh7x1lttj2oql" path="res://Materials/hanginglight_01.tscn" id="83_mdxj1"]
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="89_4fljq"]
-[ext_resource type="AudioStream" uid="uid://cxl2yxlr4v1lc" path="res://Music/Sound effects/174631__altfuture__smalljunkdroppedwav.wav" id="92_tvpo8"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -1347,10 +1347,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11092, -6.56474, -5.4403)
 [node name="Fireplace" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED/FIREPLACE" instance=ExtResource("52_l0qps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19781, -0.0877011, -6.90442)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED/FIREPLACE/Fireplace"]
+[node name="FireAudio" type="AudioStreamPlayer3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BED/FIREPLACE/Fireplace"]
 stream = ExtResource("51_w7cm0")
 unit_size = 3.0
 autoplay = true
+bus = &"Sound"
 
 [node name="BUN" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8154, 5.53139, 7.32593)
@@ -1604,6 +1605,13 @@ shape = SubResource("ConcavePolygonShape3D_xxpr7")
 
 [node name="PhoneTimer" type="Timer" parent="Greybox/Phone"]
 wait_time = 10.0
+
+[node name="PhoneAudio" type="AudioStreamPlayer3D" parent="Greybox/Phone"]
+stream = ExtResource("73_vp2fl")
+volume_db = -7.0
+unit_size = 15.0
+max_db = 0.0
+bus = &"Sound"
 
 [node name="Food" type="RigidBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71726, 1.54759, -0.30953)
@@ -2055,9 +2063,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0
 stream = ExtResource("89_4fljq")
 autoplay = true
 bus = &"Music"
-
-[node name="Crash" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("92_tvpo8")
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
