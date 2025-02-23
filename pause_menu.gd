@@ -29,14 +29,17 @@ func resume_game():
 	visible = false  # Hide pause menu
 
 func _on_menu_pressed() -> void:
+	$button.play()
 	get_tree().change_scene_to_file("res://menu.tscn")
 
 
 
 
 func _on_restart_pressed() -> void:
+	$button.play()
 	get_tree().change_scene_to_file("res://main.tscn")
 
 
 func _on_resume_pressed() -> void:
+	$button.play()
 	resume_game()
