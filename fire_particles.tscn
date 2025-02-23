@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://hc6no701f2s5"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_uocy3"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+proximity_fade_distance = 56.4
+
+[sub_resource type="Gradient" id="Gradient_e8oow"]
+offsets = PackedFloat32Array(0, 0.433333, 1)
+colors = PackedColorArray(0.829128, 0.816651, 0.687891, 1, 0.803718, 0.425794, 0.0225063, 1, 0.887061, 0.217462, 0.140085, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dvioq"]
+gradient = SubResource("Gradient_e8oow")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ucud7"]
+lifetime_randomness = 0.73
+emission_shape = 1
+emission_sphere_radius = 2.1
+gravity = Vector3(0, 9, 0)
+scale_min = 0.1
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_dvioq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_y06kw"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.225888, 0, 0, 0, 0.13933, 0, 0, 0, 0.206355, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_uocy3")
+lifetime = 0.64
+speed_scale = 0.7
+randomness = 1.0
+visibility_aabb = AABB(-3.48, -4, -4, 8, 8, 8)
+trail_lifetime = 5.2
+process_material = SubResource("ParticleProcessMaterial_ucud7")
+draw_pass_1 = SubResource("SphereMesh_y06kw")
