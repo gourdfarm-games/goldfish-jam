@@ -40,15 +40,8 @@ func _ready() -> void:
 	
 	task_label.text = "Tasks"
 	text_track = task_label.text
-	task_delay_timer.wait_time = 1
+	task_delay_timer.wait_time = 10
 	task_delay_timer.start()
-	
-	
-
-func wait_time():
-	await get_tree().create_timer(0.1).timeout
-	print(task_delay_timer.time_left)
-	wait_time()
 	
 func task_get_rng():
 	task_number = randi_range(1, 6)

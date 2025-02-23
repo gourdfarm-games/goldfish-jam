@@ -1,8 +1,9 @@
 extends Control
 
-
+var dialogue_track = 0
 
 const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
+
 
 var dialogue : Dialogue:
 	set(value):
@@ -24,7 +25,6 @@ func _ready():
 		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
 		
 		call_deferred("cycle_focus")
-		
 
 func update(new_dialogue: Dialogue) -> void:
 	%UI.hide()
@@ -70,6 +70,7 @@ func _input(event):
 		
 	if event is InputEventKey and event.pressed and Input.is_action_pressed("test"):
 		cycle_focus()
+		
 		
 func cycle_focus():
 	var options = %Options.get_children()
