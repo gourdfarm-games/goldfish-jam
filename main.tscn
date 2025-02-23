@@ -671,8 +671,7 @@ use_collision = true
 size = Vector3(4.61377, 21.6777, 4.83889)
 
 [node name="Stairs" type="CSGMesh3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(-0.725374, 0.688355, 8.74228e-08, 0.688355, 0.725374, 0, -6.34142e-08, 6.01779e-08, -1, 2.44593, 2.7808, -9.75911)
-visible = false
+transform = Transform3D(-0.725374, 0.688355, 7.48341e-08, 0.688355, 0.725374, 0, -6.34142e-08, 6.01779e-08, -0.856003, 2.44593, 2.7808, -10.0933)
 use_collision = true
 mesh = SubResource("PlaneMesh_87u11")
 
@@ -1474,7 +1473,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0988803, 0.162842, 0.12350
 shape = SubResource("ConvexPolygonShape3D_k5ik7")
 
 [node name="MuffinTimer" type="Timer" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager"]
-wait_time = 15.0
+wait_time = 30.0
 
 [node name="FISHBOWL" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("52_0gbsj")]
 transform = Transform3D(-40, 0, -3.49691e-06, 0, 40, 0, 3.49691e-06, 0, -40, 11.237, 1.99408, -4.43871)
@@ -1598,7 +1597,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_xxpr7")
 
 [node name="PhoneTimer" type="Timer" parent="Greybox/Phone"]
-wait_time = 10.0
+wait_time = 20.0
 
 [node name="PhoneAudio" type="AudioStreamPlayer3D" parent="Greybox/Phone"]
 stream = ExtResource("73_vp2fl")
@@ -1705,7 +1704,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.928965, 0.144259)
 shape = SubResource("CylinderShape3D_q3t87")
 
 [node name="PlantTimer" type="Timer" parent="Greybox/PlantShape"]
-wait_time = 35.0
+wait_time = 40.0
 
 [node name="PlantPop" type="AudioStreamPlayer2D" parent="Greybox/PlantShape"]
 stream = ExtResource("77_fej86")
@@ -1730,7 +1729,7 @@ shape = SubResource("ConvexPolygonShape3D_r1ii2")
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Greybox/TV"]
 
 [node name="TVTimer" type="Timer" parent="Greybox/TV"]
-wait_time = 20.0
+wait_time = 30.0
 
 [node name="Puddle" type="StaticBody3D" parent="Greybox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21454, 0, -4.24722)
@@ -1752,7 +1751,7 @@ shape = SubResource("ConvexPolygonShape3D_f5tp3")
 transform = Transform3D(1.93547, 0, 1.32455, 0, 2.3453, 0, -1.32455, 0, 1.93547, 0, -0.156665, 0)
 
 [node name="PuddleTimer" type="Timer" parent="Greybox/Puddle"]
-wait_time = 10.0
+wait_time = 15.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Greybox"]
 transform = Transform3D(26.2514, 0, 0, 0, 1, 0, 0, 0, 0.290416, 0.429694, 12.2505, 7.90474)
