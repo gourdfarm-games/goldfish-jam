@@ -1931,7 +1931,8 @@ offset_top = 9.0
 offset_right = 254.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("18_1dse5")
-text = "   Hold shift/right bumper to sprint"
+text = "   Hold shift/right bumper to sprint
+	   Press O/Left bumper to restart"
 
 [node name="Drop" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
