@@ -25,7 +25,6 @@ func _ready():
 		
 
 func update(new_dialogue: Dialogue) -> void:
-	print("signal")
 	%UI.hide()
 
 	%Icon.texture = new_dialogue.texture

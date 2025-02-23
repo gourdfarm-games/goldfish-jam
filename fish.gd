@@ -2,11 +2,11 @@ extends CharacterBody3D
 
 const MAX_HP = 100
 const SPEED = 8.0
-const HP_LOST_PER_SECOND = 2
+const HP_LOST_PER_SECOND = 1.5
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 const HUNGER_LOST_PER_HOUR = 15
-const ESCAPE_CHANCE = 3 # 1 in ESCAPE_CHANCE
+const ESCAPE_CHANCE = 4 # 1 in ESCAPE_CHANCE
 var current_hp = MAX_HP
 var hunger = 25
 var is_held = false
@@ -92,7 +92,6 @@ func attempt_escape():
 				region.enabled = true
 				fish_move()
 				lose_hp()
-				print(current_hp)
 				
 				# Rotate only once
 				if not has_rotated:

@@ -12,6 +12,7 @@ signal spam_call_done
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var phone_timer: Timer = $PhoneTimer
 @onready var caller_id: Label = $"../../PlaceholderHUD/ColorRect/CallerID"
+@onready var phone_audio: AudioStreamPlayer3D = $PhoneAudio
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _on_task(task, description):
 			friend_call_complete = false
 		elif phone_call == "spam_call":
 			spam_call_complete = false
+		phone_audio.play()
 		phone_timer.start()
 		await phone_timer.timeout
 		if friend_call_complete == false or spam_call_complete == false:
@@ -39,7 +41,6 @@ func _on_interacted(body: Variant) -> void:
 	if phone_call == "friend_call":
 		phone_timer.stop()
 		friend_call_complete = true
-		print("task complete")
 		new_text = task_label.text.replace(" | Phone ringing", "")
 		task_label.text = new_text
 		emit_signal("friend_call_done", task_label.text)
@@ -51,7 +52,6 @@ func _on_interacted(body: Variant) -> void:
 	elif phone_call == "spam_call":
 		phone_timer.stop()
 		spam_call_complete = true
-		print("task complete")
 		new_text = task_label.text.replace(" | Phone ringing", "")
 		task_label.text = new_text
 		emit_signal("spam_call_done", task_label.text)

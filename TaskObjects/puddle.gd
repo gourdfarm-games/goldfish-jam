@@ -38,7 +38,6 @@ func _on_interacted(body: Variant) -> void:
 			mop_complete = true
 			set_collision_layer_value(2, false)
 			mop_progress = 0
-			print("task complete")
 			new_text = task_label.text.replace(description_text, "")
 			task_label.text = new_text
 			emit_signal("mop_done", task_label.text)

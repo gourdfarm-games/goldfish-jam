@@ -16,6 +16,7 @@ signal water_done
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var plant_timer: Timer = $PlantTimer
 @onready var plants_to_water: Label = $"../../PlaceholderHUD/ColorRect/PlantsToWater"
+@onready var plant_pop: AudioStreamPlayer2D = $PlantPop
 
 func _ready() -> void:
 	$"../../TaskManager".connect("task_plant", Callable(self, "_on_task"))
@@ -47,10 +48,19 @@ func _on_interacted(body: Variant) -> void:
 		if watered_progress > 5:
 			water_complete = true
 			plants_arr.erase(self)
-			print(plants_arr)
 			plants_to_water.text = ("Plants to water: " + str(plants_watered) + "/" + amount_of_plants)
 			if plants_arr.is_empty() == true:
 				all_plants_done()
+			if plants_arr.size() < 1:
+				plant_pop.pitch_scale = 2
+				plant_pop.volume_db = 8
+				plant_pop.play()
+			else:
+				if plant_pop.pitch_scale != 1:
+					plant_pop.pitch_scale = 1
+				if plant_pop.volume_db != 0:
+					plant_pop.volume_db = 0
+				plant_pop.play()
 		else:
 			watered_progress += 1
 			
@@ -62,7 +72,6 @@ func all_plants_done():
 	water_complete = true
 	watered_progress = 0
 	can_start_watering = true
-	print("task complete")
 	new_text = task_label.text.replace(description_text, "")
 	task_label.text = new_text
 	emit_signal("water_done", task_label.text)
