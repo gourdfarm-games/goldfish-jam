@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=185 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://djx2y6fv6e45" path="res://Materials/counter.tscn" id="27_23b6l"]
 [ext_resource type="PackedScene" uid="uid://d0d2dsqqwhhw2" path="res://Asset Scenes/kitchentable.tscn" id="28_2jifd"]
 [ext_resource type="PackedScene" uid="uid://ipa4phh858p" path="res://Materials/plant_02.tscn" id="29_53hdq"]
+[ext_resource type="Script" path="res://oven.gd" id="29_kc6gu"]
 [ext_resource type="PackedScene" uid="uid://b4oxsrr7447ll" path="res://Materials/placemat.tscn" id="29_wrqvn"]
 [ext_resource type="PackedScene" uid="uid://bb46gof5qyf32" path="res://Materials/plant_01.tscn" id="30_fqrtl"]
 [ext_resource type="PackedScene" uid="uid://c834nihn57etc" path="res://Materials/floorlamp.tscn" id="31_n7j6n"]
@@ -225,7 +226,7 @@ size = Vector3(0.197998, 0.0544739, 0.252197)
 size = Vector3(3.52291, 5.88764, 1.27148)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k75d6"]
-size = Vector3(0.0941162, 0.119934, 0.0974274)
+size = Vector3(0.0941162, 0.172272, 0.0750141)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j4ecx"]
 size = Vector3(2.95686, 6.46008, 2.05481)
@@ -602,12 +603,13 @@ bus = &"Walking"
 [node name="Greybox" type="Node" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Greybox"]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_2v22i")
-enabled = false
 
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1886, 2.63, -4.35164)
 collision_layer = 2
+collision_mask = 0
 script = ExtResource("11_lt3v1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/Fish"]
@@ -931,11 +933,13 @@ shape = SubResource("BoxShape3D_74oyx")
 [node name="Bookshelf" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Bookshelves" instance=ExtResource("33_7fr23")]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 35, 0, -30, 0, -1.31134e-06, -4.54036, 0, -1.78679)
 
-[node name="Oven" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
+[node name="Oven" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" groups=["oven"]]
 transform = Transform3D(25.5351, 0, 0, 0, 25.5351, 0, 0, 0, 25.5351, -0.789866, -0.199236, 0.42742)
+collision_layer = 2
+script = ExtResource("29_kc6gu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000643732, 0.0639529, 0.000177862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482246, 0.0377841, 0.256994)
 shape = SubResource("BoxShape3D_k75d6")
 
 [node name="Oven" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" instance=ExtResource("35_7skyb")]
@@ -2060,6 +2064,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97237, 0.409882, -7.08756)
 [connection signal="screen_exited" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 [connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/InBowlTimer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
 [connection signal="navigation_finished" from="Greybox/NavigationRegion3D/Fish/NavigationAgent3D" to="Greybox/NavigationRegion3D/Fish" method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" method="_on_interacted"]

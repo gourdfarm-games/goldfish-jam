@@ -27,6 +27,7 @@ enabled=PackedStringArray()
 [global_group]
 
 dialogue=""
+oven=""
 
 [input]
 
