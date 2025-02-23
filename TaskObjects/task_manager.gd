@@ -44,7 +44,7 @@ func _ready() -> void:
 	task_delay_timer.start()
 
 func task_get_rng():
-	task_number = randi_range(4, 4)
+	task_number = randi_range(3, 3)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
@@ -77,7 +77,7 @@ func task_roll(task):
 		if can_call == true:
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
-				task_delay_timer.wait_time = 7
+				task_delay_timer.wait_time = 6
 				task_delay_timer.start()
 				task = "spam_call"
 				description = " | Spam call"
@@ -91,7 +91,7 @@ func task_roll(task):
 	# Spam E a certain amount of times
 	elif task == 3 and task != last_task: 
 		if plant_shape.can_start_watering == true:
-			task_delay_timer.wait_time = 15
+			task_delay_timer.wait_time = 13
 			task_delay_timer.start()
 			task = "water_plant"
 			description = " | You need to water your plants"
@@ -121,7 +121,7 @@ func task_roll(task):
 	# Wait a period of time
 	elif task == 5 and task != last_task: 
 		if tv.watch_tv_done == true:
-			task_delay_timer.wait_time = 12
+			task_delay_timer.wait_time = 10
 			task_delay_timer.start()
 			task = "watch_tv"
 			description = " | Your favorite show is on"
@@ -139,7 +139,7 @@ func task_roll(task):
 				task_delay_timer.wait_time = 5
 				task_delay_timer.start()
 				task = "muffin_eat"
-				description = " | Eat a muffin"
+				description = " | Find a muffin to eat"
 				task_label.text = text_track + description
 				text_track = task_label.text
 				emit_signal("task_muffin", task, description)
