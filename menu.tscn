@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5ca0xunrblw1"]
+[gd_scene load_steps=13 format=3 uid="uid://b5ca0xunrblw1"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_bmcdj"]
 [ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="2_0awpc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://play.gd" id="6_glp6h"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="8_644eo"]
 [ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/button.wav" id="9_dlcb8"]
+[ext_resource type="PackedScene" uid="uid://cnj2ximnrwytp" path="res://Character Assets/Murphy_Hand_Grab_Anim.fbx" id="9_iwdsr"]
 
 [sub_resource type="FontVariation" id="FontVariation_xcnva"]
 base_font = ExtResource("2_a4yjc")
@@ -120,6 +121,8 @@ text = "Exit"
 [node name="background_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_644eo")
 autoplay = true
+
+[node name="Murphy_Hand_Grab_Anim" parent="." instance=ExtResource("9_iwdsr")]
 
 [node name="button" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_dlcb8")
