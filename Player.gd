@@ -26,6 +26,7 @@ var is_moving
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var player_steps: AudioStreamPlayer3D = $PlayerSteps
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -76,6 +77,7 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 		velocity.y = velocity.y - (FALL_SPEED * delta)
 		
 	if Input.is_action_pressed("sprint"):
+		player_steps.pitch_scale = 1.8
 		speed = SPRINT_SPEED
 		camera.fov = lerp(camera.fov, SPRINT_FOV, FOV_CHANGE_SPEED * delta)
 	else:
@@ -91,10 +93,15 @@ func _physics_process(delta: float) -> void: #DEFAULT MOVEMENT
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 		is_moving = true
+		if player_steps.playing == false:
+			player_steps.pitch_scale = 1.3
+			player_steps.play()
+		
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
 		is_moving = false
+		player_steps.stop()
 		
 #Head Bob
 	t_bob += delta * velocity.length() * float(is_on_floor())

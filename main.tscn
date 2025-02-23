@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=186 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5no7njkn4g5e" path="res://Character Assets/Murphy_Hand_Default.fbx" id="5_10cqv"]
 [ext_resource type="Texture2D" uid="uid://j0wkwll323po" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_08.png" id="6_60578"]
 [ext_resource type="Material" uid="uid://dv477n3wbr7jb" path="res://Materials/carpet.tres" id="7_iwi4q"]
+[ext_resource type="AudioStream" uid="uid://cymx0reiou55o" path="res://Music/Sound effects/Walking Clip.wav" id="7_win2m"]
 [ext_resource type="PackedScene" uid="uid://bmujcn33g656w" path="res://murphy_fish.tscn" id="8_2ewl5"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="PackedScene" uid="uid://bntcjvrqaexjm" path="res://Materials/lightswitchon (1).fbx" id="8_mtovj"]
@@ -32,8 +33,10 @@
 [ext_resource type="PackedScene" uid="uid://djx2y6fv6e45" path="res://Materials/counter.tscn" id="27_23b6l"]
 [ext_resource type="PackedScene" uid="uid://d0d2dsqqwhhw2" path="res://Asset Scenes/kitchentable.tscn" id="28_2jifd"]
 [ext_resource type="PackedScene" uid="uid://ipa4phh858p" path="res://Materials/plant_02.tscn" id="29_53hdq"]
+[ext_resource type="Script" path="res://oven.gd" id="29_kc6gu"]
 [ext_resource type="PackedScene" uid="uid://b4oxsrr7447ll" path="res://Materials/placemat.tscn" id="29_wrqvn"]
 [ext_resource type="PackedScene" uid="uid://bb46gof5qyf32" path="res://Materials/plant_01.tscn" id="30_fqrtl"]
+[ext_resource type="Script" path="res://fridge.gd" id="31_2pcgr"]
 [ext_resource type="PackedScene" uid="uid://c834nihn57etc" path="res://Materials/floorlamp.tscn" id="31_n7j6n"]
 [ext_resource type="PackedScene" uid="uid://dev5rapdqc10i" path="res://Materials/soap.tscn" id="32_i3rsl"]
 [ext_resource type="PackedScene" uid="uid://c3ki0yd67rej" path="res://Materials/microwave.tscn" id="32_o8gc3"]
@@ -91,7 +94,7 @@
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="89_4fljq"]
 [ext_resource type="Texture2D" uid="uid://btqcob16k1i3l" path="res://Paintings-TV/IMG_2282.png" id="94_ofioq"]
-[ext_resource type="PackedScene" uid="uid://hc6no701f2s5" path="res://fire_particles.tscn" id="95_bicef"]
+[ext_resource type="PackedScene" path="res://fire_particles.tscn" id="95_bicef"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -224,7 +227,7 @@ size = Vector3(0.197998, 0.0544739, 0.252197)
 size = Vector3(3.52291, 5.88764, 1.27148)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k75d6"]
-size = Vector3(0.0941162, 0.119934, 0.0974274)
+size = Vector3(0.0941162, 0.172272, 0.0750141)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j4ecx"]
 size = Vector3(2.95686, 6.46008, 2.05481)
@@ -592,15 +595,21 @@ theme_override_fonts/font = ExtResource("18_1dse5")
 theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
 
+[node name="PlayerSteps" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(1.00644, 0, 0, 0, 1.00644, 0, 0, 0, 1.00644, 0, -0.549571, 0)
+stream = ExtResource("7_win2m")
+pitch_scale = 1.3
+bus = &"Walking"
+
 [node name="Greybox" type="Node" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Greybox"]
 navigation_mesh = SubResource("NavigationMesh_2v22i")
-enabled = false
 
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1886, 2.63, -4.35164)
 collision_layer = 2
+collision_mask = 0
 script = ExtResource("11_lt3v1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/Fish"]
@@ -924,24 +933,28 @@ shape = SubResource("BoxShape3D_74oyx")
 [node name="Bookshelf" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Bookshelves" instance=ExtResource("33_7fr23")]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 35, 0, -30, 0, -1.31134e-06, -4.54036, 0, -1.78679)
 
-[node name="Oven" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
+[node name="Oven" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" groups=["oven"]]
 transform = Transform3D(25.5351, 0, 0, 0, 25.5351, 0, 0, 0, 25.5351, -0.789866, -0.199236, 0.42742)
+collision_layer = 2
+script = ExtResource("29_kc6gu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000643732, 0.0639529, 0.000177862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482246, 0.0377841, 0.256994)
 shape = SubResource("BoxShape3D_k75d6")
 
 [node name="Oven" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" instance=ExtResource("35_7skyb")]
 transform = Transform3D(-3.24603e-08, 0, 0.850414, 0, 1, 0, -0.742606, 0, -3.71728e-08, 0.477573, 0, 0.262416)
 
-[node name="FRIDGE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
+[node name="FRIDGE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" groups=["fridge"]]
+collision_layer = 3
+script = ExtResource("31_2pcgr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82771, 2.73004, 7.09871)
 shape = SubResource("BoxShape3D_j4ecx")
 
 [node name="Fridge2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" instance=ExtResource("36_jgvof")]
-transform = Transform3D(-1.82833e-06, 0, 44.7741, 0, 37.6119, 0, -41.8272, 0, -1.95714e-06, 1.61081, -0.135868, 7.55563)
+transform = Transform3D(-1.08095e-06, 0, 44.7741, 0, 37.6119, 0, -24.7291, 0, -1.95714e-06, 1.61081, -0.135868, 7.08544)
 
 [node name="PLACEMAT" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, -0.0256774)
@@ -2053,6 +2066,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97237, 0.409882, -7.08756)
 [connection signal="screen_exited" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_exited"]
 [connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/InBowlTimer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
 [connection signal="navigation_finished" from="Greybox/NavigationRegion3D/Fish/NavigationAgent3D" to="Greybox/NavigationRegion3D/Fish" method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" method="_on_interacted"]
