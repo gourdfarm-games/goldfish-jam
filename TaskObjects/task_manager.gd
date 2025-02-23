@@ -43,6 +43,7 @@ func _ready() -> void:
 	task_delay_timer.wait_time = 10
 	task_delay_timer.start()
 	
+	
 func task_get_rng():
 	task_number = randi_range(1, 6)
 
@@ -69,6 +70,8 @@ func task_roll(task):
 				emit_signal("task_call", task, description)
 			else:
 				task = randi_range(1, 6)
+				task_delay_timer.wait_time = 0.1
+				task_delay_timer.start()
 		
 	# Spam calls
 	# Wait for dialogue to end to finish (can skip through?)
@@ -87,6 +90,8 @@ func task_roll(task):
 				emit_signal("task_call", task, description)
 			else:
 				task_get_rng()
+				task_delay_timer.wait_time = 0.1
+				task_delay_timer.start()
 	
 	# Water plant
 	# Spam E a certain amount of times
@@ -102,6 +107,8 @@ func task_roll(task):
 			emit_signal("task_plant", task, description)
 		else:
 			task_get_rng()
+			task_delay_timer.wait_time = 0.1
+			task_delay_timer.start()
 	
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
@@ -119,13 +126,15 @@ func task_roll(task):
 			emit_signal("task_mop", task, description)
 		else:
 			task_get_rng()
+			task_delay_timer.wait_time = 0.1
+			task_delay_timer.start()
 		
 	# Watch TV
 	# Wait a period of time
 	elif task == 5: 
 		if tv.watch_tv_done == true:
 			if task_delay_timer.wait_time > 0:
-				task_delay_timer.wait_time = 15
+				task_delay_timer.wait_time = 10
 				task_delay_timer.start()
 			task = "watch_tv"
 			description = " | Your favorite show is on"
@@ -134,6 +143,8 @@ func task_roll(task):
 			emit_signal("task_tv", task, description)
 		else:
 			task_get_rng()
+			task_delay_timer.wait_time = 0.1
+			task_delay_timer.start()
 	
 	# Make your own food
 	# Get all ingredients
@@ -150,8 +161,12 @@ func task_roll(task):
 				emit_signal("task_muffin", task, description)
 			else:
 				task_get_rng()
+				task_delay_timer.wait_time = 0.1
+				task_delay_timer.start()
 	else:
 		task_get_rng()
+		task_delay_timer.wait_time = 0.1
+		task_delay_timer.start()
 
 func _on_spam_call_done(new_text):
 	text_track = new_text

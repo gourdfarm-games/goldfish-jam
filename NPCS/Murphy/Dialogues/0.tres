@@ -8,6 +8,6 @@
 script = ExtResource("1_qc1a1")
 texture = ExtResource("3_r27ro")
 name = "Murphy "
-dialogue = "Looks like you gotta pet-sit me till your friend comes back, pffft- how bad could it be? - Oh uh... I meant to say \"blub blub\" hehe..."
+dialogue = "Looks like you gotta pet-sit me till your friend comes back at 5, pffft- how bad could it be? - Oh uh... I meant to say \"blub blub\" hehe..."
 path_option = ""
 options = Array[ExtResource("1_qc1a1")]([ExtResource("2_0g3cn")])
