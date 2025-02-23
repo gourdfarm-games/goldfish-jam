@@ -1,5 +1,7 @@
 extends Control
 
+
+
 const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
 
 var dialogue : Dialogue:
@@ -15,10 +17,12 @@ var dialogue : Dialogue:
 		await get_tree().create_timer(0.5).timeout
 		%Options.show()
 		
+		
 #TESTIN
 func _ready():
 	if dialogue == null:
 		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
+		
 
 func update(new_dialogue: Dialogue) -> void:
 	print("signal")
