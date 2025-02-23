@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=188 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cdu5ckwqxrfdu" path="res://Materials/food.tscn" id="13_vn7xv"]
 [ext_resource type="PackedScene" uid="uid://506kyjjwsruc" path="res://NPCS/Murphy/Dialogues/dialoguemanager.tscn" id="13_ywthu"]
 [ext_resource type="Script" path="res://TaskObjects/TV.gd" id="14_5wsaj"]
+[ext_resource type="PackedScene" uid="uid://bsydg1cejfep" path="res://Character Assets/Imported Assets/murphy_fish_idle.tscn" id="14_nt04c"]
 [ext_resource type="Script" path="res://TaskObjects/task_manager.gd" id="15_b8hnn"]
 [ext_resource type="Script" path="res://TaskObjects/plants/plant_4.gd" id="16_nexj3"]
 [ext_resource type="PackedScene" uid="uid://cd6vvesxhqluf" path="res://water_puddle_(1).tscn" id="17_7rlpn"]
@@ -639,10 +640,14 @@ mesh = SubResource("BoxMesh_s3wbl")
 
 [node name="Murphy_Fish_JUMP" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("10_ee0vf")]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/Fish"]
 transform = Transform3D(0.511883, 0, 0, 0, 0.713616, 0, 0, 0, 1.04911, 0, 0.117605, -0.132095)
 shape = SubResource("ConvexPolygonShape3D_677al")
+
+[node name="Murphy_Fish_IDLE" parent="Greybox/NavigationRegion3D/Fish" instance=ExtResource("14_nt04c")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0, 0)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(0.629016, 0, 0, 0, 2.74349, 0, 0, 0, 3.84189, -2.18564, 2.88044, 4.35872)
@@ -938,7 +943,7 @@ shape = SubResource("BoxShape3D_74oyx")
 [node name="Bookshelf" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Bookshelves" instance=ExtResource("33_7fr23")]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 35, 0, -30, 0, -1.31134e-06, -4.54036, 0, -1.78679)
 
-[node name="Oven" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" groups=["oven"]]
+[node name="Oven" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" groups=["murphy", "oven"]]
 transform = Transform3D(25.5351, 0, 0, 0, 25.5351, 0, 0, 0, 25.5351, -0.789866, -0.199236, 0.42742)
 collision_layer = 2
 script = ExtResource("29_kc6gu")
@@ -1561,7 +1566,7 @@ shape = SubResource("BoxShape3D_tukhf")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.6128, 0, -7.64972)
 
 [node name="FishBowl" type="StaticBody3D" parent="Greybox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5377, 2.53065, -4.35808)
+transform = Transform3D(1.93713, 0, 0, 0, 1.76528, 0, 0, 0, 1.96552, 13.1963, 2.53065, -4.39303)
 visible = false
 disable_mode = 1
 collision_layer = 2

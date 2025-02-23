@@ -6,7 +6,7 @@ const HP_LOST_PER_SECOND = 1.5
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 const HUNGER_LOST_PER_HOUR = 15
-const ESCAPE_CHANCE = 1 # 1 in ESCAPE_CHANCE
+const ESCAPE_CHANCE = 100
 var current_hp = MAX_HP
 var hunger = 25
 var is_held = false
@@ -29,6 +29,7 @@ signal destory_food
 @onready var hunger_label: Label = $"../../../PlaceholderHUD/ColorRect/Hunger"
 @onready var game_over_label: Label = $"../../../PlaceholderHUD/ColorRect/GameOver"
 @onready var hunger_bar: ProgressBar = $"../../../PlaceholderHUD/ColorRect/HungerBar"
+@onready var interact_ray: RayCast3D = $"../../../Player/Head/Camera3D/InteractRay"
 
 func _ready() -> void:
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
@@ -51,7 +52,7 @@ func hold_fish():
 	get_tree().call_group("hand", "pickup")
 	emit_signal("holding")
 	prompt_message = ""
-	visible = false
+	
 	
 func _on_interacted(body: Variant) -> void:
 	if has_food == true and in_bowl == true:
@@ -69,6 +70,9 @@ func _on_bowl_place():
 	region.enabled = false
 	position = Vector3(11.189, 2.63, -4.352)
 	rotation = Vector3(0, 0, 0)
+	$Murphy_Fish_IDLE.visible = true
+	#get_tree().call_group("murphy", "play_idle")
+	$Murphy_Fish_JUMP.visible = false
 	
 
 	
@@ -89,18 +93,22 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 func attempt_escape():
 	if in_bowl == true:
 		if on_screen == false:
-			escape_roll = randi_range(1, ESCAPE_CHANCE)
-			if escape_roll == 1:
+			escape_roll = randi_range(81, ESCAPE_CHANCE)
+			if escape_roll < 30:
 				in_bowl = false
 				region.enabled = true
 				fish_move()
 				lose_hp()
+				$Murphy_Fish_JUMP.visible = true
 				
 				# Rotate only once
 				if not has_rotated:
 					rotate_fish()
 					has_rotated = true
 					
+			elif escape_roll > 80:
+				random_position()
+			
 			else:
 				timer.start(TIME_TO_ESCAPE)
 		else:
@@ -111,6 +119,17 @@ func attempt_escape():
 		current_hp -= HP_LOST_PER_SECOND
 		lose_hp()
 		
+func random_position():
+	var random = randi_range(2, 2)
+	# Oven
+	if random == 1:
+		position = Vector3(11.189, 1.823, 7.057)
+		rotation = Vector3(0, -90, 0)
+		get_tree().call_group("oven", "in_oven")
+	if random == 2:
+		position = Vector3(2.1, 2.273, 6.854)
+		rotation = Vector3(0, -90, 0)
+		get_tree().call_group("fridge", "in_fridge")
 
 func _on_timer_timeout() -> void:
 	attempt_escape()
@@ -131,8 +150,10 @@ func _physics_process(delta: float) -> void:
 	
 func update_forward(new_forward: Vector3) -> void:
 	var target_position = global_transform.origin - new_forward
-	look_at(target_position, Vector3.UP)
-
+	if target_position == global_transform.origin:
+		return
+	else:
+		look_at(target_position, Vector3.UP)
 		
 func fish_move():
 	var random_position := Vector3.ZERO
