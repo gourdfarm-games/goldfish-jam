@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=186 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" path="res://oven.gd" id="29_kc6gu"]
 [ext_resource type="PackedScene" uid="uid://b4oxsrr7447ll" path="res://Materials/placemat.tscn" id="29_wrqvn"]
 [ext_resource type="PackedScene" uid="uid://bb46gof5qyf32" path="res://Materials/plant_01.tscn" id="30_fqrtl"]
+[ext_resource type="Script" path="res://fridge.gd" id="31_2pcgr"]
 [ext_resource type="PackedScene" uid="uid://c834nihn57etc" path="res://Materials/floorlamp.tscn" id="31_n7j6n"]
 [ext_resource type="PackedScene" uid="uid://dev5rapdqc10i" path="res://Materials/soap.tscn" id="32_i3rsl"]
 [ext_resource type="PackedScene" uid="uid://c3ki0yd67rej" path="res://Materials/microwave.tscn" id="32_o8gc3"]
@@ -603,7 +604,6 @@ bus = &"Walking"
 [node name="Greybox" type="Node" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Greybox"]
-visible = false
 navigation_mesh = SubResource("NavigationMesh_2v22i")
 
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
@@ -945,14 +945,16 @@ shape = SubResource("BoxShape3D_k75d6")
 [node name="Oven" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" instance=ExtResource("35_7skyb")]
 transform = Transform3D(-3.24603e-08, 0, 0.850414, 0, 1, 0, -0.742606, 0, -3.71728e-08, 0.477573, 0, 0.262416)
 
-[node name="FRIDGE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
+[node name="FRIDGE" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" groups=["fridge"]]
+collision_layer = 3
+script = ExtResource("31_2pcgr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82771, 2.73004, 7.09871)
 shape = SubResource("BoxShape3D_j4ecx")
 
 [node name="Fridge2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" instance=ExtResource("36_jgvof")]
-transform = Transform3D(-1.82833e-06, 0, 44.7741, 0, 37.6119, 0, -41.8272, 0, -1.95714e-06, 1.61081, -0.135868, 7.55563)
+transform = Transform3D(-1.08095e-06, 0, 44.7741, 0, 37.6119, 0, -24.7291, 0, -1.95714e-06, 1.61081, -0.135868, 7.08544)
 
 [node name="PLACEMAT" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, -0.0256774)
@@ -2065,6 +2067,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97237, 0.409882, -7.08756)
 [connection signal="timeout" from="Greybox/NavigationRegion3D/Fish/InBowlTimer" to="Greybox/NavigationRegion3D/Fish" method="_on_timer_timeout"]
 [connection signal="navigation_finished" from="Greybox/NavigationRegion3D/Fish/NavigationAgent3D" to="Greybox/NavigationRegion3D/Fish" method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Oven" method="_on_interacted"]
+[connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRIDGE" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN5" method="_on_interacted"]
 [connection signal="interacted" from="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" to="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager/MUFFIN2" method="_on_interacted"]
