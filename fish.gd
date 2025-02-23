@@ -6,7 +6,7 @@ const HP_LOST_PER_SECOND = 1.5
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 const HUNGER_LOST_PER_HOUR = 15
-const ESCAPE_CHANCE = 4 # 1 in ESCAPE_CHANCE
+const ESCAPE_CHANCE = 1 # 1 in ESCAPE_CHANCE
 var current_hp = MAX_HP
 var hunger = 25
 var is_held = false
@@ -36,7 +36,6 @@ func _ready() -> void:
 	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
 	$"../../Food2".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
 	hunger_bar.value = hunger
-	#hunger_label.text = "Murphy's Hunger: " + str(hunger)
 
 func interact(body):
 	interacted.emit(body)
@@ -46,7 +45,6 @@ func feed_fish():
 	hunger = MAX_HUNGER
 	hunger_bar.value = hunger
 	emit_signal("destory_food")
-	#hunger_label.text = "Murphy's Hunger: " + str(hunger)
 	
 func hold_fish():
 	is_held = true
@@ -67,7 +65,8 @@ func _on_bowl_place():
 	prompt_message = "·   E"
 	velocity = Vector3(0, 0, 0)
 	region.enabled = false
-	position = Vector3(11.9, 2.63, -4.86)
+	position = Vector3(11.189, 2.63, -4.352)
+	rotation = Vector3(0, 0, 0)
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
@@ -117,9 +116,19 @@ func _physics_process(delta: float) -> void:
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
+	var drop_offset
+	#if new_velocity.y > velocity.y:
+		#get_tree().call_group("murphy", "jump_anim")
 	
-	velocity = velocity.move_toward(new_velocity, .25)
+	velocity = new_velocity
+	#velocity = velocity.move_toward(new_velocity, .25)
 	move_and_slide()
+	update_forward(velocity)
+	
+func update_forward(new_forward: Vector3) -> void:
+	var target_position = global_transform.origin - new_forward
+	look_at(target_position, Vector3.UP)
+
 		
 func fish_move():
 	var random_position := Vector3.ZERO
@@ -132,7 +141,8 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 	fish_move()
 
 func rotate_fish():
-	$Murphy_Fish2.rotation_degrees.z += 90
+	pass
+	#$Murphy_Fish_JUMP.rotation_degrees.z += 90
 
 
 
