@@ -14,7 +14,7 @@ func _ready() -> void:
 	fish.connect("destory_food", Callable(self, "_on_destory_food"))
 
 func _on_interacted(body: Variant) -> void:
-	drop_label.text = "Q to Drop Food"
+	drop_label.text = "Q/B to Drop Food"
 	visible = false
 	set_collision_layer_value(2, false)
 	in_hand = true
