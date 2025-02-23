@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://qjnae8y1sb34"]
+
+[ext_resource type="AudioStream" uid="uid://cpmvuutw5k5wi" path="res://Music/Sound effects/collision_first.wav" id="1_4egm7"]
+
+[node name="CrashSound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_4egm7")
+volume_db = -20.0

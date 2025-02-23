@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=183 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ki0yd67rej" path="res://Materials/microwave.tscn" id="32_o8gc3"]
 [ext_resource type="PackedScene" uid="uid://bxadxh4auanxg" path="res://Materials/bookshelf.tscn" id="33_7fr23"]
 [ext_resource type="PackedScene" uid="uid://cvlwuqodi4c6e" path="res://Materials/kitchensink.tscn" id="34_1ywq6"]
+[ext_resource type="Script" path="res://crash.gd" id="34_ppmqf"]
 [ext_resource type="PackedScene" uid="uid://bnkeh8dltvovg" path="res://Materials/newoven.tscn" id="35_7skyb"]
 [ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_002.jpg" id="35_57e4h"]
 [ext_resource type="PackedScene" uid="uid://cf55wliwqq7a8" path="res://Materials/newfridge.tscn" id="36_jgvof"]
@@ -91,6 +92,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7x1lttj2oql" path="res://Materials/hanginglight_01.tscn" id="83_mdxj1"]
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="89_4fljq"]
+[ext_resource type="AudioStream" uid="uid://cxl2yxlr4v1lc" path="res://Music/Sound effects/174631__altfuture__smalljunkdroppedwav.wav" id="92_tvpo8"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -596,7 +598,6 @@ enabled = false
 [node name="Fish" type="CharacterBody3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1886, 2.63, -4.35164)
 collision_layer = 2
-collision_mask = 0
 script = ExtResource("11_lt3v1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/Fish"]
@@ -828,6 +829,7 @@ shape = SubResource("BoxShape3D_jf0uf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.826554, 0.697162, -3.86429)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="floorlamp" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/LAMP" instance=ExtResource("31_n7j6n")]
 transform = Transform3D(-3, 0, 4.52987e-07, 0, 3, 0, -4.52987e-07, 0, -3, -0.260015, -0.737361, -0.00958204)
@@ -844,6 +846,7 @@ shape = SubResource("SphereShape3D_l7787")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.826554, 0.697162, -9.36794)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/SMALL TABLE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333287, -0.186179, -0.365779)
@@ -856,6 +859,7 @@ transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, -0.796132, -0.692644, -0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6114, 6.92456, -3.49803)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="plant02" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/PLANT02" instance=ExtResource("29_53hdq")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.14893, 0, 0.457709)
@@ -868,6 +872,7 @@ shape = SubResource("CylinderShape3D_q3t87")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60433, 2.26946, 7.58978)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="soap" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/SOAP" instance=ExtResource("32_i3rsl")]
 transform = Transform3D(-4.98904, 0, 0.330934, 0, 5, 0, -0.330934, 0, -4.98904, 0.087245, -0.174699, -0.077497)
@@ -890,6 +895,7 @@ shape = SubResource("BoxShape3D_yal0o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.93079, 1.67243, -5.23174)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="pCube11" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BOOK"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -2.09676, 1.30524, -3.80295)
@@ -905,6 +911,7 @@ shape = SubResource("BoxShape3D_yk86m")
 transform = Transform3D(0.819902, 0, -0.572504, 0, 1, 0, 0.572504, 0, 0.819902, -7.69061, 1.62012, -3.64998)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="pCube11" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BOOK4"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -2.09676, 1.30524, -3.80295)
@@ -920,6 +927,7 @@ shape = SubResource("BoxShape3D_yk86m")
 transform = Transform3D(0.819902, 0, -0.572504, 0, 1, 0, 0.572504, 0, 0.819902, -9.19395, 7.61089, 2.56896)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="pCube11" type="MeshInstance3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BOOK5"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -2.09676, 1.30524, -3.80295)
@@ -963,6 +971,7 @@ transform = Transform3D(-1.82833e-06, 0, 44.7741, 0, 37.6119, 0, -41.8272, 0, -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, -0.0256774)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/PLACEMAT"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
@@ -975,6 +984,7 @@ transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73332, 1.60139, -0.0256774)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/PLACEMAT3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
@@ -987,6 +997,7 @@ transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73332, 1.60139, 1.89485)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/PLACEMAT4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
@@ -999,6 +1010,7 @@ transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55461, 1.60139, 1.92129)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/PLACEMAT2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0175781, 0.0486867, 0.060791)
@@ -1011,6 +1023,7 @@ transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, -0.0164328, 0.0468974, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64479, 0, -0.0364794)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="kitchenchair" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENCHAIR" instance=ExtResource("38_nslm4")]
 transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 0.471303, 0.0245551, 0)
@@ -1027,6 +1040,7 @@ shape = SubResource("BoxShape3D_boucb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.55386, 0, -0.0364794)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="kitchenchair" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENCHAIR2" instance=ExtResource("38_nslm4")]
 transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 0.471303, 0.0245551, 0)
@@ -1043,6 +1057,7 @@ shape = SubResource("BoxShape3D_boucb")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.55386, 0, 1.98412)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="kitchenchair" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENCHAIR3" instance=ExtResource("38_nslm4")]
 transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 0.471303, 0.0245551, 0)
@@ -1059,6 +1074,7 @@ shape = SubResource("BoxShape3D_boucb")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.73273, 0, 1.98412)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="kitchenchair" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENCHAIR4" instance=ExtResource("38_nslm4")]
 transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 0.471303, 0.0245551, 0)
@@ -1075,6 +1091,7 @@ shape = SubResource("BoxShape3D_boucb")
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 5.38538, 0, 1.06836)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="kitchenchair" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENCHAIR5" instance=ExtResource("38_nslm4")]
 transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 0.471303, 0.0245551, 0)
@@ -1091,6 +1108,7 @@ shape = SubResource("BoxShape3D_boucb")
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 8.74315, 0, 1.06836)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="kitchenchair" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/KITCHENCHAIR6" instance=ExtResource("38_nslm4")]
 transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 0.471303, 0.0245551, 0)
@@ -1105,6 +1123,7 @@ shape = SubResource("BoxShape3D_boucb")
 
 [node name="FRUITBOWL" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04738, 1.69185, 0.902797)
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/FRUITBOWL"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445771, 0.271309, 0)
@@ -1117,6 +1136,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0445771, 0, 0)
 transform = Transform3D(0.131011, 0, 0.991381, 0, 1, 0, -0.991381, 0, 0.131011, 9.81206, 1.73649, 7.20018)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/JARS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0954523, 0.727574, -0.178336)
@@ -1129,6 +1149,7 @@ transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -0.356
 transform = Transform3D(0.131011, 0, 0.991381, 0, 1, 0, -0.991381, 0, 0.131011, -1.05201, 1.71388, 5.56632)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/JARS2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0954523, 0.727574, -0.178336)
@@ -1141,6 +1162,7 @@ transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -0.356
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13251, 2.10762, 8.21071)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/DISHRACK"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.417322, 0.346313, -1.08722)
@@ -1156,6 +1178,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0293, 0)
 transform = Transform3D(0.9262, 0, -0.377033, 0, 1, 0, 0.377033, 0, 0.9262, -4.49117, 7.17564, -2.01348)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="beanbag1" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BEANBAGS" instance=ExtResource("43_alj3g")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.184677, -0.151306, 0.218522)
@@ -1168,6 +1191,7 @@ shape = SubResource("CylinderShape3D_e7kv6")
 transform = Transform3D(0.0315678, 0, -0.999502, 0, 1, 0, 0.999502, 0, 0.0315678, -4.39343, 7.17564, 1.92416)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="beanbag1" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BEANBAGS2" instance=ExtResource("43_alj3g")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.184677, -0.151306, 0.218522)
@@ -1257,6 +1281,7 @@ transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 transform = Transform3D(0.8653, 0, -0.501254, 0, 1, 0, 0.501254, 0, 0.8653, 5.04595, 5.31988, 7.60208)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/LOAF"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263489, 0.271729, -0.1745)
@@ -1272,6 +1297,7 @@ surface_material_override/0 = ExtResource("50_fsd3a")
 transform = Transform3D(0.8653, 0, -0.501254, 0, 1, 0, 0.501254, 0, 0.8653, 4.41682, 5.31988, 7.60208)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/LOAF2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263489, 0.271729, -0.1745)
@@ -1330,6 +1356,7 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8154, 5.53139, 7.32593)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BUN"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -1345,6 +1372,7 @@ surface_material_override/0 = ExtResource("52_etogu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.822038, 2.30616, 2.18833)
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("34_ppmqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/BUN2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -2023,10 +2051,13 @@ omni_range = 0.9
 [node name="Node3D" parent="." instance=ExtResource("87_h2ujb")]
 transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0999891, 11.2639, 2.0587, -4.41492)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("89_4fljq")
 autoplay = true
 bus = &"Music"
+
+[node name="Crash" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("92_tvpo8")
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
