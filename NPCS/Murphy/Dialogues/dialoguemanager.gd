@@ -68,10 +68,6 @@ func _input(event):
 	if Input.is_action_pressed("hide_dialogue"):
 		%UI.hide()
 		
-	if event is InputEventKey and event.pressed and Input.is_action_pressed("test"):
-		cycle_focus()
-		
-		
 func cycle_focus():
 	var options = %Options.get_children()
 	var current_index = 0

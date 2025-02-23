@@ -32,10 +32,6 @@ func _on_task(task, description):
 	if watch_tv_done == false:
 		game_over.text = ("You missed you favorite show")
 		get_tree().paused = true
-	
-	while true:
-		await get_tree().create_timer(0.5).timeout
-		print(tv_timer.time_left)
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
