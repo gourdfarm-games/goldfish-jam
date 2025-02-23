@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkry176gbikuy"]
+
+[ext_resource type="PackedScene" uid="uid://du3dkdm4dhqxa" path="res://Character Assets/New Assets/Animation/Murphy_Fish_JUMP.fbx" id="1_afi4n"]
+[ext_resource type="Script" path="res://Character Assets/Imported Assets/murphy_fish_jump.gd" id="2_dfjfd"]
+[ext_resource type="Texture2D" uid="uid://dpwtovd7l2j6d" path="res://Character Assets/New Assets/Murphy_Fish_NEW_MURPHY_NOW_lambert2SG2_BaseColor.png" id="3_4ws13"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hwym"]
+albedo_texture = ExtResource("3_4ws13")
+
+[node name="Murphy_Fish_JUMP" groups=["murphy"] instance=ExtResource("1_afi4n")]
+script = ExtResource("2_dfjfd")
+
+[node name="Skeleton3D" parent="Fish_Jump" index="0"]
+bones/4/rotation = Quaternion(0.888151, 0.0722662, 0.149824, 0.428391)
+bones/7/rotation = Quaternion(-0.030275, 0.918111, -0.342365, -0.197338)
+bones/8/rotation = Quaternion(-0.0646239, 0.912656, -0.295913, 0.274443)
+
+[node name="Murphy_JUMP" parent="Fish_Jump/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1hwym")

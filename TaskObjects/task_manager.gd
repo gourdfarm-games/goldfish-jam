@@ -40,11 +40,11 @@ func _ready() -> void:
 	
 	task_label.text = "Tasks"
 	text_track = task_label.text
-	task_delay_timer.wait_time = 1
+	task_delay_timer.wait_time = 10
 	task_delay_timer.start()
-
+	
 func task_get_rng():
-	task_number = randi_range(3, 3)
+	task_number = randi_range(1, 6)
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
@@ -52,19 +52,19 @@ func _on_timer_timeout() -> void:
 		
 func task_roll(task):
 	var description
-	var last_task
 	# Friend calls
 	# Wait for dialogue to end to finish (cant skip through)
-	if task == 1 and task != last_task:
+	if task == 1:
 		# Phone only rings if no other calls are happening
 		if can_call == true:
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
-				task_delay_timer.wait_time = 7
-				task_delay_timer.start()
+				if task_delay_timer.wait_time > 0:
+					task_delay_timer.wait_time = 8
+					task_delay_timer.start()
 				task = "friend_call"
 				description = " | Friend is calling"
-				task_label.text = text_track + " | Phone ringing"
+				task_label.text = text_track + " | Answer the phone"
 				text_track = task_label.text
 				emit_signal("task_call", task, description)
 			else:
@@ -72,16 +72,17 @@ func task_roll(task):
 		
 	# Spam calls
 	# Wait for dialogue to end to finish (can skip through?)
-	elif task == 2 and task != last_task:
+	elif task == 2:
 		# Phone only rings if no other calls are happening
 		if can_call == true:
 			if phone.friend_call_complete == true and phone.spam_call_complete == true:
 				can_call = false
-				task_delay_timer.wait_time = 6
-				task_delay_timer.start()
+				if task_delay_timer.wait_time > 0:
+					task_delay_timer.wait_time = 8
+					task_delay_timer.start()
 				task = "spam_call"
 				description = " | Spam call"
-				task_label.text = text_track + " | Phone ringing"
+				task_label.text = text_track + " | Answer the phone"
 				text_track = task_label.text
 				emit_signal("task_call", task, description)
 			else:
@@ -89,10 +90,11 @@ func task_roll(task):
 	
 	# Water plant
 	# Spam E a certain amount of times
-	elif task == 3 and task != last_task: 
+	elif task == 3: 
 		if plant_shape.can_start_watering == true:
-			task_delay_timer.wait_time = 13
-			task_delay_timer.start()
+			if task_delay_timer.wait_time > 0:
+				task_delay_timer.wait_time = 15
+				task_delay_timer.start()
 			task = "water_plant"
 			description = " | You need to water your plants"
 			task_label.text = text_track + description
@@ -103,10 +105,11 @@ func task_roll(task):
 	
 	# Mop the floor (if fish has been out enough)
 	# Pick up mop and clean up water areas
-	elif task == 4 and time_of_day.current_hour > 12 and task != last_task: 
+	elif task == 4 and time_of_day.current_hour > 12: 
 		if puddle.mop_complete == true:
-			task_delay_timer.wait_time = 5
-			task_delay_timer.start()
+			if task_delay_timer.wait_time > 0:
+				task_delay_timer.wait_time = 5
+				task_delay_timer.start()
 			puddle.visible = true
 			puddle_collision.disabled = false
 			task = "mop_floor"
@@ -119,10 +122,11 @@ func task_roll(task):
 		
 	# Watch TV
 	# Wait a period of time
-	elif task == 5 and task != last_task: 
+	elif task == 5: 
 		if tv.watch_tv_done == true:
-			task_delay_timer.wait_time = 10
-			task_delay_timer.start()
+			if task_delay_timer.wait_time > 0:
+				task_delay_timer.wait_time = 15
+				task_delay_timer.start()
 			task = "watch_tv"
 			description = " | Your favorite show is on"
 			task_label.text = text_track + description
@@ -133,11 +137,12 @@ func task_roll(task):
 	
 	# Make your own food
 	# Get all ingredients
-	elif task == 6 and task != last_task:
+	elif task == 6:
 		if can_eat_muffin == true:
 			if muffin.muffin_complete == true:
-				task_delay_timer.wait_time = 5
-				task_delay_timer.start()
+				if task_delay_timer.wait_time > 0:
+					task_delay_timer.wait_time = 11
+					task_delay_timer.start()
 				task = "muffin_eat"
 				description = " | Find a muffin to eat"
 				task_label.text = text_track + description
@@ -147,7 +152,6 @@ func task_roll(task):
 				task_get_rng()
 	else:
 		task_get_rng()
-	last_task = task
 
 func _on_spam_call_done(new_text):
 	text_track = new_text

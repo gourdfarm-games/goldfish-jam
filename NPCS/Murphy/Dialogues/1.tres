@@ -8,6 +8,6 @@
 script = ExtResource("1_v1rh1")
 texture = ExtResource("3_jdrup")
 name = "Murphy"
-dialogue = "Anything that can go wrong will go wrong :)"
+dialogue = "Nothing can go wrong... as long as you keep your eye on me  :)"
 path_option = "umm...ok"
 options = Array[ExtResource("1_v1rh1")]([ExtResource("2_6i2nc")])

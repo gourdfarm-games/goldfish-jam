@@ -3,6 +3,7 @@ extends Node3D
 @onready var pause_menu = $pausemenu
 var paused = false
 
+
 func _process(delta):
 	if Input.is_action_just_pressed("return-to-menu"):
 		pauseMenu()

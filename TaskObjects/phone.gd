@@ -30,7 +30,7 @@ func _on_task(task, description):
 		phone_timer.start()
 		await phone_timer.timeout
 		if friend_call_complete == false or spam_call_complete == false:
-			game_over.text = ("call failed")
+			game_over.text = ("You didn't answer your friend and he's on his way")
 			get_tree().paused = true
 	
 	
@@ -41,7 +41,7 @@ func _on_interacted(body: Variant) -> void:
 	if phone_call == "friend_call":
 		phone_timer.stop()
 		friend_call_complete = true
-		new_text = task_label.text.replace(" | Phone ringing", "")
+		new_text = task_label.text.replace(" | Answer the phone", "")
 		task_label.text = new_text
 		emit_signal("friend_call_done", task_label.text)
 		caller_id.text = "it was your friend checking on his fish"
@@ -52,7 +52,7 @@ func _on_interacted(body: Variant) -> void:
 	elif phone_call == "spam_call":
 		phone_timer.stop()
 		spam_call_complete = true
-		new_text = task_label.text.replace(" | Phone ringing", "")
+		new_text = task_label.text.replace(" | Answer the phone", "")
 		task_label.text = new_text
 		emit_signal("spam_call_done", task_label.text)
 		caller_id.text = "it was a spam call"

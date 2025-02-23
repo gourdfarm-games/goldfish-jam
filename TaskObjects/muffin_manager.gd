@@ -35,7 +35,7 @@ func _on_task(task, description):
 		muffin_timer.start()
 		await muffin_timer.timeout
 		if muffin_complete == false:
-			game_over.text = ("muffin failed")
+			game_over.text = ("You passed out from starvation")
 			get_tree().paused = true
 		
 func clear_text():

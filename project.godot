@@ -29,6 +29,8 @@ enabled=PackedStringArray()
 dialogue=""
 oven=""
 fridge=""
+murphy=""
+hand=""
 
 [input]
 

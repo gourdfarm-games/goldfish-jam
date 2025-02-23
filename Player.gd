@@ -27,6 +27,8 @@ var is_moving
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var player_steps: AudioStreamPlayer3D = $PlayerSteps
+@onready var fish: CharacterBody3D = $"../Greybox/NavigationRegion3D/Fish"
+@onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
