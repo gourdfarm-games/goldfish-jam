@@ -79,7 +79,7 @@
 [ext_resource type="PackedScene" uid="uid://bwwfeuhbh4lbu" path="res://picture_5.tscn" id="65_3uhwv"]
 [ext_resource type="PackedScene" uid="uid://brc0vf1s2t13v" path="res://picture_6.tscn" id="66_17j3o"]
 [ext_resource type="AudioStream" uid="uid://ctoh7h6rb54sm" path="res://Music/Sound effects/556499__cookiespolicy__rotaryphoneringloopablewav.wav" id="73_vp2fl"]
-[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/527522__narjara__ppop_1wav.wav" id="77_fej86"]
+[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/button.wav" id="77_fej86"]
 [ext_resource type="PackedScene" uid="uid://cdyas0wcw1y5v" path="res://Materials/window_01.tscn" id="78_bxkhy"]
 [ext_resource type="Script" path="res://color_rect.gd" id="79_a2l3r"]
 [ext_resource type="PackedScene" uid="uid://drg6fimmrf1wr" path="res://Materials/window_02.tscn" id="79_mwrrr"]
