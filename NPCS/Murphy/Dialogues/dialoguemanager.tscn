@@ -90,12 +90,12 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="UI/Panel"]
 layout_mode = 2
-offset_left = 667.0
-offset_top = 137.0
-offset_right = 777.0
-offset_bottom = 174.0
+offset_left = 692.0
+offset_top = 132.0
+offset_right = 802.0
+offset_bottom = 169.0
 theme_override_fonts/font = ExtResource("1_k7k4n")
-text = "PRESS ENTER/X"
+text = "PRESS F/X"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/Panel"]
 layout_mode = 2

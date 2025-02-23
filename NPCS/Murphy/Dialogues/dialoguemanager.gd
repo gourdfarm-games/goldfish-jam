@@ -23,6 +23,8 @@ func _ready():
 	if dialogue == null:
 		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
 		
+		call_deferred("cycle_focus")
+		
 
 func update(new_dialogue: Dialogue) -> void:
 	%UI.hide()
@@ -36,6 +38,8 @@ func update(new_dialogue: Dialogue) -> void:
 	await get_tree().create_timer(0.5).timeout
 	%Options.show()
 	%UI.show()
+	
+	call_deferred("cycle_focus")
 
 #HIDE OPTIONS
 func reset_options():
@@ -49,6 +53,7 @@ func add_buttons(options):
 	for option in options:
 		var button = next_button.instantiate()
 		button.dialogue = option
+		button.focus_mode = Control.FOCUS_ALL
 		%Options.add_child(button)
 
 #SHOW & HIDE DIALOGUE
@@ -62,3 +67,17 @@ func show_dialogue():
 func _input(event):
 	if Input.is_action_pressed("hide_dialogue"):
 		%UI.hide()
+		
+	if event is InputEventKey and event.pressed and Input.is_action_pressed("test"):
+		cycle_focus()
+		
+func cycle_focus():
+	var options = %Options.get_children()
+	var current_index = 0
+	for i in range(options.size()):
+		if options[i].has_focus():
+			current_index = i
+			break
+
+	var next_index = (current_index + 1) % options.size()
+	options[next_index].grab_focus()

@@ -8,7 +8,7 @@ var dialogue : Dialogue:
 		text = dialogue.path_option
 	
 func _ready():
-	grab_focus()
+	pass
 
 func _on_pressed() -> void:
 	if dialogue.options.size() == 0:
