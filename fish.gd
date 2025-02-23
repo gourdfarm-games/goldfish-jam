@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const MAX_HP = 100
 const SPEED = 8.0
-const HP_LOST_PER_SECOND = 1.5
+const HP_LOST_PER_SECOND = 1
 const TIME_TO_ESCAPE = 1
 const MAX_HUNGER = 100
 const HUNGER_LOST_PER_HOUR = 15

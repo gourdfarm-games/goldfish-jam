@@ -27,7 +27,7 @@ func _on_task(task, description):
 	puddle_timer.start()
 	await puddle_timer.timeout
 	if mop_complete == false:
-		game_over.text = ("puddle failed")
+		game_over.text = ("You slipped and fell")
 		get_tree().paused = true
 
 func _on_interacted(body: Variant) -> void:

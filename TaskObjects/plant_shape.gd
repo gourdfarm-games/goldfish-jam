@@ -40,7 +40,7 @@ func _on_task(task, description):
 	plant_timer.start()
 	await plant_timer.timeout
 	if water_complete == false:
-		game_over.text = ("plant failed")
+		game_over.text = ("Your plants died")
 		get_tree().paused = true
 
 func _on_interacted(body: Variant) -> void:

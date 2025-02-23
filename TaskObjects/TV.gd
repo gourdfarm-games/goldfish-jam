@@ -30,7 +30,7 @@ func _on_task(task, description):
 	tv_timer.start()
 	await tv_timer.timeout
 	if watch_tv_done == false:
-		game_over.text = ("watch tv failed")
+		game_over.text = ("You missed you favorite show")
 		get_tree().paused = true
 	
 	while true:
