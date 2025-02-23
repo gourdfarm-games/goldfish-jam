@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=187 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://interact_ray.gd" id="3_bfj5i"]
 [ext_resource type="Material" uid="uid://dvrxkapsiew12" path="res://Materials/brick.tres" id="4_g3100"]
 [ext_resource type="PackedScene" uid="uid://b5no7njkn4g5e" path="res://Character Assets/Murphy_Hand_Default.fbx" id="5_10cqv"]
+[ext_resource type="PackedScene" uid="uid://bbslviwkyp7ed" path="res://Character Assets/Imported Assets/murphy_hand_grab_anim.tscn" id="5_61bqg"]
+[ext_resource type="Script" path="res://Character Assets/murphy_hand_default.gd" id="5_lytsd"]
 [ext_resource type="Material" uid="uid://dv477n3wbr7jb" path="res://Materials/carpet.tres" id="7_iwi4q"]
 [ext_resource type="AudioStream" uid="uid://cymx0reiou55o" path="res://Music/Sound effects/Walking Clip.wav" id="7_win2m"]
+[ext_resource type="PackedScene" uid="uid://dnqqck2mxvhcj" path="res://Character Assets/Imported Assets/murphy_hand_release_anim.tscn" id="8_0ad2g"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
 [ext_resource type="PackedScene" uid="uid://bntcjvrqaexjm" path="res://Materials/lightswitchon (1).fbx" id="8_mtovj"]
 [ext_resource type="Script" path="res://fish_bowl.gd" id="9_6tgp6"]
@@ -559,8 +562,9 @@ shape = SubResource("CapsuleShape3D_iaatc")
 [node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.6039, 0)
 
-[node name="Murphy_Hand_Default" parent="Player/Head" instance=ExtResource("5_10cqv")]
+[node name="Murphy_Hand_Default" parent="Player/Head" groups=["hand"] instance=ExtResource("5_10cqv")]
 transform = Transform3D(-4.37114e-08, -0.627215, 0.778845, 0, 0.778845, 0.627215, -1, 2.74165e-08, -3.40444e-08, -0.529606, -0.614825, 0.0136608)
+script = ExtResource("5_lytsd")
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224934, -0.243119, -0.75897)
@@ -588,6 +592,14 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("18_1dse5")
 theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
+
+[node name="Murphy_Hand_Grab_Anim" parent="Player/Head" instance=ExtResource("5_61bqg")]
+transform = Transform3D(-4.37114e-08, -0.627215, 0.778845, 0, 0.778845, 0.627215, -1, 2.74165e-08, -3.40444e-08, -0.529606, -0.614825, 0.0136604)
+visible = false
+
+[node name="Murphy_Hand_Release_Anim" parent="Player/Head" instance=ExtResource("8_0ad2g")]
+transform = Transform3D(-4.37114e-08, -0.627216, 0.778845, 0, 0.778846, 0.627215, -1, 2.74165e-08, -3.40444e-08, -0.529606, -0.614825, 0.0136604)
+visible = false
 
 [node name="PlayerSteps" type="AudioStreamPlayer3D" parent="Player"]
 transform = Transform3D(1.00644, 0, 0, 0, 1.00644, 0, 0, 0, 1.00644, 0, -0.549571, 0)

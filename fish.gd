@@ -48,6 +48,7 @@ func feed_fish():
 	
 func hold_fish():
 	is_held = true
+	get_tree().call_group("hand", "pickup")
 	emit_signal("holding")
 	prompt_message = ""
 	visible = false
@@ -62,11 +63,14 @@ func _on_bowl_place():
 	is_held = false
 	in_bowl = true
 	visible = true
+	get_tree().call_group("hand", "place")
 	prompt_message = "·   E"
 	velocity = Vector3(0, 0, 0)
 	region.enabled = false
 	position = Vector3(11.189, 2.63, -4.352)
 	rotation = Vector3(0, 0, 0)
+	
+
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
