@@ -30,6 +30,7 @@ func resume_game():
 
 func _on_menu_pressed() -> void:
 	$button.play()
+	resume_game()
 	get_tree().change_scene_to_file("res://menu.tscn")
 
 
@@ -37,6 +38,7 @@ func _on_menu_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	$button.play()
+	resume_game()
 	get_tree().change_scene_to_file("res://main.tscn")
 
 

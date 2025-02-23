@@ -23,6 +23,7 @@ signal hunger_label_update(hunger_level)
 signal destory_food
 
 @export var prompt_message = "Interact"
+@onready var restart_menu = $restart_menu
 @onready var timer: Timer = $InBowlTimer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var region: NavigationRegion3D = $".."
@@ -179,6 +180,7 @@ func lose_hp():
 	if in_bowl == false:
 		if current_hp <= 0:
 			game_over_label.text = "Murphy drowned on air"
+			restart_menu.visible = true
 			get_tree().paused = true
 		else:
 			timer.start(1)
@@ -190,6 +192,7 @@ func _on_hunger_down():
 	# dies if hunger reaches 0
 	if hunger <= 0:
 		game_over_label.text = "Murphy died of hunger"
+		restart_menu.visible = true
 		get_tree().paused = true
 		
 		

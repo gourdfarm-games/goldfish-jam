@@ -1,19 +1,20 @@
 extends Node3D
-  
+
 @onready var pause_menu = $pausemenu
 var paused = false
 
-
 func _process(delta):
 	if Input.is_action_just_pressed("return-to-menu"):
-		pauseMenu()
+		toggle_pause()
+
+func toggle_pause():
+	paused = !paused  
 	
-func pauseMenu():
 	if paused: 
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
 		pause_menu.show()
 		Engine.time_scale = 0
-	
-	paused = !paused
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+	else:
+		pause_menu.hide()
+		Engine.time_scale = 1
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  

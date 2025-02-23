@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=189 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
 [ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
@@ -97,7 +97,8 @@
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="89_4fljq"]
 [ext_resource type="Texture2D" uid="uid://btqcob16k1i3l" path="res://Paintings-TV/IMG_2282.png" id="94_ofioq"]
-[ext_resource type="PackedScene" path="res://fire_particles.tscn" id="95_bicef"]
+[ext_resource type="PackedScene" uid="uid://hc6no701f2s5" path="res://fire_particles.tscn" id="95_bicef"]
+[ext_resource type="PackedScene" uid="uid://cytaf8rqfx23w" path="res://restart_menu.tscn" id="99_4lfo1"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
 colors = PackedColorArray(0, 0, 0, 1, 0.999999, 0.946537, 0.928706, 1)
@@ -2071,6 +2072,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ptp0j")
 
 [node name="Node3D2" parent="." instance=ExtResource("95_bicef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97237, 0.409882, -7.08756)
+
+[node name="restartmenu" parent="." instance=ExtResource("99_4lfo1")]
+visible = false
+offset_left = -3.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = 2.0
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
