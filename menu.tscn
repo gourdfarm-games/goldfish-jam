@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5ca0xunrblw1"]
+[gd_scene load_steps=11 format=3 uid="uid://b5ca0xunrblw1"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_bmcdj"]
 [ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="2_0awpc"]
@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="3_5gqdd"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_o4gai"]
 [ext_resource type="Script" path="res://play.gd" id="6_glp6h"]
+[ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="8_644eo"]
 
 [sub_resource type="FontVariation" id="FontVariation_xcnva"]
 base_font = ExtResource("2_a4yjc")
@@ -114,6 +115,10 @@ theme_override_styles/hover = ExtResource("3_5gqdd")
 theme_override_styles/pressed = ExtResource("3_o4gai")
 theme_override_styles/normal = ExtResource("3_o4gai")
 text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_644eo")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
