@@ -1,12 +1,12 @@
-[gd_scene load_steps=178 format=4 uid="uid://dxvn05oothtqk"]
+[gd_scene load_steps=177 format=4 uid="uid://dxvn05oothtqk"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_swxtx"]
+[ext_resource type="Script" path="res://main.gd" id="1_wxdcx"]
 [ext_resource type="Texture2D" uid="uid://bkiwjxjq8ri2j" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/red/texture_01.png" id="2_nh0l6"]
 [ext_resource type="Script" path="res://interact_ray.gd" id="3_bfj5i"]
 [ext_resource type="Material" uid="uid://dvrxkapsiew12" path="res://Materials/brick.tres" id="4_g3100"]
 [ext_resource type="PackedScene" uid="uid://b5no7njkn4g5e" path="res://Character Assets/Murphy_Hand_Default.fbx" id="5_10cqv"]
 [ext_resource type="Texture2D" uid="uid://j0wkwll323po" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_08.png" id="6_60578"]
-[ext_resource type="Material" uid="uid://ddwjk72rdq1r3" path="res://Materials/wall.tres" id="7_1c5cd"]
 [ext_resource type="Material" uid="uid://dv477n3wbr7jb" path="res://Materials/carpet.tres" id="7_iwi4q"]
 [ext_resource type="PackedScene" uid="uid://bmujcn33g656w" path="res://murphy_fish.tscn" id="8_2ewl5"]
 [ext_resource type="Script" path="res://time_manager.gd" id="8_8gqm4"]
@@ -38,7 +38,6 @@
 [ext_resource type="PackedScene" uid="uid://b4oxsrr7447ll" path="res://Materials/placemat.tscn" id="29_wrqvn"]
 [ext_resource type="PackedScene" uid="uid://bb46gof5qyf32" path="res://Materials/plant_01.tscn" id="30_fqrtl"]
 [ext_resource type="PackedScene" uid="uid://c834nihn57etc" path="res://Materials/floorlamp.tscn" id="31_n7j6n"]
-[ext_resource type="PackedScene" uid="uid://cv213ebre8y4v" path="res://3D Assets/counter (1).fbx" id="31_nvkt7"]
 [ext_resource type="PackedScene" uid="uid://dev5rapdqc10i" path="res://Materials/soap.tscn" id="32_i3rsl"]
 [ext_resource type="PackedScene" uid="uid://c3ki0yd67rej" path="res://Materials/microwave.tscn" id="32_o8gc3"]
 [ext_resource type="PackedScene" uid="uid://bxadxh4auanxg" path="res://Materials/bookshelf.tscn" id="33_7fr23"]
@@ -46,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://bnkeh8dltvovg" path="res://Materials/newoven.tscn" id="35_7skyb"]
 [ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_002.jpg" id="35_57e4h"]
 [ext_resource type="PackedScene" uid="uid://cf55wliwqq7a8" path="res://Materials/newfridge.tscn" id="36_jgvof"]
-[ext_resource type="PackedScene" uid="uid://b64y7jk37qwll" path="res://3D Assets/kitchensink (1).fbx" id="37_s3un2"]
 [ext_resource type="PackedScene" uid="uid://cdy82mk4f507x" path="res://Materials/kitchenchair.tscn" id="38_nslm4"]
 [ext_resource type="PackedScene" uid="uid://ewxq62ywwvki" path="res://Materials/jars.tscn" id="40_tj4s6"]
 [ext_resource type="PackedScene" uid="uid://gggdeau0p0j1" path="res://Materials/fruitbowl.tscn" id="40_vioqs"]
@@ -66,6 +64,7 @@
 [ext_resource type="Material" uid="uid://cekml3b6j35g" path="res://bun.tres" id="52_etogu"]
 [ext_resource type="PackedScene" uid="uid://c867vkndqkcsj" path="res://fireplace.tscn" id="52_l0qps"]
 [ext_resource type="Material" uid="uid://q8caw2cdmabs" path="res://muffin.tres" id="53_hxq3e"]
+[ext_resource type="PackedScene" uid="uid://bgxkdndk0k65e" path="res://pause_menu.tscn" id="55_6t3w8"]
 [ext_resource type="Material" uid="uid://c2nvm02w251up" path="res://Materials/ceiling.tres" id="55_cux80"]
 [ext_resource type="PackedScene" uid="uid://cnamqqxcg85ja" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/New/WelcomeMat01.fbx" id="55_qu7l4"]
 [ext_resource type="PackedScene" uid="uid://cj2wi87yf0c6j" path="res://Materials/tv_stand.tscn" id="55_rg2o6"]
@@ -87,6 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://ber6h4sjcs4vx" path="res://Materials/walloutlet.fbx" id="81_pmpbf"]
 [ext_resource type="PackedScene" uid="uid://b5a17fa1vyr2i" path="res://Materials/hanginglight_02.tscn" id="82_bs674"]
 [ext_resource type="PackedScene" uid="uid://dh7x1lttj2oql" path="res://Materials/hanginglight_01.tscn" id="83_mdxj1"]
+[ext_resource type="PackedScene" uid="uid://dsrknuw56k011" path="res://bowltable.tscn" id="86_aya0j"]
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
@@ -136,11 +136,6 @@ height = 1.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ry6da"]
 points = PackedVector3Array(-0.0626015, -0.266393, -0.240247, 0.0113916, 0.238035, 0.249442, 0.0848621, 0.279592, 0.232102, 0.115522, -0.401785, 0.160223, 0.203685, 0.325489, -0.121749, -0.241412, 0.297443, 0.0411093, -0.181422, -0.341134, 0.144839, 0.234523, -0.327267, -0.0331359, -0.0637235, 0.421361, -0.169056, -0.196702, -0.341945, -0.122349, 0.219114, 0.311636, 0.100419, 0.0420738, 0.488726, 0.0573973, -0.0341012, -0.48823, -0.0646353, 0.0997428, -0.294785, -0.224458, -0.0927739, 0.297759, -0.226763, -0.13668, 0.296132, 0.203875, -0.00346824, -0.238412, 0.24983, 0.18791, -0.294307, 0.158478, 0.0557924, 0.281545, -0.240602, -0.208646, 0.263958, -0.135262, -0.242278, -0.298492, -0.0332556, -0.139874, 0.454283, 0.0266681, -0.125092, -0.440333, 0.102654, 0.131824, -0.451389, -0.0636977, 0.186715, -0.263172, -0.164131, 0.146689, 0.435778, -0.0786007, 0.249831, 0.238321, -0.00344428, 0.0265531, 0.437506, 0.162353, -0.0772764, -0.295446, 0.232954, -0.193856, -0.249126, 0.15785, -0.0486367, -0.391155, -0.199082, -0.15034, -0.293997, -0.19445)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gsn1"]
-albedo_color = Color(0.170004, 0.140866, 0.093535, 1)
-uv1_scale = Vector3(4, 4, 4)
-point_size = 18.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_87u11"]
 size = Vector2(11, 4)
@@ -528,6 +523,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_wxdcx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -643,27 +639,6 @@ transform = Transform3D(0.334521, -1.87446e-08, 1.26883e-14, 0, 9.37228e-09, 3.3
 material_override = ExtResource("4_g3100")
 use_collision = true
 size = Vector3(4.61377, 21.6777, 4.83889)
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(1.83053, 0, 0, 0, 0.0468901, 0, 0, 0, 1.74895, 11.234, 1.97588, -4.40669)
-material_override = SubResource("StandardMaterial3D_6gsn1")
-use_collision = true
-height = 2.11163
-sides = 30
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(0.742468, 0, 0, 0, 0.075226, 0, 0, 0, 0.734059, 11.2307, -0.068203, -4.40669)
-material_override = ExtResource("7_1c5cd")
-use_collision = true
-height = 2.11163
-sides = 50
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Greybox/NavigationRegion3D"]
-transform = Transform3D(0.218698, 0, 0, 0, 1.53348, 0, 0, 0, 0.286889, 11.234, 0.321538, -4.40669)
-material_override = ExtResource("7_1c5cd")
-use_collision = true
-height = 2.11163
-sides = 20
 
 [node name="Stairs" type="CSGMesh3D" parent="Greybox/NavigationRegion3D"]
 transform = Transform3D(-0.725374, 0.688355, 8.74228e-08, 0.688355, 0.725374, 0, -6.34142e-08, 6.01779e-08, -1, 2.44593, 2.7808, -9.75911)
@@ -1146,9 +1121,6 @@ shape = SubResource("BoxShape3D_kr6eq")
 [node name="dishrack" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/DISHRACK" instance=ExtResource("42_jqi7q")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.623153)
 
-[node name="counter (1)" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("31_nvkt7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0293, 0)
-
 [node name="BEANBAGS" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(0.9262, 0, -0.377033, 0, 1, 0, 0.377033, 0, 0.9262, -4.49117, 7.17564, -2.01348)
 collision_layer = 4
@@ -1238,8 +1210,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36657, 8.78799, -0.116536)
 
 [node name="Phone2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("48_u8nes")]
 transform = Transform3D(0.875599, 0, 0.268765, 0, 1.5, 0, -0.210891, 0, 1.11588, -1.13481, 2.0285, 3.23832)
-
-[node name="kitchensink (1)" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("37_s3un2")]
 
 [node name="ARMCHAIR" type="StaticBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16651, 0.0768661, -8.80598)
@@ -1352,7 +1322,7 @@ surface_material_override/0 = ExtResource("52_etogu")
 script = ExtResource("58_ahxyn")
 
 [node name="MUFFIN" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1389, 2.25064, 6.53556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.778659, 2.25064, 4.39205)
 collision_layer = 6
 collision_mask = 7
 script = ExtResource("59_fpdls")
@@ -1419,6 +1389,12 @@ surface_material_override/0 = ExtResource("53_hxq3e")
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.106344, 0)
 shape = SubResource("ConvexPolygonShape3D_5b6f4")
 
+[node name="Framed_Picture" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" instance=ExtResource("66_17j3o")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1.04967, 0, 1, 0, 1.31134e-07, 8.02836, 5.29522, -11.4461)
+
+[node name="Framed_Picture3" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" instance=ExtResource("65_3uhwv")]
+transform = Transform3D(1.31134e-07, 0, -1.33506, 0, 1.44098, 0, 1, 0, 1.75072e-07, -10.4495, 7.43662, -11.5366)
+
 [node name="MUFFIN4" type="RigidBody3D" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/MuffinManager" groups=["Muffins"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73595, 2.97176, -4.95036)
 collision_layer = 6
@@ -1459,12 +1435,6 @@ transform = Transform3D(2.98023e-08, 0, -0.723967, 0, 1, 0, 1, 0, 0, 7.72499, 6.
 
 [node name="Framed_Picture2" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS" instance=ExtResource("64_qfov0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.30656, 6.65161, 7.83686)
-
-[node name="Framed_Picture" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Framed_Picture2" instance=ExtResource("65_3uhwv")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.44098, 0, 8.74228e-08, 0, -1, 19.3753, 1.10524, -13.7649)
-
-[node name="Framed_Picture" parent="Greybox/NavigationRegion3D/FINAL 3D ASSETS/Framed_Picture2/Framed_Picture" instance=ExtResource("66_17j3o")]
-transform = Transform3D(1, 0, 0, 0, 0.728443, 0, 0, 0, 1, 0.0922966, -1.7083, -13.4867)
 
 [node name="HOUSE ARCHITECTURE" type="Node" parent="Greybox/NavigationRegion3D"]
 
@@ -1751,29 +1721,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -578.5
-offset_top = -327.0
-offset_right = 578.5
-offset_bottom = 327.0
+offset_left = -579.0
+offset_top = -326.0
+offset_right = 578.0
+offset_bottom = 328.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 size_flags_stretch_ratio = 11.9
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 script = ExtResource("79_a2l3r")
+metadata/_edit_use_anchors_ = true
 
 [node name="Hunger" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 11.5
-offset_top = 159.0
-offset_right = 255.5
-offset_bottom = 234.0
+offset_left = 8.5
+offset_top = 226.0
+offset_right = 214.5
+offset_bottom = 301.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("18_1dse5")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "Murphy's Hunger"
 
 [node name="Time" type="Label" parent="PlaceholderHUD/ColorRect"]
@@ -1783,10 +1755,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -161.5
-offset_top = -121.0
-offset_right = 9.5
-offset_bottom = -30.0
+offset_left = -141.0
+offset_top = -30.0
+offset_right = 2.0
+offset_bottom = 61.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("18_1dse5")
@@ -1794,34 +1766,29 @@ text = "Time: "
 
 [node name="Task" type="Label" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -286.5
-offset_top = -227.0
-offset_right = 286.5
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -451.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = 243.0
+grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("18_1dse5")
 theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "TEXT"
 autowrap_mode = 3
 
 [node name="ProgressBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 299.5
+offset_left = 1064.0
 offset_top = -406.0
-offset_right = 374.5
+offset_right = 1137.0
 offset_bottom = -222.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("18_1dse5")
@@ -1911,10 +1878,10 @@ vertical_alignment = 1
 
 [node name="HungerBar" type="ProgressBar" parent="PlaceholderHUD/ColorRect"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 514.0
-offset_right = 168.0
-offset_bottom = 576.0
+offset_left = 13.0
+offset_top = 577.0
+offset_right = 148.0
+offset_bottom = 639.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_6eyqw")
 value = 1.67
 rounded = true
@@ -1969,10 +1936,10 @@ transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, -9.
 transform = Transform3D(-2.62268e-06, 0, -60, 0, 60, 0, 60, 0, -2.62268e-06, 12.7747, 1.32935, 5.24601)
 
 [node name="hanginglight05" parent="LIGHTING" instance=ExtResource("82_bs674")]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.68231, 6.6513, -6.6388)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.68231, 5.47114, -6.6388)
 
 [node name="hanginglight07" parent="LIGHTING" instance=ExtResource("82_bs674")]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -6.13017, 12.161, -0.0574532)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -6.13017, 11.6478, -0.0574532)
 
 [node name="hanginglight02" parent="LIGHTING" instance=ExtResource("83_mdxj1")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 9.42209, 10.3284, 0.851421)
@@ -1994,12 +1961,12 @@ light_energy = 50.0
 omni_range = 0.9
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="LIGHTING"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55032, 10.8034, 0.0598752)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.17077, 10.2704, -0.048559)
 light_energy = 16.81
 omni_range = 0.9
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="LIGHTING"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94207, 5.43871, -6.64289)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94207, 4.31474, -6.77072)
 light_energy = 16.81
 omni_range = 0.9
 
@@ -2010,6 +1977,14 @@ omni_range = 0.9
 
 [node name="Node3D" parent="." instance=ExtResource("87_h2ujb")]
 transform = Transform3D(0.1, 0, 0, 0, 0.0999891, -0.00147649, 0, 0.00147649, 0.0999891, 11.2639, 2.0587, -4.41492)
+
+[node name="Table_w_tablecloth" parent="." instance=ExtResource("86_aya0j")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 11.4456, -0.0831519, -4.2379)
+
+[node name="pausemenu" parent="." instance=ExtResource("55_6t3w8")]
+visible = false
+offset_left = 14.0
+offset_right = 14.0
 
 [connection signal="interacted" from="Greybox/NavigationRegion3D/Fish" to="Greybox/NavigationRegion3D/Fish" method="_on_interacted"]
 [connection signal="screen_entered" from="Greybox/NavigationRegion3D/Fish/VisibleOnScreenNotifier3D" to="Greybox/NavigationRegion3D/Fish" method="_on_visible_on_screen_notifier_3d_screen_entered"]
