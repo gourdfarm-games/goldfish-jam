@@ -13,6 +13,7 @@ signal spam_call_done
 @onready var phone_timer: Timer = $PhoneTimer
 @onready var caller_id: Label = $"../../PlaceholderHUD/ColorRect/CallerID"
 @onready var phone_audio: AudioStreamPlayer3D = $PhoneAudio
+@onready var node_3d: Node3D = $"../../"
 
 
 func _ready() -> void:
@@ -33,7 +34,8 @@ func _on_task(task, description):
 		await phone_timer.timeout
 		if friend_call_complete == false or spam_call_complete == false:
 			game_over.text = ("You didn't answer your friend and he's on his way")
-			get_tree().paused = true
+			await get_tree().create_timer(1).timeout
+			node_3d.toggle_restartmenu()
 	
 	
 	
