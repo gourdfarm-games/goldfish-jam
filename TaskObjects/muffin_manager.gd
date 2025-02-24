@@ -12,6 +12,7 @@ signal all_muffins_done
 @onready var task_label: Label = $"../../../../PlaceholderHUD/ColorRect/Task"
 @onready var game_over: Label = $"../../../../PlaceholderHUD/ColorRect/GameOver"
 @onready var muffin_timer: Timer = $MuffinTimer
+@onready var node_3d: Node3D = $"../../../.."
 
 func _ready() -> void:
 	muffin_complete = true
@@ -39,7 +40,8 @@ func _on_task(task, description):
 		await muffin_timer.timeout
 		if muffin_complete == false:
 			game_over.text = ("You passed out from starvation")
-			get_tree().paused = true
+			await get_tree().create_timer(1).timeout
+			node_3d.toggle_restartmenu()
 		
 func clear_text():
 	var new_text
