@@ -187,6 +187,7 @@ func lose_hp():
 	if in_bowl == false:
 		if current_hp <= 0:
 			game_over_label.text = "Murphy drowned on air"
+			await get_tree().create_timer(1).timeout
 			node_3d.toggle_restartmenu()
 			
 		else:
