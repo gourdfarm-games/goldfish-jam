@@ -17,6 +17,7 @@ signal water_done
 @onready var plant_timer: Timer = $PlantTimer
 @onready var plants_to_water: Label = $"../../PlaceholderHUD/ColorRect/PlantsToWater"
 @onready var plant_pop: AudioStreamPlayer2D = $PlantPop
+@onready var node_3d: Node3D = $"../.."
 
 func _ready() -> void:
 	watered_progress = 0
@@ -46,7 +47,8 @@ func _on_task(task, description):
 	await plant_timer.timeout
 	if water_complete == false:
 		game_over.text = ("Your plants died")
-		get_tree().paused = true
+		await get_tree().create_timer(1).timeout
+		node_3d.toggle_restartmenu()
 
 func _on_interacted(body: Variant) -> void:
 	if water_complete == false:
