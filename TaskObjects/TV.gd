@@ -34,6 +34,7 @@ func _on_task(task, description):
 	await tv_timer.timeout
 	if watch_tv_done == false:
 		game_over.text = ("You missed you favorite show")
+		await get_tree().create_timer(1).timeout
 		node_3d.toggle_restartmenu()
 
 func _on_interacted(body: Variant) -> void:
