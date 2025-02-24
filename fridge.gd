@@ -2,6 +2,10 @@ extends Interactable
 
 var is_open = false
 var has_murphy = false
+
+func _ready() -> void:
+	is_open = false
+	has_murphy = false
 	
 func _on_interacted(body: Variant) -> void:
 	if is_open == false:

@@ -17,8 +17,6 @@ func toggle_pause():
 		pause_game()
 
 
-
-
 func pause_game():
 	Engine.time_scale = 0.0  # Pause game logic
 	visible = true

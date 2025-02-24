@@ -9,7 +9,9 @@ var plants_watered = 0
 @onready var plant_pop: AudioStreamPlayer2D = $"../../PlantPop"
 
 func _ready() -> void:
-	pass
+	is_watered = true
+	watered_progress = 0
+	plants_watered = 0
 
 func need_to_water():
 	is_watered = false

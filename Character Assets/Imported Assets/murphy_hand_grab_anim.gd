@@ -4,6 +4,9 @@ extends Node3D
 
 signal anim_grabbed
 
+func _ready() -> void:
+	animation_player = $AnimationPlayer
+
 func pickup():
 	visible = true
 	animation_player.play("MurphyHandsGrabbing")

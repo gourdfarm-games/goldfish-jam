@@ -13,6 +13,8 @@ signal hunger_down
 @onready var game_over_label: Label = $"../PlaceholderHUD/ColorRect/GameOver"
 
 func _ready():
+	current_hour = START_TIME
+	minutes = 0
 	timer.start(0.05)
 	
 func _on_timer_timeout() -> void:

@@ -6,7 +6,8 @@ var eat_progress = 0
 @onready var muffin_manager: Node = $".."
 
 func _ready() -> void:
-	pass
+	is_eaten = true
+	eat_progress = 0
 
 func can_eat():
 	is_eaten = false

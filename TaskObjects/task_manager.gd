@@ -30,6 +30,8 @@ signal task_tv(task, description)
 signal task_muffin(task, description)
 
 func _ready() -> void:
+	can_eat_muffin = true
+	can_call = true
 	phone.connect("spam_call_done", Callable(self, "_on_spam_call_done"))
 	phone.connect("friend_call_done", Callable(self, "_on_friend_call_done"))
 	tv.connect("tv_done", Callable(self, "_on_watch_done"))

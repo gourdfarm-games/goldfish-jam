@@ -12,6 +12,8 @@ signal mop_done
 @onready var puddle_timer: Timer = $PuddleTimer
 
 func _ready() -> void:
+	mop_progress = 0
+	mop_complete = true
 	$"../../TaskManager".connect("task_mop", Callable(self, "_on_task"))
 	visible = false
 

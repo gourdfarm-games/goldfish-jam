@@ -11,6 +11,8 @@ signal food_in_hand
 @onready var fish: CharacterBody3D = $"../NavigationRegion3D/Fish"
 
 func _ready() -> void:
+	in_hand = false
+	food_tracker = 0
 	fish.connect("destory_food", Callable(self, "_on_destory_food"))
 
 func _on_interacted(body: Variant) -> void:
