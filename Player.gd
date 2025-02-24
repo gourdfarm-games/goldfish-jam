@@ -31,6 +31,8 @@ var is_moving
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 
 func _ready():
+	joy_input = Vector2.ZERO
+	t_bob = 0.0
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 

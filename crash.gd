@@ -4,8 +4,8 @@ class_name SoundRigidBody
 var collision_occurred = false
 var new_crash
 
-var crash_sound = preload("res://Music/crash_sound.tscn")
-var wack_sound = preload("res://Music/wet_wack.tscn")
+@onready var crash_sound = preload("res://Music/crash_sound.tscn")
+@onready var wack_sound = preload("res://Music/wet_wack.tscn")
 
 const COLLISION_FIRST = preload("res://Music/Sound effects/collision_first.wav")
 const COLLISION_SECOND = preload("res://Music/Sound effects/collision_second.wav")
@@ -13,6 +13,7 @@ const COLLISION_SECOND = preload("res://Music/Sound effects/collision_second.wav
 
 
 func _ready():
+	collision_occurred = false
 	contact_monitor = true
 	max_contacts_reported = 10
 

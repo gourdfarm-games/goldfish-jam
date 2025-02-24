@@ -16,6 +16,8 @@ signal spam_call_done
 
 
 func _ready() -> void:
+	friend_call_complete = true
+	spam_call_complete = true
 	$"../../TaskManager".connect("task_call", Callable(self, "_on_task"))
 	
 func _on_task(task, description):

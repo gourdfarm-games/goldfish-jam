@@ -14,6 +14,8 @@ signal tv_done
 @onready var tv_timer: Timer = $TVTimer
 
 func _ready() -> void:
+	watch_tv_done = true
+	watch_time = 0
 	$"../../TaskManager".connect("task_tv", Callable(self, "_on_task"))
 
 func _on_task(task, description):

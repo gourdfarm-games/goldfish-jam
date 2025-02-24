@@ -19,6 +19,11 @@ signal water_done
 @onready var plant_pop: AudioStreamPlayer2D = $PlantPop
 
 func _ready() -> void:
+	watered_progress = 0
+	water_complete = true
+	plants_arr = []
+	can_start_watering = true
+	plants_watered = 0
 	$"../../TaskManager".connect("task_plant", Callable(self, "_on_task"))
 
 func _on_task(task, description):

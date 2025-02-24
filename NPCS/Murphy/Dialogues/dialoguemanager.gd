@@ -1,11 +1,11 @@
 extends Control
 
-var dialogue_track = 0
+@onready var dialogue_track = 0
 
 const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
 
 
-var dialogue : Dialogue:
+@onready var dialogue : Dialogue:
 	set(value):
 		dialogue = value
 		
@@ -21,6 +21,7 @@ var dialogue : Dialogue:
 		
 #TESTIN
 func _ready():
+	dialogue_track = 0
 	if dialogue == null:
 		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
 		

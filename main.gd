@@ -5,6 +5,10 @@ extends Node3D
 var paused = false
 var restartmenu = false 
 
+func _ready() -> void:
+	paused = false
+	restartmenu = false 
+
 func _process(delta):
 	if Input.is_action_just_pressed("return-to-menu"):
 		toggle_pause()
@@ -16,9 +20,13 @@ func toggle_restartmenu():
 	restartmenu = !restartmenu
 	
 	if restartmenu:
-		get_tree().change_scene_to_file("res://main.tscn")
+		restart_menu.show()
+		Engine.time_scale = 0
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
 	else:
-		restart_menu.hide()
+		pause_menu.hide()
+		Engine.time_scale = 1
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func toggle_pause():
 	paused = !paused  

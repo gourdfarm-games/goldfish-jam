@@ -23,7 +23,7 @@ signal hunger_label_update(hunger_level)
 signal destory_food
 
 @export var prompt_message = "Interact"
-@onready var restart_menu = $restart_menu
+@onready var restart_menu: Control = $"../../../restartmenu"
 @onready var timer: Timer = $InBowlTimer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var region: NavigationRegion3D = $".."
@@ -31,8 +31,15 @@ signal destory_food
 @onready var game_over_label: Label = $"../../../PlaceholderHUD/ColorRect/GameOver"
 @onready var hunger_bar: ProgressBar = $"../../../PlaceholderHUD/ColorRect/HungerBar"
 @onready var interact_ray: RayCast3D = $"../../../Player/Head/Camera3D/InteractRay"
+@onready var node_3d: Node3D = $"../../.."
 
 func _ready() -> void:
+	current_hp = MAX_HP
+	hunger = 25
+	is_held = false
+	in_bowl = true
+	has_food = false
+	has_rotated = false
 	$"../../FishBowl".connect("bowl_place", Callable(self, "_on_bowl_place"))
 	$"../../../TimeManager".connect("hunger_down", Callable(self, "_on_hunger_down"))
 	$"../../Food".connect("food_in_hand", Callable(self, "_on_food_in_hand"))
@@ -180,8 +187,7 @@ func lose_hp():
 	if in_bowl == false:
 		if current_hp <= 0:
 			game_over_label.text = "Murphy drowned on air"
-			restart_menu.visible = true
-			get_tree().paused = true
+			node_3d.toggle_restartmenu()
 		else:
 			timer.start(1)
 	
@@ -192,8 +198,7 @@ func _on_hunger_down():
 	# dies if hunger reaches 0
 	if hunger <= 0:
 		game_over_label.text = "Murphy died of hunger"
-		restart_menu.visible = true
-		get_tree().paused = true
+		node_3d.toggle_restartmenu()
 		
 		
 		
