@@ -12,7 +12,7 @@ signal tv_done
 @onready var progress_bar: ProgressBar = $"../../PlaceholderHUD/ColorRect/ProgressBar"
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var tv_timer: Timer = $TVTimer
-@onready var node_3d: Node3D = $"../../../.."
+@onready var node_3d: Node3D = $"../.."
 
 func _ready() -> void:
 	watch_tv_done = true
