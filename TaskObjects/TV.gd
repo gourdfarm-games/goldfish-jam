@@ -12,6 +12,7 @@ signal tv_done
 @onready var progress_bar: ProgressBar = $"../../PlaceholderHUD/ColorRect/ProgressBar"
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var tv_timer: Timer = $TVTimer
+@onready var node_3d: Node3D = $"../../../.."
 
 func _ready() -> void:
 	watch_tv_done = true
@@ -33,7 +34,7 @@ func _on_task(task, description):
 	await tv_timer.timeout
 	if watch_tv_done == false:
 		game_over.text = ("You missed you favorite show")
-		get_tree().paused = true
+		node_3d.toggle_restartmenu()
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
