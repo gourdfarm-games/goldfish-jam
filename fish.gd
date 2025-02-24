@@ -200,6 +200,7 @@ func _on_hunger_down():
 	# dies if hunger reaches 0
 	if hunger <= 0:
 		game_over_label.text = "Murphy died of hunger"
+		await get_tree().create_timer(1).timeout
 		node_3d.toggle_restartmenu()
 		
 		
