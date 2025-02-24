@@ -13,7 +13,7 @@ signal spam_call_done
 @onready var phone_timer: Timer = $PhoneTimer
 @onready var caller_id: Label = $"../../PlaceholderHUD/ColorRect/CallerID"
 @onready var phone_audio: AudioStreamPlayer3D = $PhoneAudio
-@onready var node_3d: Node3D = $"../../"
+@onready var node_3d: Node3D = $"../.."
 
 
 func _ready() -> void:
