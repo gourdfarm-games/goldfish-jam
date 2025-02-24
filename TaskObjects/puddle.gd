@@ -10,6 +10,7 @@ signal mop_done
 @onready var task_label: Label = $"../../PlaceholderHUD/ColorRect/Task"
 @onready var game_over: Label = $"../../PlaceholderHUD/ColorRect/GameOver"
 @onready var puddle_timer: Timer = $PuddleTimer
+@onready var node_3d: Node3D = $"../.."
 
 func _ready() -> void:
 	mop_progress = 0
@@ -30,7 +31,8 @@ func _on_task(task, description):
 	await puddle_timer.timeout
 	if mop_complete == false:
 		game_over.text = ("You slipped and fell")
-		get_tree().paused = true
+		await get_tree().create_timer(1).timeout
+		node_3d.toggle_restartmenu()
 
 func _on_interacted(body: Variant) -> void:
 	var new_text
