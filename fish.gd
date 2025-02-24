@@ -188,6 +188,7 @@ func lose_hp():
 		if current_hp <= 0:
 			game_over_label.text = "Murphy drowned on air"
 			node_3d.toggle_restartmenu()
+			
 		else:
 			timer.start(1)
 	

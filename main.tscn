@@ -97,7 +97,7 @@
 [ext_resource type="PackedScene" uid="uid://b46cckwtrkp82" path="res://bubbles_particle.tscn" id="87_h2ujb"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background_Music (1).wav" id="89_4fljq"]
 [ext_resource type="Texture2D" uid="uid://btqcob16k1i3l" path="res://Paintings-TV/IMG_2282.png" id="94_ofioq"]
-[ext_resource type="PackedScene" path="res://fire_particles.tscn" id="95_bicef"]
+[ext_resource type="PackedScene" uid="uid://hc6no701f2s5" path="res://fire_particles.tscn" id="95_bicef"]
 [ext_resource type="PackedScene" uid="uid://cytaf8rqfx23w" path="res://restart_menu.tscn" id="99_4lfo1"]
 
 [sub_resource type="Gradient" id="Gradient_2pogn"]
