@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnkeh8dltvovg"]
+
+[ext_resource type="PackedScene" uid="uid://dcbr3a0hcl6ki" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/Oven.fbx" id="1_xjumi"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_001.jpg" id="2_1qu4a"]
+[ext_resource type="Script" path="res://Scripts/TaskObjects/newoven.gd" id="2_ftys0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61mvo"]
+albedo_texture = ExtResource("2_1qu4a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_behkl"]
+albedo_texture = ExtResource("2_1qu4a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ajpd"]
+albedo_texture = ExtResource("2_1qu4a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xugy"]
+albedo_texture = ExtResource("2_1qu4a")
+
+[sub_resource type="Animation" id="Animation_o1alq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Oven/polySurface5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.00763181)]
+}
+
+[sub_resource type="Animation" id="Animation_n17k0"]
+resource_name = "close_oven"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Oven/polySurface5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g8ju4"]
+resource_name = "open_oven"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Oven/polySurface5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.00763181), Vector3(0, 0, -1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jlu1"]
+_data = {
+"RESET": SubResource("Animation_o1alq"),
+"close_oven": SubResource("Animation_n17k0"),
+"open_oven": SubResource("Animation_g8ju4")
+}
+
+[node name="Oven" groups=["oven"] instance=ExtResource("1_xjumi")]
+script = ExtResource("2_ftys0")
+
+[node name="Burners" parent="Oven" index="1"]
+material_override = SubResource("StandardMaterial3D_61mvo")
+
+[node name="polySurface4" parent="Oven/Body" index="0"]
+material_override = SubResource("StandardMaterial3D_behkl")
+
+[node name="polySurface5" parent="Oven" index="3"]
+transform = Transform3D(0.999971, -0.00763174, 0, 0.00763174, 0.999971, 0, 0, 0, 1, 0.0488922, 0.0320519, 0)
+material_override = SubResource("StandardMaterial3D_5ajpd")
+
+[node name="pCylinder1" parent="Oven" index="4"]
+material_override = SubResource("StandardMaterial3D_0xugy")
+
+[node name="OpenOven" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_5jlu1")
+}

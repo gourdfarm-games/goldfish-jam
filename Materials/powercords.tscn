@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxin16b1056dk"]
-
-[ext_resource type="PackedScene" uid="uid://ctp5qsofas83j" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Lena Wachs/powercords.fbx" id="1_nqss0"]
-[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_i2afn"]
-
-[node name="powercords" instance=ExtResource("1_nqss0")]
-
-[node name="powercords" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_i2afn")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://bpi65mb0vsj57"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="1_qc1a1"]
+[ext_resource type="Resource" uid="uid://du8mehk27poiy" path="res://Dialogues/1.tres" id="2_0g3cn"]
+[ext_resource type="Texture2D" uid="uid://ced053qgm5lj8" path="res://Character Icons/IMG_2270.png" id="3_r27ro"]
+
+[resource]
+script = ExtResource("1_qc1a1")
+texture = ExtResource("3_r27ro")
+name = "Murphy "
+dialogue = "Looks like you gotta pet-sit me till your friend comes back at 5, pffft- how bad could it be? - Oh uh... I meant to say \"blub blub\" hehe..."
+path_option = ""
+options = Array[ExtResource("1_qc1a1")]([ExtResource("2_0g3cn")])

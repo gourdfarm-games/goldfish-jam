@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgxkdndk0k65e"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_b2pdl"]
+[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_juwbp"]
+[ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_r640d"]
+[ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="4_cwmmk"]
+[ext_resource type="Script" path="res://Scripts/return_to_menu.gd" id="5_puypi"]
+[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/button.wav" id="6_q5vh5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu20i"]
+bg_color = Color(0.898039, 0.466667, 0.172549, 0.415686)
+border_width_bottom = 6
+border_color = Color(0.74902, 0.32549, 0.129412, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2pdl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -273.5
+offset_right = 187.0
+offset_bottom = 273.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_juwbp")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_mu20i")
+text = "
+GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -112.0
+offset_right = 122.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_juwbp")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = ExtResource("3_r640d")
+theme_override_styles/hover = ExtResource("4_cwmmk")
+theme_override_styles/pressed = ExtResource("3_r640d")
+theme_override_styles/normal = ExtResource("3_r640d")
+text = "RESUME"
+script = ExtResource("5_puypi")
+
+[node name="restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_juwbp")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = ExtResource("3_r640d")
+theme_override_styles/hover = ExtResource("4_cwmmk")
+theme_override_styles/pressed = ExtResource("3_r640d")
+theme_override_styles/normal = ExtResource("3_r640d")
+text = "restart"
+
+[node name="menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_juwbp")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = ExtResource("3_r640d")
+theme_override_styles/hover = ExtResource("4_cwmmk")
+theme_override_styles/pressed = ExtResource("3_r640d")
+theme_override_styles/normal = ExtResource("3_r640d")
+text = "menu"
+
+[node name="button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q5vh5")
+
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]

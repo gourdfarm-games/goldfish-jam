@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsydg1cejfep"]
+
+[ext_resource type="PackedScene" uid="uid://bl3lwd76oq51l" path="res://Character Assets/New Assets/Animation/Murphy_Fish_IDLE.fbx" id="1_gvf2g"]
+[ext_resource type="Script" path="res://Scripts/Murphy/murphy_fish_idle.gd" id="2_6tt0b"]
+[ext_resource type="Texture2D" uid="uid://dpwtovd7l2j6d" path="res://Character Assets/New Assets/Murphy_Fish_NEW_MURPHY_NOW_lambert2SG2_BaseColor.png" id="3_n3vjt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4uqmm"]
+albedo_texture = ExtResource("3_n3vjt")
+
+[node name="Murphy_Fish_IDLE" groups=["murphy"] instance=ExtResource("1_gvf2g")]
+script = ExtResource("2_6tt0b")
+
+[node name="Skeleton3D" parent="Fish_Idle" index="0"]
+bones/4/rotation = Quaternion(0.888151, 0.0722662, 0.149824, 0.428391)
+bones/5/rotation = Quaternion(0.408905, -0.513936, -0.101399, 0.747251)
+bones/7/rotation = Quaternion(-0.030275, 0.918111, -0.342365, -0.197338)
+bones/8/rotation = Quaternion(-0.15864, 0.755358, -0.286956, 0.567383)
+
+[node name="Murphy_IDLE" parent="Fish_Idle/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4uqmm")
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 10.0
