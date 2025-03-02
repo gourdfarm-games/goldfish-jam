@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddaof165bkib"]
+
+[ext_resource type="PackedScene" uid="uid://br6j6hqq6gmhl" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/Muffin/house.fbx" id="1_dgb78"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="3_2omgb"]
+[ext_resource type="Material" uid="uid://ddwjk72rdq1r3" path="res://Materials/wall.tres" id="4_6rdkp"]
+[ext_resource type="Material" uid="uid://du0uj1v63ft1f" path="res://Materials/flooring.tres" id="4_dyn2a"]
+[ext_resource type="Material" uid="uid://cxfwflxvcxw2o" path="res://Materials/wallpaper.tres" id="5_dxkds"]
+
+[node name="house" instance=ExtResource("1_dgb78")]
+
+[node name="housegroup" parent="." index="0"]
+transform = Transform3D(33.3496, 0, 0, 0, 33.3496, 2.51783e-06, 0, -2.51783e-06, 33.3496, 0, 3.66221, 0)
+surface_material_override/0 = ExtResource("4_dyn2a")
+surface_material_override/1 = ExtResource("3_2omgb")
+surface_material_override/2 = ExtResource("4_6rdkp")
+surface_material_override/3 = ExtResource("5_dxkds")

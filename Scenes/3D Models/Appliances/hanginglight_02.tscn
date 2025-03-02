@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5a17fa1vyr2i"]
+
+[ext_resource type="PackedScene" uid="uid://mbu22jvopukm" path="res://3D Assets FBX/3D Props/hanginglight02.fbx" id="1_qm58v"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_ysqva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33r0k"]
+albedo_texture = ExtResource("2_ysqva")
+
+[node name="hanginglight02" instance=ExtResource("1_qm58v")]
+
+[node name="hanginglight02" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_33r0k")

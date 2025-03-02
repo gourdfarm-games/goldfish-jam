@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd6vvesxhqluf"]
+
+[ext_resource type="PackedScene" uid="uid://cdgal4qn5da4d" path="res://3D Assets FBX/3D Props/New/Water_Puddle (1).fbx" id="1_lppl8"]
+[ext_resource type="Material" uid="uid://bd3tyyu5xqg5w" path="res://Materials/water.tres" id="2_k52b4"]
+
+[node name="Water_Puddle (1)" instance=ExtResource("1_lppl8")]
+
+[node name="Water_Puddle" parent="." index="0"]
+material_override = ExtResource("2_k52b4")
+surface_material_override/0 = ExtResource("2_k52b4")

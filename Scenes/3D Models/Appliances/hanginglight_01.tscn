@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh7x1lttj2oql"]
+
+[ext_resource type="PackedScene" uid="uid://qtmgcvlox5xn" path="res://3D Assets FBX/3D Props/hanginglight01.fbx" id="1_88vbs"]
+[ext_resource type="Material" uid="uid://cvc7xopwiwm2w" path="res://Materials/orangeglass.tres" id="2_hfkne"]
+[ext_resource type="Material" uid="uid://lvcebcw6xij1" path="res://Materials/glass.tres" id="2_xbbju"]
+
+[node name="hanginglight01" instance=ExtResource("1_88vbs")]
+
+[node name="hanginglight01" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xbbju")
+surface_material_override/1 = ExtResource("2_hfkne")

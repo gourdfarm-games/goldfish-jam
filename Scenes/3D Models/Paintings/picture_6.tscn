@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://brc0vf1s2t13v"]
+
+[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_qv3cr"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="2_s5bap"]
+[ext_resource type="Material" uid="uid://bnwp03uabskmn" path="res://Materials/picture_2.tres" id="3_3nd1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o22c2"]
+albedo_texture = ExtResource("2_s5bap")
+
+[node name="Framed_Picture" instance=ExtResource("1_qv3cr")]
+
+[node name="pCube76" parent="group13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.60439, 9.03941, 0.84216, 8.09548)
+
+[node name="pPlane3" parent="." index="1"]
+transform = Transform3D(1.0022, 0, 0, 0, -7.08454e-08, 1.0022, 0, -1.62075, -4.38077e-08, 0.0857004, 1.33801, -0.103832)
+material_override = SubResource("StandardMaterial3D_o22c2")
+surface_material_override/0 = ExtResource("3_3nd1i")

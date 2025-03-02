@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b21lmff76q1p4"]
-
-[ext_resource type="Texture2D" uid="uid://cfcn47h1vuqen" path="res://3D Assets/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Textures/Fabric/Rug-towels/Fabric_Towel_01_basecolor.jpg" id="1_o3ljf"]
-
-[resource]
-albedo_texture = ExtResource("1_o3ljf")
-metallic_specular = 0.65

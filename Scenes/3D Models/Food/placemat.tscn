@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4oxsrr7447ll"]
+
+[ext_resource type="PackedScene" uid="uid://b5q4jwrgj3r5m" path="res://3D Assets FBX/3D Props/Lena Wachs/placemat.fbx" id="1_633tl"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_8ljm7"]
+
+[node name="placemat" instance=ExtResource("1_633tl")]
+
+[node name="placemat" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8ljm7")

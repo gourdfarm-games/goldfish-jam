@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvlwuqodi4c6e"]
+
+[ext_resource type="PackedScene" uid="uid://b64y7jk37qwll" path="res://3D Assets FBX/3D Props/kitchensink (1).fbx" id="1_rhtfl"]
+[ext_resource type="Material" uid="uid://clocfvgmvvxq0" path="res://Materials/gradient3.tres" id="2_5xk6h"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="3_d5n2e"]
+
+[node name="kitchensink (1)" instance=ExtResource("1_rhtfl")]
+
+[node name="sink1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_5xk6h")
+surface_material_override/1 = ExtResource("3_d5n2e")

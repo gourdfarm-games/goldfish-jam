@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6nxvtnan7d80"]
+
+[ext_resource type="PackedScene" uid="uid://d0t03dthx51ti" path="res://3D Assets FBX/3D Props/Lena Wachs/window.fbx" id="1_ks8h6"]
+[ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_pyhto"]
+[ext_resource type="Texture2D" uid="uid://bb0sfjjniu4tw" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_003.png" id="3_ew8n8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_et4m4"]
+albedo_texture = ExtResource("3_ew8n8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngq8m"]
+transparency = 1
+albedo_color = Color(0.570616, 0.701775, 0.878313, 0.670588)
+
+[node name="window" instance=ExtResource("1_ks8h6")]
+
+[node name="window" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pyhto")
+surface_material_override/1 = SubResource("StandardMaterial3D_et4m4")
+surface_material_override/2 = SubResource("StandardMaterial3D_ngq8m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]

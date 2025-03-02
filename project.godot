@@ -11,10 +11,13 @@ config_version=5
 [application]
 
 config/name="Murphy's Mayem"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-boot_splash/image="res://Splash_Art 2.png"
-config/icon="res://Character Icons/Murphy_Icon.PNG"
+config/icon="res://Images/Character Icons/Murphy_Icon.PNG"
+
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
 [display]
 

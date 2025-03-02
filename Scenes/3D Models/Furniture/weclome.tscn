@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwsnkgw2roeit"]
+
+[ext_resource type="PackedScene" uid="uid://cnamqqxcg85ja" path="res://3D Assets FBX/3D Props/New/WelcomeMat01.fbx" id="1_og0kd"]
+
+[node name="WelcomeMat01" instance=ExtResource("1_og0kd")]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu82ynv2vvx8o"
+path="res://.godot/imported/167169__ultradust__dooropensandcloseswav.wav-d5c1cc7633572d9cc2c5a52887304f26.sample"
+
+[deps]
+
+source_file="res://Audio/Sound effects/167169__ultradust__dooropensandcloseswav.wav"
+dest_files=["res://.godot/imported/167169__ultradust__dooropensandcloseswav.wav-d5c1cc7633572d9cc2c5a52887304f26.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

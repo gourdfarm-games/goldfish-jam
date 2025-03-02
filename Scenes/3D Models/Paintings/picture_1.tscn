@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://4i1c31gjaeet"]
+
+[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_8x3en"]
+[ext_resource type="Texture2D" uid="uid://ka4at8402dh" path="res://3D Assets FBX/3D Props/New/Screenshot 2025-02-17 210735 (1).png" id="2_uonrk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yotui"]
+albedo_texture = ExtResource("2_uonrk")
+
+[node name="Framed_Picture" instance=ExtResource("1_8x3en")]
+
+[node name="pPlane3" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0857004, 1.33801, -0.103906)
+surface_material_override/0 = SubResource("StandardMaterial3D_yotui")

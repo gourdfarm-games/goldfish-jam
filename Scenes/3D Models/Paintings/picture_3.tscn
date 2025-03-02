@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3rtjotucr7oe"]
+
+[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_o2hex"]
+[ext_resource type="Material" uid="uid://c5l6a5ny0e8gk" path="res://Materials/bowlpicture.tres" id="2_yw4xm"]
+
+[node name="Framed_Picture" instance=ExtResource("1_o2hex")]
+
+[node name="pCube76" parent="group13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.49302, 9.03941, 0.84216, 8.09557)
+
+[node name="pPlane3" parent="." index="1"]
+transform = Transform3D(1.0022, 0, 0, 0, -6.74717e-08, 1.0022, 0, -1.54357, -4.38077e-08, 0.0857004, 1.33801, -0.103906)
+material_override = ExtResource("2_yw4xm")
+surface_material_override/0 = ExtResource("2_yw4xm")

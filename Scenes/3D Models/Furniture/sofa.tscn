@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://csc8rasqvg85n"]
+
+[ext_resource type="PackedScene" uid="uid://dy1gmuhhilag7" path="res://3D Assets FBX/3D Props/Lena Wachs/sofa.fbx" id="1_2ry0j"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_8qbqu"]
+
+[node name="sofa" instance=ExtResource("1_2ry0j")]
+
+[node name="polySurface12123" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_8qbqu")

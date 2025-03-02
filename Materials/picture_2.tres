@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bnwp03uabskmn"]
+
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="1_mkahc"]
+
+[resource]
+albedo_texture = ExtResource("1_mkahc")
+uv1_scale = Vector3(0.785, 1.035, 1)
+uv1_offset = Vector3(0.1, 0, 0)

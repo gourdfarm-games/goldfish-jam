@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6xipe5jntqis"]
+
+[ext_resource type="PackedScene" uid="uid://b64y7jk37qwll" path="res://3D Assets FBX/3D Props/kitchensink (1).fbx" id="1_u6f0m"]
+
+[node name="kitchensink (1)" instance=ExtResource("1_u6f0m")]

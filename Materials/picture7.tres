@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dq8li2nktri6y"]
+
+[ext_resource type="Texture2D" uid="uid://csf5y1hcxgat5" path="res://Images/Game Logo/Screenshot 2025-02-20 183129.png" id="1_jcmsi"]
+
+[resource]
+albedo_color = Color(0.942206, 0.790826, 0.631146, 1)
+albedo_texture = ExtResource("1_jcmsi")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(1.05, 1.035, 1)
+uv1_offset = Vector3(-0.015, 0, 0)

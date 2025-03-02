@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dky2jn01dcu28"]
+
+[ext_resource type="PackedScene" uid="uid://d0aub2jq67pt5" path="res://3D Assets FBX/3D Props/Lena Wachs/armchair.fbx" id="1_qo5eh"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_4gkix"]
+
+[node name="armchair" instance=ExtResource("1_qo5eh")]
+
+[node name="armchair" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_4gkix")

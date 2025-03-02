@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4vci8kuntmur"]
+
+[ext_resource type="PackedScene" uid="uid://cdhp4e7a33vu8" path="res://3D Assets FBX/3D Props/Lena Wachs/cabinet.fbx" id="1_qord4"]
+[ext_resource type="Material" uid="uid://clocfvgmvvxq0" path="res://Materials/gradient3.tres" id="2_3nsq1"]
+
+[node name="cabinet" instance=ExtResource("1_qord4")]
+
+[node name="cabinet" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3nsq1")

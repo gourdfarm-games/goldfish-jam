@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ipa4phh858p"]
+
+[ext_resource type="PackedScene" uid="uid://b8gnct1ekl4c8" path="res://3D Assets FBX/3D Props/More Assets/plant02.fbx" id="1_7qacl"]
+[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_002.jpg" id="2_y26ln"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cuy5t"]
+albedo_texture = ExtResource("2_y26ln")
+
+[node name="plant02" instance=ExtResource("1_7qacl")]
+
+[node name="plant02" parent="." index="0"]
+transform = Transform3D(1, 0.000241962, -0.000150597, -0.000241938, 1, 0.0001322, 0.000150635, -0.000132156, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_cuy5t")

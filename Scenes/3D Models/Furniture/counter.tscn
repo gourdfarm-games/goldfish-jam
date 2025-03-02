@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://djx2y6fv6e45"]
+
+[ext_resource type="PackedScene" uid="uid://cv213ebre8y4v" path="res://3D Assets FBX/3D Props/counter (1).fbx" id="1_3pcrm"]
+[ext_resource type="Texture2D" uid="uid://bb0sfjjniu4tw" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_003.png" id="2_2ufnp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hbhf"]
+albedo_texture = ExtResource("2_2ufnp")
+
+[node name="counter (1)" instance=ExtResource("1_3pcrm")]
+
+[node name="counter1" parent="." index="0"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -0.0146329, 0.0153215, -0.0061549)
+material_override = SubResource("StandardMaterial3D_1hbhf")

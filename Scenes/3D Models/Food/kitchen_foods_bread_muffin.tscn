@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=3 uid="uid://hm2q7yair55n"]
+
+[ext_resource type="PackedScene" uid="uid://ebdduy7ke30i" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/Kitchen_foods_bread_muffin.fbx" id="1_qabvp"]
+[ext_resource type="Texture2D" uid="uid://buchq6vma1t3s" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/BreadLoaf/BreadLoaf_BreadLoaf_BaseColor.1001.png" id="2_d64uf"]
+[ext_resource type="Material" uid="uid://u0eq1u1mj34o" path="res://Materials/loaf.tres" id="2_uvo4k"]
+[ext_resource type="Texture2D" uid="uid://lssuemkmt2g1" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/MiniBun/MiniBun_lambert1_BaseColor.1001.png" id="3_6bhvf"]
+[ext_resource type="Material" uid="uid://cekml3b6j35g" path="res://Materials/bun.tres" id="3_l6p3e"]
+[ext_resource type="Material" uid="uid://q8caw2cdmabs" path="res://Materials/muffin.tres" id="4_vkbbd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wigg"]
+albedo_texture = ExtResource("3_6bhvf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrwix"]
+albedo_texture = ExtResource("2_d64uf")
+
+[node name="Kitchen_foods_bread_muffin" instance=ExtResource("1_qabvp")]
+
+[node name="BreadLoaf" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_uvo4k")
+
+[node name="LilLoaf" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_l6p3e")
+
+[node name="Muffin1" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_vkbbd")
+
+[node name="SplitLoaf" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3wigg")
+
+[node name="BreadLoaf1" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mrwix")

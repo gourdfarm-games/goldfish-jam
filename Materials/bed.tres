@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://crd84konupmcp"]
+
+[ext_resource type="Texture2D" uid="uid://ju0yjljwpfp0" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/Fabric/Fabric_02/Fabric_Pattern_02_roughness.jpg" id="1_r662a"]
+
+[resource]
+albedo_color = Color(0.530097, 0.6437, 0.617981, 1)
+albedo_texture = ExtResource("1_r662a")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dev5rapdqc10i"]
+
+[ext_resource type="PackedScene" uid="uid://4h0oi0cfxs1f" path="res://3D Assets FBX/3D Props/Lena Wachs/soap.fbx" id="1_75m5x"]
+[ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_b1cf2"]
+
+[node name="soap" instance=ExtResource("1_75m5x")]
+
+[node name="soap" parent="." index="0"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+material_override = ExtResource("2_b1cf2")
+material_overlay = ExtResource("2_b1cf2")

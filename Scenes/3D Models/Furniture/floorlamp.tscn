@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://c834nihn57etc"]
+
+[ext_resource type="PackedScene" uid="uid://b3gno5y8ogc2u" path="res://3D Assets FBX/3D Props/Lena Wachs/floorlamp.fbx" id="1_ofulc"]
+[ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_xcb1s"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="3_ctblc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip178"]
+albedo_texture = ExtResource("3_ctblc")
+
+[node name="floorlamp" instance=ExtResource("1_ofulc")]
+
+[node name="floorlamp" parent="." index="0"]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_xcb1s")
+surface_material_override/1 = SubResource("StandardMaterial3D_ip178")

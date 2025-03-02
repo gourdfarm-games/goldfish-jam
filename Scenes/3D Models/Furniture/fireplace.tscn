@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://c867vkndqkcsj"]
+
+[ext_resource type="PackedScene" uid="uid://2i26yqtoo3tn" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/Fireplace.fbx" id="1_iikb6"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_0q1eg"]
+[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_002.jpg" id="3_coa4e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qog6j"]
+albedo_texture = ExtResource("2_0q1eg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdr3w"]
+albedo_texture = ExtResource("2_0q1eg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8geup"]
+albedo_texture = ExtResource("3_coa4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h5g7"]
+albedo_texture = ExtResource("2_0q1eg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi3w0"]
+albedo_texture = ExtResource("3_coa4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bauyu"]
+albedo_texture = ExtResource("3_coa4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajmki"]
+albedo_texture = ExtResource("3_coa4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_332xk"]
+albedo_texture = ExtResource("3_coa4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uucku"]
+albedo_texture = ExtResource("2_0q1eg")
+
+[node name="Fireplace" instance=ExtResource("1_iikb6")]
+
+[node name="pCylinder4" parent="group7" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qog6j")
+
+[node name="pCylinder3" parent="group7" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bdr3w")
+
+[node name="polySurface1" parent="group7" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8geup")
+
+[node name="pCylinder1" parent="group7" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6h5g7")
+
+[node name="pCube10" parent="group7" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mi3w0")
+
+[node name="pCube9" parent="group7" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bauyu")
+
+[node name="pCube8" parent="group7" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ajmki")
+
+[node name="pCube7" parent="group7" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_332xk")
+
+[node name="pCylinder2" parent="group7" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uucku")

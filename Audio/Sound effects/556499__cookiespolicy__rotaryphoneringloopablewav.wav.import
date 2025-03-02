@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctoh7h6rb54sm"
+path="res://.godot/imported/556499__cookiespolicy__rotaryphoneringloopablewav.wav-4249b6eb783ba04c44b7554312ac304d.sample"
+
+[deps]
+
+source_file="res://Audio/Sound effects/556499__cookiespolicy__rotaryphoneringloopablewav.wav"
+dest_files=["res://.godot/imported/556499__cookiespolicy__rotaryphoneringloopablewav.wav-4249b6eb783ba04c44b7554312ac304d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

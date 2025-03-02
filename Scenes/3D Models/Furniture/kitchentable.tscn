@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0d2dsqqwhhw2"]
+
+[ext_resource type="PackedScene" uid="uid://5kblprwgsvwi" path="res://3D Assets FBX/3D Props/Lena Wachs/kitchentable.fbx" id="1_cv1hm"]
+[ext_resource type="Material" uid="uid://clocfvgmvvxq0" path="res://Materials/gradient3.tres" id="2_wvlbg"]
+
+[node name="kitchentable" instance=ExtResource("1_cv1hm")]
+
+[node name="kitchentable" parent="." index="0"]
+material_override = ExtResource("2_wvlbg")

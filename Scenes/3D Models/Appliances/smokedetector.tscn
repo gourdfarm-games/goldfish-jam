@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://j41p42jxvuys"]
+
+[ext_resource type="PackedScene" uid="uid://cuus7no4c2rsp" path="res://3D Assets FBX/3D Props/More Assets/smokedetector.fbx" id="1_b03fm"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_yhcy0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ffnh"]
+albedo_texture = ExtResource("2_yhcy0")
+
+[node name="smokedetector" instance=ExtResource("1_b03fm")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="smokedetector" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_0ffnh")

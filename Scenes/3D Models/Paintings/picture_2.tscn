@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu5tv3o7b0a04"]
+
+[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_vh8jl"]
+[ext_resource type="Material" uid="uid://bnwp03uabskmn" path="res://Materials/picture_2.tres" id="2_c1nd3"]
+[ext_resource type="Texture2D" uid="uid://bjv24uaeg20d7" path="res://3D Assets FBX/3D Props/New/Screenshot 2025-02-20 182014.png" id="2_lsdpj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5x18a"]
+albedo_texture = ExtResource("2_lsdpj")
+
+[node name="Framed_Picture" instance=ExtResource("1_vh8jl")]
+
+[node name="pCube76" parent="group13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.63737, 9.03941, 0.84216, 8.09557)
+
+[node name="pPlane3" parent="." index="1"]
+transform = Transform3D(1.0022, 0, 0, 0, -7.22665e-08, 1.0022, 0, -1.65327, -4.38077e-08, 0.0857004, 1.33801, -0.103906)
+material_override = SubResource("StandardMaterial3D_5x18a")
+surface_material_override/0 = ExtResource("2_c1nd3")

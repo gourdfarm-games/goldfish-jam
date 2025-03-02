@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://6wjybjc34xiw"]
+
+[ext_resource type="PackedScene" uid="uid://i5w3qmiarboq" path="res://3D Assets FBX/3D Props/Lena Wachs/beanbag1.fbx" id="1_go4dx"]
+[ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_kdxex"]
+
+[node name="beanbag1" instance=ExtResource("1_go4dx")]
+
+[node name="beanbag1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kdxex")

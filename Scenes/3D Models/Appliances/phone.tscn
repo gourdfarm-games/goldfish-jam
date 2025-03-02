@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://chap85pynp23i"]
+
+[ext_resource type="PackedScene" uid="uid://b6urgkdy0dkpj" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/Phone.fbx" id="1_5e62q"]
+[ext_resource type="Material" uid="uid://e0swjom00o12" path="res://Materials/phone.tres" id="2_yvi30"]
+
+[node name="Phone" instance=ExtResource("1_5e62q")]
+
+[node name="polySurface3" parent="Phone" index="12"]
+surface_material_override/0 = ExtResource("2_yvi30")
+
+[node name="pCube59" parent="Phone" index="14"]
+material_override = ExtResource("2_yvi30")

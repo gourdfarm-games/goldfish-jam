@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://q76t1swxl4rf"]
+
+[ext_resource type="PackedScene" uid="uid://dohjis5ectirh" path="res://3D Assets FBX/3D Props/Lena Wachs/squaresidetable.fbx" id="1_3bfan"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_e2qsd"]
+
+[node name="squaresidetable" instance=ExtResource("1_3bfan")]
+
+[node name="squaresidetable" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_e2qsd")

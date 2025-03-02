@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsrknuw56k011"]
+
+[ext_resource type="PackedScene" uid="uid://brj3l78xyo8jx" path="res://3D Assets FBX/3D Props/Table_w_tablecloth.fbx" id="1_88nbr"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_2rscd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbfkk"]
+albedo_texture = ExtResource("2_2rscd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsaqa"]
+albedo_texture = ExtResource("2_2rscd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yw5w"]
+albedo_texture = ExtResource("2_2rscd")
+
+[node name="Table_w_tablecloth" instance=ExtResource("1_88nbr")]
+
+[node name="pCylinder84" parent="TableAndCloth" index="0"]
+material_override = SubResource("StandardMaterial3D_qbfkk")
+
+[node name="pCylinder83" parent="TableAndCloth" index="1"]
+material_override = SubResource("StandardMaterial3D_rsaqa")
+
+[node name="pDisc4" parent="TableAndCloth" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2yw5w")

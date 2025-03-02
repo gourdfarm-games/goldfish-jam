@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dj7hts8dhyqd6"]
+
+[ext_resource type="Texture2D" uid="uid://lssuemkmt2g1" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/MiniBun/MiniBun_lambert1_BaseColor.1001.png" id="1_u2c5h"]
+
+[resource]
+albedo_texture = ExtResource("1_u2c5h")

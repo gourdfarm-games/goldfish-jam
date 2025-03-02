@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjkrgjqhyk43y"]
+
+[ext_resource type="PackedScene" uid="uid://ck14y583fhvni" path="res://3D Assets FBX/3D Props/Lena Wachs/coffeemaker.fbx" id="1_xpvcu"]
+[ext_resource type="Material" uid="uid://lvcebcw6xij1" path="res://Materials/glass.tres" id="2_cku4s"]
+
+[node name="coffeemaker" instance=ExtResource("1_xpvcu")]
+
+[node name="coffeemaker1" parent="." index="2"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+surface_material_override/2 = ExtResource("2_cku4s")

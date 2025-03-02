@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj2wi87yf0c6j"]
+
+[ext_resource type="PackedScene" uid="uid://b13br3ix57w15" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/TV_Stand.fbx" id="1_iru7u"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_vgmk5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_460rq"]
+albedo_texture = ExtResource("2_vgmk5")
+
+[node name="TV_Stand" instance=ExtResource("1_iru7u")]
+
+[node name="polySurface5" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_460rq")

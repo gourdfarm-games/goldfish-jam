@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ewxq62ywwvki"]
+
+[ext_resource type="PackedScene" uid="uid://c3balto5acs8f" path="res://3D Assets FBX/3D Props/Lena Wachs/jars.fbx" id="1_6fwxi"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_pks7g"]
+
+[node name="jars" instance=ExtResource("1_6fwxi")]
+
+[node name="jars" parent="." index="0"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_pks7g")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmujcn33g656w"]
+
+[ext_resource type="PackedScene" uid="uid://cmbyymi0nnemu" path="res://3D Assets FBX/Character Assets/Murphy_Fish.fbx" id="1_cyetp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkauo"]
+albedo_color = Color(0.976971, 0.450092, 0, 1)
+
+[node name="Murphy_Fish" instance=ExtResource("1_cyetp")]
+
+[node name="Murphy_thefish" parent="Fish_Jump" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152349, 0.00813446, -0.0579173)
+material_override = SubResource("StandardMaterial3D_mkauo")

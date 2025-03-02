@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://da8yo0qt0i4f3"]
+
+[ext_resource type="PackedScene" uid="uid://bo38eae1oyji4" path="res://3D Assets FBX/3D Props/New/window03.fbx" id="1_5u7vw"]
+[ext_resource type="Material" uid="uid://clocfvgmvvxq0" path="res://Materials/gradient3.tres" id="2_6isxk"]
+
+[node name="window03" instance=ExtResource("1_5u7vw")]
+
+[node name="window03" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_6isxk")

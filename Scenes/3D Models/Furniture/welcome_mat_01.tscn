@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1188ky77axg0"]
+
+[ext_resource type="PackedScene" uid="uid://cnamqqxcg85ja" path="res://3D Assets FBX/3D Props/New/WelcomeMat01.fbx" id="1_drvb7"]
+[ext_resource type="Texture2D" uid="uid://dliawp12mihto" path="res://3D Assets FBX/3D Props/New/WelcomeMat02.jpg" id="2_nekak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mm5nn"]
+albedo_texture = ExtResource("2_nekak")
+uv1_scale = Vector3(0.905, 1.14, 1)
+
+[node name="WelcomeMat01" instance=ExtResource("1_drvb7")]
+
+[node name="pCube82" parent="group14" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mm5nn")

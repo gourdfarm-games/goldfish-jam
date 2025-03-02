@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq8oihsclbw05"]
+
+[ext_resource type="PackedScene" uid="uid://eqgsesfenah7" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/Bed.fbx" id="1_el6la"]
+[ext_resource type="Material" uid="uid://bl3km5olhldq" path="res://Materials/black.tres" id="2_vmqst"]
+[ext_resource type="Material" uid="uid://gfwxe5oogsnp" path="res://Materials/pillows.tres" id="3_vyu3t"]
+[ext_resource type="Material" uid="uid://crd84konupmcp" path="res://Materials/bed.tres" id="4_6r216"]
+
+[node name="Bed" instance=ExtResource("1_el6la")]
+
+[node name="pCube17" parent="Bed1/Bed2" index="0"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube23" parent="Bed1/Bed2" index="1"]
+surface_material_override/0 = ExtResource("3_vyu3t")
+
+[node name="pCube14" parent="Bed1/Bed2" index="2"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube13" parent="Bed1/Bed2" index="3"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube19" parent="Bed1/Bed2" index="4"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube16" parent="Bed1/Bed2" index="5"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube24" parent="Bed1/Bed2" index="6"]
+material_override = ExtResource("3_vyu3t")
+
+[node name="pCube18" parent="Bed1/Bed2" index="7"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube12" parent="Bed1/Bed2" index="8"]
+material_override = ExtResource("2_vmqst")
+
+[node name="pCube11" parent="Bed1/Bed2" index="9"]
+surface_material_override/0 = ExtResource("4_6r216")
+
+[node name="pCube15" parent="Bed1/Bed2" index="10"]
+material_override = ExtResource("2_vmqst")

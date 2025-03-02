@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb46gof5qyf32"]
+
+[ext_resource type="PackedScene" uid="uid://caclfborb2crx" path="res://3D Assets FBX/3D Props/Lena Wachs/plant01.fbx" id="1_ahieg"]
+[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_002.jpg" id="2_md34x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bq8aa"]
+albedo_texture = ExtResource("2_md34x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4xcg"]
+albedo_texture = ExtResource("2_md34x")
+
+[node name="plant01" instance=ExtResource("1_ahieg")]
+
+[node name="plant01" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bq8aa")
+surface_material_override/1 = SubResource("StandardMaterial3D_c4xcg")

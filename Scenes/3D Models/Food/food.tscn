@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdu5ckwqxrfdu"]
+
+[ext_resource type="PackedScene" uid="uid://brwhsvdhbehd3" path="res://3D Assets FBX/3D Props/Jenna Zimanski/Food.fbx" id="1_5ntn6"]
+[ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_fiam1"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="3_3fs7k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qv8g"]
+albedo_texture = ExtResource("3_3fs7k")
+
+[node name="Food" instance=ExtResource("1_5ntn6")]
+
+[node name="Fish_Food" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.297, 0, 0, 0, 1, -0.000223175, 0.0162653, 0.00012067)
+surface_material_override/0 = ExtResource("2_fiam1")
+surface_material_override/1 = SubResource("StandardMaterial3D_3qv8g")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxl2yxlr4v1lc"
+path="res://.godot/imported/174631__altfuture__smalljunkdroppedwav.wav-c8abcba6bbd885061367f5c2fff61f36.sample"
+
+[deps]
+
+source_file="res://Audio/Sound effects/174631__altfuture__smalljunkdroppedwav.wav"
+dest_files=["res://.godot/imported/174631__altfuture__smalljunkdroppedwav.wav-c8abcba6bbd885061367f5c2fff61f36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
