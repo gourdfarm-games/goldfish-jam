@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://dlff1cqoqo51f"]
 
-[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_002.jpg" id="1_5it13"]
+[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_002.jpg" id="1_r0vhd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6or7s"]
-albedo_texture = ExtResource("1_5it13")
+albedo_texture = ExtResource("1_r0vhd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmxdk"]
 resource_name = "lambert2"

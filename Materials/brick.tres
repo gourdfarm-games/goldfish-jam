@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvrxkapsiew12"]
 
-[ext_resource type="Texture2D" uid="uid://ysu1l6hdwqdk" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Textures/Bricks/Brick.png" id="1_rwwlg"]
+[ext_resource type="Texture2D" uid="uid://ysu1l6hdwqdk" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/Bricks/Brick.png" id="1_rwwlg"]
 
 [resource]
 albedo_color = Color(0.387821, 0.417016, 0.414766, 1)

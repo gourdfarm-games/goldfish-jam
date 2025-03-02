@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bnkeh8dltvovg"]
 
-[ext_resource type="PackedScene" uid="uid://dcbr3a0hcl6ki" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Jenna Zimanski/Oven.fbx" id="1_xjumi"]
-[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_001.jpg" id="2_1qu4a"]
+[ext_resource type="PackedScene" uid="uid://dcbr3a0hcl6ki" path="res://3D Assets FBX/3D Props/Jenna Zimanski/Oven.fbx" id="1_xjumi"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_1qu4a"]
 [ext_resource type="Script" path="res://Scripts/TaskObjects/newoven.gd" id="2_ftys0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61mvo"]

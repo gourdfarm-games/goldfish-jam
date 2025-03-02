@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgxkdndk0k65e"]
 
-[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_b2pdl"]
+[ext_resource type="Script" path="res://Scripts/Menus/pause_menu.gd" id="1_b2pdl"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_juwbp"]
-[ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="3_r640d"]
-[ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="4_cwmmk"]
-[ext_resource type="Script" path="res://Scripts/return_to_menu.gd" id="5_puypi"]
-[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/button.wav" id="6_q5vh5"]
+[ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://Scripts/UI/orangebuttons.tres" id="3_r640d"]
+[ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://Scripts/UI/hover.tres" id="4_cwmmk"]
+[ext_resource type="Script" path="res://Scripts/Menus/return_to_menu.gd" id="5_puypi"]
+[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Audio/Sound effects/button.wav" id="6_q5vh5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu20i"]
 bg_color = Color(0.898039, 0.466667, 0.172549, 0.415686)

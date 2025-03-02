@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://q8caw2cdmabs"]
+
+[ext_resource type="Texture2D" uid="uid://cks8rfu7rsy7" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/Muffin/Muffin_Muffin_BaseColor.1001.png" id="1_5a36h"]
+
+[resource]
+albedo_texture = ExtResource("1_5a36h")

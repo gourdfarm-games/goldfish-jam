@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3rtjotucr7oe"]
 
-[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/New/Framed_Picture.fbx" id="1_o2hex"]
-[ext_resource type="Material" uid="uid://c5l6a5ny0e8gk" path="res://bowlpicture.tres" id="2_yw4xm"]
+[ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_o2hex"]
+[ext_resource type="Material" uid="uid://c5l6a5ny0e8gk" path="res://Materials/bowlpicture.tres" id="2_yw4xm"]
 
 [node name="Framed_Picture" instance=ExtResource("1_o2hex")]
 

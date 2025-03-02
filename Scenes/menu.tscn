@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://b5ca0xunrblw1"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_su8jg"]
+[ext_resource type="Script" path="res://Scripts/Menus/menu.gd" id="1_su8jg"]
 [ext_resource type="Texture2D" uid="uid://2riuxnw0iv7m" path="res://Game Logo/Splash_Art 2.png" id="2_62lac"]
 [ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="3_pl5hq"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="4_vsrfb"]
-[ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://hover.tres" id="5_mkxku"]
-[ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://orangebuttons.tres" id="6_07ll1"]
-[ext_resource type="Script" path="res://Scripts/play.gd" id="7_r77ke"]
-[ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Music/Background/Background_Music (1).wav" id="8_fg0c1"]
-[ext_resource type="PackedScene" uid="uid://cnj2ximnrwytp" path="res://Character Assets/Murphy_Hand_Grab_Anim.fbx" id="9_o1vvh"]
-[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Music/Sound effects/button.wav" id="10_3k3nb"]
+[ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://Scripts/UI/hover.tres" id="5_mkxku"]
+[ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://Scripts/UI/orangebuttons.tres" id="6_07ll1"]
+[ext_resource type="Script" path="res://Scripts/Menus/play.gd" id="7_r77ke"]
+[ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Audio/Background/Background_Music (1).wav" id="8_fg0c1"]
+[ext_resource type="PackedScene" uid="uid://cnj2ximnrwytp" path="res://3D Assets FBX/Character Assets/Murphy_Hand_Grab_Anim.fbx" id="9_o1vvh"]
+[ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Audio/Sound effects/button.wav" id="10_3k3nb"]
 
 [sub_resource type="FontVariation" id="FontVariation_xcnva"]
 base_font = ExtResource("4_vsrfb")

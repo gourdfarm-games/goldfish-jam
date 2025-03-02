@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dv43gkmxf8gdr"
+path="res://.godot/imported/MiniBun_lambert1_BaseColor.1001.png-1670dd1310f479746a1433f5b723cccf.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://3D Assets FBX/3D Props/Sarah Chene/Textures/MiniBun/Unsplitminitbun/MiniBun_lambert1_BaseColor.1001.png"
+dest_files=["res://.godot/imported/MiniBun_lambert1_BaseColor.1001.png-1670dd1310f479746a1433f5b723cccf.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

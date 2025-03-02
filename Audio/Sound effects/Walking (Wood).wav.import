@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8r55utyo4i8t"
+path="res://.godot/imported/Walking (Wood).wav-90e91f13fea0e96420e9ec87cc4aa3e8.sample"
+
+[deps]
+
+source_file="res://Audio/Sound effects/Walking (Wood).wav"
+dest_files=["res://.godot/imported/Walking (Wood).wav-90e91f13fea0e96420e9ec87cc4aa3e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

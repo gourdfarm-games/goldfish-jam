@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://30cb0au1mhl3"]
 
-[ext_resource type="AudioStream" uid="uid://rqccac517eo0" path="res://Music/Sound effects/wet_wack.wav" id="1_vqh3i"]
+[ext_resource type="AudioStream" uid="uid://rqccac517eo0" path="res://Audio/Sound effects/wet_wack.wav" id="1_vqh3i"]
 
 [node name="WetWack" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_vqh3i")

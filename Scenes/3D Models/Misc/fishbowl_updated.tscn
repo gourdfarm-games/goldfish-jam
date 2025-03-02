@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr62ba8kmbsfx"]
 
-[ext_resource type="PackedScene" uid="uid://dcqhetkali3g1" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/More Assets/fishbowl_updated.fbx" id="1_yiwv8"]
+[ext_resource type="PackedScene" uid="uid://dcqhetkali3g1" path="res://3D Assets FBX/3D Props/More Assets/fishbowl_updated.fbx" id="1_yiwv8"]
 [ext_resource type="Material" uid="uid://clnwf8nebulg7" path="res://Materials/gradient_2.tres" id="2_ht70c"]
 [ext_resource type="Material" uid="uid://lvcebcw6xij1" path="res://Materials/glass.tres" id="3_n3qow"]
 [ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="4_aammf"]

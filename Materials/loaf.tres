@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://u0eq1u1mj34o"]
+
+[ext_resource type="Texture2D" uid="uid://buchq6vma1t3s" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/BreadLoaf/BreadLoaf_BreadLoaf_BaseColor.1001.png" id="1_307du"]
+
+[resource]
+albedo_texture = ExtResource("1_307du")

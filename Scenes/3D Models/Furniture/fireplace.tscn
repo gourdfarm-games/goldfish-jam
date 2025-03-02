@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://c867vkndqkcsj"]
 
-[ext_resource type="PackedScene" uid="uid://2i26yqtoo3tn" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Assets/Fireplace.fbx" id="1_iikb6"]
-[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_001.jpg" id="2_0q1eg"]
-[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_002.jpg" id="3_coa4e"]
+[ext_resource type="PackedScene" uid="uid://2i26yqtoo3tn" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/Fireplace.fbx" id="1_iikb6"]
+[ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_0q1eg"]
+[ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_002.jpg" id="3_coa4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qog6j"]
 albedo_texture = ExtResource("2_0q1eg")

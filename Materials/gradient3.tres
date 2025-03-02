@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clocfvgmvvxq0"]
 
-[ext_resource type="Texture2D" uid="uid://bb0sfjjniu4tw" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Gradients/color_gradient_003.png" id="1_xsbll"]
+[ext_resource type="Texture2D" uid="uid://bb0sfjjniu4tw" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_003.png" id="1_xsbll"]
 
 [resource]
 albedo_texture = ExtResource("1_xsbll")

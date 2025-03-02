@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmujcn33g656w"]
 
-[ext_resource type="PackedScene" uid="uid://cmbyymi0nnemu" path="res://Character Assets/Murphy_Fish.fbx" id="1_cyetp"]
+[ext_resource type="PackedScene" uid="uid://cmbyymi0nnemu" path="res://3D Assets FBX/Character Assets/Murphy_Fish.fbx" id="1_cyetp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkauo"]
 albedo_color = Color(0.976971, 0.450092, 0, 1)

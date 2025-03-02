@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq8oihsclbw05"]
 
-[ext_resource type="PackedScene" uid="uid://eqgsesfenah7" path="res://3D Assets FBX/3D Props-20250220T033920Z-001/3D Props/Sarah Chene/Assets/Bed.fbx" id="1_el6la"]
-[ext_resource type="Material" uid="uid://bl3km5olhldq" path="res://black.tres" id="2_vmqst"]
-[ext_resource type="Material" uid="uid://gfwxe5oogsnp" path="res://pillows.tres" id="3_vyu3t"]
-[ext_resource type="Material" uid="uid://crd84konupmcp" path="res://bed.tres" id="4_6r216"]
+[ext_resource type="PackedScene" uid="uid://eqgsesfenah7" path="res://3D Assets FBX/3D Props/Sarah Chene/Assets/Bed.fbx" id="1_el6la"]
+[ext_resource type="Material" uid="uid://bl3km5olhldq" path="res://Materials/black.tres" id="2_vmqst"]
+[ext_resource type="Material" uid="uid://gfwxe5oogsnp" path="res://Materials/pillows.tres" id="3_vyu3t"]
+[ext_resource type="Material" uid="uid://crd84konupmcp" path="res://Materials/bed.tres" id="4_6r216"]
 
 [node name="Bed" instance=ExtResource("1_el6la")]
 
