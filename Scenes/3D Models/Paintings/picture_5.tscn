@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_51ryv"]
 [ext_resource type="Texture2D" uid="uid://cq01qr4yvtac1" path="res://3D Assets FBX/3D Props/Sarah Chene/Textures/BreadLoaf/BreadLoaf_BreadLoaf_Metallic.1001.png" id="2_3435y"]
-[ext_resource type="Texture2D" uid="uid://cvnfb8k1khdgb" path="res://Paintings-TV/IMG_2278.png" id="2_jgmhu"]
+[ext_resource type="Texture2D" uid="uid://cvnfb8k1khdgb" path="res://Images/Paintings-TV/IMG_2278.png" id="2_jgmhu"]
 [ext_resource type="Material" uid="uid://bnwp03uabskmn" path="res://Materials/picture_2.tres" id="3_pdev5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wv28"]

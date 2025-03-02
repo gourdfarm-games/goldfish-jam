@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://brwhsvdhbehd3" path="res://3D Assets FBX/3D Props/Jenna Zimanski/Food.fbx" id="1_5ntn6"]
 [ext_resource type="Material" uid="uid://dy1vooco4dww2" path="res://Materials/gradient_1.tres" id="2_fiam1"]
-[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="3_3fs7k"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="3_3fs7k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qv8g"]
 albedo_texture = ExtResource("3_3fs7k")

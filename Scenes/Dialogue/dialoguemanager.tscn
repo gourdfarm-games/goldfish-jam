@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://506kyjjwsruc"]
 
-[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="1_k7k4n"]
+[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://Fonts/Banana Stick.otf" id="1_k7k4n"]
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialoguemanager.gd" id="1_qskvy"]
-[ext_resource type="FontFile" uid="uid://dh32vslbjc75e" path="res://_fonts/Simply Rounded.ttf" id="3_tkxms"]
+[ext_resource type="FontFile" uid="uid://dh32vslbjc75e" path="res://Fonts/Simply Rounded.ttf" id="3_tkxms"]
 [ext_resource type="Script" path="res://Scripts/Dialogue/options.gd" id="4_8eorq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phqu6"]

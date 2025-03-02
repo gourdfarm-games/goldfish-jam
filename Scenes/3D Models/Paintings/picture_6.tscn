@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://brc0vf1s2t13v"]
 
 [ext_resource type="PackedScene" uid="uid://bkrruro4g3msf" path="res://3D Assets FBX/3D Props/New/Framed_Picture.fbx" id="1_qv3cr"]
-[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="2_s5bap"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="2_s5bap"]
 [ext_resource type="Material" uid="uid://bnwp03uabskmn" path="res://Materials/picture_2.tres" id="3_3nd1i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o22c2"]

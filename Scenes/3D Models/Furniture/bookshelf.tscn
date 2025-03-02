@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cbwus21vjlc67" path="res://3D Assets FBX/3D Props/Jenna Zimanski/Bookshelf.fbx" id="1_esnwf"]
 [ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_tvp2u"]
 [ext_resource type="Texture2D" uid="uid://dt8argpja26ld" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_002.jpg" id="3_o613x"]
-[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="4_jhqk1"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="4_jhqk1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rsey"]
 albedo_texture = ExtResource("2_tvp2u")

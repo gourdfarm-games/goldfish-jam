@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cytaf8rqfx23w"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/restart_menu.gd" id="1_aw85r"]
-[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="2_v5tq2"]
+[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://Fonts/Banana Stick.otf" id="2_v5tq2"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://Scripts/UI/orangebuttons.tres" id="3_h3h8e"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://Scripts/UI/hover.tres" id="4_fby7t"]
 [ext_resource type="Script" path="res://Scripts/Menus/restart.gd" id="5_gyegb"]

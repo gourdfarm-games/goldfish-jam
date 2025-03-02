@@ -2,7 +2,7 @@ extends Control
 
 @onready var dialogue_track = 0
 
-const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
+const next_button = preload("res://Scenes/Dialogue/nextdialogue.tscn")
 
 
 @onready var dialogue : Dialogue:
@@ -23,7 +23,7 @@ const next_button = preload("res://NPCS/Murphy/Dialogues/nextdialogue.tscn")
 func _ready():
 	dialogue_track = 0
 	if dialogue == null:
-		dialogue = load("res://NPCS/Murphy/Dialogues/0.tres")
+		dialogue = load("res://Dialogues/0.tres")
 		
 		call_deferred("cycle_focus")
 

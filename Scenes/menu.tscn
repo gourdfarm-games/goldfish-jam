@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://b5ca0xunrblw1"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/menu.gd" id="1_su8jg"]
-[ext_resource type="Texture2D" uid="uid://2riuxnw0iv7m" path="res://Game Logo/Splash_Art 2.png" id="2_62lac"]
-[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Game Logo/Ari_GameTitle.png" id="3_pl5hq"]
-[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://_fonts/Banana Stick.otf" id="4_vsrfb"]
+[ext_resource type="Texture2D" uid="uid://2riuxnw0iv7m" path="res://Images/Game Logo/Splash_Art 2.png" id="2_62lac"]
+[ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="3_pl5hq"]
+[ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://Fonts/Banana Stick.otf" id="4_vsrfb"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://Scripts/UI/hover.tres" id="5_mkxku"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://Scripts/UI/orangebuttons.tres" id="6_07ll1"]
 [ext_resource type="Script" path="res://Scripts/Menus/play.gd" id="7_r77ke"]

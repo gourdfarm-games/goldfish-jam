@@ -4,11 +4,11 @@ class_name SoundRigidBody
 var collision_occurred = false
 var new_crash
 
-@onready var crash_sound = preload("res://Music/crash_sound.tscn")
-@onready var wack_sound = preload("res://Music/wet_wack.tscn")
+@onready var crash_sound = preload("res://Scenes/Audio/crash_sound.tscn")
+@onready var wack_sound = preload("res://Scenes/Audio/wet_wack.tscn")
 
-const COLLISION_FIRST = preload("res://Music/Sound effects/collision_first.wav")
-const COLLISION_SECOND = preload("res://Music/Sound effects/collision_second.wav")
+const COLLISION_FIRST = preload("res://Audio/Sound effects/collision_first.wav")
+const COLLISION_SECOND = preload("res://Audio/Sound effects/collision_second.wav")
 
 
 
