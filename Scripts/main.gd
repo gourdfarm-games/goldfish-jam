@@ -8,6 +8,7 @@ var restartmenu = false
 func _ready() -> void:
 	paused = false
 	restartmenu = false 
+	print(Engine.time_scale)
 
 func _process(delta):
 	if Input.is_action_just_pressed("return-to-menu"):
@@ -29,13 +30,18 @@ func toggle_restartmenu():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func toggle_pause():
-	paused = !paused  
-	
 	if paused: 
-		pause_menu.show()
-		Engine.time_scale = 0
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
-	else:
 		pause_menu.hide()
 		Engine.time_scale = 1
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
+		
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0.0000000001
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+		
+		
+	paused = !paused
+	
+	
+	
