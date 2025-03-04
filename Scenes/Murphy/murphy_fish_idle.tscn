@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsydg1cejfep"]
 
 [ext_resource type="PackedScene" uid="uid://bl3lwd76oq51l" path="res://3D Assets FBX/Character Assets/New Assets/Animation/Murphy_Fish_IDLE.fbx" id="1_gvf2g"]
-[ext_resource type="Script" path="res://Scripts/Murphy/murphy_fish_idle.gd" id="2_6tt0b"]
+[ext_resource type="Script" uid="uid://c3rib31ei8l85" path="res://Scripts/Murphy/murphy_fish_idle.gd" id="2_6tt0b"]
 [ext_resource type="Texture2D" uid="uid://dpwtovd7l2j6d" path="res://3D Assets FBX/Character Assets/New Assets/Murphy_Fish_NEW_MURPHY_NOW_lambert2SG2_BaseColor.png" id="3_n3vjt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4uqmm"]

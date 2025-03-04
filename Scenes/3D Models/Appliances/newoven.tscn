@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dcbr3a0hcl6ki" path="res://3D Assets FBX/3D Props/Jenna Zimanski/Oven.fbx" id="1_xjumi"]
 [ext_resource type="Texture2D" uid="uid://chx1s5w0wteea" path="res://3D Assets FBX/3D Props/Gradients/color_gradient_001.jpg" id="2_1qu4a"]
-[ext_resource type="Script" path="res://Scripts/TaskObjects/newoven.gd" id="2_ftys0"]
+[ext_resource type="Script" uid="uid://bhyuk57unh2b0" path="res://Scripts/TaskObjects/newoven.gd" id="2_ftys0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61mvo"]
 albedo_texture = ExtResource("2_1qu4a")
@@ -63,9 +63,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5jlu1"]
 _data = {
-"RESET": SubResource("Animation_o1alq"),
-"close_oven": SubResource("Animation_n17k0"),
-"open_oven": SubResource("Animation_g8ju4")
+&"RESET": SubResource("Animation_o1alq"),
+&"close_oven": SubResource("Animation_n17k0"),
+&"open_oven": SubResource("Animation_g8ju4")
 }
 
 [node name="Oven" groups=["oven"] instance=ExtResource("1_xjumi")]
