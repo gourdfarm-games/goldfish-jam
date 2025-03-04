@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://b5ca0xunrblw1"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/menu.gd" id="1_su8jg"]
+[ext_resource type="Script" uid="uid://ckwn58x51ws01" path="res://Scripts/Menus/menu.gd" id="1_su8jg"]
 [ext_resource type="Texture2D" uid="uid://2riuxnw0iv7m" path="res://Images/Game Logo/Splash_Art 2.png" id="2_62lac"]
 [ext_resource type="Texture2D" uid="uid://ri1xbkuf5fnb" path="res://Images/Game Logo/Ari_GameTitle.png" id="3_pl5hq"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://Fonts/Banana Stick.otf" id="4_vsrfb"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://Scripts/UI/hover.tres" id="5_mkxku"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://Scripts/UI/orangebuttons.tres" id="6_07ll1"]
-[ext_resource type="Script" path="res://Scripts/Menus/play.gd" id="7_r77ke"]
+[ext_resource type="Script" uid="uid://bt5ap8e4woc4m" path="res://Scripts/Menus/play.gd" id="7_r77ke"]
 [ext_resource type="AudioStream" uid="uid://b3ogw6psrsooj" path="res://Audio/Background/Background_Music (1).wav" id="8_fg0c1"]
 [ext_resource type="PackedScene" uid="uid://cnj2ximnrwytp" path="res://3D Assets FBX/Character Assets/Murphy_Hand_Grab_Anim.fbx" id="9_o1vvh"]
 [ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Audio/Sound effects/button.wav" id="10_3k3nb"]
@@ -65,8 +65,8 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
-theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oky3b")
@@ -80,8 +80,8 @@ script = ExtResource("7_r77ke")
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
-theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oky3b")
@@ -94,8 +94,8 @@ text = "Settings"
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
-theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oky3b")
@@ -108,8 +108,8 @@ text = "Credits"
 layout_mode = 2
 size_flags_vertical = 7
 theme_override_colors/font_hover_color = Color(0.687678, 0.946178, 1, 1)
-theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.686275, 0.945098, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_xcnva")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oky3b")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://506kyjjwsruc"]
 
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://Fonts/Banana Stick.otf" id="1_k7k4n"]
-[ext_resource type="Script" path="res://Scripts/Dialogue/dialoguemanager.gd" id="1_qskvy"]
+[ext_resource type="Script" uid="uid://cdxfs5r3nfbm4" path="res://Scripts/Dialogue/dialoguemanager.gd" id="1_qskvy"]
 [ext_resource type="FontFile" uid="uid://dh32vslbjc75e" path="res://Fonts/Simply Rounded.ttf" id="3_tkxms"]
-[ext_resource type="Script" path="res://Scripts/Dialogue/options.gd" id="4_8eorq"]
+[ext_resource type="Script" uid="uid://fy5suubex55f" path="res://Scripts/Dialogue/options.gd" id="4_8eorq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phqu6"]
 bg_color = Color(0.0117647, 0.0117647, 0.0117647, 0.180392)
@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j85ji"]
 _data = {
-"RESET": SubResource("Animation_ve8xd"),
-"text_anim": SubResource("Animation_b31de")
+&"RESET": SubResource("Animation_ve8xd"),
+&"text_anim": SubResource("Animation_b31de")
 }
 
 [node name="DialogueManager" type="Control" groups=["dialogue"]]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbslviwkyp7ed"]
 
 [ext_resource type="PackedScene" uid="uid://ctq15xv7i24ig" path="res://3D Assets FBX/Character Assets/New Assets/Animation/Murphy_Hand_Grab_Anim.fbx" id="1_ihjem"]
-[ext_resource type="Script" path="res://Scripts/Player/murphy_hand_grab_anim.gd" id="2_qmgqy"]
+[ext_resource type="Script" uid="uid://opl2bpo07iss" path="res://Scripts/Player/murphy_hand_grab_anim.gd" id="2_qmgqy"]
 
 [node name="Murphy_Hand_Grab_Anim" groups=["hand"] instance=ExtResource("1_ihjem")]
 script = ExtResource("2_qmgqy")
