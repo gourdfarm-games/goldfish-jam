@@ -4,6 +4,6 @@
 
 [node name="WetWack" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_vqh3i")
-volume_db = -10.0
+volume_db = -20.0
 unit_size = 5.0
 bus = &"Sound"
