@@ -21,6 +21,7 @@ func _physics_process(delta):
 	var contacts = get_contact_count()
 	if get_contact_count() > 0 and not collision_occurred:
 		if "Player" in str(get_colliding_bodies()) or "Fish" in str(get_colliding_bodies()):
+			print("contact")
 			collision_occurred = true
 			var crash = crash_sound.instantiate()
 			var random = randi_range(1, 2)
@@ -34,6 +35,8 @@ func _physics_process(delta):
 				var wack = wack_sound.instantiate()
 				add_child(wack)
 				wack.play()
+			await get_tree().create_timer(0.4).timeout
+			collision_occurred = false
 			
 			
 	elif get_contact_count() == 0:
