@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn32h7ga7xtp0"]
+[gd_scene load_steps=8 format=3 uid="uid://bn32h7ga7xtp0"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/settings.gd" id="1_6jx53"]
 [ext_resource type="FontFile" uid="uid://b2nrwwb8gsbqu" path="res://Fonts/Banana Stick.otf" id="2_58cva"]
 [ext_resource type="StyleBox" uid="uid://b3j5t3i5gl85u" path="res://Scripts/UI/orangebuttons.tres" id="2_67wt3"]
+[ext_resource type="Script" path="res://Scripts/Audio/master_vol.gd" id="3_66g1s"]
 [ext_resource type="StyleBox" uid="uid://bh60l478xylq6" path="res://Scripts/UI/hover.tres" id="4_y3c5o"]
 [ext_resource type="Script" path="res://Scripts/Menus/back.gd" id="5_t5b6c"]
 [ext_resource type="AudioStream" uid="uid://cs7f63m5oghyl" path="res://Audio/Sound effects/button.wav" id="6_76lyt"]
@@ -57,6 +58,10 @@ text = "Volume"
 
 [node name="Volume2" type="HSlider" parent="VBoxContainer2"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_66g1s")
+bus_name = "Master"
 
 [node name="Label2" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -66,6 +71,10 @@ text = "SOund FX"
 
 [node name="Volume3" type="HSlider" parent="VBoxContainer2"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_66g1s")
+bus_name = "Sound"
 
 [node name="Label3" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -75,6 +84,10 @@ text = "MUSIC"
 
 [node name="Volume4" type="HSlider" parent="VBoxContainer2"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_66g1s")
+bus_name = "Music"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -143,8 +156,8 @@ stream = ExtResource("6_76lyt")
 
 [connection signal="item_selected" from="VBoxContainer2/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="value_changed" from="VBoxContainer2/Volume2" to="." method="_on_volume_2_value_changed"]
-[connection signal="value_changed" from="VBoxContainer2/Volume3" to="." method="_on_volume_2_value_changed"]
-[connection signal="value_changed" from="VBoxContainer2/Volume4" to="." method="_on_volume_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/Volume3" to="." method="_on_volume_3_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/Volume4" to="." method="_on_volume_4_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="VBoxContainer/Back" method="_on_pressed"]
 [connection signal="toggled" from="VBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]

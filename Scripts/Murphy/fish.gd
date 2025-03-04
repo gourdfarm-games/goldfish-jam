@@ -32,6 +32,7 @@ signal destory_food
 @onready var hunger_bar: ProgressBar = $"../../../PlaceholderHUD/ColorRect/HungerBar"
 @onready var interact_ray: RayCast3D = $"../../../Player/Head/Camera3D/InteractRay"
 @onready var node_3d: Node3D = $"../../.."
+@onready var fish_bowl: StaticBody3D = $"../../FishBowl"
 
 func _ready() -> void:
 	current_hp = MAX_HP
@@ -80,7 +81,6 @@ func _on_bowl_place():
 	position = Vector3(11.189, 2.63, -4.352)
 	rotation = Vector3(0, 0, 0)
 	$Murphy_Fish_IDLE.visible = true
-	#get_tree().call_group("murphy", "play_idle")
 	$Murphy_Fish_JUMP.visible = false
 	
 
@@ -163,6 +163,8 @@ func _physics_process(delta: float) -> void:
 func update_forward(new_forward: Vector3) -> void:
 	var target_position = global_transform.origin - new_forward
 	if target_position == global_transform.origin:
+		return
+	if target_position == Vector3.UP:
 		return
 	else:
 		look_at(target_position, Vector3.UP)

@@ -34,6 +34,8 @@ func _physics_process(delta):
 				var wack = wack_sound.instantiate()
 				add_child(wack)
 				wack.play()
+			await get_tree().create_timer(0.4).timeout
+			collision_occurred = false
 			
 			
 	elif get_contact_count() == 0:
