@@ -164,6 +164,8 @@ func update_forward(new_forward: Vector3) -> void:
 	var target_position = global_transform.origin - new_forward
 	if target_position == global_transform.origin:
 		return
+	if target_position == Vector3.UP:
+		return
 	else:
 		look_at(target_position, Vector3.UP)
 		
