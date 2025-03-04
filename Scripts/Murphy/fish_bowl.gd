@@ -7,14 +7,13 @@ var is_holding = false
 signal bowl_place
 
 func _ready() -> void:
-	is_holding = false
 	$"../NavigationRegion3D/Fish".connect("holding", Callable(self, "_on_holding"))
 	
 func _on_holding():
 		is_holding = true
 	
 func _on_interacted(body: Variant) -> void:
-	if is_holding == true:
+	if is_holding == true and fish.in_bowl == false and fish.is_held == true:
 		emit_signal("bowl_place")
 	if fish.has_food == true and fish.in_bowl == true:
 		fish.feed_fish()
