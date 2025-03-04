@@ -47,7 +47,7 @@ func _ready() -> void:
 	
 	
 func task_get_rng():
-	task_number = randi_range(1, 6) # Change value based on amount of tasks
+	task_number = randi_range(1, 2) # Change value based on amount of tasks
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
