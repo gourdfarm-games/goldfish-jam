@@ -47,7 +47,7 @@ func _ready() -> void:
 	
 	
 func task_get_rng():
-	task_number = randi_range(1, 6)
+	task_number = randi_range(1, 6) # Change value based on amount of tasks
 
 func _on_timer_timeout() -> void:
 	task_get_rng()
@@ -71,7 +71,7 @@ func task_roll(task):
 				text_track = task_label.text
 				emit_signal("task_call", task, description)
 			else:
-				task = randi_range(1, 6)
+				task_get_rng()
 				task_delay_timer.wait_time = 0.1
 				task_delay_timer.start()
 		

@@ -33,7 +33,7 @@ func _on_task(task, description):
 		phone_timer.start()
 		await phone_timer.timeout
 		if friend_call_complete == false or spam_call_complete == false:
-			game_over.text = ("You didn't answer your friend and he's on his way")
+			game_over.text = ("You didn't answer\nyour friend and\nhe's on his way")
 			await get_tree().create_timer(1).timeout
 			node_3d.toggle_restartmenu()
 	
