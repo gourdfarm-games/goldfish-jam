@@ -8,7 +8,6 @@ var restartmenu = false
 func _ready() -> void:
 	paused = false
 	restartmenu = false 
-	print(Engine.time_scale)
 
 func _process(delta):
 	if Input.is_action_just_pressed("return-to-menu"):
